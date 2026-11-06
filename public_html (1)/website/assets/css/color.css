@@ -542,6 +542,97 @@ body {
   display: none !important;
 }
 
+/* ==========================================================================
+   OFFCANVAS DEDICATED MOBILE NAVIGATION
+   ========================================================================== */
+.vg-mobile-drawer-menu {
+  background: rgba(14, 6, 34, 0.98);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  margin-top: 12px;
+}
+
+.vg-mobile-nav-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+.vg-mobile-nav-list > li {
+  list-style: none !important;
+  border-top: 1px solid rgba(168, 85, 247, 0.12) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.vg-mobile-nav-list > li:first-child {
+  border-top: none !important;
+}
+
+.vg-mobile-nav-list > li > a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  padding: 13px 18px !important;
+  color: #e2e8f0 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  background: transparent !important;
+}
+
+.vg-mobile-nav-list > li > a:hover,
+.vg-mobile-nav-list > li > a.active {
+  color: #c084fc !important;
+  background: rgba(147, 51, 234, 0.18) !important;
+  padding-left: 22px !important;
+}
+
+/* Submenu dropdown */
+.vg-mobile-sub {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: none;
+  background: rgba(8, 3, 20, 0.7) !important;
+  border-top: 1px solid rgba(168, 85, 247, 0.15) !important;
+}
+
+.vg-mobile-sub.is-open {
+  display: block !important;
+}
+
+.vg-mobile-sub li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.vg-mobile-sub li a {
+  display: block !important;
+  padding: 11px 18px 11px 32px !important;
+  color: #cbd5e1 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  border-top: 1px solid rgba(168, 85, 247, 0.08) !important;
+  transition: all 0.2s ease !important;
+}
+
+.vg-mobile-sub li a:hover {
+  color: #ffffff !important;
+  background: rgba(147, 51, 234, 0.15) !important;
+  padding-left: 36px !important;
+}
+
 /* Offcanvas & MeanMenu Mobile Navigation */
 .mean-container .mean-bar {
   background: transparent !important;

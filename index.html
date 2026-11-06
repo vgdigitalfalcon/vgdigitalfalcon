@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     
     <!--<< Custom Theme & Color CSS >>-->
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/color.css">
+    <link rel="stylesheet" href="assets/css/main.css?v=4.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=4.0">
 
     <!-- Resource Hints for High-Speed Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -78,7 +78,33 @@
                     <p class="text mb-4" style="color: #cbd5e1; font-size: 14px;">
                         Scale your business with AI-powered marketing. We combine AI, creative strategies, and data to deliver predictable, measurable revenue.
                     </p>
-                    <div class="mobile-menu fix mb-4"></div>
+                    <!-- Dedicated Touch-Friendly Mobile Drawer Menu -->
+                    <div class="vg-mobile-drawer-menu mb-4">
+                        <ul class="vg-mobile-nav-list">
+                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li class="has-dropdown">
+                                <a href="javascript:void(0)" class="vg-mobile-parent-link">
+                                    <span>Services</span> <i class="fas fa-chevron-down"></i>
+                                </a>
+                                <ul class="vg-mobile-sub">
+                                    <li><a href="seo-service.html">SEO Optimization</a></li>
+                                    <li><a href="performance-marketing.html">Google & Meta Ads</a></li>
+                                    <li><a href="web-development.html">Website Development</a></li>
+                                    <li><a href="personal-branding-service.html">Personal Branding</a></li>
+                                    <li><a href="ecommerce-seo-service.html">Ecommerce SEO</a></li>
+                                    <li><a href="youtube-seo-agency.html">YouTube SEO Agency</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#falcon-agents">AI Agents</a></li>
+                            <li><a href="#how-it-works">How It Works</a></li>
+                            <li><a href="#case-studies">Case Studies</a></li>
+                            <li><a href="#team">Our Team</a></li>
+                            <li><a href="#reviews">Reviews</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
                     <div class="offcanvas__contact">
                         <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 15px;">Get In Touch</h4>
                         <ul>
@@ -118,7 +144,7 @@
             </a>
 
             <!-- Navigation Links -->
-            <nav class="vg-nav-menu" id="mobile-menu">
+            <nav class="vg-nav-menu">
                 <ul class="vg-nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about-us.html">About Us</a></li>
@@ -3337,6 +3363,36 @@
     <script src="assets/js/jquery.meanmenu.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=4.0"></script>
+    <script>
+        // Dedicated Mobile Drawer Menu Accordion & Auto-Close
+        document.addEventListener('DOMContentLoaded', function() {
+            var parentLinks = document.querySelectorAll('.vg-mobile-parent-link');
+            parentLinks.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    var sub = this.nextElementSibling;
+                    var icon = this.querySelector('i');
+                    if (sub) {
+                        sub.classList.toggle('is-open');
+                        if (icon) {
+                            icon.classList.toggle('fa-chevron-up');
+                            icon.classList.toggle('fa-chevron-down');
+                        }
+                    }
+                });
+            });
+
+            var navLinks = document.querySelectorAll('.vg-mobile-nav-list a:not(.vg-mobile-parent-link)');
+            navLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    var info = document.querySelector('.offcanvas__info');
+                    var overlay = document.querySelector('.offcanvas__overlay');
+                    if (info) info.classList.remove('info-open');
+                    if (overlay) overlay.classList.remove('overlay-open');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
