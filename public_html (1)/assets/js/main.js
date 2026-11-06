@@ -33,6 +33,7 @@ CSS TABLE OF CONTENTS
         $('#mobile-menu').meanmenu({
             meanMenuContainer: '.mobile-menu',
             meanScreenWidth: "1199",
+            meanDisplay: "flex",
             meanExpand: ['<i class="far fa-plus"></i>'],
         });
 
@@ -44,6 +45,13 @@ CSS TABLE OF CONTENTS
         $(".sidebar__toggle").on("click", function() {
             $(".offcanvas__info").addClass("info-open");
             $(".offcanvas__overlay").addClass("overlay-open");
+        });
+        // Auto-close mobile drawer when navigating to in-page hash links
+        $(".offcanvas__info a").on("click", function() {
+            if (!$(this).hasClass("mean-expand")) {
+                $(".offcanvas__info").removeClass("info-open");
+                $(".offcanvas__overlay").removeClass("overlay-open");
+            }
         });
 
         //>> Body Overlay Js Start <<//
