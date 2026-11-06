@@ -1,0 +1,36 @@
+User-agent: *
+Disallow: /wp-admin/
+Disallow: /private/
+# (Add any other standard disallows here)
+
+# --- AI SEARCH & LARGE LANGUAGE MODEL BOTS ---
+
+# OpenAI (SearchGPT & ChatGPT training)
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: GPTBot
+Allow: /
+
+# Perplexity AI (The leading AI Search Engine)
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI (AI Overviews, Gemini, Vertex)
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic (Claude)
+User-agent: anthropic-ai
+Allow: /
+
+# Apple (Apple Intelligence)
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft / Copilot (Relies heavily on standard Bingbot)
+User-agent: bingbot
+Allow: /
+
+# --- SITEMAPS ---
+Sitemap: https://vgdigitalfalcon.com/sitemap.xml
+Sitemap: https://vgdigitalfalcon.com/sitemap-pseo.xml

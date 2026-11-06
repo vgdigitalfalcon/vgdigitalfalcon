@@ -1,0 +1,252 @@
+/* ==========================================================================
+   RMB Chennai Central — Global Styles
+   Load order: bootstrap.css -> variables.css -> style.css -> page css
+   ========================================================================== */
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--gray-700);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  background: var(--white);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: white;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.container-xl {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section { padding: var(--section-y) 0; }
+
+/* Eyebrow label used above every section heading */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-small);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--orange-500);
+  margin-bottom: 0.5rem;
+}
+.eyebrow::after {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: var(--orange-500);
+}
+
+.section-title {
+  font-size: var(--fs-h2);
+  color: var(--navy-800);
+  text-align: center;
+}
+.section-heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* ---- Buttons ---- */
+.btn-rmb-primary {
+  background: var(--orange-500);
+  border: none;
+  color: var(--white);
+  font-weight: 600;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), transform var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-rmb-primary:hover { background: var(--orange-600); color: var(--white); transform: translateY(-2px); }
+
+.btn-rmb-outline {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  color: var(--white);
+  font-weight: 600;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), border-color var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-rmb-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); color: var(--white); }
+
+.btn-rmb-outline-navy {
+  background: transparent;
+  border: 1.5px solid var(--navy-700);
+  color: var(--navy-800);
+  font-weight: 600;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), color var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-rmb-outline-navy:hover { background: var(--navy-800); color: var(--white); }
+
+/* ==========================================================================
+   HEADER
+   ========================================================================== */
+.rmb-header {
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.rmb-header .navbar {
+  padding: 0.85rem 0;
+}
+.rmb-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.rmb-logo-group .rotary-word {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--navy-600);
+}
+.rmb-logo-group .rotary-icon {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--orange-500);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--white); font-size: 0.7rem; font-weight: 700;
+}
+.rmb-logo-group .rmb-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--navy-900);
+  color: var(--orange-500);
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 6px;
+  letter-spacing: 0.03em;
+}
+
+.rmb-nav .nav-link {
+  color: var(--gray-900);
+  font-weight: 500;
+  font-size: 0.95rem;
+  margin: 0 0.9rem;
+  padding: 0.4rem 0 !important;
+  position: relative;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+.rmb-nav .nav-link:hover,
+.rmb-nav .nav-link.active {
+  color: var(--orange-500);
+  border-bottom-color: var(--orange-500);
+}
+.rmb-nav .dropdown-menu {
+  border: none;
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+}
+.rmb-nav .dropdown-item {
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.9rem;
+}
+.rmb-nav .dropdown-item:hover { background: var(--orange-100); color: var(--orange-600); }
+
+.rmb-header .btn-rmb-primary { padding: 0.6rem 1.4rem; font-size: 0.9rem; }
+
+/* Page hero (inner pages) */
+.page-hero {
+  background: linear-gradient(120deg, rgba(8,20,50,0.92), rgba(11,28,74,0.75)), center/cover no-repeat;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+  padding: 3rem 0 4.5rem;
+}
+.page-hero .breadcrumb-row a { color: var(--orange-500); font-weight: 600; font-size: 0.85rem; }
+.page-hero .breadcrumb-row span { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+.page-hero h1 { color: var(--white); font-size: var(--fs-hero); margin: 0.5rem 0; }
+.page-hero p { color: rgba(255,255,255,0.8); max-width: 520px; }
+.page-hero .dot-grid {
+  position: absolute; left: 6%; bottom: 1.5rem;
+  display: grid; grid-template-columns: repeat(10, 8px); gap: 8px;
+}
+.page-hero .dot-grid span { width: 5px; height: 5px; border-radius: 50%; background: var(--orange-500); opacity: .8; }
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.rmb-footer {
+  background: var(--navy-900);
+  color: rgba(255,255,255,0.75);
+  padding-top: 4rem;
+  border-top: 4px solid var(--orange-500);
+}
+.rmb-footer h5 {
+  color: var(--white);
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+.rmb-footer h5::after {
+  content: "";
+  position: absolute; left: 0; bottom: 0;
+  width: 26px; height: 2px; background: var(--orange-500);
+}
+.rmb-footer p, .rmb-footer li, .rmb-footer a { color: rgba(255,255,255,0.65); font-size: 0.9rem; }
+.rmb-footer a:hover { color: var(--orange-500); }
+.rmb-footer ul { list-style: none; padding: 0; margin: 0; }
+.rmb-footer ul li { margin-bottom: 0.65rem; }
+.rmb-footer .rmb-logo-group .rotary-word { color: var(--white); }
+
+.rmb-footer .social-icons { display: flex; gap: 0.6rem; margin-top: 1.2rem; }
+.rmb-footer .social-icons a {
+  width: 34px; height: 34px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--white); font-size: 0.85rem;
+  transition: background var(--transition), border-color var(--transition);
+}
+.rmb-footer .social-icons a:hover { background: var(--orange-500); border-color: var(--orange-500); color: var(--white); }
+
+.rmb-footer .update-item { display: flex; gap: 0.7rem; margin-bottom: 1rem; }
+.rmb-footer .update-item img { width: 52px; height: 52px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+.rmb-footer .update-item .update-date { color: var(--orange-500); font-size: 0.75rem; font-weight: 600; }
+.rmb-footer .update-item p { margin: 0.15rem 0 0; font-size: 0.85rem; color: rgba(255,255,255,0.85); }
+
+.rmb-footer .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 2.5rem;
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+}
+
+/* Utility */
+.text-orange { color: var(--orange-500) !important; }
+.bg-navy { background: var(--navy-800) !important; }

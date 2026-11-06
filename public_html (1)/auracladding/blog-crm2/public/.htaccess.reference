@@ -1,0 +1,21 @@
+# ============================================================
+# Reference — copy rules to the document root .htaccess
+#
+# Clean URLs:
+#   /blog              → blog listing
+#   /blog/post-slug    → single post
+#   /sitemap.xml       → sitemap
+#   /robots.txt        → robots
+# ============================================================
+
+RewriteEngine On
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteRule ^blog/?$ blog-crm/public/blog.php [L,QSA]
+RewriteRule ^blog/([a-zA-Z0-9\-]+)/?$ blog-crm/public/post.php?slug=$1 [L,QSA]
+RewriteRule ^sitemap\.xml$ blog-crm/public/sitemap.xml [L]
+RewriteRule ^robots\.txt$ blog-crm/public/robots.txt [L]

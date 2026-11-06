@@ -1,0 +1,46 @@
+<!-- ==========================================================================
+     HEADER PARTIAL — included on every page via assets/js/include.js
+     Uses data-page attribute on <body> (e.g. data-page="about") to set the
+     active nav link automatically. See include.js for logic.
+     ========================================================================== -->
+<header class="rmb-header">
+  <nav class="navbar navbar-expand-lg container-xl">
+            <a class="navbar-brand d-flex align-items-center" href="index.php">
+            <img src="assets/images/rottery-logo.png" alt="Rotary" height="80" class="me-2">
+            <img src="assets/images/rmb-logo.png" alt="RMB" height="80">
+        </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#rmbNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="rmbNavbar">
+      <ul class="navbar-nav mx-auto rmb-nav align-items-lg-center">
+        <li class="nav-item">
+          <a class="nav-link" data-nav="home" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-nav="about" href="about.html">About Us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-nav="members" href="members.html" id="membersDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Members
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="membersDropdown">
+            <li><a class="dropdown-item" href="members.html">RMB Chennai Central Members</a></li>
+            <li><a class="dropdown-item" href="non-members.html">Rotarians Non Members</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-nav="newsroom" href="newsroom.html">Newsroom</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-nav="contact" href="contact.html">Contact</a>
+        </li>
+      </ul>
+      <a href="join-membership.html" class="btn btn-rmb-primary d-none d-lg-inline-flex">
+        Join RMB <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </nav>
+</header>

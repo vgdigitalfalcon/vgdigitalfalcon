@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VG Digital Falcon | Digital Marketing for Manufacturing Companies</title>
+
+<!-- Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#0b1530;
+  --navy-2:#0e1c3f;
+  --red:#e6332a;
+  --red-2:#ff453a;
+  --light:#f6f7fb;
+  --muted:#7c869c;
+  --white:#ffffff;
+}
+*{box-sizing:border-box;}
+body{
+  font-family:'Inter', sans-serif;
+  color:#1c2333;
+  overflow-x:hidden;
+  background:var(--white);
+}
+h1,h2,h3,h4,h5{ font-family:'Poppins', sans-serif; }
+
+/* ===== Reveal animation ===== */
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:all .8s cubic-bezier(.2,.7,.3,1);
+}
+.reveal.active{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:all .8s cubic-bezier(.2,.7,.3,1);}
+.reveal-left.active{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(40px);transition:all .8s cubic-bezier(.2,.7,.3,1);}
+.reveal-right.active{opacity:1;transform:translateX(0);}
+
+/* ===== Navbar ===== */
+.navbar-vgdf{
+  background:var(--navy);
+  padding:14px 0;
+  position:fixed;
+  top:0;width:100%;
+  z-index:1000;
+  box-shadow:0 4px 20px rgba(0,0,0,.25);
+  transition:padding .3s ease;
+}
+.navbar-vgdf.shrink{padding:8px 0;}
+.navbar-vgdf .navbar-brand img{height:42px;transition:.3s;}
+.navbar-vgdf .nav-link{
+  color:#dfe3ee !important;
+  font-weight:500;
+  font-size:15px;
+  margin:0 6px;
+  padding:8px 10px !important;
+  position:relative;
+  transition:.25s;
+}
+.navbar-vgdf .nav-link::after{
+  content:'';
+  position:absolute;
+  left:10px;right:10px;bottom:2px;
+  height:2px;background:var(--red);
+  transform:scaleX(0);
+  transition:transform .25s ease;
+  transform-origin:left;
+}
+.navbar-vgdf .nav-link:hover, .navbar-vgdf .nav-link.active{color:#fff !important;}
+.navbar-vgdf .nav-link:hover::after, .navbar-vgdf .nav-link.active::after{transform:scaleX(1);}
+
+.btn-strategy{
+  background:var(--red);
+  color:#fff;
+  border-radius:30px;
+  padding:10px 22px;
+  font-weight:600;
+  font-size:14px;
+  border:none;
+  transition:.3s;
+  white-space:nowrap;
+}
+.btn-strategy:hover{background:#c5241c;color:#fff;transform:translateY(-2px);box-shadow:0 8px 18px rgba(230,51,42,.4);}
+
+/* Dropdown / mega menu */
+.dropdown-menu-dark{
+  background:#101b3a;
+  border:none;
+  border-radius:10px;
+  padding:10px 0;
+  box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+.dropdown-menu-dark .dropdown-item{
+  color:#cfd4e4;
+  padding:9px 20px;
+  font-size:14px;
+  transition:.2s;
+}
+.dropdown-menu-dark .dropdown-item:hover{background:rgba(230,51,42,.15);color:#fff;padding-left:25px;}
+
+.nav-item.dropdown:hover > .dropdown-menu{display:block;margin-top:0;}
+
+/* mega menu for services */
+.mega-wrap{position:relative;}
+.mega-panel{
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#101b3a;
+  min-width:230px;
+  border-radius:10px;
+  box-shadow:0 15px 40px rgba(0,0,0,.45);
+  padding:10px 0;
+  display:none;
+  z-index:1200;
+}
+.mega-wrap:hover > .mega-panel{display:block;}
+.mega-item{position:relative;}
+.mega-item > a{
+  display:flex;justify-content:space-between;align-items:center;
+  color:#cfd4e4;padding:9px 20px;font-size:14px;transition:.2s;
+  text-decoration:none;
+}
+.mega-item:hover > a{background:rgba(230,51,42,.15);color:#fff;}
+.mega-sub{
+  position:absolute;
+  top:0;
+  left:100%;
+  min-width:280px;
+  background:#142351;
+  border-radius:10px;
+  box-shadow:0 15px 40px rgba(0,0,0,.45);
+  padding:10px 0;
+  display:none;
+}
+.mega-item:hover > .mega-sub{display:block;}
+.mega-sub a{
+  display:block;color:#cfd4e4;padding:9px 20px;font-size:13.5px;text-decoration:none;transition:.2s;
+}
+.mega-sub a:hover{background:rgba(230,51,42,.15);color:#fff;padding-left:25px;}
+
+@media (max-width:991px){
+  .mega-sub{position:static;display:block !important;background:#0c1733;margin-left:10px;border-radius:6px;box-shadow:none;}
+  .mega-panel{position:static;display:block !important;box-shadow:none;}
+  .mega-item:hover > .mega-sub{display:block;}
+}
+
+/* ===== Hero ===== */
+.hero{
+  background:linear-gradient(120deg, rgba(8,16,38,.93), rgba(8,16,38,.8)), url('images/b2b-home-banner.png') center/cover no-repeat;
+  min-height:92vh;
+  display:flex;
+  align-items:center;
+  padding-top:110px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 30%, rgba(230,51,42,.15), transparent 60%);
+}
+.hero h1{
+  font-size:3.1rem;
+  font-weight:700;
+  color:#fff;
+  line-height:1.15;
+}
+.hero h1 span{color:var(--red);}
+.hero p{color:#c4cae0;font-size:1.05rem;max-width:520px;}
+.btn-outline-light-vgdf{
+  border:1px solid rgba(255,255,255,.4);
+  color:#fff;
+  border-radius:30px;
+  padding:10px 24px;
+  font-weight:600;
+  font-size:14px;
+  transition:.3s;
+  background:transparent;
+}
+.btn-outline-light-vgdf:hover{background:#fff;color:var(--navy);}
+
+.serving-pill{
+  display:inline-flex;align-items:center;gap:10px;
+  color:#c4cae0;font-size:14px;margin-top:30px;
+}
+.serving-pill .icon-circ{
+  width:30px;height:30px;border-radius:50%;
+  background:var(--red);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;
+}
+
+.hero-stats{position:relative;}
+.float-card{
+  background:rgba(15,24,52,.92);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;
+  padding:18px 22px;
+  backdrop-filter:blur(6px);
+  animation:floaty 5s ease-in-out infinite;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+}
+.float-card.delay{animation-delay:1.2s;}
+@keyframes floaty{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-12px);}
+}
+.float-card .label{color:#8d96b3;font-size:12px;letter-spacing:.5px;text-transform:uppercase;}
+.float-card .value{color:#fff;font-size:1.8rem;font-weight:700;}
+.float-card .growth{color:#27d17f;font-size:13px;font-weight:600;}
+
+/* ===== About ===== */
+.section-eyebrow{
+  color:var(--red);
+  font-weight:700;
+  letter-spacing:1.5px;
+  font-size:13px;
+  text-transform:uppercase;
+}
+.section-title{
+  font-weight:700;
+  font-size:2.1rem;
+  color:#13193a;
+}
+.title-bar{
+  width:55px;height:4px;background:var(--red);border-radius:3px;margin:14px 0 20px;
+}
+.about-img-wrap{position:relative;}
+.about-img-wrap img{
+  border-radius:18px;
+  box-shadow:0 25px 50px rgba(11,21,48,.25);
+  width:100%;
+}
+.dot-grid{
+  position:absolute;
+  width:140px;height:140px;
+  background-image:radial-gradient(circle, #dfe3f3 1.6px, transparent 1.6px);
+  background-size:12px 12px;
+  z-index:-1;
+  opacity:.7;
+}
+
+/* ===== What we do ===== */
+.bg-soft{background:var(--light);}
+.service-card{
+  background:#fff;
+  border-radius:14px;
+  padding:28px 24px;
+  border:1px solid #eef0f7;
+  height:100%;
+  transition:.35s;
+}
+.service-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 40px rgba(11,21,48,.12);
+  border-color:transparent;
+}
+.service-icon{
+  width:54px;height:54px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;color:#fff;margin-bottom:16px;
+  transition:.3s;
+}
+.service-card:nth-child(8n+1) .service-icon,.icon-1{background:#3b82f6;}
+.icon-2{background:#0a66c2;}
+.icon-3{background:#e6332a;}
+.icon-4{background:#0ea5e9;}
+.icon-5{background:#34a853;}
+.icon-6{background:#475569;}
+.icon-7{background:#ef4444;}
+.icon-8{background:#1d4ed8;}
+.service-card h5{font-size:1.05rem;font-weight:600;margin-bottom:8px;}
+.service-card p{font-size:13.5px;color:var(--muted);margin:0;}
+
+/* ===== Industries ===== */
+.industry-card{
+  position:relative;
+  border-radius:14px;
+  overflow:hidden;
+  height:230px;
+  cursor:pointer;
+}
+.industry-card img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s ease;
+}
+.industry-card:hover img{transform:scale(1.12);}
+.industry-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(8,14,33,.92), rgba(8,14,33,.1));
+  display:flex;align-items:flex-end;
+  padding:16px;
+}
+.industry-overlay span{color:#fff;font-weight:600;font-size:14px;}
+
+/* ===== Reviews ===== */
+.review-card{
+  background:#fff;border-radius:16px;padding:30px;
+  box-shadow:0 15px 35px rgba(11,21,48,.07);
+  height:100%;position:relative;
+}
+.review-card .quote-ic{color:#dfe3f3;font-size:34px;position:absolute;top:24px;right:24px;}
+.review-card .stars{color:#f5a623;margin-bottom:14px;}
+.review-card p{color:#56607a;font-size:14.5px;}
+.review-person{display:flex;align-items:center;gap:12px;margin-top:18px;}
+.review-person img{width:46px;height:46px;border-radius:50%;object-fit:cover;}
+.review-person h6{margin:0;font-size:14px;font-weight:600;}
+.review-person small{color:var(--muted);}
+
+/* ===== FAQ ===== */
+.accordion-vgdf .accordion-item{
+  border:none;border-bottom:1px solid #e8eaf2;background:transparent;
+}
+.accordion-vgdf .accordion-button{
+  font-weight:600;color:#13193a;padding:18px 6px;background:transparent;box-shadow:none;font-size:15px;
+}
+.accordion-vgdf .accordion-button:not(.collapsed){color:var(--red);}
+.accordion-vgdf .accordion-button::after{filter:none;}
+.accordion-vgdf .accordion-body{color:var(--muted);padding:0 6px 18px;font-size:14px;}
+
+/* ===== CTA ===== */
+.cta-section{
+  background:linear-gradient(120deg, rgba(8,16,38,.93), rgba(8,16,38,.85)), url('images/b2b-home-cta.png') center/cover no-repeat;
+  border-radius:24px;
+  padding:55px 40px;
+  color:#fff;
+  margin:0 auto;
+  max-width:1300px;
+}
+.cta-section h2{font-weight:700;font-size:2rem;}
+.cta-feature{
+  display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;color:#cfd4e8;font-size:13px;
+}
+.cta-feature .ic{
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(255,255,255,.08);
+  display:flex;align-items:center;justify-content:center;color:var(--red);font-size:18px;
+}
+
+/* ===== Footer ===== */
+footer.site-footer{background:var(--navy);color:#aab2cc;padding:60px 0 0;}
+footer h6{color:#fff;font-weight:600;margin-bottom:18px;}
+footer a{color:#aab2cc;text-decoration:none;font-size:14px;transition:.2s;}
+footer a:hover{color:var(--red);padding-left:3px;}
+footer ul{list-style:none;padding:0;}
+footer ul li{margin-bottom:10px;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);margin-top:40px;padding:18px 0;font-size:13px;}
+.social-ic{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.08);
+  display:inline-flex;align-items:center;justify-content:center;
+  color:#fff;margin-right:8px;transition:.3s;
+}
+.social-ic:hover{background:var(--red);transform:translateY(-3px);}
+
+.hours-box{
+  background:rgba(255,255,255,.06);
+  border-radius:10px;padding:14px 16px;font-size:13px;display:flex;align-items:center;gap:10px;
+}
+
+@media (max-width:991px){
+  .hero h1{font-size:2.2rem;}
+  .hero-stats{margin-top:40px;}
+  .cta-section{border-radius:14px;padding:35px 20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAVBAR ============ -->
+<nav class="navbar navbar-expand-lg navbar-vgdf" id="mainNav">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="https://vgdigitalfalcon.com/assets/img/logo/dflogo-white.png" alt="VG Digital Falcon">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" style="background:#fff;">
+    </button>
+    <div class="collapse navbar-collapse" id="navMain">
+      <ul class="navbar-nav mx-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+
+        <!-- INDUSTRY DROPDOWN -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Industry</a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="#">B2B Industry</a></li>
+            <li><a class="dropdown-item" href="#">Healthcare</a></li>
+            <li><a class="dropdown-item" href="#">Education</a></li>
+          </ul>
+        </li>
+
+        <!-- SERVICE MEGA DROPDOWN -->
+        <li class="nav-item mega-wrap">
+          <a class="nav-link" href="#">Service <i class="fa-solid fa-chevron-down" style="font-size:10px;"></i></a>
+          <div class="mega-panel">
+
+            <div class="mega-item">
+              <a href="#">SEO <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i></a>
+              <div class="mega-sub">
+                <a href="#">SEO for Plastic &amp; Polymer Industry</a>
+                <a href="#">SEO for Pump Manufacturers</a>
+                <a href="#">SEO for Auto Component Manufacturers</a>
+                <a href="#">SEO for Chemical Manufacturing Industry</a>
+                <a href="#">SEO for Textile &amp; Garments</a>
+                <a href="#">SEO for Food Manufacturers</a>
+                <a href="#">SEO for Engineering Workshops</a>
+                <a href="#">SEO for Packaging Manufacturers Industry</a>
+              </div>
+            </div>
+
+            <div class="mega-item">
+              <a href="#">Website Development <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i></a>
+              <div class="mega-sub">
+                <a href="#">Website Development for Plastic &amp; Polymer Industry</a>
+                <a href="#">Website Development for Pump Manufacturers</a>
+                <a href="#">Website Development for Auto Component Manufacturers</a>
+                <a href="#">Website Development for Chemical Manufacturing Industry</a>
+                <a href="#">Website Development for Textile &amp; Garments</a>
+                <a href="#">Website Development for Food Manufacturers</a>
+                <a href="#">Website Development for Engineering Workshops</a>
+                <a href="#">Website Development for Packaging Manufacturers Industry</a>
+              </div>
+            </div>
+
+            <div class="mega-item">
+              <a href="#">Digital Marketing <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i></a>
+              <div class="mega-sub">
+                <a href="#">Digital Marketing for Plastic &amp; Polymer Industry</a>
+                <a href="#">Digital Marketing for Pump Manufacturers</a>
+                <a href="#">Digital Marketing for Auto Component Manufacturers</a>
+                <a href="#">Digital Marketing for Chemical Manufacturing Industry</a>
+                <a href="#">Digital Marketing for Textile &amp; Garments</a>
+                <a href="#">Digital Marketing for Food Manufacturers</a>
+                <a href="#">Digital Marketing for Engineering Workshops</a>
+                <a href="#">Digital Marketing for Packaging Manufacturers Industry</a>
+              </div>
+            </div>
+
+            <div class="mega-item">
+              <a href="#">Performance Marketing <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i></a>
+              <div class="mega-sub">
+                <a href="#">Performance Marketing for Plastic &amp; Polymer Industry</a>
+                <a href="#">Performance Marketing for Pump Manufacturers</a>
+                <a href="#">Performance Marketing for Auto Component Manufacturers</a>
+                <a href="#">Performance Marketing for Chemical Manufacturing Industry</a>
+                <a href="#">Performance Marketing for Textile &amp; Garments</a>
+                <a href="#">Performance Marketing for Food Manufacturers</a>
+                <a href="#">Performance Marketing for Engineering Workshops</a>
+                <a href="#">Performance Marketing for Packaging Manufacturers Industry</a>
+              </div>
+            </div>
+
+            <div class="mega-item">
+              <a href="#">Personal Branding <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i></a>
+              <div class="mega-sub">
+                <a href="#">Personal Branding for Plastic &amp; Polymer Industry</a>
+                <a href="#">Personal Branding for Pump Manufacturers</a>
+                <a href="#">Personal Branding for Auto Component Manufacturers</a>
+                <a href="#">Personal Branding for Chemical Manufacturing Industry</a>
+                <a href="#">Personal Branding for Textile &amp; Garments</a>
+                <a href="#">Personal Branding for Food Manufacturers</a>
+                <a href="#">Personal Branding for Engineering Workshops</a>
+                <a href="#">Personal Branding for Packaging Manufacturers Industry</a>
+              </div>
+            </div>
+
+            <div class="mega-item">
+              <a href="#">SMO <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i></a>
+              <div class="mega-sub">
+                <a href="#">SMO for Textile &amp; Garments</a>
+                <a href="#">SMO for Food Manufacturers</a>
+                <a href="#">SMO for Packaging Manufacturers Industry</a>
+                <a href="#">SMO for Pump Manufacturers</a>
+              </div>
+            </div>
+
+            <div class="mega-item">
+              <a href="#">YouTube SEO <i class="fa-solid fa-chevron-right" style="font-size:10px;"></i></a>
+              <div class="mega-sub">
+                <a href="#">YouTube SEO for Textile &amp; Garments</a>
+                <a href="#">YouTube SEO for Food Manufacturers</a>
+                <a href="#">YouTube SEO for Packaging Manufacturers Industry</a>
+                <a href="#">YouTube SEO for Pump Manufacturers</a>
+              </div>
+            </div>
+
+          </div>
+        </li>
+
+        <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-strategy d-none d-lg-inline-block ms-3"><i class="fa-solid fa-phone me-1"></i> Get Free Strategy</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <h1 class="reveal-left active">Digital Marketing Built for <span>Manufacturing Companies</span></h1>
+        <p class="mt-3 reveal-left active" style="transition-delay:.15s;">Generate More B2B Leads, Export Enquiries, OEM Opportunities, and Qualified Buyers Through Data-Driven Digital Marketing.</p>
+        <div class="d-flex gap-3 mt-4 flex-wrap reveal-left active" style="transition-delay:.3s;">
+          <a href="#contact" class="btn btn-strategy">Get Free Strategy <i class="fa-solid fa-arrow-up-right-from-square ms-1" style="font-size:11px;"></i></a>
+          <a href="#contact" class="btn btn-outline-light-vgdf">Book a Consultation</a>
+        </div>
+        <div class="serving-pill reveal-left active" style="transition-delay:.45s;">
+          <span class="icon-circ"><i class="fa-solid fa-industry"></i></span>
+          Serving Manufacturers Across 8+ Industry Verticals
+        </div>
+      </div>
+      <div class="col-lg-6 mt-5 mt-lg-0">
+        <div class="hero-stats position-relative reveal-right active">
+          <img src="images/b2b-home-banner.png" alt="Manufacturing Digital Growth" class="img-fluid rounded-4 shadow" style="max-height:480px;width:100%;object-fit:cover;">
+          <div class="float-card position-absolute" style="top:-25px; left:-15px; min-width:190px;">
+            <div class="label">B2B Leads</div>
+            <div class="value">2,450</div>
+            <div class="growth"><i class="fa-solid fa-arrow-trend-up"></i> +135% vs last 6 months</div>
+          </div>
+          <div class="float-card delay position-absolute" style="bottom:-25px; right:-15px; min-width:200px;">
+            <div class="label">Export Enquiries</div>
+            <div class="value">1,320</div>
+            <div class="growth"><i class="fa-solid fa-arrow-trend-up"></i> +98% vs last 6 months</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="py-5 py-lg-5" id="about" style="padding-top:100px;padding-bottom:100px;">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 reveal">
+        <div class="about-img-wrap">
+          <div class="dot-grid" style="top:-30px;left:-30px;"></div>
+          <img src="images/b2b-about.png" alt="Manufacturing Industry">
+        </div>
+      </div>
+      <div class="col-lg-7 reveal">
+        <span class="section-eyebrow">About Us</span>
+        <h2 class="section-title mt-2">We Understand Manufacturing Better Than Traditional Agencies</h2>
+        <div class="title-bar"></div>
+        <p style="color:var(--muted);">At VG Digital Falcon, we specialize in helping manufacturing companies grow through strategic digital marketing. We understand industrial products, technical buyers, long B2B sales cycles, and export-focused business models.</p>
+        <p style="color:var(--muted);">Unlike generic marketing agencies, we create industry-specific strategies that help manufacturers increase visibility, build credibility, and generate qualified enquiries from India and global markets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE DO ============ -->
+<section class="bg-soft py-5" style="padding-top:90px;padding-bottom:90px;">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-eyebrow">What We Do</span>
+      <h2 class="section-title mt-2">Digital Growth Solutions for Manufacturers</h2>
+      <div class="title-bar mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="service-card"><div class="service-icon icon-1"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+          <h5>Manufacturing SEO</h5><p>Rank higher on Google and attract buyers searching for your products.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal" style="transition-delay:.1s;">
+        <div class="service-card"><div class="service-icon icon-2"><i class="fa-brands fa-linkedin-in"></i></div>
+          <h5>LinkedIn Marketing</h5><p>Connect with procurement managers, OEM buyers, and decision-makers.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal" style="transition-delay:.2s;">
+        <div class="service-card"><div class="service-icon icon-3"><i class="fa-solid fa-m"></i></div>
+          <h5>IndiaMart Optimization</h5><p>Improve visibility, enquiries, and buyer trust on IndiaMart.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal" style="transition-delay:.3s;">
+        <div class="service-card"><div class="service-icon icon-4"><i class="fa-solid fa-display"></i></div>
+          <h5>Website Development</h5><p>Modern websites designed specifically for industrial and manufacturing businesses.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="service-card"><div class="service-icon icon-5"><i class="fa-brands fa-google"></i></div>
+          <h5>Google Ads</h5><p>Generate high-quality enquiries from targeted industrial buyers.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal" style="transition-delay:.1s;">
+        <div class="service-card"><div class="service-icon icon-6"><i class="fa-solid fa-pen-nib"></i></div>
+          <h5>Content Marketing</h5><p>Technical content that builds authority and buyer confidence.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal" style="transition-delay:.2s;">
+        <div class="service-card"><div class="service-icon icon-7"><i class="fa-solid fa-location-dot"></i></div>
+          <h5>Local SEO</h5><p>Get discovered by nearby businesses and industrial buyers.</p></div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal" style="transition-delay:.3s;">
+        <div class="service-card"><div class="service-icon icon-8"><i class="fa-solid fa-globe"></i></div>
+          <h5>Export Lead Generation</h5><p>Reach international buyers and increase export enquiries.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INDUSTRIES ============ -->
+<section class="py-5" style="padding-top:90px;padding-bottom:90px;">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-eyebrow">Industries We Serve</span>
+      <h2 class="section-title mt-2">Industry-Specific Marketing Expertise</h2>
+      <div class="title-bar mx-auto"></div>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-3 reveal">
+        <div class="industry-card"><img src="images/plastic.png" alt="Plastic & Polymer"><div class="industry-overlay"><span>Plastic &amp; Polymer Manufacturers</span></div></div>
+      </div>
+      <div class="col-6 col-md-3 reveal" style="transition-delay:.05s;">
+        <div class="industry-card"><img src="images/pump.png" alt="Pump & Fluid Handling"><div class="industry-overlay"><span>Pump &amp; Fluid Handling Manufacturers</span></div></div>
+      </div>
+      <div class="col-6 col-md-3 reveal" style="transition-delay:.1s;">
+        <div class="industry-card"><img src="images/auto.png" alt="Auto Component"><div class="industry-overlay"><span>Auto Component Manufacturers</span></div></div>
+      </div>
+      <div class="col-6 col-md-3 reveal" style="transition-delay:.15s;">
+        <div class="industry-card"><img src="images/chemical.png" alt="Chemical"><div class="industry-overlay"><span>Chemical Manufacturers</span></div></div>
+      </div>
+      <div class="col-6 col-md-3 reveal" style="transition-delay:.05s;">
+        <div class="industry-card"><img src="images/textile.png" alt="Textile & Garment"><div class="industry-overlay"><span>Textile &amp; Garment Manufacturers</span></div></div>
+      </div>
+      <div class="col-6 col-md-3 reveal" style="transition-delay:.1s;">
+        <div class="industry-card"><img src="images/food.png" alt="Food Processing"><div class="industry-overlay"><span>Food Processing Manufacturers</span></div></div>
+      </div>
+      <div class="col-6 col-md-3 reveal" style="transition-delay:.15s;">
+        <div class="industry-card"><img src="images/engg.png" alt="Engineering & Fabrication"><div class="industry-overlay"><span>Engineering &amp; Fabrication Workshops</span></div></div>
+      </div>
+      <div class="col-6 col-md-3 reveal" style="transition-delay:.2s;">
+        <div class="industry-card"><img src="images/package.png" alt="Packaging Material"><div class="industry-overlay"><span>Packaging Material Manufacturers</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<section class="bg-soft py-5" style="padding-top:90px;padding-bottom:90px;">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-eyebrow">Client Reviews</span>
+      <h2 class="section-title mt-2">Trusted By Manufacturing Businesses</h2>
+      <div class="title-bar mx-auto"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4 reveal">
+        <div class="review-card">
+          <i class="fa-solid fa-quote-right quote-ic"></i>
+          <div class="stars">★★★★★</div>
+          <p>VG Digital Falcon helped us generate high-quality B2B enquiries within months. Their understanding of manufacturing businesses is exceptional.</p>
+          <div class="review-person">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+            <div><h6>Operations Director</h6><small>Auto Components Company</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.1s;">
+        <div class="review-card">
+          <i class="fa-solid fa-quote-right quote-ic"></i>
+          <div class="stars">★★★★★</div>
+          <p>Their SEO and LinkedIn strategies significantly improved our visibility among OEM buyers. We now receive consistent RFQs and export enquiries.</p>
+          <div class="review-person">
+            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="">
+            <div><h6>Managing Director</h6><small>Plastic Manufacturing Company</small></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 reveal" style="transition-delay:.2s;">
+        <div class="review-card">
+          <i class="fa-solid fa-quote-right quote-ic"></i>
+          <div class="stars">★★★★★</div>
+          <p>Professional team, industry-specific expertise, and measurable results. Highly recommended for any manufacturing business.</p>
+          <div class="review-person">
+            <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="">
+            <div><h6>Founder</h6><small>Engineering Workshop</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="py-5" id="blog" style="padding-top:90px;padding-bottom:90px;">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <span class="section-eyebrow">FAQ</span>
+      <h2 class="section-title mt-2">Frequently Asked Questions</h2>
+      <div class="title-bar mx-auto"></div>
+    </div>
+    <div class="row reveal">
+      <div class="col-lg-6">
+        <div class="accordion accordion-vgdf" id="faq1">
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1"><i class="fa-regular fa-circle-question me-2"></i>How can digital marketing help manufacturing companies?</button></h2>
+            <div id="q1" class="accordion-collapse collapse" data-bs-parent="#faq1"><div class="accordion-body">Digital marketing helps manufacturers reach procurement managers and OEM buyers directly, generating qualified leads, export enquiries, and long-term brand visibility online.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2"><i class="fa-regular fa-circle-question me-2"></i>How long does SEO take to generate results?</button></h2>
+            <div id="q2" class="accordion-collapse collapse" data-bs-parent="#faq1"><div class="accordion-body">Most manufacturing clients start seeing measurable improvements in rankings and enquiries within 3 to 6 months, depending on competition and industry.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3"><i class="fa-regular fa-circle-question me-2"></i>Do manufacturers really need LinkedIn marketing?</button></h2>
+            <div id="q3" class="accordion-collapse collapse" data-bs-parent="#faq1"><div class="accordion-body">Yes — LinkedIn is where procurement managers, OEM buyers, and decision-makers spend their time, making it one of the highest-value B2B channels.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q4"><i class="fa-regular fa-circle-question me-2"></i>Can you help us generate export enquiries?</button></h2>
+            <div id="q4" class="accordion-collapse collapse" data-bs-parent="#faq1"><div class="accordion-body">Yes, we build export-focused digital strategies including international SEO, B2B portal optimization, and targeted ad campaigns to reach global buyers.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="accordion accordion-vgdf" id="faq2">
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q5"><i class="fa-regular fa-circle-question me-2"></i>How is IndiaMart different from having a website?</button></h2>
+            <div id="q5" class="accordion-collapse collapse" data-bs-parent="#faq2"><div class="accordion-body">IndiaMart is a B2B marketplace that generates direct buyer enquiries, while your website builds long-term brand authority. We optimize both together.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q6"><i class="fa-regular fa-circle-question me-2"></i>Which manufacturing industries do you specialize in?</button></h2>
+            <div id="q6" class="accordion-collapse collapse" data-bs-parent="#faq2"><div class="accordion-body">We work across plastic & polymer, pump & fluid handling, auto components, chemicals, textiles, food processing, engineering workshops, and packaging.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q7"><i class="fa-regular fa-circle-question me-2"></i>Can small manufacturing companies benefit from digital marketing?</button></h2>
+            <div id="q7" class="accordion-collapse collapse" data-bs-parent="#faq2"><div class="accordion-body">Absolutely. We tailor budget-friendly strategies for small manufacturers to compete effectively against larger players online.</div></div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q8"><i class="fa-regular fa-circle-question me-2"></i>What makes VG Digital Falcon different from other agencies?</button></h2>
+            <div id="q8" class="accordion-collapse collapse" data-bs-parent="#faq2"><div class="accordion-body">We focus exclusively on manufacturers, meaning every strategy is built around technical buyers, long sales cycles, and industrial sourcing behaviour.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="pb-5" id="contact" style="padding-bottom:90px;">
+  <div class="container reveal">
+    <div class="cta-section">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h2>Ready To Grow Your Manufacturing Business?</h2>
+          <p style="color:#c4cae0;">Get a customized digital growth strategy tailored specifically for your industry.</p>
+          <div class="d-flex gap-3 mt-3 flex-wrap">
+            <a href="#" class="btn btn-strategy">Get Free Strategy</a>
+            <a href="#" class="btn btn-outline-light-vgdf">Book a Consultation</a>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="row text-center g-3">
+            <div class="col-3"><div class="cta-feature"><span class="ic"><i class="fa-solid fa-bullseye"></i></span>Industry-Specific Strategies</div></div>
+            <div class="col-3"><div class="cta-feature"><span class="ic"><i class="fa-solid fa-users"></i></span>Qualified B2B Leads</div></div>
+            <div class="col-3"><div class="cta-feature"><span class="ic"><i class="fa-solid fa-chart-line"></i></span>Measurable Results</div></div>
+            <div class="col-3"><div class="cta-feature"><span class="ic"><i class="fa-solid fa-shield-halved"></i></span>Long-Term Growth</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-3 col-md-6">
+        <img src="https://vgdigitalfalcon.com/assets/img/logo/dflogo-white.png" alt="VG Digital Falcon" style="height:46px;margin-bottom:14px;">
+        <p style="font-size:13.5px;">VG Digital Falcon helps manufacturing companies generate B2B leads, improve visibility, and grow through industry-focused digital marketing strategies.</p>
+        <div class="mt-3">
+          <a href="#" class="social-ic"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="social-ic"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-ic"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-ic"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Quick Links</h6>
+        <ul>
+          <li><a href="#home"><i class="fa-solid fa-chevron-right fa-xs me-1"></i>Home</a></li>
+          <li><a href="#about"><i class="fa-solid fa-chevron-right fa-xs me-1"></i>About Us</a></li>
+          <li><a href="#"><i class="fa-solid fa-chevron-right fa-xs me-1"></i>Industry</a></li>
+          <li><a href="#"><i class="fa-solid fa-chevron-right fa-xs me-1"></i>Service</a></li>
+          <li><a href="#blog"><i class="fa-solid fa-chevron-right fa-xs me-1"></i>Blog</a></li>
+          <li><a href="#contact"><i class="fa-solid fa-chevron-right fa-xs me-1"></i>Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Industries</h6>
+        <ul>
+          <li><a href="#">Plastic &amp; Polymer</a></li>
+          <li><a href="#">Pump &amp; Fluid Handling</a></li>
+          <li><a href="#">Auto Components</a></li>
+          <li><a href="#">Chemical</a></li>
+          <li><a href="#">Textile &amp; Garment</a></li>
+          <li><a href="#">Food Processing</a></li>
+          <li><a href="#">Engineering &amp; Fabrication</a></li>
+          <li><a href="#">Packaging Material</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-md-6">
+        <h6>Services</h6>
+        <ul>
+          <li><a href="#">Manufacturing SEO</a></li>
+          <li><a href="#">LinkedIn Marketing</a></li>
+          <li><a href="#">IndiaMart Optimization</a></li>
+          <li><a href="#">Website Development</a></li>
+          <li><a href="#">Google Ads</a></li>
+          <li><a href="#">Export Lead Generation</a></li>
+          <li><a href="#">Local SEO</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <h6>Contact Us</h6>
+        <ul>
+          <li><a href="tel:+918695776922"><i class="fa-solid fa-phone me-2"></i>+91 86957 76922</a></li>
+          <li><a href="tel:+918870600855"><i class="fa-solid fa-phone me-2"></i>+91 88706 00855</a></li>
+          <li><a href="mailto:vgdigitalfalcon@gmail.com"><i class="fa-solid fa-envelope me-2"></i>vgdigitalfalcon@gmail.com</a></li>
+          <li><a href="mailto:contact@vgdigitalfalcon.com"><i class="fa-solid fa-envelope me-2"></i>contact@vgdigitalfalcon.com</a></li>
+          <li><a href="#"><i class="fa-solid fa-location-dot me-2"></i>Tamil Nadu, India</a></li>
+        </ul>
+        <div class="hours-box"><i class="fa-solid fa-clock"></i> Business Hours: Mon - Sat: 9.30 AM - 6.30 PM</div>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between">
+      <span>© 2026 VG Digital Falcon. All Rights Reserved.</span>
+      <span><a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">Terms &amp; Conditions</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+// Navbar shrink on scroll
+window.addEventListener('scroll', function(){
+  document.getElementById('mainNav').classList.toggle('shrink', window.scrollY > 50);
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+const obs = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('active'); }
+  });
+},{threshold:0.15});
+reveals.forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

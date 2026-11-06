@@ -1,0 +1,27 @@
+:root { --red:#FF4647; --blue:#504FFF; --ink:#1A1A1A; --paper:#f6f6f7; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family: "Segoe UI", sans-serif; }
+.app-shell { display:flex; min-height:100vh; }
+.side { width:240px; background:var(--ink); color:#fff; padding:18px 14px; display:flex; flex-direction:column; }
+.brand { display:flex; gap:10px; align-items:center; margin-bottom:22px; }
+.brand img { width:46px; height:46px; background:#fff; border-radius:8px; }
+.brand small { display:block; color:#cfcfcf; }
+.side nav a { display:block; color:#fff; text-decoration:none; padding:10px 12px; border-radius:8px; margin-bottom:4px; }
+.side nav a:hover { background:#2a2a2a; }
+.side-foot { margin-top:auto; font-size:13px; color:#ddd; }
+.role { color:var(--red); text-transform:uppercase; font-size:11px; letter-spacing:.08em; }
+main { flex:1; }
+.top { display:flex; justify-content:space-between; align-items:center; padding:16px 22px; background:#fff; border-bottom:3px solid var(--red); }
+.top h1 { font-size:22px; margin:0; }
+.top-actions a { margin-left:14px; color:var(--ink); text-decoration:none; font-weight:600; }
+.badge { background:var(--red); color:#fff; border-radius:99px; padding:1px 7px; font-size:12px; }
+.content { padding:22px; }
+.card-box { background:#fff; border:1px solid #ececec; border-radius:12px; padding:16px; margin-bottom:16px; }
+.stat { border-top:3px solid var(--blue); }
+table { font-size:14px; }
+.btn-red { background:var(--red); color:#fff; border:0; }
+.btn-blue { background:var(--blue); color:#fff; border:0; }
+.checks label { display:block; font-size:14px; }
+@media (max-width: 800px) {
+  .app-shell { display:block; }
+  .side { width:100%; }
+}

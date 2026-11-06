@@ -1,0 +1,41 @@
+# ============================================================
+# PLACE THIS FILE AS:  .htaccess
+# Location: domain document root (parent of the "blog-crm" folder)
+#
+# Your structure:
+#   public_html/auracladding/          ← document root for
+#       .htaccess                      ← THIS FILE goes here
+#       blog-crm/
+#           admin/
+#           public/
+#           config.php
+#       (your main website files / index)
+#
+# Clean URLs:
+#   https://auracladding.vgdigitalfalcon.com/blog
+#   https://auracladding.vgdigitalfalcon.com/blog/post-slug
+#   https://auracladding.vgdigitalfalcon.com/our-works
+#   https://auracladding.vgdigitalfalcon.com/sitemap.xml
+#   https://auracladding.vgdigitalfalcon.com/robots.txt
+# ============================================================
+
+RewriteEngine On
+RewriteBase /
+
+# Don't rewrite real files or folders
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Blog listing
+RewriteRule ^blog/?$ blog-crm/public/blog.php [L,QSA]
+
+# Single blog post: /blog/my-post-slug
+RewriteRule ^blog/([a-zA-Z0-9\-]+)/?$ blog-crm/public/post.php?slug=$1 [L,QSA]
+
+# Gallery / Our Works
+RewriteRule ^our-works/?$ blog-crm/public/works.php [L,QSA]
+
+# Sitemap & robots at domain root
+RewriteRule ^sitemap\.xml$ blog-crm/public/sitemap.xml [L]
+RewriteRule ^robots\.txt$ blog-crm/public/robots.txt [L]

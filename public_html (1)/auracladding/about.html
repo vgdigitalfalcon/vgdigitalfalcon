@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Aura Cladding</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="image/favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+   
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ================= CSS VARIABLES & RESET ================= */
+        :root {
+            --primary-dark: #051329;
+            --primary-light: #0a1f3f;
+            --accent-orange: #f37021;
+            --accent-hover: #d95e1a;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --white: #ffffff;
+            --border-color: #e5e5e5;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.05);
+            --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+            --transition: all 0.3s ease;
+        }
+        
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body { max-width: 100%; overflow-x: hidden; }
+
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            color: var(--text-main);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        p {
+            text-align: justify;
+        }
+        img {
+            max-width: 100%;
+            display: block;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+        /* ================= UTILITY CLASSES ================= */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: 4px;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 15px;
+        }
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+       
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+        }
+        .btn-outline:hover {
+            border-color: var(--primary-dark);
+            background-color: var(--primary-dark);
+            color: var(--white);
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-subtitle {
+            color: var(--accent-orange);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .section-heading {
+            font-size: 32px;
+            color: var(--primary-dark);
+            font-weight: 700;
+        }
+        section {
+            padding: 80px 0;
+        }
+        /* ================= ANIMATIONS ================= */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes rotate-pulse {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.05); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        .animated-bg-dots {
+            position: relative;
+            z-index: 1;
+        }
+        .animated-bg-dots::before {
+            content: '';
+            position: absolute;
+            top: -30px;
+            left: -30px;
+            width: 160px;
+            height: 160px;
+            background-image: radial-gradient(var(--accent-orange) 20%, transparent 20%);
+            background-size: 20px 20px;
+            border-radius: 50%;
+            z-index: -1;
+            animation: rotate-pulse 15s linear infinite;
+            opacity: 0.8;
+        }
+        .why-us-img.animated-bg-dots::before {
+            top: auto;
+            left: auto;
+            bottom: -30px;
+            right: -30px;
+        }
+        /* ================= NAVBAR ================= */
+        .navbar {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .logo img {
+            height: 100px;
+            max-height: 108px;
+            width: auto;
+            object-fit: contain;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        .nav-links > li {
+            position: relative;
+        }
+        .nav-links > li > a {
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            position: relative;
+        }
+        .nav-links > li > a:hover {
+            color: var(--accent-orange);
+        }
+        .nav-links > li > a.active {
+            color: var(--accent-orange);
+        }
+        .nav-links > li > a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-orange);
+            border-radius: 2px;
+        }
+
+        /* ===== DROPDOWN ===== */
+        .dropdown-menu {
+            visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: transparent;
+            min-width: 240px;
+            box-shadow: none;
+            border-radius: 6px;
+            padding: 14px 0 0;
+            z-index: 1001;
+            margin-top: 0;
+            transition: opacity 0.18s ease, visibility 0.18s ease;
+        }
+        .dropdown-menu::before {
+            content: '';
+            position: absolute;
+            top: 14px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            border-radius: 6px;
+            box-shadow: var(--shadow-md);
+            z-index: -1;
+        }
+        .nav-links li.has-dropdown:hover > .dropdown-menu,
+        .nav-links li.has-dropdown:focus-within > .dropdown-menu,
+        .nav-links li.has-dropdown.dropdown-open > .dropdown-menu {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .dropdown-menu li a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 20px;
+            color: var(--text-main);
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .dropdown-menu li a i {
+            color: var(--accent-orange);
+            width: 18px;
+            text-align: center;
+            font-size: 15px;
+        }
+        .dropdown-menu li a:hover {
+            background: #fff5ef;
+            color: var(--accent-orange);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        /* ================= ABOUT HERO ================= */
+        .about-hero {
+            position: relative;
+            min-height: 520px;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(5,19,41,0.92) 0%, rgba(5,19,41,0.75) 45%, rgba(5,19,41,0.4) 100%),
+                        url('image/about-banner.png') center center / cover no-repeat;
+            color: var(--white);
+            padding: 80px 0 70px;
+        }
+        .about-hero-content {
+            max-width: 560px;
+        }
+        .breadcrumb {
+            font-size: 14px;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 20px;
+        }
+        .breadcrumb a {
+            color: rgba(255,255,255,0.7);
+            transition: var(--transition);
+        }
+        .breadcrumb a:hover {
+            color: var(--accent-orange);
+        }
+        .breadcrumb span {
+            color: var(--accent-orange);
+        }
+        .about-hero-content h1 {
+            font-size: 42px;
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+        .about-hero-content h1 span {
+            color: var(--accent-orange);
+        }
+        .about-hero-content p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 30px;
+            text-align: left;
+            line-height: 1.7;
+        }
+        /* ================= OUR STORY ================= */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .story-img img {
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            width: 100%;
+        }
+        .story-content .section-title {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .story-content p {
+            color: var(--text-light);
+            margin-bottom: 18px;
+            font-size: 15px;
+            line-height: 1.75;
+        }
+        /* ================= MISSION & VISION ================= */
+        .mission-vision {
+            background: var(--bg-light);
+        }
+        .mv-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .mv-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 35px 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .mv-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+        .mv-icon {
+            width: 56px;
+            height: 56px;
+            min-width: 56px;
+            background: rgba(243,112,33,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: var(--accent-orange);
+        }
+        .mv-card h3 {
+            font-size: 20px;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .mv-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            text-align: left;
+            line-height: 1.7;
+        }
+        /* ================= WHY CHOOSE US ================= */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .why-us-content .section-title {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .why-list {
+            margin-top: 25px;
+        }
+        .why-list li {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 18px;
+            align-items: flex-start;
+        }
+        .why-list li i {
+            color: var(--accent-orange);
+            font-size: 18px;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        .why-list li span {
+            color: var(--text-light);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .why-us-img img {
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+            width: 100%;
+        }
+        /* ================= OUR JOURNEY ================= */
+        .journey-section {
+            background: var(--bg-light);
+        }
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 28px;
+            left: 5%;
+            right: 5%;
+            height: 3px;
+            background: linear-gradient(to right, var(--accent-orange), #ffb347);
+            z-index: 1;
+        }
+        .timeline-item {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+            max-width: 180px;
+        }
+        .timeline-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--white);
+            border: 3px solid var(--accent-orange);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 20px;
+            color: var(--accent-orange);
+            box-shadow: 0 4px 15px rgba(243,112,33,0.25);
+        }
+        .timeline-item h4 {
+            font-size: 18px;
+            color: var(--primary-dark);
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .timeline-item h5 {
+            font-size: 14px;
+            color: var(--accent-orange);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .timeline-item p {
+            font-size: 13px;
+            color: var(--text-light);
+            text-align: center;
+            line-height: 1.5;
+        }
+        /* ================= CERTIFICATES ================= */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        .cert-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px 22px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .cert-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: transparent;
+        }
+        .cert-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(5,19,41,0.06);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 24px;
+            color: var(--primary-dark);
+        }
+        .cert-card h4 {
+            font-size: 16px;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .cert-card p {
+            font-size: 13px;
+            color: var(--text-light);
+            text-align: center;
+            line-height: 1.6;
+        }
+        /* ================= BRANDS ================= */
+        .brands-section {
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .brands-section .section-subtitle {
+            margin-bottom: 30px;
+        }
+        .brands-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        .brand-item {
+            transition: var(--transition);
+            max-height: 100px;
+            opacity: 0.75;
+        }
+        .brand-item:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.08);
+        }
+        /* ================= PROJECT STATS ================= */
+        .project-stats {
+            background: var(--primary-dark);
+            padding: 50px 0;
+        }
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .stat-box {
+            color: var(--white);
+        }
+        .stat-box i {
+            font-size: 28px;
+            color: var(--accent-orange);
+            margin-bottom: 12px;
+            display: block;
+        }
+        .stat-box h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+        .stat-box p {
+            font-size: 14px;
+            color: rgba(255,255,255,0.75);
+            text-align: center;
+        }
+        /* ================= FAQ ================= */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 40px;
+        }
+        .faq-item {
+            background: var(--bg-light);
+            border-radius: 8px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-dark);
+            transition: var(--transition);
+            font-size: 15px;
+        }
+        .faq-question:hover {
+            color: var(--accent-orange);
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 20px;
+        }
+        .faq-answer p {
+            padding-bottom: 20px;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        /* ================= CTA BANNER ================= */
+        .cta-banner {
+            background-color: var(--primary-dark);
+            border-radius: 12px;
+            padding: 40px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--white);
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        .cta-icon {
+            font-size: 40px;
+            color: var(--accent-orange);
+        }
+        .cta-text h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+        .cta-text p {
+            font-size: 14px;
+            color: #ccc;
+            text-align: left;
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        /* ================= FOOTER ================= */
+        .footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr 1.5fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .footer-col h4 {
+            color: var(--accent-orange);
+            margin-bottom: 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+        .footer-logo img {
+            height: 100px;
+            max-height: 108px;
+            width: auto;
+            object-fit: contain;
+        
+        }
+        .footer-col p {
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        .social-icons a {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+        .social-icons a:hover {
+            background: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            font-size: 14px;
+            color: #ccc;
+            transition: var(--transition);
+        }
+        .footer-links a:hover {
+            color: var(--accent-orange);
+            padding-left: 5px;
+        }
+        .contact-info li {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            color: #ccc;
+        }
+        .contact-info i {
+            color: var(--accent-orange);
+            margin-top: 4px;
+        }
+        .map-placeholder {
+            width: 100%;
+            height: 120px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            color: #aaa;
+        }
+        .footer-bottom-links a {
+            margin-left: 15px;
+        }
+        .footer-bottom-links a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* ================= FLOATING WHATSAPP ================= */
+        .whatsapp-float {
+            position: fixed;
+            right: 22px;
+            bottom: 22px;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 8px 22px rgba(37, 211, 102, 0.45);
+            z-index: 1400;
+            transition: var(--transition);
+        }
+        .whatsapp-float:hover {
+            transform: translateY(-3px) scale(1.06);
+            background: #1ebe57;
+            color: #fff;
+        }
+
+        /* ================= QUOTE MODAL ================= */
+        .quote-modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(5, 19, 41, 0.72);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 18px;
+        }
+        .quote-modal-overlay.active {
+            display: flex;
+        }
+        .quote-modal {
+            background: var(--white);
+            width: 100%;
+            max-width: 540px;
+            border-radius: 12px;
+            padding: 32px 28px 26px;
+            position: relative;
+            box-shadow: var(--shadow-md);
+            max-height: 92vh;
+            overflow-y: auto;
+        }
+        .quote-modal h3 {
+            color: var(--primary-dark);
+            font-size: 24px;
+            margin-bottom: 6px;
+        }
+        .quote-modal .modal-sub {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 22px;
+            text-align: left;
+        }
+        .quote-close {
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            width: 34px;
+            height: 34px;
+            border: none;
+            background: var(--bg-light);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--text-main);
+        }
+        .quote-close:hover {
+            background: #eee;
+            color: var(--accent-orange);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 6px;
+        }
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            height: 46px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 0 14px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            color: var(--text-main);
+            background: #fff;
+            outline: none;
+            transition: var(--transition);
+        }
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--accent-orange);
+            box-shadow: 0 0 0 3px rgba(243, 112, 33, 0.12);
+        }
+        .quote-modal .btn {
+            width: 100%;
+            text-align: center;
+            margin-top: 6px;
+        }
+        .form-status {
+            display: none;
+            margin-top: 12px;
+            font-size: 13px;
+            text-align: center;
+            padding: 10px 12px;
+            border-radius: 6px;
+        }
+        .form-status.success {
+            display: block;
+            background: #e8f8ef;
+            color: #147a3f;
+        }
+        .form-status.error {
+            display: block;
+            background: #fdecea;
+            color: #b42318;
+        }
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        /* ================= RESPONSIVE DESIGN ================= */
+        @media (max-width: 1100px) {
+            .container { padding-left: 18px; padding-right: 18px; }
+            .nav-links { gap: 20px; }
+            .nav-links > li > a { font-size: 13px; }
+            .nav-btn { padding: 10px 18px; font-size: 13px; }
+            .footer-grid { grid-template-columns: repeat(3, 1fr); }
+            .certs-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 900px) {
+            .nav-links,
+            .nav-btn { display: none; }
+
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                border: 1px solid rgba(255,255,255,.2);
+                border-radius: 5px;
+                color: var(--white);
+                cursor: pointer;
+                flex-shrink: 0;
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                width: 100%;
+                max-height: calc(100vh - 65px);
+                overflow-y: auto;
+                background: var(--primary-dark);
+                padding: 8px 15px 15px;
+                gap: 0;
+                box-shadow: 0 12px 25px rgba(0,0,0,.2);
+                border-top: 1px solid rgba(255,255,255,.08);
+                z-index: 1005;
+            }
+
+            .nav-links.active > li {
+                width: 100%;
+                margin: 0;
+            }
+
+            .nav-links.active > li > a {
+                width: 100%;
+                min-height: 46px;
+                padding: 10px 5px;
+                justify-content: center;
+                border-bottom: 1px solid rgba(255,255,255,.08);
+            }
+            .nav-links.active > li > a.active::after {
+                display: none;
+            }
+
+            .dropdown-menu {
+                position: static;
+                visibility: hidden;
+                opacity: 0;
+                pointer-events: none;
+                height: 0;
+                overflow: hidden;
+                width: 100%;
+                min-width: 0;
+                margin: 0 0 6px;
+                padding: 0;
+                background: rgba(255,255,255,.06);
+                border-radius: 5px;
+                box-shadow: none;
+            }
+            .dropdown-menu::before {
+                display: none;
+            }
+
+            .nav-links.active .dropdown-menu {
+                visibility: hidden;
+                opacity: 0;
+                pointer-events: none;
+                height: 0;
+            }
+
+            .nav-links.active .has-dropdown.dropdown-open > .dropdown-menu {
+                visibility: visible;
+                opacity: 1;
+                pointer-events: auto;
+                height: auto;
+                overflow: visible;
+                padding: 5px 0;
+            }
+
+            .dropdown-menu li a {
+                min-height: 42px;
+                justify-content: center;
+                color: #fff;
+                padding: 9px 12px;
+                font-size: 13px;
+            }
+
+            .dropdown-menu li a:hover {
+                background: rgba(255,255,255,.08);
+                color: var(--accent-orange);
+            }
+
+            .has-dropdown.dropdown-open > a .fa-chevron-down {
+                transform: rotate(180deg);
+            }
+
+            section { padding: 65px 0; }
+
+            .about-hero {
+                min-height: 460px;
+                padding: 70px 0 60px;
+            }
+            .about-hero-content h1 { font-size: 34px; }
+
+            .story-grid,
+            .why-us-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+            .story-content .section-title,
+            .why-us-content .section-title {
+                text-align: center;
+            }
+
+            .mv-grid { grid-template-columns: 1fr; }
+
+            .timeline {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            .timeline::before {
+                top: 0;
+                bottom: 0;
+                left: 50%;
+                width: 3px;
+                height: 100%;
+                transform: translateX(-50%);
+            }
+            .timeline-item {
+                max-width: 280px;
+            }
+
+            .faq-grid { grid-template-columns: 1fr; }
+
+            .cta-banner { 
+                padding: 35px 30px; 
+                flex-direction: column;
+                gap: 25px;
+                text-align: center;
+            }
+            .cta-content {
+                flex-direction: column;
+            }
+            .cta-text p { text-align: center; }
+            .cta-buttons {
+                width: 100%;
+                flex-direction: column;
+            }
+            .cta-buttons .btn { width: 100%; text-align: center; }
+
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-row { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 100%;
+                max-width: 100%;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            .navbar { padding: 8px 0; }
+.logo img { height: 84px; max-height: 96px; width: auto; }
+
+            .about-hero {
+                min-height: auto;
+                padding: 60px 0 50px;
+            }
+            .about-hero-content h1 {
+                font-size: 28px;
+                line-height: 1.3;
+            }
+            .about-hero-content p {
+                font-size: 14px;
+            }
+
+            section { padding: 55px 0; }
+
+            .section-title { margin-bottom: 30px; }
+            .section-subtitle { font-size: 12px; }
+            .section-heading {
+                font-size: 24px;
+                line-height: 1.3;
+            }
+
+            .story-content p,
+            .why-list li span {
+                font-size: 14px;
+            }
+
+            .certs-grid {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .brands-container { gap: 22px; }
+            .brand-item {
+                max-width: 100px;
+                max-height: 35px;
+            }
+
+            .stats-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px 15px;
+            }
+            .stat-box h3 { font-size: 26px; }
+            .stat-box i { font-size: 24px; }
+
+            .faq-question {
+                padding: 15px;
+                gap: 15px;
+                font-size: 14px;
+            }
+            .faq-answer { padding: 0 15px; }
+
+            .cta-banner {
+                margin: 25px 0;
+                padding: 28px 20px;
+            }
+            .cta-text h3 {
+                font-size: 20px;
+                line-height: 1.35;
+            }
+
+            .footer { padding: 45px 0 20px; }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .footer-col { width: 100%; }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .footer-bottom-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 8px;
+            }
+            .footer-bottom-links a { margin-left: 0; }
+
+            .whatsapp-float {
+                width: 52px;
+                height: 52px;
+                font-size: 26px;
+                right: 16px;
+                bottom: 16px;
+            }
+
+            .quote-modal {
+                padding: 26px 16px 20px;
+            }
+
+            .quote-modal h3 { font-size: 21px; }
+
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
+            }
+
+            .map-placeholder { height: 180px; }
+
+            .animated-bg-dots::before {
+                width: 90px;
+                height: 90px;
+                top: -10px;
+                left: -10px;
+                background-size: 14px 14px;
+            }
+            .why-us-img.animated-bg-dots::before {
+                bottom: -10px;
+                right: -10px;
+                left: auto;
+                top: auto;
+            }
+
+            /* Improved Timeline for Small Screens */
+            .timeline {
+                gap: 30px;
+                padding: 0;
+            }
+            .timeline::before {
+                left: 20px;
+                transform: none;
+            }
+            .timeline-item {
+                display: flex;
+                max-width: 100%;
+                width: 100%;
+                text-align: left;
+                align-items: flex-start;
+                gap: 20px;
+                padding-left: 40px;
+                position: relative;
+            }
+            .timeline-icon {
+                position: absolute;
+                left: -8px;
+                top: 0;
+                margin: 0;
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+                background: var(--white);
+                z-index: 5;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+            .timeline-item h4,
+            .timeline-item h5,
+            .timeline-item p {
+                text-align: left;
+                flex: 1;
+            }
+            .timeline-item h4 {
+                font-size: 16px;
+                margin-bottom: 2px;
+            }
+            .timeline-item h5 {
+                font-size: 13px;
+                margin-bottom: 4px;
+            }
+            .timeline-item p {
+                font-size: 12px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .about-hero-content h1 { font-size: 24px; }
+            .section-heading { font-size: 22px; }
+            .stats-row { grid-template-columns: 1fr; }
+            .timeline-item {
+                padding-left: 35px;
+            }
+            .timeline-icon {
+                width: 40px;
+                height: 40px;
+                left: -5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ================= NAVBAR ================= -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="image/aura-logo.png" alt="Aura Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li class="has-dropdown">
+                    <a href="services.html" class="services-toggle" aria-haspopup="true" aria-expanded="false">
+                        Services <i class="fas fa-chevron-down" style="font-size:10px;"></i>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="services.html"><i class="fas fa-th-large"></i> All Services</a></li>
+                        <li><a href="acp-cladding.html"><i class="fas fa-layer-group"></i> ACP Cladding</a></li>
+                        <li><a href="structural-glazing.html"><i class="fas fa-border-all"></i> Structural Glazing</a></li>
+                        <li><a href="exterior-glazing.html"><i class="fas fa-building"></i> Exterior Glazing</a></li>
+                        <li><a href="tuffen-glass.html"><i class="fas fa-square"></i> Tuffen Glass</a></li>
+                        <li><a href="ms-fabrication.html"><i class="fas fa-industry"></i> MS Fabrication</a></li>
+                    </ul>
+                </li>
+                <li><a href="our-works.html">Our Works</a></li>
+                <li><a href="blog">Blog</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <a href="#quote" class="btn nav-btn open-quote-modal">Get a Free Quote <i class="fas fa-arrow-right"></i></a>
+            <div class="menu-toggle" role="button" tabindex="0" aria-label="Open navigation menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ================= ABOUT HERO ================= -->
+    <header class="about-hero">
+        <div class="container">
+            <div class="about-hero-content reveal">
+                <div class="breadcrumb">
+                    <a href="index.html">Home</a> / <span>About Us</span>
+                </div>
+                <h1>Building Modern Exteriors<br>with <span>Innovation & Excellence</span></h1>
+                <p>At Aura Cladding, we combine advanced technology, premium materials and expert craftsmanship to deliver exceptional exterior solutions that stand the test of time.</p>
+                <a href="#quote" class="btn open-quote-modal">Get a Free Quote <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= OUR STORY ================= -->
+    <section class="story-section">
+        <div class="container story-grid reveal">
+            <div class="story-img animated-bg-dots">
+                <img src="image/aura-abt.png" alt="Aura Cladding Building">
+            </div>
+            <div class="story-content">
+                <div class="section-title">
+                    <span class="section-subtitle">Our Story</span>
+                    <h2 class="section-heading">Crafting Exteriors.<br>Creating Impressions.</h2>
+                </div>
+                <p>Founded with a vision to redefine building exteriors, Aura Cladding has grown into a trusted name in the cladding industry. From concept to completion, we deliver solutions that blend aesthetics, durability, and performance.</p>
+                <p>With a client-first approach and a commitment to quality, we have successfully completed 800+ projects across commercial, industrial and residential sectors.</p>
+                <p>Our team of experts works closely with architects, builders and developers to bring innovative ideas to life with precision and perfection.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= MISSION & VISION ================= -->
+    <section class="mission-vision">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-subtitle">Our Mission & Vision</span>
+            </div>
+            <div class="mv-grid">
+                <div class="mv-card reveal">
+                    <div class="mv-icon"><i class="fas fa-bullseye"></i></div>
+                    <div>
+                        <h3>Our Mission</h3>
+                        <p>To deliver innovative cladding solutions that enhance building performance and aesthetics while ensuring quality, safety and customer satisfaction.</p>
+                    </div>
+                </div>
+                <div class="mv-card reveal">
+                    <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                    <div>
+                        <h3>Our Vision</h3>
+                        <p>To be India’s most trusted cladding partner, recognized for excellence, innovation and our contribution to building a better tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section class="why-us">
+        <div class="container why-us-grid reveal">
+            <div class="why-us-content">
+                <div class="section-title">
+                    <span class="section-subtitle">Why Choose Aura Cladding</span>
+                    <h2 class="section-heading">Built on Quality,<br>Driven by Commitment.</h2>
+                </div>
+                <ul class="why-list">
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>We believe every building deserves a façade that reflects strength, sophistication, and sustainability.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Our solutions are tailored to your unique needs, ensuring timely delivery, flawless execution, and long-term value.</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <span>With experienced professionals and a passion for excellence, we transform ideas into iconic real-world structures.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="why-us-img animated-bg-dots">
+                <img src="image/why-aura.png" alt="Why Choose Aura Cladding">
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= OUR JOURNEY ================= -->
+    <section class="journey-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-subtitle">Our Journey</span>
+            </div>
+            <div class="timeline reveal">
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-building"></i></div>
+                    <h4>2016</h4>
+                    <h5>Company Established</h5>
+                    <p>Started our journey with a passion for quality.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-tools"></i></div>
+                    <h4>2021</h4>
+                    <h5>Service Expansion</h5>
+                    <p>Expanded our services across multiple cities.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-trophy"></i></div>
+                    <h4>2025</h4>
+                    <h5>Major Milestone</h5>
+                    <p>Completed 800+ successful projects across India.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon"><i class="fas fa-star"></i></div>
+                    <h4>2026+</h4>
+                    <h5>Today</h5>
+                    <p>Continuing to innovate and set new benchmarks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CERTIFICATES & STANDARDS ================= -->
+    <section class="certs-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-subtitle">Certificates & Standards</span>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <h4>ISO Certified</h4>
+                    <p>ISO 9001:2015 certified for quality management systems.</p>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Quality Assurance</h4>
+                    <p>Strict quality checks to ensure the best in every project.</p>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h4>Safety Compliance</h4>
+                    <p>Adhering to global safety standards for secure execution.</p>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-icon"><i class="fas fa-layer-group"></i></div>
+                    <h4>Premium Material</h4>
+                    <p>Using certified materials from trusted manufacturers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= BRANDS ================= -->
+    <section class="brands-section reveal">
+        <div class="container">
+            <span class="section-subtitle">Brands We Work With</span>
+            <div class="brands-container">
+                <img src="image/logo-1.png" alt="Brand Logo" class="brand-item">
+                <img src="image/logo-2.png" alt="Brand Logo" class="brand-item">
+                <img src="image/logo-3.png" alt="Brand Logo" class="brand-item">
+                <img src="image/logo-4.png" alt="Brand Logo" class="brand-item">
+                <img src="image/logo-5.png" alt="Brand Logo" class="brand-item">
+                <img src="image/logo-6.png" alt="Brand Logo" class="brand-item">
+                <img src="image/logo-7.png" alt="Brand Logo" class="brand-item">
+                <img src="image/logo-8.png" alt="Brand Logo" class="brand-item">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= PROJECT STATISTICS ================= -->
+    <section class="project-stats">
+        <div class="container">
+            <div class="stats-row reveal">
+                <div class="stat-box">
+                    <i class="fas fa-building"></i>
+                    <h3>800+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-users"></i>
+                    <h3>750+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>10+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-thumbs-up"></i>
+                    <h3>98%</h3>
+                    <p>Client Satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FAQ SECTION ================= -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="section-title reveal">
+                <span class="section-subtitle">Frequently Asked Questions</span>
+            </div>
+            <div class="faq-grid reveal">
+                <div class="faq-col">
+                    <div class="faq-item">
+                        <div class="faq-question">What is ACP cladding? <i class="fas fa-plus"></i></div>
+                        <div class="faq-answer"><p>Aluminum Composite Panel (ACP) cladding is a modern material used for building exteriors, providing a sleek look and weather resistance.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you provide installation services? <i class="fas fa-plus"></i></div>
+                        <div class="faq-answer"><p>Yes, we provide end-to-end installation services with our expert in-house team to ensure precise and safe fitting.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">How long does installation take? <i class="fas fa-plus"></i></div>
+                        <div class="faq-answer"><p>The timeline depends on the project size. However, we always strive to meet agreed-upon deadlines without compromising quality.</p></div>
+                    </div>
+                </div>
+                <div class="faq-col">
+                    <div class="faq-item">
+                        <div class="faq-question">Which cladding material is best? <i class="fas fa-plus"></i></div>
+                        <div class="faq-answer"><p>The best material depends on your specific requirements, budget, and aesthetic goals. We offer consultation to help you choose.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you offer warranties? <i class="fas fa-plus"></i></div>
+                        <div class="faq-answer"><p>Yes, all our cladding solutions come with standard manufacturer warranties, and we guarantee our workmanship.</p></div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">Do you handle turnkey projects? <i class="fas fa-plus"></i></div>
+                        <div class="faq-answer"><p>Absolutely. We manage everything from initial design and material procurement to final execution and handover.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= CTA BANNER ================= -->
+    <div class="container reveal">
+        <div class="cta-banner">
+            <div class="cta-content">
+                <i class="fas fa-clipboard-list cta-icon"></i>
+                <div class="cta-text">
+                    <h3>Ready to Build Something Exceptional?</h3>
+                    <p>Let's create modern, durable, and elegant façade solutions for your next project.</p>
+                </div>
+            </div>
+            <div class="cta-buttons">
+                <a href="#quote" class="btn open-quote-modal">Get a Free Quote <i class="fas fa-arrow-right"></i></a>
+                <a href="contact.html" class="btn btn-outline" style="border-color:#fff; color:#fff;">Contact Our Team <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+   <!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <a href="index.html"><img src="image/aura-logo.png" alt="Aura Logo"></a>
+                </div>
+                <p>We craft high-performance cladding solutions that blend aesthetics, durability, and innovation.</p>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/auracladding" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/auracladding/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="our-works.html">Our Works</a></li>
+                    <li><a href="blog">Blog</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul class="footer-links">
+                    <li><a href="acp-cladding.html">ACP Cladding</a></li>
+                    <li><a href="structural-glazing.html">Structural Glazing</a></li>
+                    <li><a href="exterior-glazing.html">Exterior Glazing</a></li>
+                    <li><a href="tuffen-glass.html">Tuffen Glass</a></li>
+                    <li><a href="ms-fabrication.html">MS Fabrication</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <ul class="contact-info">
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+918682878886">+91 86828 78886</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+918862878887">+91 88628 78887</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+918682878885">+91 86828 78885</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@auracladding.com">info@auracladding.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-globe"></i>
+                        <a href="https://www.auracladding.com" target="_blank">www.auracladding.com</a>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        101, Pachaiamman Koil St,<br>
+                        Virugambakkam, Tamil Nadu, 600092.<br>
+                        
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Our Location</h4>
+                <iframe 
+                    src="https://maps.google.com/maps?q=101%20Kamarajar%20High%20Road%2C%20Thanthai%20Periyar%20Nagar%2C%20Virugambakkam%2C%20Chennai%20600092&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" 
+                    height="140" 
+                    style="border:0; border-radius:6px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+       
+        <div class="footer-bottom">
+            <p>&copy; 2026 Aura Cladding. All Rights Reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms & Conditions</a> |
+                Designed and Developed By 
+                <a href="https://vgdigitalfalcon.com/" target="_blank" style="color:#f37021; font-weight:600;">
+                    @ VG DIGITAL FALCON
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- ================= FLOATING WHATSAPP ================= -->
+    <a href="https://wa.me/918682878886" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ================= QUOTE POPUP ================= -->
+    <div class="quote-modal-overlay" id="quoteModal" role="dialog" aria-modal="true" aria-labelledby="quoteTitle">
+        <div class="quote-modal">
+            <button type="button" class="quote-close" id="quoteClose" aria-label="Close quote form">&times;</button>
+            <h3 id="quoteTitle">Get a Free Quote</h3>
+            <p class="modal-sub">Share your details and our team will get back to you shortly.</p>
+            <form id="quoteForm" action="send-quote.php" method="POST">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quoteName">Name</label>
+                        <input type="text" id="quoteName" name="name" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quotePhone">Phone Number</label>
+                        <input type="tel" id="quotePhone" name="phone" placeholder="10-digit mobile number" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="quoteLocation">Location</label>
+                    <input type="text" id="quoteLocation" name="location" placeholder="Your city / location" required>
+                </div>
+                <div class="form-group">
+                    <label for="quoteService">Service Looking for</label>
+                    <select id="quoteService" name="service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="ACP Cladding">ACP Cladding</option>
+                        <option value="Structural Glazing">Structural Glazing</option>
+                        <option value="Exterior Glazing">Exterior Glazing</option>
+                        <option value="Tuffen Glass">Tuffen Glass</option>
+                        <option value="MS Fabrication">MS Fabrication</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn" id="quoteSubmit">Submit Enquiry</button>
+                <div class="form-status" id="quoteStatus"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT ================= -->
+    <script>
+        // --- Responsive Navigation ---
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const servicesItem = document.querySelector('.has-dropdown');
+        const servicesToggle = document.querySelector('.services-toggle');
+
+        if (menuToggle && navLinks) {
+            menuToggle.setAttribute('aria-expanded', 'false');
+
+            menuToggle.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    menuToggle.click();
+                }
+            });
+
+            menuToggle.addEventListener('click', function(event) {
+                event.stopPropagation();
+
+                const isOpen = navLinks.classList.toggle('active');
+                menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+                if (!isOpen && servicesItem) {
+                    servicesItem.classList.remove('dropdown-open');
+                    if (servicesToggle) {
+                        servicesToggle.setAttribute('aria-expanded', 'false');
+                    }
+                }
+            });
+        }
+
+        if (servicesItem && servicesToggle) {
+            let dropdownTimer;
+
+            servicesToggle.addEventListener('click', function(event) {
+                if (window.innerWidth <= 900) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    const isOpen = servicesItem.classList.toggle('dropdown-open');
+                    servicesToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                }
+            });
+
+            servicesItem.addEventListener('mouseenter', function() {
+                if (window.innerWidth > 900) {
+                    clearTimeout(dropdownTimer);
+                    servicesItem.classList.add('dropdown-open');
+                    servicesToggle.setAttribute('aria-expanded', 'true');
+                }
+            });
+
+            servicesItem.addEventListener('mouseleave', function() {
+                if (window.innerWidth > 900) {
+                    dropdownTimer = setTimeout(function() {
+                        servicesItem.classList.remove('dropdown-open');
+                        servicesToggle.setAttribute('aria-expanded', 'false');
+                    }, 180);
+                }
+            });
+        }
+
+        document.querySelectorAll('.nav-links a:not(.services-toggle)').forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 900) {
+                    navLinks.classList.remove('active');
+                    if (servicesItem) servicesItem.classList.remove('dropdown-open');
+                    if (servicesToggle) servicesToggle.setAttribute('aria-expanded', 'false');
+                    if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+
+            if (navbar && !navbar.contains(event.target) && navLinks) {
+                navLinks.classList.remove('active');
+
+                if (servicesItem) servicesItem.classList.remove('dropdown-open');
+                if (servicesToggle) servicesToggle.setAttribute('aria-expanded', 'false');
+                if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 900 && navLinks) {
+                navLinks.classList.remove('active');
+
+                if (servicesItem) servicesItem.classList.remove('dropdown-open');
+                if (servicesToggle) servicesToggle.setAttribute('aria-expanded', 'false');
+                if (menuToggle) menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // --- FAQ Accordion ---
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+               
+                faqQuestions.forEach(otherQ => {
+                    if (otherQ !== question) {
+                        otherQ.nextElementSibling.style.maxHeight = null;
+                        otherQ.querySelector('i').classList.remove('fa-minus');
+                        otherQ.querySelector('i').classList.add('fa-plus');
+                    }
+                });
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+
+        // --- Scroll Reveal Animation ---
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+               
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+       
+        window.addEventListener("scroll", reveal);
+        reveal();
+
+        // --- Quote Popup ---
+        const quoteModal = document.getElementById('quoteModal');
+        const quoteForm = document.getElementById('quoteForm');
+        const quoteStatus = document.getElementById('quoteStatus');
+        const quoteSubmit = document.getElementById('quoteSubmit');
+        const quoteClose = document.getElementById('quoteClose');
+
+        function openQuoteModal(event) {
+            if (event) event.preventDefault();
+            if (!quoteModal) return;
+            quoteModal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeQuoteModal() {
+            if (!quoteModal) return;
+            quoteModal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+
+        document.querySelectorAll('.open-quote-modal').forEach(function(btn) {
+            btn.addEventListener('click', openQuoteModal);
+        });
+
+        if (quoteClose) {
+            quoteClose.addEventListener('click', closeQuoteModal);
+        }
+
+        if (quoteModal) {
+            quoteModal.addEventListener('click', function(event) {
+                if (event.target === quoteModal) closeQuoteModal();
+            });
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closeQuoteModal();
+        });
+
+        if (quoteForm) {
+            quoteForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('quoteName').value.trim();
+                const phone = document.getElementById('quotePhone').value.trim();
+                const location = document.getElementById('quoteLocation').value.trim();
+                const service = document.getElementById('quoteService').value;
+
+                if (!name || !phone || !location || !service) {
+                    quoteStatus.className = 'form-status error';
+                    quoteStatus.textContent = 'Please fill in all the fields.';
+                    return;
+                }
+
+                quoteSubmit.disabled = true;
+                quoteSubmit.textContent = 'Sending...';
+                quoteStatus.className = 'form-status';
+                quoteStatus.textContent = '';
+
+                const formData = new FormData(quoteForm);
+                formData.append('ajax', '1');
+
+                fetch('send-quote.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(function(response) { return response.json(); })
+                .then(function(data) {
+                    if (data && data.success) {
+                        quoteStatus.className = 'form-status success';
+                        quoteStatus.textContent = 'Thank you! Your enquiry has been sent. We will contact you soon.';
+                        quoteForm.reset();
+                        setTimeout(closeQuoteModal, 1800);
+                    } else {
+                        throw new Error((data && data.message) || 'Failed');
+                    }
+                })
+                .catch(function() {
+                    quoteStatus.className = 'form-status error';
+                    quoteStatus.textContent = 'Unable to send right now. Please try again or call us.';
+                })
+                .finally(function() {
+                    quoteSubmit.disabled = false;
+                    quoteSubmit.textContent = 'Submit Enquiry';
+                });
+            });
+        }
+    </script>
+</body>
+</html>

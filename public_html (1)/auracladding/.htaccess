@@ -1,0 +1,49 @@
+RewriteEngine On
+RewriteBase /
+
+# ============================================================
+# 1. Don't rewrite real files or folders
+# ============================================================
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# ============================================================
+# 2. Force remove .php and .html from the browser URL (301)
+# ============================================================
+# Remove .php
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# Remove .html
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# ============================================================
+# 3. Internally serve the file when extension is missing
+# ============================================================
+# If /something exists as .php → serve it
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+?)/?$ $1.php [L]
+
+# If /something exists as .html → serve it
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+
+# ============================================================
+# 4. Your existing Blog + Gallery clean URLs
+# ============================================================
+# Blog listing
+RewriteRule ^blog/?$ blog-crm/public/blog.php [L,QSA]
+
+# Single blog post: /blog/my-post-slug
+RewriteRule ^blog/([a-zA-Z0-9\-]+)/?$ blog-crm/public/post.php?slug=$1 [L,QSA]
+
+# Gallery / Our Works
+RewriteRule ^our-works/?$ blog-crm/public/works.php [L,QSA]
+
+# Sitemap & robots
+RewriteRule ^sitemap\.xml$ blog-crm/public/sitemap.xml [L]
+RewriteRule ^robots\.txt$ blog-crm/public/robots.txt [L]
