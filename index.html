@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     
     <!--<< Custom Theme & Color CSS >>-->
-    <link rel="stylesheet" href="assets/css/main.css?v=14.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=14.0">
+    <link rel="stylesheet" href="assets/css/main.css?v=15.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=15.0">
 
     <!-- Resource Hints for High-Speed Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2740,103 +2740,445 @@
     </section>
 
     <!-- ==========================================================================
-         TESTIMONIALS & GOOGLE RATINGS SECTION
+         TESTIMONIALS & CLIENT RESULTS (SCROLL & ZOOM-IN SPOTLIGHT SHOWCASE)
          ========================================================================== -->
     <section class="vg-testimonials-section" id="reviews">
-        <div class="container">
-            <div class="vg-section-head wow fadeInUp">
-                <div class="vg-pill-badge mb-2" style="background: rgba(124, 58, 237, 0.1) !important; border: 1px solid rgba(124, 58, 237, 0.35) !important; color: #6d28d9 !important; font-weight: 700 !important;">TESTIMONIALS</div>
-                <h2 style="color: #0f172a !important;">What Our Clients <span style="color: #7c3aed !important;">Say</span></h2>
-                <p style="color: #475569 !important;">Real feedback from business owners and founders who scaled with VG Digital Falcon.</p>
+        <div class="container position-relative" style="z-index: 2;">
+            <!-- Section Header -->
+            <div class="vg-section-head text-center wow fadeInUp">
+                <div class="vg-pill-badge mb-2" style="background: rgba(124, 58, 237, 0.1) !important; border: 1px solid rgba(124, 58, 237, 0.35) !important; color: #6d28d9 !important; font-weight: 700 !important;">
+                    <i class="fa-solid fa-star me-1" style="color: #eab308 !important;"></i> TESTIMONIALS
+                </div>
+                <h2 style="color: #0f172a !important;">
+                    What Our Clients <span style="color: #7c3aed !important;">Say</span>
+                </h2>
+                <p style="color: #475569 !important; max-width: 620px; margin: 0 auto;">
+                    Real feedback from business owners and founders who scaled with VG Digital Falcon.
+                </p>
+
+                <!-- Google Rating Trust Bar -->
+                <div class="vg-google-trust-bar mt-3">
+                    <div class="trust-badge">
+                        <svg viewBox="0 0 48 48" width="22" height="22">
+                            <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                            <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                            <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.79l7.97-6.2z"/>
+                            <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                        </svg>
+                        <span class="trust-score"><strong>4.9</strong> / 5</span>
+                        <div class="vg-stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="trust-count">Based on 200+ Verified Google Reviews</span>
+                    </div>
+                </div>
             </div>
 
-            <div class="vg-testimonials-grid">
-                <!-- 3 Client Review Cards -->
-                <div class="vg-reviews-cards-row">
-                    <!-- Review 1 -->
-                    <div class="vg-review-card wow fadeInUp" data-wow-delay=".1s">
-                        <div class="vg-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>
-                            "VG Digital Falcon transformed our business in just four months. Our qualified inbound leads increased by over 300%!"
-                        </p>
-                        <div class="vg-reviewer">
-                            <img src="assets/img/testimonial/clientt-1.png" alt="Arun Kumar" loading="lazy" decoding="async">
-                            <div>
-                                <h6>Arun Kumar</h6>
-                                <span>Founder, Foodie Hub</span>
+            <!-- Scroll & Zoom-In Spotlight Showcase -->
+            <div class="vg-testi-spotlight-wrap">
+                <!-- Navigation Arrows -->
+                <button type="button" class="vg-testi-nav-btn prev-btn" id="vg-testi-prev" aria-label="Previous Review">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button type="button" class="vg-testi-nav-btn next-btn" id="vg-testi-next" aria-label="Next Review">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+                <!-- Cards Viewport -->
+                <div class="vg-testi-viewport" id="vg-testi-viewport">
+                    <div class="vg-testi-track" id="vg-testi-track">
+                        <!-- Review 1: Arun Kumar -->
+                        <div class="vg-testi-card is-active" data-index="0">
+                            <div class="vg-testi-card-inner">
+                                <div class="vg-testi-card-top">
+                                    <div class="vg-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="vg-testi-metric-pill">
+                                        <i class="fa-solid fa-arrow-trend-up me-1 text-success"></i> +310% Inbound Leads
+                                    </span>
+                                </div>
+                                <p class="vg-testi-quote">
+                                    "VG Digital Falcon transformed our business in just four months. Our qualified inbound leads increased by over 300% and ad spend waste was completely eliminated."
+                                </p>
+                                <div class="vg-testi-footer">
+                                    <div class="vg-reviewer">
+                                        <img src="assets/img/testimonial/clientt-1.png" alt="Arun Kumar" loading="lazy" decoding="async">
+                                        <div>
+                                            <h6>Arun Kumar</h6>
+                                            <span>Founder, Foodie Hub</span>
+                                        </div>
+                                    </div>
+                                    <span class="vg-testi-verified">
+                                        <i class="fa-brands fa-google text-danger me-1"></i> Verified
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Review 2 -->
-                    <div class="vg-review-card wow fadeInUp" data-wow-delay=".2s">
-                        <div class="vg-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                        </div>
-                        <p>
-                            "Their AI-powered strategies and automation helped us save time and dramatically increased student admissions."
-                        </p>
-                        <div class="vg-reviewer">
-                            <img src="assets/img/testimonial/clientt-4.png" alt="Priya Nair" loading="lazy" decoding="async">
-                            <div>
-                                <h6>Priya Nair</h6>
-                                <span>Director, Bright Future Academy</span>
+                        <!-- Review 2: Priya Nair -->
+                        <div class="vg-testi-card" data-index="1">
+                            <div class="vg-testi-card-inner">
+                                <div class="vg-testi-card-top">
+                                    <div class="vg-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="vg-testi-metric-pill">
+                                        <i class="fa-solid fa-bolt me-1 text-primary"></i> 2.4x Admissions
+                                    </span>
+                                </div>
+                                <p class="vg-testi-quote">
+                                    "Their AI-powered strategies and automation helped us save time and dramatically increased student admissions. The WhatsApp lead nurture workflow is unbelievable!"
+                                </p>
+                                <div class="vg-testi-footer">
+                                    <div class="vg-reviewer">
+                                        <img src="assets/img/testimonial/clientt-4.png" alt="Priya Nair" loading="lazy" decoding="async">
+                                        <div>
+                                            <h6>Priya Nair</h6>
+                                            <span>Director, Bright Future Academy</span>
+                                        </div>
+                                    </div>
+                                    <span class="vg-testi-verified">
+                                        <i class="fa-brands fa-google text-danger me-1"></i> Verified
+                                    </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Review 3 -->
-                    <div class="vg-review-card wow fadeInUp" data-wow-delay=".3s">
-                        <div class="vg-stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                        <!-- Review 3: Ramesh Babu -->
+                        <div class="vg-testi-card" data-index="2">
+                            <div class="vg-testi-card-inner">
+                                <div class="vg-testi-card-top">
+                                    <div class="vg-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="vg-testi-metric-pill">
+                                        <i class="fa-solid fa-chart-line me-1 text-success"></i> 5.2x Verified ROAS
+                                    </span>
+                                </div>
+                                <p class="vg-testi-quote">
+                                    "Professional, transparent, and result-driven team. Highly recommend VG Digital Falcon for sustainable business growth and real revenue attribution."
+                                </p>
+                                <div class="vg-testi-footer">
+                                    <div class="vg-reviewer">
+                                        <img src="assets/img/testimonial/clientt-2.png" alt="Ramesh Babu" loading="lazy" decoding="async">
+                                        <div>
+                                            <h6>Ramesh Babu</h6>
+                                            <span>CFO, BuildRight Constructions</span>
+                                        </div>
+                                    </div>
+                                    <span class="vg-testi-verified">
+                                        <i class="fa-brands fa-google text-danger me-1"></i> Verified
+                                    </span>
+                                </div>
+                            </div>
                         </div>
-                        <p>
-                            "Professional, transparent, and result-driven team. Highly recommend VG Digital Falcon for sustainable business growth."
-                        </p>
-                        <div class="vg-reviewer">
-                            <img src="assets/img/testimonial/clientt-2.png" alt="Ramesh Babu" loading="lazy" decoding="async">
-                            <div>
-                                <h6>Ramesh Babu</h6>
-                                <span>CFO, BuildRight Constructions</span>
+
+                        <!-- Review 4: Kavitha Sundaram -->
+                        <div class="vg-testi-card" data-index="3">
+                            <div class="vg-testi-card-inner">
+                                <div class="vg-testi-card-top">
+                                    <div class="vg-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="vg-testi-metric-pill">
+                                        <i class="fa-solid fa-hospital me-1 text-info"></i> 1,400+ Consults/mo
+                                    </span>
+                                </div>
+                                <p class="vg-testi-quote">
+                                    "The hyper-targeted local SEO campaigns and Meta Ads drive over 1,400 patient bookings every month across our clinic locations. True growth partners!"
+                                </p>
+                                <div class="vg-testi-footer">
+                                    <div class="vg-reviewer">
+                                        <img src="assets/img/testimonial/clientt-3.png" alt="Kavitha Sundaram" loading="lazy" decoding="async">
+                                        <div>
+                                            <h6>Kavitha Sundaram</h6>
+                                            <span>VP Growth, Medix Healthcare</span>
+                                        </div>
+                                    </div>
+                                    <span class="vg-testi-verified">
+                                        <i class="fa-brands fa-google text-danger me-1"></i> Verified
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Review 5: Vikramaditya Shah -->
+                        <div class="vg-testi-card" data-index="4">
+                            <div class="vg-testi-card-inner">
+                                <div class="vg-testi-card-top">
+                                    <div class="vg-stars">
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                        <i class="fa-solid fa-star"></i>
+                                    </div>
+                                    <span class="vg-testi-metric-pill">
+                                        <i class="fa-solid fa-truck-fast me-1 text-warning"></i> 4.2x Pipeline
+                                    </span>
+                                </div>
+                                <p class="vg-testi-quote">
+                                    "They engineered our entire B2B pipeline infrastructure. We scaled qualified contract leads 4.2x within 90 days. Zero guesswork, pure execution."
+                                </p>
+                                <div class="vg-testi-footer">
+                                    <div class="vg-reviewer">
+                                        <img src="assets/img/testimonial/clientt-5.png" alt="Vikramaditya Shah" loading="lazy" decoding="async">
+                                        <div>
+                                            <h6>Vikramaditya Shah</h6>
+                                            <span>Co-Founder, Nexus B2B Logistics</span>
+                                        </div>
+                                    </div>
+                                    <span class="vg-testi-verified">
+                                        <i class="fa-brands fa-google text-danger me-1"></i> Verified
+                                    </span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Google Rating Showcase Box -->
-                <div class="vg-google-box wow fadeInRight" data-wow-delay=".3s">
-                    <svg viewBox="0 0 48 48" width="56" height="56">
-                        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-                        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-                        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.79l7.97-6.2z"/>
-                        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-                    </svg>
-                    <div class="vg-google-score">4.9 <span>/ 5</span></div>
-                    <div class="vg-stars">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
+                <!-- Live Auto-Scroll Progress & Pagination Bar -->
+                <div class="vg-testi-controls">
+                    <div class="vg-testi-progress-line">
+                        <div class="vg-testi-progress-fill" id="vg-testi-progress-fill"></div>
                     </div>
-                    <span class="vg-google-sub">Based on 200+ Google Reviews</span>
+                    <div class="vg-testi-dots" id="vg-testi-dots">
+                        <!-- Dots dynamically rendered -->
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Interactive Vanilla JS for Testimonials Scroll & Zoom Spotlight -->
+        <script>
+            (function () {
+                function initTestimonialsSpotlight() {
+                    var section = document.getElementById('reviews');
+                    if (!section) return;
+
+                    var track = document.getElementById('vg-testi-track');
+                    var viewport = document.getElementById('vg-testi-viewport');
+                    if (!track || !viewport) return;
+
+                    var originalCards = Array.from(track.querySelectorAll('.vg-testi-card'));
+                    var total = originalCards.length;
+                    if (!total) return;
+
+                    var prevBtn = document.getElementById('vg-testi-prev');
+                    var nextBtn = document.getElementById('vg-testi-next');
+                    var dotsContainer = document.getElementById('vg-testi-dots');
+                    var progressFill = document.getElementById('vg-testi-progress-fill');
+
+                    // Clone cards for seamless infinite loop
+                    originalCards.forEach(function (card) {
+                        var clone = card.cloneNode(true);
+                        clone.setAttribute('data-clone', 'true');
+                        track.appendChild(clone);
+                    });
+
+                    var allCards = Array.from(track.querySelectorAll('.vg-testi-card'));
+
+                    // Create Dots
+                    if (dotsContainer) {
+                        dotsContainer.innerHTML = '';
+                        for (var i = 0; i < total; i++) {
+                            var dot = document.createElement('button');
+                            dot.type = 'button';
+                            dot.className = 'vg-testi-dot' + (i === 0 ? ' is-active' : '');
+                            dot.setAttribute('data-target-index', i);
+                            dot.setAttribute('aria-label', 'Go to review ' + (i + 1));
+                            dotsContainer.appendChild(dot);
+                        }
+                    }
+
+                    var dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.vg-testi-dot')) : [];
+                    var currentIndex = 0;
+                    var autoInterval = null;
+                    var AUTO_DELAY = 4500;
+
+                    function getCardStep() {
+                        if (!allCards[0]) return 380;
+                        var style = window.getComputedStyle(track);
+                        var gap = parseFloat(style.gap) || 22;
+                        return allCards[0].offsetWidth + gap;
+                    }
+
+                    function updateCardFocus(targetIndex) {
+                        var realIndex = targetIndex % total;
+                        var targetCard = allCards[targetIndex] || allCards[realIndex];
+
+                        allCards.forEach(function (c) {
+                            c.classList.remove('is-active');
+                        });
+                        if (targetCard) targetCard.classList.add('is-active');
+
+                        dots.forEach(function (d, idx) {
+                            if (idx === realIndex) d.classList.add('is-active');
+                            else d.classList.remove('is-active');
+                        });
+                    }
+
+                    function scrollToIndex(index, smooth) {
+                        if (smooth === undefined) smooth = true;
+                        var step = getCardStep();
+                        var viewportWidth = viewport.offsetWidth;
+                        var cardWidth = allCards[0] ? allCards[0].offsetWidth : 360;
+                        var centerOffset = (viewportWidth - cardWidth) / 2;
+
+                        var translateX = -(index * step) + centerOffset;
+
+                        if (smooth) {
+                            track.style.transition = 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)';
+                        } else {
+                            track.style.transition = 'none';
+                        }
+
+                        track.style.transform = 'translateX(' + translateX + 'px)';
+                        updateCardFocus(index);
+                    }
+
+                    function goToNext() {
+                        currentIndex++;
+                        scrollToIndex(currentIndex, true);
+
+                        if (currentIndex >= total) {
+                            setTimeout(function () {
+                                currentIndex = currentIndex % total;
+                                scrollToIndex(currentIndex, false);
+                            }, 620);
+                        }
+                        resetProgress();
+                    }
+
+                    function goToPrev() {
+                        if (currentIndex === 0) {
+                            currentIndex = total;
+                            scrollToIndex(currentIndex, false);
+                            setTimeout(function () {
+                                currentIndex--;
+                                scrollToIndex(currentIndex, true);
+                            }, 20);
+                        } else {
+                            currentIndex--;
+                            scrollToIndex(currentIndex, true);
+                        }
+                        resetProgress();
+                    }
+
+                    function resetProgress() {
+                        if (progressFill) {
+                            progressFill.style.transition = 'none';
+                            progressFill.style.width = '0%';
+                            setTimeout(function () {
+                                progressFill.style.transition = 'width ' + AUTO_DELAY + 'ms linear';
+                                progressFill.style.width = '100%';
+                            }, 40);
+                        }
+                    }
+
+                    function startAutoScroll() {
+                        stopAutoScroll();
+                        resetProgress();
+                        autoInterval = setInterval(function () {
+                            goToNext();
+                        }, AUTO_DELAY);
+                    }
+
+                    function stopAutoScroll() {
+                        if (autoInterval) clearInterval(autoInterval);
+                        if (progressFill) {
+                            var currentW = window.getComputedStyle(progressFill).width;
+                            progressFill.style.transition = 'none';
+                            progressFill.style.width = currentW;
+                        }
+                    }
+
+                    if (nextBtn) nextBtn.addEventListener('click', function () {
+                        goToNext();
+                        startAutoScroll();
+                    });
+
+                    if (prevBtn) prevBtn.addEventListener('click', function () {
+                        goToPrev();
+                        startAutoScroll();
+                    });
+
+                    dots.forEach(function (dot) {
+                        dot.addEventListener('click', function () {
+                            var target = parseInt(this.getAttribute('data-target-index'), 10) || 0;
+                            currentIndex = target;
+                            scrollToIndex(currentIndex, true);
+                            startAutoScroll();
+                        });
+                    });
+
+                    allCards.forEach(function (card, idx) {
+                        card.addEventListener('click', function () {
+                            currentIndex = idx;
+                            scrollToIndex(currentIndex, true);
+                            startAutoScroll();
+                        });
+                    });
+
+                    viewport.addEventListener('mouseenter', stopAutoScroll);
+                    viewport.addEventListener('mouseleave', startAutoScroll);
+
+                    var startX = 0;
+                    var isDragging = false;
+                    viewport.addEventListener('touchstart', function (e) {
+                        startX = e.touches[0].clientX;
+                        isDragging = true;
+                        stopAutoScroll();
+                    }, { passive: true });
+
+                    viewport.addEventListener('touchend', function (e) {
+                        if (!isDragging) return;
+                        isDragging = false;
+                        var endX = e.changedTouches[0].clientX;
+                        var diff = startX - endX;
+                        if (diff > 40) goToNext();
+                        else if (diff < -40) goToPrev();
+                        startAutoScroll();
+                    }, { passive: true });
+
+                    setTimeout(function () {
+                        scrollToIndex(0, false);
+                        startAutoScroll();
+                    }, 100);
+
+                    window.addEventListener('resize', function () {
+                        scrollToIndex(currentIndex % total, false);
+                    });
+                }
+
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', initTestimonialsSpotlight);
+                } else {
+                    initTestimonialsSpotlight();
+                }
+            })();
+        </script>
     </section>
 
     <!-- ==========================================================================
@@ -3293,7 +3635,7 @@
     <script src="assets/js/jquery.meanmenu.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js?v=14.0"></script>
+    <script src="assets/js/main.js?v=15.0"></script>
     <script>
         // Dedicated Mobile Drawer Menu Accordion & Auto-Close
         document.addEventListener('DOMContentLoaded', function() {
