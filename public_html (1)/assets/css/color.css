@@ -4327,6 +4327,105 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   Interactive Controls Bar (Category Filter Pills + View Mode Toggle)
+   -------------------------------------------------------------------------- */
+.vg-comp-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 22px auto 32px;
+  max-width: 1040px;
+  padding: 10px 18px;
+  background: rgba(18, 8, 38, 0.75);
+  border: 1px solid rgba(168, 85, 247, 0.24);
+  border-radius: 9999px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), inset 0 0 15px rgba(168, 85, 247, 0.08);
+}
+
+.vg-comp-pills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.vg-comp-filter-btn {
+  background: transparent;
+  border: 1px solid transparent;
+  color: #94a3b8;
+  padding: 7px 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vg-comp-filter-btn:hover {
+  color: #ffffff;
+  background: rgba(168, 85, 247, 0.16);
+  border-color: rgba(168, 85, 247, 0.35);
+  transform: translateY(-1px);
+}
+
+.vg-comp-filter-btn.active {
+  background: linear-gradient(135deg, rgba(147, 51, 234, 0.5) 0%, rgba(56, 189, 248, 0.25) 100%);
+  border-color: rgba(192, 132, 252, 0.65);
+  color: #ffffff;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.4);
+}
+
+.vg-comp-view-toggle {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(9, 3, 20, 0.85);
+  padding: 3px;
+  border-radius: 9999px;
+  border: 1px solid rgba(168, 85, 247, 0.22);
+}
+
+.vg-comp-view-toggle .toggle-label {
+  font-size: 11px;
+  color: #94a3b8;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 8px;
+}
+
+.vg-view-mode-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  padding: 5px 13px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.vg-view-mode-btn:hover {
+  color: #ffffff;
+}
+
+.vg-view-mode-btn.active {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #ffffff;
+  box-shadow: 0 2px 12px rgba(124, 58, 237, 0.55);
+}
+
+/* --------------------------------------------------------------------------
    Comparison Table Container & Matrix Styling
    -------------------------------------------------------------------------- */
 .vg-comp-card-wrap {
@@ -4845,6 +4944,91 @@ body {
 }
 
 /* --------------------------------------------------------------------------
+   Streamlined Comparison Cell Content & Modes
+   -------------------------------------------------------------------------- */
+.cell-highlight-text {
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 5px;
+  letter-spacing: -0.15px;
+}
+
+.cell-highlight-text.text-danger {
+  color: #f87171 !important;
+}
+
+.cell-highlight-text.text-success {
+  color: #4ade80 !important;
+}
+
+.cell-desc-text {
+  font-size: 13px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+/* Quick Scan Mode (Default): Ultra-compact & clean */
+.vg-comp-table-body.mode-quick .cell-desc-text {
+  display: none !important;
+}
+
+.vg-comp-table-body.mode-quick .comp-cell {
+  padding: 13px 20px;
+}
+
+.vg-comp-table-body.mode-quick .cell-highlight-text {
+  margin-bottom: 6px;
+}
+
+/* Deep Dive Mode: Full detailed explanations */
+.vg-comp-table-body.mode-detail .comp-cell {
+  padding: 20px 22px;
+}
+
+.vg-comp-table-body.mode-detail .cell-desc-text {
+  display: block;
+}
+
+/* Filtered Transition Classes */
+.vg-comp-row.is-filtered-out {
+  display: none !important;
+}
+
+.vg-comp-row.is-animating-in {
+  animation: compRowFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes compRowFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Badge Engine Pulse in Table Head */
+.badge-engine.pulse-engine {
+  animation: engineGlowPulse 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes engineGlowPulse {
+  0% {
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+    filter: brightness(1);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(236, 72, 153, 0.8), 0 0 30px rgba(56, 189, 248, 0.5);
+    filter: brightness(1.15);
+  }
+}
+
+/* --------------------------------------------------------------------------
    Comparison Bottom Bar / Verdict CTA
    -------------------------------------------------------------------------- */
 .vg-comp-bottom-bar {
@@ -4916,6 +5100,22 @@ body {
    Mobile & Tablet Responsive Styling
    -------------------------------------------------------------------------- */
 @media (max-width: 991px) {
+  .vg-comp-controls-bar {
+    border-radius: 20px;
+    padding: 12px 14px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .vg-comp-pills {
+    justify-content: center;
+  }
+
+  .vg-comp-view-toggle {
+    justify-content: center;
+  }
+
   .vg-comp-table-head {
     display: grid !important;
     grid-template-columns: 1fr 1fr;

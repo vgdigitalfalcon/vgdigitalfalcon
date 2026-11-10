@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     
     <!--<< Custom Theme & Color CSS >>-->
-    <link rel="stylesheet" href="assets/css/main.css?v=11.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=11.0">
+    <link rel="stylesheet" href="assets/css/main.css?v=12.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=12.0">
 
     <!-- Resource Hints for High-Speed Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -831,11 +831,38 @@
                 </p>
 
                 <!-- Comparison Quick Stat Pills -->
-                <div class="vg-comp-highlights mt-4 mb-5">
+                <div class="vg-comp-highlights mt-4 mb-4">
                     <span class="comp-stat-pill"><i class="fa-solid fa-bolt text-warning me-2"></i><strong class="stat-count" data-stat-type="range" data-val1="4.8" data-val2="8.6">4.8x - 8.6x</strong> Avg. ROAS Delivered</span>
                     <span class="comp-stat-pill"><i class="fa-solid fa-clock text-info me-2"></i><strong class="stat-count" data-stat-type="less-than" data-val="30">&lt; 30s</strong> Automated Lead Response</span>
                     <span class="comp-stat-pill"><i class="fa-solid fa-chart-line-down text-success me-2"></i><strong class="stat-count" data-stat-type="negative-percent" data-val="40">-40%</strong> Lower Cost Per Lead</span>
                     <span class="comp-stat-pill"><i class="fa-solid fa-shield-check text-primary me-2"></i><strong class="stat-count" data-stat-type="percent" data-val="100">100%</strong> Live Data Transparency</span>
+                </div>
+
+                <!-- Interactive Controls Bar: Category Filter Pills + View Mode Toggle -->
+                <div class="vg-comp-controls-bar">
+                    <div class="vg-comp-pills" id="vg-comp-filter-group">
+                        <button type="button" class="vg-comp-filter-btn active" data-filter="all">
+                            <i class="fa-solid fa-layer-group me-1"></i> All 6 Pillars
+                        </button>
+                        <button type="button" class="vg-comp-filter-btn" data-filter="targeting">
+                            <i class="fa-solid fa-crosshairs me-1"></i> Targeting &amp; Strategy
+                        </button>
+                        <button type="button" class="vg-comp-filter-btn" data-filter="speed">
+                            <i class="fa-solid fa-bolt-lightning me-1"></i> Speed &amp; Creatives
+                        </button>
+                        <button type="button" class="vg-comp-filter-btn" data-filter="roi">
+                            <i class="fa-solid fa-chart-pie me-1"></i> Reporting &amp; ROI
+                        </button>
+                    </div>
+                    <div class="vg-comp-view-toggle">
+                        <span class="toggle-label"><i class="fa-solid fa-sliders me-1"></i> View:</span>
+                        <button type="button" class="vg-view-mode-btn active" data-mode="quick" id="vg-view-quick" title="Compact view">
+                            <i class="fa-solid fa-bolt"></i> Quick Scan
+                        </button>
+                        <button type="button" class="vg-view-mode-btn" data-mode="detail" id="vg-view-detail" title="Detailed deep dive">
+                            <i class="fa-solid fa-circle-info"></i> Deep Dive
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -844,8 +871,8 @@
                 <!-- Column Headers -->
                 <div class="vg-comp-table-head">
                     <div class="head-col head-feature">
-                        <span class="head-title text-white">BENCHMARK / CAPABILITY</span>
-                        <span class="head-desc">Operational Standard</span>
+                        <span class="head-title text-white">OPERATIONAL PILLAR</span>
+                        <span class="head-desc">Benchmark Standard</span>
                     </div>
                     <div class="head-col head-trad">
                         <div class="d-flex align-items-center justify-content-between mb-2">
@@ -876,40 +903,42 @@
                                 </div>
                             </div>
                         </div>
-                        <h4 class="head-title mb-1 text-white">VG Digital Falcon <span class="badge-engine">AI Engine</span></h4>
+                        <h4 class="head-title mb-1 text-white">VG Digital Falcon <span class="badge-engine pulse-engine">AI Engine</span></h4>
                         <span class="head-desc">Autonomous Pipelines • Live GA4 Dashboards • Real Revenue</span>
                     </div>
                 </div>
 
-                <!-- Comparison Rows -->
-                <div class="vg-comp-table-body">
+                <!-- Comparison Rows Container (Default: Quick Scan mode for clean compactness) -->
+                <div class="vg-comp-table-body mode-quick" id="vg-comp-rows-container">
                     <!-- Row 1: Strategy & Market Research -->
-                    <div class="vg-comp-row">
+                    <div class="vg-comp-row is-revealed" data-category="targeting">
                         <div class="comp-cell cell-feature">
                             <div class="feature-icon"><i class="fa-solid fa-compass-drafting"></i></div>
                             <div class="feature-meta">
-                                <span class="feature-tag">STRATEGY &amp; AUDIT</span>
+                                <span class="feature-tag">STRATEGY &amp; AUDITING</span>
                                 <h5 class="feature-name">Market Research &amp; Planning</h5>
                             </div>
                         </div>
                         <div class="comp-cell cell-trad">
                             <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
                             <div class="cell-content">
-                                <p>Rely on subjective assumptions, generic templates, and copy-pasted competitor tactics without verifying hard audience data.</p>
+                                <h6 class="cell-highlight-text text-danger">Subjective Guesswork &amp; Generic Templates</h6>
+                                <p class="cell-desc-text">Rely on subjective assumptions, generic templates, and copy-pasted competitor tactics without verifying hard audience data.</p>
                                 <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> High Guesswork &amp; Wasted Spend</span>
                             </div>
                         </div>
                         <div class="comp-cell cell-ai">
                             <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
                             <div class="cell-content">
-                                <p>Deep algorithmic competitor audits, consumer psychology modeling, and AI-driven predictive market roadmaps built for guaranteed ROI.</p>
+                                <h6 class="cell-highlight-text text-success">Predictive Algorithmic Audits &amp; Custom Models</h6>
+                                <p class="cell-desc-text">Deep algorithmic competitor audits, consumer psychology modeling, and AI-driven predictive market roadmaps built for guaranteed ROI.</p>
                                 <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> Data-Backed Custom Strategy</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Row 2: Audience Targeting & Ad Spend -->
-                    <div class="vg-comp-row">
+                    <div class="vg-comp-row is-revealed" data-category="targeting">
                         <div class="comp-cell cell-feature">
                             <div class="feature-icon"><i class="fa-solid fa-crosshairs"></i></div>
                             <div class="feature-meta">
@@ -920,21 +949,23 @@
                         <div class="comp-cell cell-trad">
                             <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
                             <div class="cell-content">
-                                <p>Broad "spray-and-pray" interest targeting that exhausts budgets on irrelevant clicks, bot impressions, and unqualified leads.</p>
+                                <h6 class="cell-highlight-text text-danger">Spray-and-Pray Broad Interest Targeting</h6>
+                                <p class="cell-desc-text">Broad interest targeting that exhausts budgets on irrelevant clicks, bot impressions, and unqualified leads.</p>
                                 <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> Diluted Ad Spend &amp; High CPA</span>
                             </div>
                         </div>
                         <div class="comp-cell cell-ai">
                             <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
                             <div class="cell-content">
-                                <p>High-intent behavioral clustering, AI lookalike modeling, and real-time algorithmic bidding targeting buyers ready to convert.</p>
+                                <h6 class="cell-highlight-text text-success">High-Intent AI Behavioral Clustering</h6>
+                                <p class="cell-desc-text">High-intent behavioral clustering, AI lookalike modeling, and real-time algorithmic bidding targeting buyers ready to convert.</p>
                                 <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> Laser-Targeted Qualified Traffic</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Row 3: Creative Production & Testing -->
-                    <div class="vg-comp-row">
+                    <!-- Row 3: Creative Velocity & Testing -->
+                    <div class="vg-comp-row is-revealed" data-category="speed">
                         <div class="comp-cell cell-feature">
                             <div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
                             <div class="feature-meta">
@@ -945,21 +976,23 @@
                         <div class="comp-cell cell-trad">
                             <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
                             <div class="cell-content">
-                                <p>Design 2–3 static banners that cause rapid ad fatigue; updates take 2–3 weeks of back-and-forth approval meetings.</p>
+                                <h6 class="cell-highlight-text text-danger">2–3 Static Banners with 3-Week Delays</h6>
+                                <p class="cell-desc-text">Design 2–3 static banners that cause rapid ad fatigue; updates take 2–3 weeks of back-and-forth approval meetings.</p>
                                 <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> Creative Fatigue &amp; Slow Iteration</span>
                             </div>
                         </div>
                         <div class="comp-cell cell-ai">
                             <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
                             <div class="cell-content">
-                                <p>Rapid AI multi-variant testing across dozens of hooks, visuals, and copy angles, identifying winning ad combinations within 48 hours.</p>
+                                <h6 class="cell-highlight-text text-success">50+ AI Multi-Variants in 48 Hours</h6>
+                                <p class="cell-desc-text">Rapid AI multi-variant testing across dozens of hooks, visuals, and copy angles, identifying winning ad combinations within 48 hours.</p>
                                 <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> High-Converting Dynamic Assets</span>
                             </div>
                         </div>
                     </div>
 
                     <!-- Row 4: Lead Follow-up & Automation -->
-                    <div class="vg-comp-row">
+                    <div class="vg-comp-row is-revealed" data-category="speed">
                         <div class="comp-cell cell-feature">
                             <div class="feature-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
                             <div class="feature-meta">
@@ -970,96 +1003,50 @@
                         <div class="comp-cell cell-trad">
                             <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
                             <div class="cell-content">
-                                <p>Leads sit in spreadsheets for 24–48 hours until manual follow-up. By then, over 70% of high-intent prospects have moved on to competitors.</p>
+                                <h6 class="cell-highlight-text text-danger">24–48hr Spreadsheet Delay (70% Drop)</h6>
+                                <p class="cell-desc-text">Leads sit in spreadsheets for 24–48 hours until manual follow-up; over 70% of high-intent prospects move to competitors.</p>
                                 <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> 24-48hr Delay • 70% Lead Drop-off</span>
                             </div>
                         </div>
                         <div class="comp-cell cell-ai">
                             <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
                             <div class="cell-content">
-                                <p>Sub-30-second automated sync into CRM, instant WhatsApp Cloud API replies, automated nurture drip, and direct calendar booking 24/7.</p>
+                                <h6 class="cell-highlight-text text-success">Sub-30s Instant WhatsApp &amp; CRM Sync</h6>
+                                <p class="cell-desc-text">Sub-30-second automated sync into CRM, instant WhatsApp Cloud API replies, automated nurture drip, and direct calendar booking 24/7.</p>
                                 <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> &lt; 30s Instant Lead Engagement</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Row 5: Optimization & Spend Efficiency -->
-                    <div class="vg-comp-row">
+                    <!-- Row 5: 24/7 Optimization & Data -->
+                    <div class="vg-comp-row is-revealed" data-category="roi">
                         <div class="comp-cell cell-feature">
                             <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
                             <div class="feature-meta">
-                                <span class="feature-tag">OPTIMIZATION CYCLE</span>
-                                <h5 class="feature-name">Campaign Monitoring &amp; Budget Shift</h5>
+                                <span class="feature-tag">OPTIMIZATION &amp; DATA</span>
+                                <h5 class="feature-name">Campaign Monitoring &amp; Real Transparency</h5>
                             </div>
                         </div>
                         <div class="comp-cell cell-trad">
                             <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
                             <div class="cell-content">
-                                <p>Passive bi-weekly or monthly manual check-ins. Budget continues burning on unprofitable keywords and underperforming campaigns.</p>
-                                <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> Unchecked Ad Spend Wastage</span>
+                                <h6 class="cell-highlight-text text-danger">Passive Monthly Reviews &amp; Vanity PDFs</h6>
+                                <p class="cell-desc-text">Passive bi-weekly check-ins while budget burns on unprofitable keywords, masked by confusing monthly PDF vanity summaries.</p>
+                                <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> Passive Waste • Vanity Metrics</span>
                             </div>
                         </div>
                         <div class="comp-cell cell-ai">
                             <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
                             <div class="cell-content">
-                                <p>Continuous 24/7 autonomous monitoring. Algorithmic budget shifts automatically cut losing ads and funnel capital into highest ROAS channels.</p>
-                                <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> 24/7 Real-Time Budget Optimization</span>
+                                <h6 class="cell-highlight-text text-success">Autonomous 24/7 Shifts &amp; Live GA4</h6>
+                                <p class="cell-desc-text">Continuous 24/7 autonomous monitoring. Algorithmic budget shifts cut losing ads and funnel capital into highest ROAS channels with live dashboards.</p>
+                                <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> 24/7 Bidding &amp; Real-Time ROI</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Row 6: Reporting & Analytics Transparency -->
-                    <div class="vg-comp-row">
-                        <div class="comp-cell cell-feature">
-                            <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
-                            <div class="feature-meta">
-                                <span class="feature-tag">REPORTING &amp; DATA</span>
-                                <h5 class="feature-name">Performance Reporting &amp; Transparency</h5>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-trad">
-                            <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
-                            <div class="cell-content">
-                                <p>Confusing end-of-month PDF summaries stuffed with vanity metrics (clicks, impressions, reach) that mask the lack of actual customer revenue.</p>
-                                <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> Static Vanity PDFs • Zero Clarity</span>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-ai">
-                            <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="cell-content">
-                                <p>100% transparent live GA4 &amp; Looker Studio dashboards tracking cost per acquisition (CPA), qualified leads, and real closed revenue in real time.</p>
-                                <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> 24/7 Live Transparent ROI Dashboard</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 7: Model & Accountability -->
-                    <div class="vg-comp-row">
-                        <div class="comp-cell cell-feature">
-                            <div class="feature-icon"><i class="fa-solid fa-handshake-angle"></i></div>
-                            <div class="feature-meta">
-                                <span class="feature-tag">PARTNERSHIP MODEL</span>
-                                <h5 class="feature-name">Accountability &amp; Business Alignment</h5>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-trad">
-                            <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
-                            <div class="cell-content">
-                                <p>Lock clients into rigid 6–12 month retainers; agency profits whether your business succeeds or not, with zero accountability for sales.</p>
-                                <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> Rigid Retainers • No Outcome Guarantee</span>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-ai">
-                            <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="cell-content">
-                                <p>Dedicated AI Growth Partner model where our KPIs align with your revenue, profit margins, and long-term customer lifetime value (LTV).</p>
-                                <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> 95% Retention • Aligned Incentives</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 8: Ultimate Result -->
-                    <div class="vg-comp-row highlight-row">
+                    <!-- Row 6: Ultimate Result -->
+                    <div class="vg-comp-row highlight-row is-revealed" data-category="roi">
                         <div class="comp-cell cell-feature">
                             <div class="feature-icon"><i class="fa-solid fa-trophy"></i></div>
                             <div class="feature-meta">
@@ -1070,14 +1057,16 @@
                         <div class="comp-cell cell-trad">
                             <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
                             <div class="cell-content">
-                                <p class="outcome-text text-danger">Stagnant pipeline, high customer acquisition costs, unpredictable lead volume, and wasted ad spend.</p>
+                                <h6 class="cell-highlight-text text-danger">Stagnant Pipeline &amp; High Customer CPA</h6>
+                                <p class="cell-desc-text">Stagnant pipeline, unpredictable lead volume, rigid lock-in retainers, and burned ad budget without revenue attribution.</p>
                                 <div class="trad-metric-pill">High CPA • Low ROI</div>
                             </div>
                         </div>
                         <div class="comp-cell cell-ai">
                             <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
                             <div class="cell-content">
-                                <p class="outcome-text text-success">Predictable revenue, automated high-converting funnels, 4.8x–8.6x ROAS, and scalable market domination.</p>
+                                <h6 class="cell-highlight-text text-success">Predictable Compounding Growth &amp; Scalable ROI</h6>
+                                <p class="cell-desc-text">Predictable revenue, automated high-converting funnels, 4.8x–8.6x ROAS, and aligned growth partner incentives.</p>
                                 <div class="ai-metric-pill"><i class="fa-solid fa-arrow-trend-up me-1"></i> 4.8x - 8.6x ROAS • -40% CPL</div>
                             </div>
                         </div>
@@ -1182,55 +1171,51 @@
 
                     var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-                    // 1. Scroll Reveal for Comparison Rows (fast snappy stagger 45ms)
+                    // 1. Interactive Category Filter Buttons
+                    var filterBtns = compSection.querySelectorAll('.vg-comp-filter-btn');
                     var rows = compSection.querySelectorAll('.vg-comp-row');
-                    if (rows.length) {
-                        var rowsTriggered = false;
-                        function revealRows() {
-                            if (rowsTriggered) return;
-                            rowsTriggered = true;
-                            rows.forEach(function (row, idx) {
-                                setTimeout(function () {
-                                    row.classList.add('is-revealed');
-                                }, idx * 45);
-                            });
-                        }
+                    var rowsContainer = document.getElementById('vg-comp-rows-container');
 
-                        if (prefersReduced || !('IntersectionObserver' in window)) {
-                            rows.forEach(function (row) { row.classList.add('is-revealed'); });
-                        } else {
-                            var tableBody = compSection.querySelector('.vg-comp-table-body') || compSection;
-                            var rowObserver = new IntersectionObserver(function (entries, obs) {
-                                entries.forEach(function (entry) {
-                                    if (entry.isIntersecting) {
-                                        revealRows();
-                                        obs.unobserve(entry.target);
-                                    }
-                                });
-                            }, {
-                                root: null,
-                                rootMargin: '150px 0px 80px 0px',
-                                threshold: 0.02
-                            });
-                            rowObserver.observe(tableBody);
+                    filterBtns.forEach(function (btn) {
+                        btn.addEventListener('click', function () {
+                            var filter = this.getAttribute('data-filter');
+                            filterBtns.forEach(function (b) { b.classList.remove('active'); });
+                            this.classList.add('active');
 
-                            // Trigger immediately if already in view
-                            var rect = tableBody.getBoundingClientRect();
-                            if (rect.top < window.innerHeight + 100 && rect.bottom > 0) {
-                                revealRows();
-                                rowObserver.disconnect();
-                            }
-                        }
-
-                        // Fast fallback: ensure rows become visible quickly
-                        setTimeout(function () {
                             rows.forEach(function (row) {
-                                if (!row.classList.contains('is-revealed')) {
-                                    row.classList.add('is-revealed');
+                                var cat = row.getAttribute('data-category');
+                                row.classList.remove('is-animating-in');
+                                if (filter === 'all' || cat === filter) {
+                                    row.classList.remove('is-filtered-out');
+                                    setTimeout(function () {
+                                        row.classList.add('is-animating-in');
+                                    }, 10);
+                                } else {
+                                    row.classList.add('is-filtered-out');
                                 }
                             });
-                        }, 1200);
-                    }
+                        });
+                    });
+
+                    // 2. Interactive View Mode Switcher (Quick Scan vs Deep Dive)
+                    var viewBtns = compSection.querySelectorAll('.vg-view-mode-btn');
+                    viewBtns.forEach(function (btn) {
+                        btn.addEventListener('click', function () {
+                            var mode = this.getAttribute('data-mode');
+                            viewBtns.forEach(function (b) { b.classList.remove('active'); });
+                            this.classList.add('active');
+
+                            if (rowsContainer) {
+                                if (mode === 'quick') {
+                                    rowsContainer.classList.remove('mode-detail');
+                                    rowsContainer.classList.add('mode-quick');
+                                } else {
+                                    rowsContainer.classList.remove('mode-quick');
+                                    rowsContainer.classList.add('mode-detail');
+                                }
+                            }
+                        });
+                    });
 
                     // 2. Efficiency Bars (Traditional 2.5s, VG Falcon 1.2s)
                     var effBoxes = compSection.querySelectorAll('.vg-eff-box');
@@ -3303,7 +3288,7 @@
     <script src="assets/js/jquery.meanmenu.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js?v=11.0"></script>
+    <script src="assets/js/main.js?v=12.0"></script>
     <script>
         // Dedicated Mobile Drawer Menu Accordion & Auto-Close
         document.addEventListener('DOMContentLoaded', function() {
