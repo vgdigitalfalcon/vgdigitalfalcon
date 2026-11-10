@@ -505,6 +505,83 @@ CSS TABLE OF CONTENTS
             });
         });
 
+        //>> Tech Stack Domain Filtering (Click & Hover Interaction) <<//
+        const $techPills = $(".vg-code-discipline-pills .vg-code-pill");
+        const $techCards = $(".vg-square-tech-card");
+        let activeTechDomain = "ai-automation";
+
+        const idePresets = {
+            "ai-automation": {
+                spec: "Autonomous AI Agents • LLM Workflows • Bots",
+                stack: "OpenAI • Python • Node.js • WhatsApp API"
+            },
+            "performance-marketing": {
+                spec: "Multi-Channel Paid Ads • Algorithmic ROAS",
+                stack: "Google Ads • Meta Ads • GA4 • Semrush"
+            },
+            "web-engineering": {
+                spec: "High-Performance Web Apps • Custom E-Commerce",
+                stack: "React • Node.js • Laravel • Cloudflare"
+            },
+            "lead-funnels": {
+                spec: "Omni-Channel Lead Capture • Instant CRM Sync",
+                stack: "WhatsApp API • HubSpot • Zapier • Meta Ads"
+            },
+            "roi-attribution": {
+                spec: "Closed-Loop Revenue Tracking • Predictive LTV",
+                stack: "GA4 • Server-Side CAPI • Python Analytics"
+            }
+        };
+
+        function applyTechDomain(domain) {
+            if (!domain) return;
+            $techCards.each(function() {
+                const cats = ($(this).attr("data-category") || "").split(" ");
+                if (cats.indexOf(domain) !== -1) {
+                    $(this).removeClass("is-dimmed-tech").addClass("is-active-tech");
+                } else {
+                    $(this).removeClass("is-active-tech").addClass("is-dimmed-tech");
+                }
+            });
+
+            const preset = idePresets[domain];
+            if (preset) {
+                const $spec = $("#ide-spec");
+                const $stack = $("#ide-stack");
+                if ($spec.length) $spec.text('"' + preset.spec + '"');
+                if ($stack.length) $stack.text('"' + preset.stack + '"');
+            }
+        }
+
+        if ($techPills.length && $techCards.length) {
+            // Apply default active domain on page load
+            applyTechDomain(activeTechDomain);
+
+            // Hover preview: temporarily illuminate domain tech stack
+            $techPills.on("mouseenter", function() {
+                const domain = $(this).attr("data-domain");
+                if (domain) {
+                    $techPills.removeClass("hover-preview");
+                    $(this).addClass("hover-preview");
+                    applyTechDomain(domain);
+                }
+            }).on("mouseleave", function() {
+                $techPills.removeClass("hover-preview");
+                applyTechDomain(activeTechDomain);
+            });
+
+            // Click: permanently activate selected domain tab
+            $techPills.on("click", function() {
+                const domain = $(this).attr("data-domain");
+                if (domain) {
+                    activeTechDomain = domain;
+                    $techPills.removeClass("active");
+                    $(this).addClass("active");
+                    applyTechDomain(activeTechDomain);
+                }
+            });
+        }
+
         //>> Magnetic CTA Buttons <<//
         $(".vg-btn-primary, .vg-btn-glass, .vg-btn-whatsapp").addClass("vg-btn-magnetic").on("mousemove", function(e) {
             const rect = this.getBoundingClientRect();

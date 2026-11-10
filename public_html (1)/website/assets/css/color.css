@@ -3777,15 +3777,25 @@ body {
   letter-spacing: -0.1px;
   backdrop-filter: blur(8px);
   transition: all 0.28s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: default;
+  cursor: pointer;
+  user-select: none;
 }
 
-.vg-code-pill:hover {
-  background: rgba(147, 51, 234, 0.16);
-  border-color: rgba(192, 132, 252, 0.6);
+.vg-code-pill:hover,
+.vg-code-pill.hover-preview {
+  background: rgba(147, 51, 234, 0.25);
+  border-color: rgba(192, 132, 252, 0.8);
   color: #ffffff;
   transform: translateY(-2px);
-  box-shadow: 0 4px 18px rgba(168, 85, 247, 0.25);
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.35);
+}
+
+.vg-code-pill.active {
+  background: var(--vg-gradient-primary) !important;
+  border-color: #c084fc !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 25px rgba(147, 51, 234, 0.6), 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-2px);
 }
 
 /* --------------------------------------------------------------------------
@@ -4053,7 +4063,7 @@ body {
   overflow: hidden;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .vg-square-tech-card::before {
@@ -4077,6 +4087,47 @@ body {
 
 .vg-square-tech-card:hover::before {
   opacity: 1;
+}
+
+/* Domain Filter Active / Highlighted State */
+.vg-square-tech-card.is-active-tech {
+  opacity: 1 !important;
+  transform: translateY(-4px) scale(1.05) !important;
+  border-color: rgba(192, 132, 252, 0.85) !important;
+  background: rgba(28, 14, 58, 0.95) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 24px rgba(168, 85, 247, 0.4) !important;
+  z-index: 3;
+}
+
+.vg-square-tech-card.is-active-tech::before {
+  opacity: 1 !important;
+}
+
+.vg-square-tech-card.is-active-tech .tech-icon-wrap {
+  transform: scale(1.18);
+  filter: drop-shadow(0 0 12px currentColor);
+}
+
+.vg-square-tech-card.is-active-tech .tech-card-name {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+}
+
+/* Domain Filter Dimmed State */
+.vg-square-tech-card.is-dimmed-tech {
+  opacity: 0.2 !important;
+  transform: scale(0.96) !important;
+  border-color: rgba(255, 255, 255, 0.05) !important;
+  background: rgba(10, 4, 22, 0.45) !important;
+  box-shadow: none !important;
+  filter: grayscale(85%) contrast(0.85) !important;
+}
+
+.vg-square-tech-card.is-dimmed-tech:hover {
+  opacity: 0.9 !important;
+  filter: none !important;
+  transform: scale(1.03) !important;
+  border-color: rgba(168, 85, 247, 0.5) !important;
 }
 
 .tech-icon-wrap {

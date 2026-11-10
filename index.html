@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     
     <!--<< Custom Theme & Color CSS >>-->
-    <link rel="stylesheet" href="assets/css/main.css?v=8.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=8.0">
+    <link rel="stylesheet" href="assets/css/main.css?v=9.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=9.0">
 
     <!-- Resource Hints for High-Speed Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -571,11 +571,11 @@
 
                 <!-- Skill & Discipline Pills (Matching Reference Theme) -->
                 <div class="vg-code-discipline-pills mb-5">
-                    <span class="vg-code-pill">AI &amp; GenAI Automation</span>
-                    <span class="vg-code-pill">Performance Marketing</span>
-                    <span class="vg-code-pill">Full-Stack Web Engineering</span>
-                    <span class="vg-code-pill">Omni-Channel Lead Funnels</span>
-                    <span class="vg-code-pill">ROI Data Attribution</span>
+                    <span class="vg-code-pill active" data-domain="ai-automation"><i class="fa-solid fa-sparkles me-1 text-warning"></i> AI &amp; GenAI Automation</span>
+                    <span class="vg-code-pill" data-domain="performance-marketing"><i class="fa-solid fa-chart-line me-1"></i> Performance Marketing</span>
+                    <span class="vg-code-pill" data-domain="web-engineering"><i class="fa-solid fa-code me-1"></i> Full-Stack Web Engineering</span>
+                    <span class="vg-code-pill" data-domain="lead-funnels"><i class="fa-solid fa-filter me-1"></i> Omni-Channel Lead Funnels</span>
+                    <span class="vg-code-pill" data-domain="roi-attribution"><i class="fa-solid fa-coins me-1"></i> ROI Data Attribution</span>
                 </div>
             </div>
 
@@ -600,8 +600,8 @@
                             <pre><code><span class="c-comment"># AI-Powered Digital Marketing &amp; Growth Engine</span>
 
 <span class="c-kw">class</span> <span class="c-class">VGDigitalFalcon</span>(<span class="c-parent">AIGrowthPartner</span>):
-    <span class="c-prop">specialization</span> = <span class="c-str">"AI Marketing • Performance Ads • Automation"</span>
-    <span class="c-prop">core_stack</span>     = <span class="c-str">"React • Python • Node.js • Meta &amp; Google Ads"</span>
+    <span class="c-prop">specialization</span> = <span class="c-str" id="ide-spec">"AI Marketing • Performance Ads • Automation"</span>
+    <span class="c-prop">core_stack</span>     = <span class="c-str" id="ide-stack">"React • Python • Node.js • Meta &amp; Google Ads"</span>
     <span class="c-prop">avg_roas</span>       = <span class="c-str">"4.8x"</span>  <span class="c-comment"># Proven client scaling</span>
     <span class="c-prop">lead_latency</span>   = <span class="c-str">"&lt; 30s"</span>  <span class="c-comment"># Automated CRM sync</span>
     <span class="c-prop">client_retention</span> = <span class="c-str">"95%"</span>
@@ -644,67 +644,67 @@
 
                         <!-- 4x4 Tech Stack Square Icon Grid (16 Core Tools Matching Reference) -->
                         <div class="vg-tech-square-grid">
-                            <div class="vg-square-tech-card" title="Python Data Science &amp; AI">
+                            <div class="vg-square-tech-card" data-category="ai-automation web-engineering roi-attribution" title="Python Data Science &amp; AI">
                                 <div class="tech-icon-wrap" style="color: #38bdf8;"><i class="fa-brands fa-python"></i></div>
                                 <span class="tech-card-name">Python</span>
                             </div>
-                            <div class="vg-square-tech-card" title="React.js Dynamic UI">
+                            <div class="vg-square-tech-card" data-category="web-engineering" title="React.js Dynamic UI">
                                 <div class="tech-icon-wrap" style="color: #61dafb;"><i class="fa-brands fa-react"></i></div>
                                 <span class="tech-card-name">React</span>
                             </div>
-                            <div class="vg-square-tech-card" title="Node.js High Concurrency Backend">
+                            <div class="vg-square-tech-card" data-category="ai-automation web-engineering" title="Node.js High Concurrency Backend">
                                 <div class="tech-icon-wrap" style="color: #22c55e;"><i class="fa-brands fa-node-js"></i></div>
                                 <span class="tech-card-name">Node.js</span>
                             </div>
-                            <div class="vg-square-tech-card" title="OpenAI LLMs &amp; Autonomous Agents">
+                            <div class="vg-square-tech-card" data-category="ai-automation" title="OpenAI LLMs &amp; Autonomous Agents">
                                 <div class="tech-icon-wrap" style="color: #a855f7;"><i class="fa-solid fa-brain-circuit"></i></div>
                                 <span class="tech-card-name">OpenAI</span>
                             </div>
-                            <div class="vg-square-tech-card" title="Google Ads &amp; Performance Max">
+                            <div class="vg-square-tech-card" data-category="performance-marketing lead-funnels roi-attribution" title="Google Ads &amp; Performance Max">
                                 <div class="tech-icon-wrap" style="color: #4285f4;"><i class="fa-brands fa-google"></i></div>
                                 <span class="tech-card-name">Google Ads</span>
                             </div>
-                            <div class="vg-square-tech-card" title="Meta Ads (FB &amp; Instagram)">
+                            <div class="vg-square-tech-card" data-category="performance-marketing lead-funnels roi-attribution" title="Meta Ads (FB &amp; Instagram)">
                                 <div class="tech-icon-wrap" style="color: #0668e1;"><i class="fa-brands fa-meta"></i></div>
                                 <span class="tech-card-name">Meta Ads</span>
                             </div>
-                            <div class="vg-square-tech-card" title="WhatsApp Cloud API Automation">
+                            <div class="vg-square-tech-card" data-category="ai-automation lead-funnels" title="WhatsApp Cloud API Automation">
                                 <div class="tech-icon-wrap" style="color: #25d366;"><i class="fa-brands fa-whatsapp"></i></div>
                                 <span class="tech-card-name">WhatsApp</span>
                             </div>
-                            <div class="vg-square-tech-card" title="Shopify Plus DTC E-Commerce">
+                            <div class="vg-square-tech-card" data-category="performance-marketing web-engineering lead-funnels" title="Shopify Plus DTC E-Commerce">
                                 <div class="tech-icon-wrap" style="color: #95bf47;"><i class="fa-brands fa-shopify"></i></div>
                                 <span class="tech-card-name">Shopify</span>
                             </div>
-                            <div class="vg-square-tech-card" title="WordPress SEO-First CMS">
+                            <div class="vg-square-tech-card" data-category="web-engineering lead-funnels" title="WordPress SEO-First CMS">
                                 <div class="tech-icon-wrap" style="color: #38bdf8;"><i class="fa-brands fa-wordpress"></i></div>
                                 <span class="tech-card-name">WordPress</span>
                             </div>
-                            <div class="vg-square-tech-card" title="PHP 8 &amp; Laravel Enterprise">
+                            <div class="vg-square-tech-card" data-category="web-engineering" title="PHP 8 &amp; Laravel Enterprise">
                                 <div class="tech-icon-wrap" style="color: #ef4444;"><i class="fa-brands fa-laravel"></i></div>
                                 <span class="tech-card-name">Laravel</span>
                             </div>
-                            <div class="vg-square-tech-card" title="HubSpot CRM Lead Tracking">
+                            <div class="vg-square-tech-card" data-category="lead-funnels roi-attribution ai-automation" title="HubSpot CRM Lead Tracking">
                                 <div class="tech-icon-wrap" style="color: #ff7a59;"><i class="fa-brands fa-hubspot"></i></div>
                                 <span class="tech-card-name">HubSpot</span>
                             </div>
-                            <div class="vg-square-tech-card" title="Zapier &amp; Make Automation">
+                            <div class="vg-square-tech-card" data-category="ai-automation lead-funnels" title="Zapier &amp; Make Automation">
                                 <div class="tech-icon-wrap" style="color: #ff4a00;"><i class="fa-solid fa-bolt"></i></div>
                                 <span class="tech-card-name">Zapier</span>
                             </div>
-                            <div class="vg-square-tech-card" title="Google Analytics 4 &amp; GTM">
+                            <div class="vg-square-tech-card" data-category="performance-marketing roi-attribution" title="Google Analytics 4 &amp; GTM">
                                 <div class="tech-icon-wrap" style="color: #f59e0b;"><i class="fa-solid fa-chart-line-up"></i></div>
                                 <span class="tech-card-name">GA4</span>
                             </div>
-                            <div class="vg-square-tech-card" title="Semrush Competitive SEO">
+                            <div class="vg-square-tech-card" data-category="performance-marketing roi-attribution" title="Semrush Competitive SEO">
                                 <div class="tech-icon-wrap" style="color: #ec4899;"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
                                 <span class="tech-card-name">Semrush</span>
                             </div>
-                            <div class="vg-square-tech-card" title="WooCommerce E-Commerce Engine">
+                            <div class="vg-square-tech-card" data-category="web-engineering lead-funnels" title="WooCommerce E-Commerce Engine">
                                 <div class="tech-icon-wrap" style="color: #9b51e0;"><i class="fa-solid fa-cart-shopping-fast"></i></div>
                                 <span class="tech-card-name">WooCommerce</span>
                             </div>
-                            <div class="vg-square-tech-card" title="Cloudflare CDN &amp; Edge Security">
+                            <div class="vg-square-tech-card" data-category="web-engineering" title="Cloudflare CDN &amp; Edge Security">
                                 <div class="tech-icon-wrap" style="color: #c084fc;"><i class="fa-solid fa-shield-halved"></i></div>
                                 <span class="tech-card-name">Cloudflare</span>
                             </div>
@@ -3363,7 +3363,7 @@
     <script src="assets/js/jquery.meanmenu.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js?v=8.0"></script>
+    <script src="assets/js/main.js?v=9.0"></script>
     <script>
         // Dedicated Mobile Drawer Menu Accordion & Auto-Close
         document.addEventListener('DOMContentLoaded', function() {
