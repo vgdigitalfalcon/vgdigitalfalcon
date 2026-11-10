@@ -6552,3 +6552,386 @@ body {
 .fa-flask-vial:before { content: "\f0c3" !important; }
 .fa-envelope-circle-check:before { content: "\f0e0" !important; }
 
+/* ==========================================================================
+   MASTER RESPONSIVE ADAPTABILITY ENGINE (DESKTOP & MOBILE OPTIMIZATIONS)
+   ========================================================================== */
+
+/* 1. Global Viewport & Boundary Safeguards */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  -webkit-overflow-scrolling: touch;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fluid Responsive Typography */
+.vg-responsive-head {
+  font-size: 38px;
+  line-height: 1.25;
+}
+
+/* 2. Desktop Specific Optimizations (>= 992px & >= 1200px) */
+@media (min-width: 992px) {
+  /* Dual Battle Arena: Always side-by-side with central VS reactor */
+  .vg-battle-arena-wrap {
+    display: grid !important;
+    grid-template-columns: 1fr 68px 1fr !important;
+    gap: 16px !important;
+    align-items: stretch !important;
+  }
+  .vg-battle-monolith {
+    display: block !important;
+  }
+  .vg-battle-reactor {
+    display: flex !important;
+  }
+  .vg-arena-mobile-switcher {
+    display: none !important;
+  }
+
+  /* Hero Desktop Layout */
+  .vg-hero-grid {
+    display: grid !important;
+    grid-template-columns: 1.15fr 0.85fr !important;
+    gap: 40px !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+  .vg-hero-actions {
+    justify-content: flex-start !important;
+  }
+
+  /* Testimonials Desktop */
+  .vg-testi-card {
+    flex: 0 0 380px !important;
+    max-width: 380px !important;
+  }
+  .vg-testi-nav-btn {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .vg-nav-menu {
+    display: block !important;
+  }
+  .sidebar__toggle {
+    display: none !important;
+  }
+}
+
+/* 3. Tablet Fluidity (768px to 991px) */
+@media (max-width: 991px) {
+  .vg-responsive-head {
+    font-size: 30px !important;
+    line-height: 1.3 !important;
+  }
+  .vg-section-head {
+    margin-bottom: 28px !important;
+  }
+  .vg-hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 36px !important;
+  }
+  .vg-hero-desc {
+    margin: 0 auto 20px !important;
+  }
+  .vg-hero-actions {
+    justify-content: center !important;
+  }
+
+  /* Battle Arena on Tablet */
+  .vg-battle-arena-wrap {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .vg-battle-reactor {
+    display: none !important;
+  }
+  .vg-arena-mobile-switcher {
+    display: flex !important;
+    margin-bottom: 16px !important;
+  }
+  .vg-battle-monolith {
+    display: none !important;
+  }
+  .vg-battle-monolith.active-monolith {
+    display: block !important;
+    animation: vgFadeInScale 0.28s ease;
+  }
+
+  /* ROI Calculator on Tablet */
+  .vg-roi-results-grid {
+    gap: 14px !important;
+  }
+  .vg-roi-result-val {
+    font-size: 26px !important;
+  }
+}
+
+/* 4. Mobile Adaptability (<= 767px) */
+@media (max-width: 767px) {
+  .vg-responsive-head {
+    font-size: 26px !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Challenges Section 1-Column Below 640px */
+  .vg-challenges-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .vg-challenge-card {
+    min-height: auto !important;
+    padding: 18px 16px !important;
+  }
+  .vg-solution-bullet {
+    font-size: 11.5px !important;
+    line-height: 1.45 !important;
+    padding: 10px 12px !important;
+  }
+
+  /* Testimonials Spotlight Mobile Adaptation */
+  .vg-testi-spotlight-wrap {
+    padding: 6px 0 !important;
+    margin-top: 14px !important;
+  }
+  .vg-testi-viewport {
+    padding: 14px 0 12px !important;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%) !important;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 3%, #000 97%, transparent 100%) !important;
+  }
+  .vg-testi-card {
+    flex: 0 0 calc(100vw - 44px) !important;
+    max-width: 330px !important;
+    transform: scale(0.96) !important;
+    opacity: 0.7 !important;
+    padding: 0 2px !important;
+  }
+  .vg-testi-card.is-active {
+    transform: scale(1.02) translateY(-2px) !important;
+    opacity: 1 !important;
+  }
+  .vg-testi-card-inner {
+    padding: 20px 18px !important;
+  }
+  .vg-testi-text {
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+  }
+  .vg-testi-nav-btn {
+    display: none !important;
+  }
+  .vg-google-trust-bar .trust-badge {
+    padding: 6px 14px !important;
+    font-size: 11.5px !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Architecture & Tech Stack Mobile */
+  .vg-code-discipline-pills {
+    gap: 6px !important;
+  }
+  .vg-code-pill {
+    padding: 6px 12px !important;
+    font-size: 11.5px !important;
+  }
+  .vg-ide-terminal-card {
+    padding: 16px 14px 18px !important;
+    border-radius: 16px !important;
+  }
+  .vg-ide-code-body {
+    padding: 12px 10px !important;
+  }
+  .vg-ide-code-body pre {
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+    overflow-x: auto !important;
+  }
+  .vg-tech-square-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+  .vg-tech-square-item {
+    padding: 12px 6px !important;
+  }
+  .vg-tech-square-item img,
+  .vg-tech-square-item svg {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .vg-tech-name {
+    font-size: 10px !important;
+  }
+  .kpi-value {
+    font-size: 24px !important;
+  }
+  .kpi-top-label {
+    font-size: 9px !important;
+  }
+  .kpi-sub-label {
+    font-size: 8px !important;
+  }
+
+  /* ROI Calculator Mobile Grid */
+  .vg-roi-results-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .vg-roi-result-card {
+    padding: 16px 14px !important;
+  }
+  .vg-roi-result-val {
+    font-size: 28px !important;
+  }
+  .vg-roi-calculator-box {
+    padding: 24px 16px !important;
+    border-radius: 20px !important;
+  }
+  .vg-roi-budget-display .budget-amount {
+    font-size: 30px !important;
+  }
+
+  /* Blog / Insights Mobile Grid */
+  .vg-blog-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+  .vg-blog-card-body {
+    padding: 18px 16px !important;
+  }
+
+  /* Floating Mascot & WhatsApp Buttons */
+  .vg-floating-whatsapp {
+    bottom: 16px !important;
+    right: 16px !important;
+    width: 48px !important;
+    height: 48px !important;
+    font-size: 22px !important;
+    z-index: 99999 !important;
+  }
+  .vg-global-mascot-wrap {
+    bottom: 16px !important;
+    left: 16px !important;
+    z-index: 99990 !important;
+  }
+  .vg-mascot-falcon {
+    width: 44px !important;
+    height: 44px !important;
+  }
+  .vg-mascot-bubble {
+    display: none !important;
+  }
+}
+
+/* 5. Small Phone Screens (<= 480px) */
+@media (max-width: 480px) {
+  .vg-responsive-head {
+    font-size: 22px !important;
+  }
+  .vg-hero-title {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+  }
+  .vg-hero-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+  .vg-hero-actions .vg-btn-primary,
+  .vg-hero-actions .vg-btn-glass {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 11px 18px !important;
+  }
+  .vg-engine-stage {
+    width: 240px !important;
+    height: 240px !important;
+  }
+  .vg-engine-core {
+    width: 72px !important;
+    height: 72px !important;
+  }
+  .core-title {
+    font-size: 14px !important;
+  }
+  .vg-node {
+    padding: 2.5px 6px !important;
+    font-size: 8.5px !important;
+  }
+
+  /* Tech stack 2 columns on small screens */
+  .vg-tech-square-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+  .vg-ide-actions {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .vg-ide-actions .vg-btn-primary,
+  .vg-ide-actions .vg-btn-glass {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  /* Dual Battle Arena Small Mobile */
+  .vg-mobile-switch-btn {
+    font-size: 11px !important;
+    padding: 7px 8px !important;
+  }
+  .monolith-inner {
+    padding: 14px 12px !important;
+  }
+  .vg-battle-chip {
+    padding: 7px 8px !important;
+  }
+  .chip-trad-name, .chip-ai-name {
+    font-size: 11.5px !important;
+  }
+
+  /* Falcon Agents 1 column on smallest screens */
+  .vg-agents-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  /* Trust Grid */
+  .vg-trust-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  .vg-trust-stat-num {
+    font-size: 26px !important;
+  }
+
+  /* CTA Banner actions full width */
+  .vg-cta-banner {
+    padding: 24px 16px !important;
+  }
+  .vg-cta-text h3 {
+    font-size: 22px !important;
+  }
+  .vg-cta-actions {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+  .vg-cta-actions a,
+  .vg-cta-actions button {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
