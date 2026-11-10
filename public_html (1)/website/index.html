@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     
     <!--<< Custom Theme & Color CSS >>-->
-    <link rel="stylesheet" href="assets/css/main.css?v=12.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=12.0">
+    <link rel="stylesheet" href="assets/css/main.css?v=13.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=13.0">
 
     <!-- Resource Hints for High-Speed Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -838,283 +838,288 @@
                     <span class="comp-stat-pill"><i class="fa-solid fa-shield-check text-primary me-2"></i><strong class="stat-count" data-stat-type="percent" data-val="100">100%</strong> Live Data Transparency</span>
                 </div>
 
-                <!-- Interactive Controls Bar: Category Filter Pills + View Mode Toggle -->
-                <div class="vg-comp-controls-bar">
-                    <div class="vg-comp-pills" id="vg-comp-filter-group">
-                        <button type="button" class="vg-comp-filter-btn active" data-filter="all">
-                            <i class="fa-solid fa-layer-group me-1"></i> All 6 Pillars
-                        </button>
-                        <button type="button" class="vg-comp-filter-btn" data-filter="targeting">
-                            <i class="fa-solid fa-crosshairs me-1"></i> Targeting &amp; Strategy
-                        </button>
-                        <button type="button" class="vg-comp-filter-btn" data-filter="speed">
-                            <i class="fa-solid fa-bolt-lightning me-1"></i> Speed &amp; Creatives
-                        </button>
-                        <button type="button" class="vg-comp-filter-btn" data-filter="roi">
-                            <i class="fa-solid fa-chart-pie me-1"></i> Reporting &amp; ROI
-                        </button>
+                <!-- Interactive Dimension Filter Deck -->
+                <div class="vg-arena-filter-deck">
+                    <button type="button" class="vg-arena-tab-btn active" data-filter="all">
+                        <i class="fa-solid fa-layer-group me-1"></i> All 5 Dimensions
+                    </button>
+                    <button type="button" class="vg-arena-tab-btn" data-filter="strategy">
+                        <i class="fa-solid fa-compass-drafting me-1"></i> Strategy &amp; Auditing
+                    </button>
+                    <button type="button" class="vg-arena-tab-btn" data-filter="targeting">
+                        <i class="fa-solid fa-crosshairs me-1"></i> Targeting Precision
+                    </button>
+                    <button type="button" class="vg-arena-tab-btn" data-filter="creatives">
+                        <i class="fa-solid fa-palette me-1"></i> Creative Velocity
+                    </button>
+                    <button type="button" class="vg-arena-tab-btn" data-filter="leads">
+                        <i class="fa-solid fa-bolt-lightning me-1"></i> Lead Capture Speed
+                    </button>
+                    <button type="button" class="vg-arena-tab-btn" data-filter="roi">
+                        <i class="fa-solid fa-sliders me-1"></i> Optimization &amp; ROI
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Competitor Switcher -->
+            <div class="vg-arena-mobile-switcher">
+                <button type="button" class="vg-mobile-switch-btn" data-target="trad">
+                    <i class="fa-solid fa-triangle-exclamation me-1"></i> Traditional Agency
+                </button>
+                <button type="button" class="vg-mobile-switch-btn active" data-target="ai">
+                    <i class="fa-solid fa-crown me-1 text-warning"></i> VG Falcon AI Engine
+                </button>
+            </div>
+
+            <!-- Dual Battle Arena: Traditional VS VG Digital Falcon AI -->
+            <div class="vg-battle-arena-wrap wow fadeInUp" data-wow-delay=".2s">
+                <!-- Left Monolith: Traditional Marketing Agencies (Outdated Model) -->
+                <div class="vg-battle-monolith monolith-trad" id="monolith-trad">
+                    <div class="monolith-inner">
+                        <div class="monolith-head">
+                            <div class="monolith-badge-row">
+                                <span class="monolith-status-tag tag-trad">
+                                    <i class="fa-solid fa-triangle-exclamation me-1"></i> Outdated Model
+                                </span>
+                                <div class="monolith-meter meter-trad">
+                                    <span class="meter-text">Efficiency: <strong class="meter-val trad-meter-val">0%</strong></span>
+                                    <div class="meter-track">
+                                        <div class="meter-fill trad-meter-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="monolith-title text-white">Traditional Marketing Agencies</h3>
+                            <p class="monolith-subtitle">Manual Guesswork • Vanity PDF Reports • Slow Retainers</p>
+                        </div>
+
+                        <!-- Traditional Battle Chips -->
+                        <div class="monolith-chips-list">
+                            <!-- Chip 1: Strategy -->
+                            <div class="vg-battle-chip" data-pair="strategy" data-dim="strategy">
+                                <div class="chip-status-icon status-x">
+                                    <i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                                <div class="chip-content">
+                                    <span class="chip-pillar-tag">Strategy &amp; Auditing</span>
+                                    <h4 class="chip-title">Subjective Guesswork &amp; Generic Templates</h4>
+                                    <p class="chip-desc">Rely on subjective assumptions, generic templates, and copy-pasted competitor tactics without verifying hard audience data.</p>
+                                    <span class="chip-pill-tag tag-danger"><i class="fa-solid fa-arrow-down-left"></i> High Guesswork &amp; Wasted Spend</span>
+                                </div>
+                            </div>
+
+                            <!-- Chip 2: Targeting -->
+                            <div class="vg-battle-chip" data-pair="targeting" data-dim="targeting">
+                                <div class="chip-status-icon status-x">
+                                    <i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                                <div class="chip-content">
+                                    <span class="chip-pillar-tag">Targeting Precision</span>
+                                    <h4 class="chip-title">Spray-and-Pray Broad Interest Targeting</h4>
+                                    <p class="chip-desc">Broad interest targeting that exhausts budgets on irrelevant clicks, bot impressions, and unqualified leads.</p>
+                                    <span class="chip-pill-tag tag-danger"><i class="fa-solid fa-arrow-down-left"></i> Diluted Ad Spend &amp; High CPA</span>
+                                </div>
+                            </div>
+
+                            <!-- Chip 3: Creatives -->
+                            <div class="vg-battle-chip" data-pair="creatives" data-dim="creatives">
+                                <div class="chip-status-icon status-x">
+                                    <i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                                <div class="chip-content">
+                                    <span class="chip-pillar-tag">Creative Velocity</span>
+                                    <h4 class="chip-title">2–3 Static Banners with 3-Week Delays</h4>
+                                    <p class="chip-desc">Design 2–3 static banners that cause rapid ad fatigue; updates take 2–3 weeks of back-and-forth approval meetings.</p>
+                                    <span class="chip-pill-tag tag-danger"><i class="fa-solid fa-arrow-down-left"></i> Creative Fatigue &amp; Slow Iteration</span>
+                                </div>
+                            </div>
+
+                            <!-- Chip 4: Leads -->
+                            <div class="vg-battle-chip" data-pair="leads" data-dim="leads">
+                                <div class="chip-status-icon status-x">
+                                    <i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                                <div class="chip-content">
+                                    <span class="chip-pillar-tag">Lead Capture Speed</span>
+                                    <h4 class="chip-title">24–48hr Spreadsheet Delay (70% Drop)</h4>
+                                    <p class="chip-desc">Leads sit in spreadsheets for 24–48 hours until manual follow-up; over 70% of high-intent prospects move to competitors.</p>
+                                    <span class="chip-pill-tag tag-danger"><i class="fa-solid fa-arrow-down-left"></i> 24-48hr Delay • 70% Lead Drop-off</span>
+                                </div>
+                            </div>
+
+                            <!-- Chip 5: ROI -->
+                            <div class="vg-battle-chip" data-pair="roi" data-dim="roi">
+                                <div class="chip-status-icon status-x">
+                                    <i class="fa-solid fa-circle-xmark"></i>
+                                </div>
+                                <div class="chip-content">
+                                    <span class="chip-pillar-tag">Optimization &amp; Data</span>
+                                    <h4 class="chip-title">Passive Monthly Reviews &amp; Vanity PDFs</h4>
+                                    <p class="chip-desc">Passive bi-weekly check-ins while budget burns on unprofitable keywords, masked by confusing monthly PDF vanity summaries.</p>
+                                    <span class="chip-pill-tag tag-danger"><i class="fa-solid fa-arrow-down-left"></i> Passive Waste • Vanity Metrics</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="monolith-footer footer-trad">
+                            <i class="fa-solid fa-arrow-trend-down me-2 text-danger"></i> Stagnant Pipeline, Low Accountability &amp; Unpredictable CPA
+                        </div>
                     </div>
-                    <div class="vg-comp-view-toggle">
-                        <span class="toggle-label"><i class="fa-solid fa-sliders me-1"></i> View:</span>
-                        <button type="button" class="vg-view-mode-btn active" data-mode="quick" id="vg-view-quick" title="Compact view">
-                            <i class="fa-solid fa-bolt"></i> Quick Scan
-                        </button>
-                        <button type="button" class="vg-view-mode-btn" data-mode="detail" id="vg-view-detail" title="Detailed deep dive">
-                            <i class="fa-solid fa-circle-info"></i> Deep Dive
-                        </button>
+                </div>
+
+                <!-- Central Cybernetic VS Energy Reactor -->
+                <div class="vg-battle-reactor">
+                    <div class="reactor-core">
+                        <div class="reactor-ring ring-outer"></div>
+                        <div class="reactor-ring ring-middle"></div>
+                        <div class="reactor-pulse-orb">
+                            <span class="reactor-vs-text">VS</span>
+                        </div>
+                    </div>
+                    <div class="reactor-label">
+                        <span class="reactor-dot"></span>
+                        <span>LIVE MATRIX</span>
+                    </div>
+                </div>
+
+                <!-- Right Monolith: VG Digital Falcon AI (Elevated Winner) -->
+                <div class="vg-battle-monolith monolith-ai active-monolith" id="monolith-ai">
+                    <div class="monolith-winner-pill">
+                        <i class="fa-solid fa-crown me-1 text-warning"></i> AUTONOMOUS GROWTH WINNER
+                    </div>
+                    <div class="monolith-inner">
+                        <div class="monolith-head">
+                            <div class="monolith-badge-row">
+                                <span class="monolith-status-tag tag-ai">
+                                    <i class="fa-solid fa-sparkles me-1 text-warning"></i> AI Growth Partner
+                                </span>
+                                <div class="monolith-meter meter-ai">
+                                    <span class="meter-text">Efficiency: <strong class="meter-val ai-meter-val">0%</strong></span>
+                                    <div class="meter-track">
+                                        <div class="meter-fill ai-meter-fill" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3 class="monolith-title text-white">VG Digital Falcon <span class="ai-glow-tag">AI ENGINE</span></h3>
+                            <p class="monolith-subtitle">Autonomous Pipelines • Live GA4 Dashboards • Real Revenue</p>
+                        </div>
+
+                        <!-- AI Battle Chips -->
+                        <div class="monolith-chips-list">
+                            <!-- Chip 1: Strategy -->
+                            <div class="vg-battle-chip" data-pair="strategy" data-dim="strategy">
+                                <div class="chip-status-icon status-check">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <div class="chip-content">
+                                    <span class="chip-pillar-tag">Strategy &amp; Auditing</span>
+                                    <h4 class="chip-title">Predictive Algorithmic Audits &amp; Custom Models</h4>
+                                    <p class="chip-desc">Deep algorithmic competitor audits, consumer psychology modeling, and AI-driven predictive market roadmaps built for guaranteed ROI.</p>
+                                    <span class="chip-pill-tag tag-success"><i class="fa-solid fa-sparkles"></i> Data-Backed Custom Strategy</span>
+                                </div>
+                            </div>
+
+                            <!-- Chip 2: Targeting -->
+                            <div class="vg-battle-chip" data-pair="targeting" data-dim="targeting">
+                                <div class="chip-status-icon status-check">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <div class="chip-content">
+                                    <span class="chip-pillar-tag">Targeting Precision</span>
+                                    <h4 class="chip-title">High-Intent AI Behavioral Clustering</h4>
+                                    <p class="chip-desc">High-intent behavioral clustering, AI lookalike modeling, and real-time algorithmic bidding targeting buyers ready to convert.</p>
+                                    <span class="chip-pill-tag tag-success"><i class="fa-solid fa-sparkles"></i> Laser-Targeted Qualified Traffic</span>
+                                </div>
+                            </div>
+
+                            <!-- Chip 3: Creatives -->
+                            <div class="vg-battle-chip" data-pair="creatives" data-dim="creatives">
+                                <div class="chip-status-icon status-check">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <div class="chip-content">
+                                    <span class="chip-pillar-tag">Creative Velocity</span>
+                                    <h4 class="chip-title">50+ AI Multi-Variants in 48 Hours</h4>
+                                    <p class="chip-desc">Rapid AI multi-variant testing across dozens of hooks, visuals, and copy angles, identifying winning ad combinations within 48 hours.</p>
+                                    <span class="chip-pill-tag tag-success"><i class="fa-solid fa-sparkles"></i> High-Converting Dynamic Assets</span>
+                                </div>
+                            </div>
+
+                            <!-- Chip 4: Leads -->
+                            <div class="vg-battle-chip" data-pair="leads" data-dim="leads">
+                                <div class="chip-status-icon status-check">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <div class="chip-content">
+                                    <span class="chip-pillar-tag">Lead Capture Speed</span>
+                                    <h4 class="chip-title">Sub-30s Instant WhatsApp &amp; CRM Sync</h4>
+                                    <p class="chip-desc">Sub-30-second automated sync into CRM, instant WhatsApp Cloud API replies, automated nurture drip, and direct calendar booking 24/7.</p>
+                                    <span class="chip-pill-tag tag-success"><i class="fa-solid fa-sparkles"></i> &lt; 30s Instant Lead Engagement</span>
+                                </div>
+                            </div>
+
+                            <!-- Chip 5: ROI -->
+                            <div class="vg-battle-chip" data-pair="roi" data-dim="roi">
+                                <div class="chip-status-icon status-check">
+                                    <i class="fa-solid fa-circle-check"></i>
+                                </div>
+                                <div class="chip-content">
+                                    <span class="chip-pillar-tag">Optimization &amp; Data</span>
+                                    <h4 class="chip-title">Autonomous 24/7 Shifts &amp; Live GA4</h4>
+                                    <p class="chip-desc">Continuous 24/7 autonomous monitoring. Algorithmic budget shifts cut losing ads and funnel capital into highest ROAS channels with live dashboards.</p>
+                                    <span class="chip-pill-tag tag-success"><i class="fa-solid fa-sparkles"></i> 24/7 Bidding &amp; Real-Time ROI</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="monolith-footer footer-ai">
+                            <i class="fa-solid fa-arrow-trend-up me-2 text-success"></i> 4.8x - 8.6x Compounding ROAS &amp; -40% Cost Per Lead
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Comparison Matrix Card -->
-            <div class="vg-comp-card-wrap wow fadeInUp" data-wow-delay=".2s">
-                <!-- Column Headers -->
-                <div class="vg-comp-table-head">
-                    <div class="head-col head-feature">
-                        <span class="head-title text-white">OPERATIONAL PILLAR</span>
-                        <span class="head-desc">Benchmark Standard</span>
-                    </div>
-                    <div class="head-col head-trad">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <span class="head-badge badge-trad"><i class="fa-solid fa-triangle-exclamation me-1"></i> OUTDATED MODEL</span>
-                            <div class="vg-eff-box trad-eff" data-target="35">
-                                <div class="eff-label-row">
-                                    <span class="eff-title">Efficiency:</span>
-                                    <span class="eff-percent">0%</span>
-                                </div>
-                                <div class="eff-bar-track">
-                                    <div class="eff-bar-fill"></div>
-                                </div>
+            <!-- Bottom Verdict Card & CTA -->
+            <div class="vg-arena-verdict-card wow fadeInUp" data-wow-delay=".25s">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="verdict-icon-box">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i>
                             </div>
-                        </div>
-                        <h4 class="head-title mb-1 text-white">Traditional Marketing Agencies</h4>
-                        <span class="head-desc">Manual Guesswork • Vanity PDF Reports • Slow Retainers</span>
-                    </div>
-                    <div class="head-col head-ai">
-                        <div class="d-flex align-items-center justify-content-between mb-2">
-                            <span class="head-badge badge-ai"><i class="fa-solid fa-sparkles me-1"></i> AI GROWTH PARTNER</span>
-                            <div class="vg-eff-box ai-eff" data-target="98">
-                                <div class="eff-label-row">
-                                    <span class="eff-title"><i class="fa-solid fa-circle-check me-1"></i> Efficiency:</span>
-                                    <span class="eff-percent">0%</span>
-                                </div>
-                                <div class="eff-bar-track">
-                                    <div class="eff-bar-fill"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="head-title mb-1 text-white">VG Digital Falcon <span class="badge-engine pulse-engine">AI Engine</span></h4>
-                        <span class="head-desc">Autonomous Pipelines • Live GA4 Dashboards • Real Revenue</span>
-                    </div>
-                </div>
-
-                <!-- Comparison Rows Container (Default: Quick Scan mode for clean compactness) -->
-                <div class="vg-comp-table-body mode-quick" id="vg-comp-rows-container">
-                    <!-- Row 1: Strategy & Market Research -->
-                    <div class="vg-comp-row is-revealed" data-category="targeting">
-                        <div class="comp-cell cell-feature">
-                            <div class="feature-icon"><i class="fa-solid fa-compass-drafting"></i></div>
-                            <div class="feature-meta">
-                                <span class="feature-tag">STRATEGY &amp; AUDITING</span>
-                                <h5 class="feature-name">Market Research &amp; Planning</h5>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-trad">
-                            <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-danger">Subjective Guesswork &amp; Generic Templates</h6>
-                                <p class="cell-desc-text">Rely on subjective assumptions, generic templates, and copy-pasted competitor tactics without verifying hard audience data.</p>
-                                <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> High Guesswork &amp; Wasted Spend</span>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-ai">
-                            <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-success">Predictive Algorithmic Audits &amp; Custom Models</h6>
-                                <p class="cell-desc-text">Deep algorithmic competitor audits, consumer psychology modeling, and AI-driven predictive market roadmaps built for guaranteed ROI.</p>
-                                <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> Data-Backed Custom Strategy</span>
+                            <div>
+                                <h4 class="text-white mb-1">Stop Paying for Guesswork. Upgrade to AI-Powered Growth.</h4>
+                                <p class="mb-0 text-muted-lavender" style="font-size: 14px;">
+                                    Get a complete audit of your current ads and funnel to uncover where you are losing leads and money.
+                                </p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Row 2: Audience Targeting & Ad Spend -->
-                    <div class="vg-comp-row is-revealed" data-category="targeting">
-                        <div class="comp-cell cell-feature">
-                            <div class="feature-icon"><i class="fa-solid fa-crosshairs"></i></div>
-                            <div class="feature-meta">
-                                <span class="feature-tag">TARGETING PRECISION</span>
-                                <h5 class="feature-name">Audience &amp; Ad Budget Allocation</h5>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-trad">
-                            <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-danger">Spray-and-Pray Broad Interest Targeting</h6>
-                                <p class="cell-desc-text">Broad interest targeting that exhausts budgets on irrelevant clicks, bot impressions, and unqualified leads.</p>
-                                <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> Diluted Ad Spend &amp; High CPA</span>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-ai">
-                            <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-success">High-Intent AI Behavioral Clustering</h6>
-                                <p class="cell-desc-text">High-intent behavioral clustering, AI lookalike modeling, and real-time algorithmic bidding targeting buyers ready to convert.</p>
-                                <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> Laser-Targeted Qualified Traffic</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 3: Creative Velocity & Testing -->
-                    <div class="vg-comp-row is-revealed" data-category="speed">
-                        <div class="comp-cell cell-feature">
-                            <div class="feature-icon"><i class="fa-solid fa-palette"></i></div>
-                            <div class="feature-meta">
-                                <span class="feature-tag">CREATIVE VELOCITY</span>
-                                <h5 class="feature-name">Ad Creatives &amp; Copy Iteration</h5>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-trad">
-                            <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-danger">2–3 Static Banners with 3-Week Delays</h6>
-                                <p class="cell-desc-text">Design 2–3 static banners that cause rapid ad fatigue; updates take 2–3 weeks of back-and-forth approval meetings.</p>
-                                <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> Creative Fatigue &amp; Slow Iteration</span>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-ai">
-                            <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-success">50+ AI Multi-Variants in 48 Hours</h6>
-                                <p class="cell-desc-text">Rapid AI multi-variant testing across dozens of hooks, visuals, and copy angles, identifying winning ad combinations within 48 hours.</p>
-                                <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> High-Converting Dynamic Assets</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 4: Lead Follow-up & Automation -->
-                    <div class="vg-comp-row is-revealed" data-category="speed">
-                        <div class="comp-cell cell-feature">
-                            <div class="feature-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
-                            <div class="feature-meta">
-                                <span class="feature-tag">LEAD CAPTURE SPEED</span>
-                                <h5 class="feature-name">Lead Response &amp; Follow-up Time</h5>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-trad">
-                            <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-danger">24–48hr Spreadsheet Delay (70% Drop)</h6>
-                                <p class="cell-desc-text">Leads sit in spreadsheets for 24–48 hours until manual follow-up; over 70% of high-intent prospects move to competitors.</p>
-                                <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> 24-48hr Delay • 70% Lead Drop-off</span>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-ai">
-                            <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-success">Sub-30s Instant WhatsApp &amp; CRM Sync</h6>
-                                <p class="cell-desc-text">Sub-30-second automated sync into CRM, instant WhatsApp Cloud API replies, automated nurture drip, and direct calendar booking 24/7.</p>
-                                <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> &lt; 30s Instant Lead Engagement</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 5: 24/7 Optimization & Data -->
-                    <div class="vg-comp-row is-revealed" data-category="roi">
-                        <div class="comp-cell cell-feature">
-                            <div class="feature-icon"><i class="fa-solid fa-sliders"></i></div>
-                            <div class="feature-meta">
-                                <span class="feature-tag">OPTIMIZATION &amp; DATA</span>
-                                <h5 class="feature-name">Campaign Monitoring &amp; Real Transparency</h5>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-trad">
-                            <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-danger">Passive Monthly Reviews &amp; Vanity PDFs</h6>
-                                <p class="cell-desc-text">Passive bi-weekly check-ins while budget burns on unprofitable keywords, masked by confusing monthly PDF vanity summaries.</p>
-                                <span class="cell-sub-tag text-danger"><i class="fa-solid fa-arrow-down-left"></i> Passive Waste • Vanity Metrics</span>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-ai">
-                            <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-success">Autonomous 24/7 Shifts &amp; Live GA4</h6>
-                                <p class="cell-desc-text">Continuous 24/7 autonomous monitoring. Algorithmic budget shifts cut losing ads and funnel capital into highest ROAS channels with live dashboards.</p>
-                                <span class="cell-sub-tag text-success"><i class="fa-solid fa-sparkles"></i> 24/7 Bidding &amp; Real-Time ROI</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Row 6: Ultimate Result -->
-                    <div class="vg-comp-row highlight-row is-revealed" data-category="roi">
-                        <div class="comp-cell cell-feature">
-                            <div class="feature-icon"><i class="fa-solid fa-trophy"></i></div>
-                            <div class="feature-meta">
-                                <span class="feature-tag">THE BOTTOM LINE</span>
-                                <h5 class="feature-name">Proven Business Outcome</h5>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-trad">
-                            <div class="cell-status"><i class="fa-solid fa-circle-xmark"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-danger">Stagnant Pipeline &amp; High Customer CPA</h6>
-                                <p class="cell-desc-text">Stagnant pipeline, unpredictable lead volume, rigid lock-in retainers, and burned ad budget without revenue attribution.</p>
-                                <div class="trad-metric-pill">High CPA • Low ROI</div>
-                            </div>
-                        </div>
-                        <div class="comp-cell cell-ai">
-                            <div class="cell-status"><i class="fa-solid fa-circle-check"></i></div>
-                            <div class="cell-content">
-                                <h6 class="cell-highlight-text text-success">Predictable Compounding Growth &amp; Scalable ROI</h6>
-                                <p class="cell-desc-text">Predictable revenue, automated high-converting funnels, 4.8x–8.6x ROAS, and aligned growth partner incentives.</p>
-                                <div class="ai-metric-pill"><i class="fa-solid fa-arrow-trend-up me-1"></i> 4.8x - 8.6x ROAS • -40% CPL</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bottom Summary Card & CTA -->
-                <div class="vg-comp-bottom-bar">
-                    <div class="row align-items-center g-4">
-                        <div class="col-lg-8">
-                            <div class="d-flex align-items-center gap-3">
-                                <div class="verdict-icon-box">
-                                    <i class="fa-solid fa-wand-magic-sparkles"></i>
-                                </div>
-                                <div>
-                                    <h4 class="text-white mb-1">Stop Paying for Guesswork. Upgrade to AI-Powered Growth.</h4>
-                                    <p class="mb-0 text-muted-lavender" style="font-size: 14px;">
-                                        Get a complete audit of your current ads and funnel to uncover where you are losing leads and money.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 text-lg-end text-center">
-                            <a href="#strategy-call" class="vg-btn-primary">
-                                Book Free Strategy Audit <i class="fa-solid fa-arrow-right ms-2"></i>
-                            </a>
-                        </div>
+                    <div class="col-lg-4 text-lg-end text-center">
+                        <a href="#strategy-call" class="vg-btn-primary">
+                            Book Free Strategy Audit <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Comparison Section Interactive Logic -->
+        <!-- Comparison Dual Arena Interactive Logic -->
         <script>
             (function () {
-                function animateEfficiencyCount(element, start, end, duration) {
+                function animateCount(element, start, end, duration, suffix) {
                     if (!element) return;
+                    suffix = suffix || '%';
                     var startTime = null;
                     function step(timestamp) {
                         if (!startTime) startTime = timestamp;
                         var progress = Math.min((timestamp - startTime) / duration, 1);
-                        var easeOutProgress = 1 - Math.pow(1 - progress, 3);
-                        var current = Math.floor(easeOutProgress * (end - start) + start);
-                        element.textContent = current + '%';
+                        var easeOut = 1 - Math.pow(1 - progress, 3);
+                        var current = Math.floor(easeOut * (end - start) + start);
+                        element.textContent = current + suffix;
                         if (progress < 1) {
                             window.requestAnimationFrame(step);
                         } else {
-                            element.textContent = end + '%';
+                            element.textContent = end + suffix;
                         }
                     }
                     window.requestAnimationFrame(step);
@@ -1165,108 +1170,136 @@
                     window.requestAnimationFrame(step);
                 }
 
-                function initComparisonInteractions() {
-                    var compSection = document.getElementById('comparison');
-                    if (!compSection) return;
+                function initArenaInteractions() {
+                    var arenaSection = document.getElementById('comparison');
+                    if (!arenaSection) return;
 
                     var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-                    // 1. Interactive Category Filter Buttons
-                    var filterBtns = compSection.querySelectorAll('.vg-comp-filter-btn');
-                    var rows = compSection.querySelectorAll('.vg-comp-row');
-                    var rowsContainer = document.getElementById('vg-comp-rows-container');
+                    // 1. Dimension Tabs Filtering
+                    var tabBtns = arenaSection.querySelectorAll('.vg-arena-tab-btn');
+                    var allChips = arenaSection.querySelectorAll('.vg-battle-chip');
 
-                    filterBtns.forEach(function (btn) {
+                    tabBtns.forEach(function (btn) {
                         btn.addEventListener('click', function () {
                             var filter = this.getAttribute('data-filter');
-                            filterBtns.forEach(function (b) { b.classList.remove('active'); });
+                            tabBtns.forEach(function (b) { b.classList.remove('active'); });
                             this.classList.add('active');
 
-                            rows.forEach(function (row) {
-                                var cat = row.getAttribute('data-category');
-                                row.classList.remove('is-animating-in');
-                                if (filter === 'all' || cat === filter) {
-                                    row.classList.remove('is-filtered-out');
+                            allChips.forEach(function (chip) {
+                                var dim = chip.getAttribute('data-dim');
+                                chip.classList.remove('is-animating');
+                                if (filter === 'all' || dim === filter) {
+                                    chip.classList.remove('is-hidden');
                                     setTimeout(function () {
-                                        row.classList.add('is-animating-in');
+                                        chip.classList.add('is-animating');
                                     }, 10);
                                 } else {
-                                    row.classList.add('is-filtered-out');
+                                    chip.classList.add('is-hidden');
                                 }
                             });
                         });
                     });
 
-                    // 2. Interactive View Mode Switcher (Quick Scan vs Deep Dive)
-                    var viewBtns = compSection.querySelectorAll('.vg-view-mode-btn');
-                    viewBtns.forEach(function (btn) {
+                    // 2. Interactive Cross-Linking on Hover
+                    allChips.forEach(function (chip) {
+                        chip.addEventListener('mouseenter', function () {
+                            var pairKey = this.getAttribute('data-pair');
+                            if (!pairKey) return;
+
+                            allChips.forEach(function (c) {
+                                if (c.getAttribute('data-pair') === pairKey) {
+                                    c.classList.add('is-paired-highlight');
+                                    c.classList.remove('is-paired-dim');
+                                } else {
+                                    c.classList.remove('is-paired-highlight');
+                                    c.classList.add('is-paired-dim');
+                                }
+                            });
+                        });
+
+                        chip.addEventListener('mouseleave', function () {
+                            allChips.forEach(function (c) {
+                                c.classList.remove('is-paired-highlight');
+                                c.classList.remove('is-paired-dim');
+                            });
+                        });
+                    });
+
+                    // 3. Mobile Competitor Switcher (<992px)
+                    var switchBtns = arenaSection.querySelectorAll('.vg-mobile-switch-btn');
+                    var monolithTrad = document.getElementById('monolith-trad');
+                    var monolithAi = document.getElementById('monolith-ai');
+
+                    switchBtns.forEach(function (btn) {
                         btn.addEventListener('click', function () {
-                            var mode = this.getAttribute('data-mode');
-                            viewBtns.forEach(function (b) { b.classList.remove('active'); });
+                            var target = this.getAttribute('data-target');
+                            switchBtns.forEach(function (b) { b.classList.remove('active'); });
                             this.classList.add('active');
 
-                            if (rowsContainer) {
-                                if (mode === 'quick') {
-                                    rowsContainer.classList.remove('mode-detail');
-                                    rowsContainer.classList.add('mode-quick');
-                                } else {
-                                    rowsContainer.classList.remove('mode-quick');
-                                    rowsContainer.classList.add('mode-detail');
-                                }
+                            if (target === 'trad') {
+                                if (monolithTrad) monolithTrad.classList.add('active-monolith');
+                                if (monolithAi) monolithAi.classList.remove('active-monolith');
+                            } else {
+                                if (monolithAi) monolithAi.classList.add('active-monolith');
+                                if (monolithTrad) monolithTrad.classList.remove('active-monolith');
                             }
                         });
                     });
 
-                    // 2. Efficiency Bars (Traditional 2.5s, VG Falcon 1.2s)
-                    var effBoxes = compSection.querySelectorAll('.vg-eff-box');
-                    if (effBoxes.length) {
-                        var effTriggered = false;
-                        function fillEffBoxes() {
-                            if (effTriggered) return;
-                            effTriggered = true;
-                            effBoxes.forEach(function (box) {
-                                box.classList.add('is-filled');
-                                var target = parseInt(box.getAttribute('data-target'), 10) || 0;
-                                var percentEl = box.querySelector('.eff-percent');
-                                var duration = box.classList.contains('trad-eff') ? 2500 : 1200;
-                                animateEfficiencyCount(percentEl, 0, target, duration);
-                            });
+                    // 4. Efficiency Gauges Animated on Scroll
+                    var tradValEl = arenaSection.querySelector('.trad-meter-val');
+                    var tradFillEl = arenaSection.querySelector('.trad-meter-fill');
+                    var aiValEl = arenaSection.querySelector('.ai-meter-val');
+                    var aiFillEl = arenaSection.querySelector('.ai-meter-fill');
+
+                    var gaugesTriggered = false;
+                    function triggerGauges() {
+                        if (gaugesTriggered) return;
+                        gaugesTriggered = true;
+
+                        if (tradFillEl) {
+                            tradFillEl.style.transition = 'width 2.2s cubic-bezier(0.16, 1, 0.3, 1)';
+                            tradFillEl.style.width = '35%';
                         }
+                        if (tradValEl) animateCount(tradValEl, 0, 35, 2200);
 
-                        if (prefersReduced || !('IntersectionObserver' in window)) {
-                            effBoxes.forEach(function (box) {
-                                box.classList.add('is-filled');
-                                var target = parseInt(box.getAttribute('data-target'), 10) || 0;
-                                var percentEl = box.querySelector('.eff-percent');
-                                if (percentEl) percentEl.textContent = target + '%';
-                            });
-                        } else {
-                            var headEl = compSection.querySelector('.vg-comp-table-head') || compSection;
-                            var effObserver = new IntersectionObserver(function (entries, obs) {
-                                entries.forEach(function (entry) {
-                                    if (entry.isIntersecting) {
-                                        fillEffBoxes();
-                                        obs.unobserve(entry.target);
-                                    }
-                                });
-                            }, {
-                                root: null,
-                                rootMargin: '0px 0px 50px 0px',
-                                threshold: 0.05
-                            });
-                            effObserver.observe(headEl);
+                        if (aiFillEl) {
+                            aiFillEl.style.transition = 'width 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
+                            aiFillEl.style.width = '98%';
+                        }
+                        if (aiValEl) animateCount(aiValEl, 0, 98, 1200);
+                    }
 
-                            var headRect = headEl.getBoundingClientRect();
-                            if (headRect.top < window.innerHeight && headRect.bottom > 0) {
-                                fillEffBoxes();
-                                effObserver.disconnect();
-                            }
+                    if (prefersReduced || !('IntersectionObserver' in window)) {
+                        if (tradFillEl) tradFillEl.style.width = '35%';
+                        if (tradValEl) tradValEl.textContent = '35%';
+                        if (aiFillEl) aiFillEl.style.width = '98%';
+                        if (aiValEl) aiValEl.textContent = '98%';
+                    } else {
+                        var arenaWrap = arenaSection.querySelector('.vg-battle-arena-wrap') || arenaSection;
+                        var observer = new IntersectionObserver(function (entries, obs) {
+                            entries.forEach(function (entry) {
+                                if (entry.isIntersecting) {
+                                    triggerGauges();
+                                    obs.unobserve(entry.target);
+                                }
+                            });
+                        }, {
+                            threshold: 0.1
+                        });
+                        observer.observe(arenaWrap);
+
+                        var rect = arenaWrap.getBoundingClientRect();
+                        if (rect.top < window.innerHeight && rect.bottom > 0) {
+                            triggerGauges();
+                            observer.disconnect();
                         }
                     }
 
-                    // 3. Pill Stats Count-up (4.8x-8.6x, <30s, -40%, 100%)
-                    var highlightsEl = compSection.querySelector('.vg-comp-highlights');
-                    var statCounts = compSection.querySelectorAll('.stat-count');
+                    // 5. Pill Stats Count-up
+                    var highlightsEl = arenaSection.querySelector('.vg-comp-highlights');
+                    var statCounts = arenaSection.querySelectorAll('.stat-count');
                     if (highlightsEl && statCounts.length) {
                         var statsAnimated = false;
                         function triggerStats() {
@@ -1276,13 +1309,12 @@
                         }
 
                         if (prefersReduced || !('IntersectionObserver' in window)) {
-                            // Leave default static text as is for accessibility
+                            // Leave default text
                         } else {
                             var pillRect = highlightsEl.getBoundingClientRect();
                             if (pillRect.top < window.innerHeight && pillRect.bottom > 0) {
                                 triggerStats();
                             } else {
-                                // Pre-set to 0 so visitor sees count-up when scrolling in
                                 statCounts.forEach(function (el) {
                                     var type = el.getAttribute('data-stat-type');
                                     if (type === 'range') el.textContent = '0.0x - 0.0x';
@@ -1299,8 +1331,6 @@
                                         }
                                     });
                                 }, {
-                                    root: null,
-                                    rootMargin: '0px 0px 50px 0px',
                                     threshold: 0.05
                                 });
                                 pillObserver.observe(highlightsEl);
@@ -1310,9 +1340,9 @@
                 }
 
                 if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', initComparisonInteractions);
+                    document.addEventListener('DOMContentLoaded', initArenaInteractions);
                 } else {
-                    initComparisonInteractions();
+                    initArenaInteractions();
                 }
             })();
         </script>
@@ -3288,7 +3318,7 @@
     <script src="assets/js/jquery.meanmenu.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js?v=12.0"></script>
+    <script src="assets/js/main.js?v=13.0"></script>
     <script>
         // Dedicated Mobile Drawer Menu Accordion & Auto-Close
         document.addEventListener('DOMContentLoaded', function() {
