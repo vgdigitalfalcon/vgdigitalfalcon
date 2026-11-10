@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     
     <!--<< Custom Theme & Color CSS >>-->
-    <link rel="stylesheet" href="assets/css/main.css?v=18.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=18.0">
+    <link rel="stylesheet" href="assets/css/main.css?v=19.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=19.0">
 
     <!-- Resource Hints for High-Speed Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -840,6 +840,19 @@
 
             </div>
 
+            <!-- Comparison View Toggle (Mobile / Tablet) -->
+            <div class="vg-arena-view-toggle">
+                <button type="button" class="vg-arena-toggle-btn active" data-filter="both">
+                    <i class="fa-solid fa-arrows-split-up-and-left me-1"></i> Full VS Compare
+                </button>
+                <button type="button" class="vg-arena-toggle-btn" data-filter="trad">
+                    <i class="fa-solid fa-triangle-exclamation me-1"></i> Outdated Agency
+                </button>
+                <button type="button" class="vg-arena-toggle-btn" data-filter="ai">
+                    <i class="fa-solid fa-crown me-1 text-warning"></i> VG Falcon AI
+                </button>
+            </div>
+
             <!-- Dual Battle Arena: Traditional VS VG Digital Falcon AI (Compact High-Impact) -->
             <div class="vg-battle-arena-wrap wow fadeInUp" data-wow-delay=".2s">
                 <!-- Left Monolith: Traditional Marketing Agencies (Outdated Model) -->
@@ -1191,23 +1204,30 @@
                         });
                     });
 
-                    // 3. Mobile Competitor Switcher (<992px)
-                    var switchBtns = arenaSection.querySelectorAll('.vg-mobile-switch-btn');
+                    // 3. Mobile / Responsive Arena View Toggle
+                    var toggleBtns = arenaSection.querySelectorAll('.vg-arena-toggle-btn');
                     var monolithTrad = document.getElementById('monolith-trad');
                     var monolithAi = document.getElementById('monolith-ai');
+                    var reactorEl = arenaSection.querySelector('.vg-battle-reactor');
 
-                    switchBtns.forEach(function (btn) {
+                    toggleBtns.forEach(function (btn) {
                         btn.addEventListener('click', function () {
-                            var target = this.getAttribute('data-target');
-                            switchBtns.forEach(function (b) { b.classList.remove('active'); });
+                            var filter = this.getAttribute('data-filter');
+                            toggleBtns.forEach(function (b) { b.classList.remove('active'); });
                             this.classList.add('active');
 
-                            if (target === 'trad') {
-                                if (monolithTrad) monolithTrad.classList.add('active-monolith');
-                                if (monolithAi) monolithAi.classList.remove('active-monolith');
+                            if (filter === 'trad') {
+                                if (monolithTrad) monolithTrad.style.display = 'block';
+                                if (monolithAi) monolithAi.style.display = 'none';
+                                if (reactorEl) reactorEl.style.display = 'none';
+                            } else if (filter === 'ai') {
+                                if (monolithAi) monolithAi.style.display = 'block';
+                                if (monolithTrad) monolithTrad.style.display = 'none';
+                                if (reactorEl) reactorEl.style.display = 'none';
                             } else {
-                                if (monolithAi) monolithAi.classList.add('active-monolith');
-                                if (monolithTrad) monolithTrad.classList.remove('active-monolith');
+                                if (monolithTrad) monolithTrad.style.display = '';
+                                if (monolithAi) monolithAi.style.display = '';
+                                if (reactorEl) reactorEl.style.display = '';
                             }
                         });
                     });
