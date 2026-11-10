@@ -6512,3 +6512,15 @@ body {
     opacity: 1;
   }
 }
+
+/* ==========================================================================
+   FontAwesome Icon Compatibility Aliases (Ensures all glyphs render)
+   ========================================================================== */
+.fa-shield-halved:before { content: "\f2f7" !important; }
+.fa-magnifying-glass-chart:before { content: "\f002" !important; }
+.fa-crosshairs-simple:before { content: "\f05b" !important; }
+.fa-arrows-spin:before { content: "\f021" !important; }
+.fa-x-twitter:before { content: "\f099" !important; }
+.fa-flask-vial:before { content: "\f0c3" !important; }
+.fa-envelope-circle-check:before { content: "\f0e0" !important; }
+
