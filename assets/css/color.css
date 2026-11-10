@@ -5064,26 +5064,25 @@ body {
   box-shadow: 0 0 16px rgba(124, 58, 237, 0.5);
 }
 
-/* Responsive */
+/* Responsive Arena: Always Side-by-Side VS Matrix on Tablet & Mobile */
 @media (max-width: 991px) {
-  .vg-battle-arena-wrap {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .vg-battle-reactor {
-    display: none;
-  }
   .vg-arena-mobile-switcher {
-    display: flex;
+    display: none !important;
+  }
+  .vg-battle-arena-wrap {
+    display: grid !important;
+    grid-template-columns: 1fr 46px 1fr !important;
+    gap: 12px !important;
+    align-items: stretch !important;
   }
   .vg-battle-monolith {
-    display: none;
+    display: block !important;
   }
-  .vg-battle-monolith.active-monolith {
-    display: block;
+  .vg-battle-reactor {
+    display: flex !important;
   }
   .monolith-inner {
-    padding: 16px 14px;
+    padding: 16px 12px !important;
   }
 }
 
@@ -6698,25 +6697,43 @@ img, svg, video, canvas {
     justify-content: center !important;
   }
 
-  /* Battle Arena on Tablet */
+  /* Battle Arena on Tablet: Always Side-by-Side VS Model */
+  .vg-arena-mobile-switcher {
+    display: none !important;
+  }
   .vg-battle-arena-wrap {
     display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 14px !important;
-  }
-  .vg-battle-reactor {
-    display: none !important;
-  }
-  .vg-arena-mobile-switcher {
-    display: flex !important;
-    margin-bottom: 16px !important;
+    grid-template-columns: 1fr 46px 1fr !important;
+    gap: 12px !important;
+    align-items: stretch !important;
   }
   .vg-battle-monolith {
-    display: none !important;
-  }
-  .vg-battle-monolith.active-monolith {
     display: block !important;
-    animation: vgFadeInScale 0.28s ease;
+  }
+  .vg-battle-reactor {
+    display: flex !important;
+  }
+  .reactor-core {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .reactor-ring.ring-outer {
+    width: 38px !important;
+    height: 38px !important;
+  }
+  .reactor-ring.ring-middle {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .reactor-pulse-orb {
+    width: 26px !important;
+    height: 26px !important;
+  }
+  .reactor-vs-text {
+    font-size: 11px !important;
+  }
+  .monolith-inner {
+    padding: 16px 12px !important;
   }
 
   /* ROI Calculator on Tablet */
@@ -6852,6 +6869,189 @@ img, svg, video, canvas {
   }
   .kpi-sub-label {
     font-size: 8px !important;
+  }
+
+  /* Dual Battle Arena Mobile (<= 767px): Side-by-Side Direct VS Version */
+  .vg-arena-mobile-switcher {
+    display: none !important;
+  }
+  .vg-battle-arena-wrap {
+    display: grid !important;
+    grid-template-columns: 1fr 34px 1fr !important;
+    gap: 8px !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .vg-battle-monolith {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+  .monolith-inner {
+    padding: 14px 8px 10px !important;
+    border-radius: 14px !important;
+  }
+  .monolith-winner-pill {
+    top: -11px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    font-size: 8px !important;
+    padding: 2px 7px !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.3px !important;
+    border-radius: 9999px !important;
+    z-index: 5 !important;
+    box-shadow: 0 0 10px rgba(124, 58, 237, 0.6) !important;
+  }
+  .monolith-badge-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 3px !important;
+    margin-bottom: 6px !important;
+  }
+  .monolith-status-tag {
+    font-size: 8.5px !important;
+    padding: 2px 6px !important;
+    border-radius: 5px !important;
+  }
+  .monolith-meter {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 4px !important;
+  }
+  .meter-text {
+    font-size: 8px !important;
+  }
+  .meter-track {
+    width: 36px !important;
+    height: 4px !important;
+    border-radius: 99px !important;
+  }
+  .monolith-title {
+    font-size: 11px !important;
+    line-height: 1.25 !important;
+    margin-bottom: 2px !important;
+    font-weight: 800 !important;
+    word-break: break-word !important;
+  }
+  .monolith-subtitle {
+    font-size: 8px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 8px !important;
+    color: #94a3b8 !important;
+  }
+  .ai-glow-tag {
+    font-size: 7px !important;
+    padding: 1px 3px !important;
+    border-radius: 3px !important;
+  }
+
+  /* Central VS Cybernetic Energy Reactor on Mobile */
+  .vg-battle-reactor {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 2px !important;
+    z-index: 4 !important;
+  }
+  .reactor-core {
+    width: 28px !important;
+    height: 28px !important;
+  }
+  .reactor-ring.ring-outer {
+    width: 28px !important;
+    height: 28px !important;
+    border-width: 1.5px !important;
+  }
+  .reactor-ring.ring-middle {
+    width: 22px !important;
+    height: 22px !important;
+    border-width: 1px !important;
+  }
+  .reactor-pulse-orb {
+    width: 20px !important;
+    height: 20px !important;
+  }
+  .reactor-vs-text {
+    font-size: 9px !important;
+    font-weight: 900 !important;
+  }
+  .reactor-label {
+    font-size: 6px !important;
+    letter-spacing: 0.5px !important;
+  }
+  .reactor-dot {
+    width: 2.5px !important;
+    height: 2.5px !important;
+  }
+
+  /* Compact Chips on Mobile */
+  .vg-battle-chip {
+    padding: 6px 5px !important;
+    margin-bottom: 5px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    box-sizing: border-box !important;
+  }
+  .chip-status-icon {
+    width: 13px !important;
+    height: 13px !important;
+    font-size: 9px !important;
+    flex-shrink: 0 !important;
+    margin-top: 1px !important;
+  }
+  .chip-content {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 2px !important;
+  }
+  .chip-pillar-tag {
+    font-size: 7px !important;
+    margin-bottom: 1px !important;
+    letter-spacing: 0.2px !important;
+    display: block !important;
+  }
+  .chip-title {
+    font-size: 9.5px !important;
+    line-height: 1.2 !important;
+    font-weight: 700 !important;
+    margin-bottom: 2px !important;
+    word-break: break-word !important;
+  }
+  .chip-desc {
+    font-size: 8px !important;
+    line-height: 1.25 !important;
+    color: #94a3b8 !important;
+    margin-bottom: 2px !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+  }
+  .chip-pill-tag {
+    font-size: 7px !important;
+    padding: 1px 4px !important;
+    border-radius: 3px !important;
+    align-self: flex-start !important;
+  }
+  .monolith-footer {
+    padding: 6px 4px !important;
+    font-size: 7.5px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    margin-top: 6px !important;
+    border-radius: 6px !important;
   }
 
   /* ROI Calculator on Mobile (<= 767px) */
@@ -7030,19 +7230,55 @@ img, svg, video, canvas {
     justify-content: center !important;
   }
 
-  /* Dual Battle Arena Small Mobile */
-  .vg-mobile-switch-btn {
-    font-size: 11px !important;
-    padding: 7px 8px !important;
+  /* Dual Battle Arena Small Mobile (<= 480px) */
+  .vg-battle-arena-wrap {
+    grid-template-columns: 1fr 26px 1fr !important;
+    gap: 5px !important;
   }
   .monolith-inner {
-    padding: 14px 12px !important;
+    padding: 12px 5px 8px !important;
+    border-radius: 12px !important;
+  }
+  .monolith-winner-pill {
+    font-size: 7.5px !important;
+    padding: 2px 6px !important;
+    top: -10px !important;
+  }
+  .monolith-title {
+    font-size: 10px !important;
+  }
+  .reactor-core {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .reactor-ring.ring-outer {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .reactor-ring.ring-middle {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  .reactor-pulse-orb {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  .reactor-vs-text {
+    font-size: 8px !important;
+  }
+  .reactor-label {
+    display: none !important;
   }
   .vg-battle-chip {
-    padding: 7px 8px !important;
+    padding: 5px 4px !important;
+    margin-bottom: 4px !important;
+    gap: 3px !important;
   }
-  .chip-trad-name, .chip-ai-name {
-    font-size: 11.5px !important;
+  .chip-title {
+    font-size: 9px !important;
+  }
+  .chip-desc {
+    font-size: 7.5px !important;
   }
 
   /* Falcon Agents 1 column on smallest screens */
