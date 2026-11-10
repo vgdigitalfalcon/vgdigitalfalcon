@@ -829,27 +829,69 @@ body {
   z-index: 5;
 }
 
-/* Hero Badge */
+/* Universal Pill Badge */
 .vg-pill-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 5px 14px;
-  background: rgba(147, 51, 234, 0.12);
-  border: 1px solid rgba(168, 85, 247, 0.35);
+  padding: 6px 16px;
   border-radius: 9999px;
-  color: var(--vg-purple-300);
   font-size: 11.5px;
-  font-weight: 600;
-  letter-spacing: 0.6px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   margin-bottom: 12px;
   width: fit-content;
-  box-shadow: 0 0 15px rgba(147, 51, 234, 0.15);
+  box-shadow: 0 2px 10px rgba(124, 58, 237, 0.12);
+  transition: all 0.2s ease;
 }
 
-.vg-pill-badge i {
-  color: var(--vg-purple-400);
+/* Light Background Sections: Deep Royal Purple Pill (Highly Legible) */
+.vg-services-section .vg-pill-badge,
+.vg-about-section .vg-pill-badge,
+.vg-challenges-section .vg-pill-badge,
+.vg-process-section .vg-pill-badge,
+.vg-team-section .vg-pill-badge,
+.vg-testimonials-section .vg-pill-badge {
+  background: rgba(124, 58, 237, 0.1) !important;
+  border: 1px solid rgba(124, 58, 237, 0.35) !important;
+  color: #6d28d9 !important;
+}
+
+.vg-services-section .vg-pill-badge i,
+.vg-about-section .vg-pill-badge i,
+.vg-challenges-section .vg-pill-badge i,
+.vg-process-section .vg-pill-badge i,
+.vg-team-section .vg-pill-badge i,
+.vg-testimonials-section .vg-pill-badge i {
+  color: #7c3aed !important;
+}
+
+/* Dark Background Sections: Glowing Neon Violet Pill */
+.vg-hero-section .vg-pill-badge,
+.vg-wont-do-section .vg-pill-badge,
+.vg-agents-section .vg-pill-badge,
+.vg-techstack-section .vg-pill-badge,
+.vg-comparison-section .vg-pill-badge,
+.vg-roi-section .vg-pill-badge,
+.vg-case-studies-section .vg-pill-badge,
+.vg-blog-section .vg-pill-badge,
+.vg-effective-section .vg-pill-badge {
+  background: rgba(147, 51, 234, 0.18) !important;
+  border: 1px solid rgba(168, 85, 247, 0.45) !important;
+  color: #c084fc !important;
+}
+
+.vg-hero-section .vg-pill-badge i,
+.vg-wont-do-section .vg-pill-badge i,
+.vg-agents-section .vg-pill-badge i,
+.vg-techstack-section .vg-pill-badge i,
+.vg-comparison-section .vg-pill-badge i,
+.vg-roi-section .vg-pill-badge i,
+.vg-case-studies-section .vg-pill-badge i,
+.vg-blog-section .vg-pill-badge i,
+.vg-effective-section .vg-pill-badge i {
+  color: #a855f7 !important;
 }
 
 /* Hero Headline */
