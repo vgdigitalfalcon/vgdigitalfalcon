@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     
     <!--<< Custom Theme & Color CSS >>-->
-    <link rel="stylesheet" href="assets/css/main.css?v=10.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=10.0">
+    <link rel="stylesheet" href="assets/css/main.css?v=11.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=11.0">
 
     <!-- Resource Hints for High-Speed Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2868,22 +2868,6 @@
                 </p>
             </div>
 
-            <!-- Interactive Category Filter Tabs -->
-            <div class="vg-blog-filters wow fadeInUp" data-wow-delay=".1s">
-                <button type="button" class="vg-blog-filter-btn active" data-filter="all">
-                    <i class="fa-solid fa-layer-group me-1"></i> All Insights
-                </button>
-                <button type="button" class="vg-blog-filter-btn" data-filter="seo">
-                    <i class="fa-solid fa-magnifying-glass me-1"></i> Local &amp; Technical SEO
-                </button>
-                <button type="button" class="vg-blog-filter-btn" data-filter="performance">
-                    <i class="fa-solid fa-chart-line-up me-1"></i> Paid Ads &amp; ROAS
-                </button>
-                <button type="button" class="vg-blog-filter-btn" data-filter="ai">
-                    <i class="fa-solid fa-microchip-ai me-1"></i> AI &amp; Automation
-                </button>
-            </div>
-
             <!-- Insights / Feed Grid -->
             <div class="vg-blog-grid">
                 <!-- Article 1: Local SEO -->
@@ -3017,50 +3001,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Vanilla JS for Interactive Category Filtering -->
-        <script>
-            (function () {
-                function initBlogFilters() {
-                    var blogSection = document.getElementById('blog');
-                    if (!blogSection) return;
-
-                    var filterBtns = blogSection.querySelectorAll('.vg-blog-filter-btn');
-                    var cards = blogSection.querySelectorAll('.vg-blog-card');
-
-                    filterBtns.forEach(function (btn) {
-                        btn.addEventListener('click', function () {
-                            var filter = this.getAttribute('data-filter');
-                            filterBtns.forEach(function (b) { b.classList.remove('active'); });
-                            this.classList.add('active');
-
-                            cards.forEach(function (card) {
-                                var category = card.getAttribute('data-category');
-                                if (filter === 'all' || category === filter) {
-                                    card.style.display = '';
-                                    setTimeout(function () {
-                                        card.style.opacity = '1';
-                                        card.style.transform = 'translateY(0)';
-                                    }, 10);
-                                } else {
-                                    card.style.opacity = '0';
-                                    card.style.transform = 'translateY(12px)';
-                                    setTimeout(function () {
-                                        card.style.display = 'none';
-                                    }, 200);
-                                }
-                            });
-                        });
-                    });
-                }
-
-                if (document.readyState === 'loading') {
-                    document.addEventListener('DOMContentLoaded', initBlogFilters);
-                } else {
-                    initBlogFilters();
-                }
-            })();
-        </script>
     </section>
 
     <!-- ==========================================================================
@@ -3363,7 +3303,7 @@
     <script src="assets/js/jquery.meanmenu.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js?v=10.0"></script>
+    <script src="assets/js/main.js?v=11.0"></script>
     <script>
         // Dedicated Mobile Drawer Menu Accordion & Auto-Close
         document.addEventListener('DOMContentLoaded', function() {
