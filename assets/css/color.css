@@ -264,9 +264,9 @@ body {
 }
 
 .vg-header-brand-logo {
-  height: 42px;
+  height: 47px;
   width: auto;
-  max-width: 215px;
+  max-width: 225px;
   object-fit: contain;
   display: block;
   image-rendering: -webkit-optimize-contrast;
@@ -343,14 +343,20 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(124, 58, 237, 0.15);
 }
 
+.vg-header.header-scrolled .vg-nav-container {
+  padding: 11px 28px;
+}
+
 .vg-nav-container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 10px 24px;
+  padding: 15px 28px;
+  min-height: 72px;
   display: flex !important;
   align-items: center !important;
   justify-content: space-between !important;
-  gap: 16px;
+  gap: 20px;
+  transition: padding var(--vg-transition-base);
 }
 
 .vg-brand-wrap {
@@ -378,7 +384,7 @@ body {
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
-  gap: 16px !important;
+  gap: 28px !important;
   flex-shrink: 1 !important;
 }
 
@@ -396,14 +402,14 @@ body {
 .vg-nav-links > li > a,
 .vg-nav-menu .vg-nav-links > li > a {
   color: #e2e8f0 !important;
-  font-size: 13.5px !important;
-  font-weight: 500 !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
   text-decoration: none !important;
   transition: var(--vg-transition-fast) !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 5px !important;
-  padding: 6px 2px !important;
+  gap: 6px !important;
+  padding: 8px 4px !important;
   white-space: nowrap !important;
   position: relative !important;
 }
@@ -411,18 +417,18 @@ body {
 @media (max-width: 1360px) and (min-width: 1200px) {
   .vg-nav-links,
   .vg-nav-menu .vg-nav-links {
-    gap: 9px !important;
+    gap: 18px !important;
   }
   .vg-nav-links > li > a,
   .vg-nav-menu .vg-nav-links > li > a {
-    font-size: 12.2px !important;
-    padding: 6px 1px !important;
+    font-size: 13.5px !important;
+    padding: 7px 2px !important;
   }
   .vg-brand-wrap {
-    margin-right: 6px !important;
+    margin-right: 8px !important;
   }
   .vg-header-brand-logo {
-    max-width: 140px !important;
+    max-width: 180px !important;
   }
 }
 
@@ -467,12 +473,12 @@ body {
 
 @media (max-width: 575px) {
   .vg-nav-container {
-    padding: 8px 14px !important;
-    gap: 10px !important;
+    padding: 13px 16px !important;
+    gap: 12px !important;
   }
   .vg-header-brand-logo {
-    height: 30px !important;
-    max-width: 135px !important;
+    height: 35px !important;
+    max-width: 150px !important;
   }
   .vg-brand-wrap {
     margin-right: 0 !important;
