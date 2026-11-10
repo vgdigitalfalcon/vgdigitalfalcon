@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://vgdigitalfalcon.com/sitemap.xml
+Sitemap: https://vgdigitalfalcon.github.io/vgdigitalfalcon/sitemap.xml
+
