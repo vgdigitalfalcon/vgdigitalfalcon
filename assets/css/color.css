@@ -4551,42 +4551,9 @@ body {
    THE DUAL BATTLE ARENA (COMPACT HIGH-IMPACT MODEL)
    ========================================================================== */
 
-/* Mobile / Responsive Arena View Toggle */
-.vg-arena-view-toggle {
+/* Mobile Feature-by-Feature Matrix (Hidden on Desktop) */
+.vg-feature-matrix-mobile {
   display: none;
-  margin-bottom: 22px;
-  gap: 8px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.vg-arena-toggle-btn {
-  padding: 8px 16px;
-  border-radius: 9999px;
-  border: 1px solid rgba(168, 85, 247, 0.25);
-  background: rgba(18, 9, 36, 0.85);
-  color: #94a3b8;
-  font-size: 12px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  backdrop-filter: blur(8px);
-}
-
-.vg-arena-toggle-btn:hover {
-  color: #ffffff;
-  border-color: rgba(192, 132, 252, 0.5);
-  background: rgba(28, 14, 52, 0.9);
-}
-
-.vg-arena-toggle-btn.active {
-  background: linear-gradient(135deg, #7c3aed, #a855f7);
-  color: #ffffff;
-  border-color: #c084fc;
-  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.45);
 }
 
 /* Battle Arena Wrap: 2 Monoliths side-by-side with central VS reactor */
@@ -6630,7 +6597,9 @@ img, svg, video, canvas {
   .vg-battle-reactor {
     display: flex !important;
   }
-  .vg-arena-mobile-switcher {
+  .vg-arena-mobile-switcher,
+  .vg-arena-view-toggle,
+  .vg-feature-matrix-mobile {
     display: none !important;
   }
 
@@ -6687,203 +6656,244 @@ img, svg, video, canvas {
     justify-content: center !important;
   }
 
-  /* Dual Battle Arena on Tablet & Mobile: Stacked Cleanly with VS Divider & View Toggle */
-  .vg-arena-view-toggle {
-    display: flex !important;
-  }
+  /* Dual Battle Arena on Tablet & Mobile: Feature-by-Feature Comparison Matrix (< 992px) */
+  .vg-battle-arena-wrap,
+  .vg-arena-view-toggle,
   .vg-arena-mobile-switcher {
     display: none !important;
   }
-  .vg-battle-arena-wrap {
+
+  .vg-feature-matrix-mobile {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 auto 24px !important;
+  }
+
+  /* Mobile Efficiency Comparison Bar */
+  .vg-matrix-efficiency-bar {
     display: grid !important;
-    grid-template-columns: 1fr !important;
-    gap: 16px !important;
-    width: 100% !important;
-    max-width: 100% !important;
+    grid-template-columns: 1fr 36px 1fr !important;
+    gap: 10px !important;
+    align-items: center !important;
+    background: rgba(18, 9, 36, 0.75) !important;
+    border: 1px solid rgba(168, 85, 247, 0.28) !important;
+    border-radius: 14px !important;
+    padding: 12px 14px !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
     box-sizing: border-box !important;
   }
-  .vg-battle-monolith {
-    display: block !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    border-radius: 18px !important;
+  .matrix-eff-box {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    min-width: 0 !important;
   }
-  .monolith-inner {
-    padding: 22px 18px !important;
-    border-radius: 18px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-  }
-  .monolith-winner-pill {
-    position: relative !important;
-    top: 0 !important;
-    left: 0 !important;
-    transform: none !important;
-    margin-bottom: 12px !important;
-    display: inline-flex !important;
-    align-self: flex-start !important;
+  .matrix-eff-tag {
     font-size: 11px !important;
-    padding: 4px 12px !important;
-    white-space: normal !important;
-    border-radius: 9999px !important;
+    font-weight: 700 !important;
+    color: #cbd5e1 !important;
+    display: flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
   }
-  .monolith-badge-row {
+  .matrix-eff-val {
+    font-size: 11.5px !important;
+    color: #94a3b8 !important;
+    font-weight: 600 !important;
+  }
+  .matrix-eff-val strong {
+    font-weight: 800 !important;
+    font-size: 13px !important;
+  }
+  .matrix-eff-track {
+    width: 100% !important;
+    height: 6px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    margin-top: 2px !important;
+  }
+  .matrix-eff-fill.trad {
+    height: 100% !important;
+    border-radius: 9999px !important;
+    background: linear-gradient(90deg, #ef4444, #f87171) !important;
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.5) !important;
+  }
+  .matrix-eff-fill.ai {
+    height: 100% !important;
+    border-radius: 9999px !important;
+    background: linear-gradient(90deg, #10b981, #34d399) !important;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.6) !important;
+  }
+  .matrix-eff-vs {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 50% !important;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.25), rgba(16, 185, 129, 0.25)) !important;
+    border: 1px solid rgba(168, 85, 247, 0.35) !important;
+    color: #f1f5f9 !important;
+    font-size: 10px !important;
+    font-weight: 900 !important;
+    box-shadow: 0 0 12px rgba(168, 85, 247, 0.3) !important;
+    margin: 0 auto !important;
+  }
+
+  /* Feature Comparison Cards */
+  .vg-feature-compare-card {
+    background: rgba(18, 9, 36, 0.85) !important;
+    border: 1px solid rgba(168, 85, 247, 0.28) !important;
+    border-radius: 16px !important;
+    padding: 14px 16px !important;
+    backdrop-filter: blur(12px) !important;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45) !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+    overflow: hidden !important;
+    background-image: radial-gradient(circle at top left, rgba(168, 85, 247, 0.1), transparent 70%) !important;
+  }
+  .feature-compare-head {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    flex-wrap: wrap !important;
-    gap: 8px !important;
     margin-bottom: 10px !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.16) !important;
   }
-  .monolith-status-tag {
-    font-size: 11px !important;
-    padding: 3px 10px !important;
-    border-radius: 6px !important;
-    white-space: normal !important;
-  }
-  .monolith-meter {
+  .feature-cat-badge {
+    font-size: 12px !important;
+    font-weight: 800 !important;
+    color: #f8fafc !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.6px !important;
     display: inline-flex !important;
     align-items: center !important;
     gap: 6px !important;
   }
-  .meter-text {
-    font-size: 10.5px !important;
-  }
-  .meter-track {
-    width: 60px !important;
-    height: 6px !important;
-  }
-  .monolith-title {
-    font-size: 16px !important;
-    line-height: 1.3 !important;
-    margin-bottom: 4px !important;
-    font-weight: 800 !important;
-    word-break: break-word !important;
-  }
-  .monolith-subtitle {
-    font-size: 11.5px !important;
-    line-height: 1.4 !important;
-    margin-bottom: 14px !important;
-    color: #94a3b8 !important;
-  }
-  .ai-glow-tag {
-    font-size: 8px !important;
-    padding: 2px 5px !important;
-    border-radius: 4px !important;
-  }
-
-  /* Central VS Cybernetic Energy Reactor as a sleek Divider */
-  .vg-battle-reactor {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 16px !important;
-    margin: 4px 0 !important;
-    padding: 8px 0 !important;
-    position: relative !important;
-    width: 100% !important;
-  }
-  .vg-battle-reactor::before,
-  .vg-battle-reactor::after {
-    content: '' !important;
-    height: 1.5px !important;
-    flex: 1 !important;
-    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.45), transparent) !important;
-  }
-  .reactor-core {
-    width: 44px !important;
-    height: 44px !important;
-  }
-  .reactor-ring.ring-outer {
-    width: 44px !important;
-    height: 44px !important;
-  }
-  .reactor-ring.ring-middle {
-    width: 34px !important;
-    height: 34px !important;
-  }
-  .reactor-pulse-orb {
-    width: 30px !important;
-    height: 30px !important;
-  }
-  .reactor-vs-text {
-    font-size: 12px !important;
-    font-weight: 900 !important;
-  }
-  .reactor-label {
-    display: none !important;
-  }
-
-  /* Chips on Stacked View */
-  .vg-battle-chip {
-    padding: 12px 14px !important;
-    margin-bottom: 8px !important;
-    border-radius: 12px !important;
-    display: flex !important;
-    align-items: flex-start !important;
+  .feature-compare-body {
+    display: grid !important;
+    grid-template-columns: 1fr 28px 1fr !important;
     gap: 10px !important;
-    box-sizing: border-box !important;
-    width: 100% !important;
+    align-items: stretch !important;
   }
-  .chip-status-icon {
-    width: 18px !important;
-    height: 18px !important;
-    font-size: 13px !important;
-    flex-shrink: 0 !important;
-    margin-top: 2px !important;
-  }
-  .chip-content {
-    flex: 1 !important;
+  .feature-side {
+    border-radius: 12px !important;
+    padding: 12px 14px !important;
+    display: flex !important;
+    flex-direction: column !important;
     min-width: 0 !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+  .feature-side.side-trad {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.08), rgba(239, 68, 68, 0.03)) !important;
+    border: 1px solid rgba(239, 68, 68, 0.22) !important;
+  }
+  .feature-side.side-ai {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(168, 85, 247, 0.06)) !important;
+    border: 1.5px solid rgba(16, 185, 129, 0.38) !important;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.08) !important;
+  }
+  .feature-side-header {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
+    gap: 6px !important;
     flex-wrap: wrap !important;
-    gap: 8px !important;
+    margin-bottom: 6px !important;
   }
-  .chip-main-text {
-    flex: 1 1 200px !important;
-    min-width: 0 !important;
+  .side-icon-label {
+    font-size: 10.5px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
   }
-  .chip-pillar-tag {
-    font-size: 9.5px !important;
-    margin-bottom: 2px !important;
-    letter-spacing: 0.3px !important;
-    display: block !important;
+  .side-trad .side-icon-label {
+    color: #f87171 !important;
   }
-  .chip-title {
-    font-size: 13px !important;
-    line-height: 1.35 !important;
-    font-weight: 700 !important;
-    margin-bottom: 3px !important;
-    word-break: break-word !important;
+  .side-ai .side-icon-label {
+    color: #34d399 !important;
   }
-  .chip-desc {
-    font-size: 11px !important;
-    line-height: 1.45 !important;
-    color: #94a3b8 !important;
-    margin-bottom: 0 !important;
-    word-break: break-word !important;
-  }
-  .chip-pill-tag {
+  .feature-tag {
     font-size: 9px !important;
-    padding: 3px 8px !important;
-    border-radius: 5px !important;
-    align-self: center !important;
-    flex-shrink: 0 !important;
+    font-weight: 700 !important;
+    padding: 2px 7px !important;
+    border-radius: 4px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
     white-space: nowrap !important;
   }
-  .monolith-footer {
-    padding: 10px 12px !important;
-    font-size: 10.5px !important;
+  .feature-tag.tag-danger {
+    background: rgba(239, 68, 68, 0.15) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    color: #fca5a5 !important;
+  }
+  .feature-tag.tag-success {
+    background: rgba(16, 185, 129, 0.18) !important;
+    border: 1px solid rgba(16, 185, 129, 0.35) !important;
+    color: #6ee7b7 !important;
+  }
+  .feature-title {
+    font-size: 13px !important;
+    font-weight: 800 !important;
     line-height: 1.35 !important;
-    text-align: center !important;
-    margin-top: 10px !important;
-    border-radius: 8px !important;
+    margin: 0 0 4px 0 !important;
+    word-break: break-word !important;
+  }
+  .side-trad .feature-title {
+    color: #f1f5f9 !important;
+  }
+  .side-ai .feature-title {
+    color: #ffffff !important;
+  }
+  .feature-desc {
+    font-size: 11px !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0 !important;
+    color: #94a3b8 !important;
+    word-break: break-word !important;
+  }
+  .feature-vs-divider {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+  }
+  .feature-vs-divider::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: 1px !important;
+    background: linear-gradient(180deg, transparent, rgba(168, 85, 247, 0.3), transparent) !important;
+  }
+  .feature-vs-pill {
+    position: relative !important;
+    z-index: 1 !important;
+    width: 24px !important;
+    height: 24px !important;
+    border-radius: 50% !important;
+    background: rgba(24, 12, 44, 0.95) !important;
+    border: 1px solid rgba(168, 85, 247, 0.35) !important;
+    color: #c084fc !important;
+    font-size: 8px !important;
+    font-weight: 900 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.3) !important;
   }
 
   /* ROI Calculator on Tablet */
@@ -7021,28 +7031,47 @@ img, svg, video, canvas {
     font-size: 8px !important;
   }
 
-  /* Dual Battle Arena Mobile Adaptability (<= 767px) */
-  .monolith-inner {
-    padding: 18px 14px !important;
-    border-radius: 16px !important;
+  /* Mobile Feature Comparison Card Stacked Layout (<= 767px) */
+  .vg-feature-matrix-mobile {
+    gap: 10px !important;
   }
-  .monolith-title {
-    font-size: 15px !important;
-  }
-  .monolith-subtitle {
-    font-size: 11px !important;
-    margin-bottom: 12px !important;
-  }
-  .vg-battle-chip {
+  .vg-matrix-efficiency-bar {
     padding: 10px 12px !important;
-    gap: 8px !important;
   }
-  .chip-title {
+  .feature-compare-body {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+  }
+  .feature-vs-divider {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 2px 0 !important;
+    width: 100% !important;
+  }
+  .feature-vs-divider::before,
+  .feature-vs-divider::after {
+    content: '' !important;
+    flex: 1 !important;
+    height: 1px !important;
+    background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.35), transparent) !important;
+    position: static !important;
+  }
+  .feature-vs-pill {
+    margin: 0 10px !important;
+    width: 22px !important;
+    height: 22px !important;
+    font-size: 7.5px !important;
+  }
+  .feature-side {
+    padding: 10px 12px !important;
+  }
+  .feature-title {
     font-size: 12.5px !important;
   }
-  .chip-desc {
+  .feature-desc {
     font-size: 11px !important;
-    line-height: 1.4 !important;
   }
 
   /* ROI Calculator on Mobile (<= 767px) */
@@ -7221,37 +7250,51 @@ img, svg, video, canvas {
     justify-content: center !important;
   }
 
-  /* Dual Battle Arena Small Mobile (<= 480px) */
-  .monolith-inner {
-    padding: 16px 12px !important;
-    border-radius: 14px !important;
+  /* Mobile Feature Comparison Card Small Screen (<= 480px) */
+  .vg-matrix-efficiency-bar {
+    grid-template-columns: 1fr 30px 1fr !important;
+    gap: 6px !important;
+    padding: 8px 10px !important;
+    border-radius: 12px !important;
   }
-  .vg-arena-toggle-btn {
-    padding: 6px 12px !important;
+  .matrix-eff-tag {
+    font-size: 9.5px !important;
+  }
+  .matrix-eff-val {
+    font-size: 10px !important;
+  }
+  .matrix-eff-val strong {
     font-size: 11px !important;
   }
-  .monolith-title {
-    font-size: 14.5px !important;
+  .matrix-eff-vs {
+    width: 26px !important;
+    height: 26px !important;
+    font-size: 8.5px !important;
   }
-  .monolith-subtitle {
-    font-size: 10.5px !important;
+  .vg-feature-compare-card {
+    padding: 12px 10px !important;
+    border-radius: 14px !important;
   }
-  .chip-content {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 4px !important;
+  .feature-cat-badge {
+    font-size: 11px !important;
   }
-  .chip-main-text {
-    width: 100% !important;
+  .feature-side {
+    padding: 9px 10px !important;
+    border-radius: 10px !important;
   }
-  .chip-pill-tag {
-    align-self: flex-start !important;
+  .side-icon-label {
+    font-size: 9.5px !important;
   }
-  .chip-title {
+  .feature-tag {
+    font-size: 8px !important;
+    padding: 1.5px 5px !important;
+  }
+  .feature-title {
     font-size: 12px !important;
   }
-  .chip-desc {
-    font-size: 10px !important;
+  .feature-desc {
+    font-size: 10.5px !important;
+    line-height: 1.4 !important;
   }
   .reactor-core {
     width: 36px !important;

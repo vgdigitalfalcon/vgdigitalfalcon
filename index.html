@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     
     <!--<< Custom Theme & Color CSS >>-->
-    <link rel="stylesheet" href="assets/css/main.css?v=19.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=19.0">
+    <link rel="stylesheet" href="assets/css/main.css?v=20.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=20.0">
 
     <!-- Resource Hints for High-Speed Loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -840,17 +840,164 @@
 
             </div>
 
-            <!-- Comparison View Toggle (Mobile / Tablet) -->
-            <div class="vg-arena-view-toggle">
-                <button type="button" class="vg-arena-toggle-btn active" data-filter="both">
-                    <i class="fa-solid fa-arrows-split-up-and-left me-1"></i> Full VS Compare
-                </button>
-                <button type="button" class="vg-arena-toggle-btn" data-filter="trad">
-                    <i class="fa-solid fa-triangle-exclamation me-1"></i> Outdated Agency
-                </button>
-                <button type="button" class="vg-arena-toggle-btn" data-filter="ai">
-                    <i class="fa-solid fa-crown me-1 text-warning"></i> VG Falcon AI
-                </button>
+            <!-- Mobile Compact Feature-by-Feature Comparison Layout (< 992px) -->
+            <div class="vg-feature-matrix-mobile">
+                <!-- Efficiency Comparison Bar -->
+                <div class="vg-matrix-efficiency-bar">
+                    <div class="matrix-eff-box trad">
+                        <div class="matrix-eff-tag"><i class="fa-solid fa-triangle-exclamation text-danger me-1"></i> Outdated Agency</div>
+                        <div class="matrix-eff-val">Efficiency: <strong class="text-danger trad-meter-val-mob">35%</strong></div>
+                        <div class="matrix-eff-track"><div class="matrix-eff-fill trad" style="width: 35%;"></div></div>
+                    </div>
+                    <div class="matrix-eff-vs">
+                        <span>VS</span>
+                    </div>
+                    <div class="matrix-eff-box ai">
+                        <div class="matrix-eff-tag"><i class="fa-solid fa-crown text-warning me-1"></i> VG Falcon AI</div>
+                        <div class="matrix-eff-val">Efficiency: <strong class="text-success ai-meter-val-mob">98%</strong></div>
+                        <div class="matrix-eff-track"><div class="matrix-eff-fill ai" style="width: 98%;"></div></div>
+                    </div>
+                </div>
+
+                <!-- Feature 1: Strategy & Auditing -->
+                <div class="vg-feature-compare-card">
+                    <div class="feature-compare-head">
+                        <span class="feature-cat-badge"><i class="fa-solid fa-chess-knight me-1 text-primary"></i> 1. Strategy &amp; Auditing</span>
+                    </div>
+                    <div class="feature-compare-body">
+                        <div class="feature-side side-trad">
+                            <div class="feature-side-header">
+                                <span class="side-icon-label"><i class="fa-solid fa-circle-xmark text-danger me-1"></i> Outdated Model</span>
+                                <span class="feature-tag tag-danger"><i class="fa-solid fa-arrow-down-left"></i> High Spend</span>
+                            </div>
+                            <h5 class="feature-title">Subjective Guesswork &amp; Generic Templates</h5>
+                            <p class="feature-desc">Copy-pasted competitor tactics without verified hard audience data</p>
+                        </div>
+                        <div class="feature-vs-divider">
+                            <span class="feature-vs-pill">VS</span>
+                        </div>
+                        <div class="feature-side side-ai">
+                            <div class="feature-side-header">
+                                <span class="side-icon-label"><i class="fa-solid fa-circle-check text-success me-1"></i> VG Falcon AI</span>
+                                <span class="feature-tag tag-success"><i class="fa-solid fa-sparkles"></i> Data-Backed</span>
+                            </div>
+                            <h5 class="feature-title">Predictive Algorithmic Audits &amp; Custom Models</h5>
+                            <p class="feature-desc">Deep consumer psychology modeling &amp; AI roadmaps for guaranteed ROI</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Targeting Precision -->
+                <div class="vg-feature-compare-card">
+                    <div class="feature-compare-head">
+                        <span class="feature-cat-badge"><i class="fa-solid fa-bullseye me-1 text-info"></i> 2. Targeting Precision</span>
+                    </div>
+                    <div class="feature-compare-body">
+                        <div class="feature-side side-trad">
+                            <div class="feature-side-header">
+                                <span class="side-icon-label"><i class="fa-solid fa-circle-xmark text-danger me-1"></i> Outdated Model</span>
+                                <span class="feature-tag tag-danger"><i class="fa-solid fa-arrow-down-left"></i> Diluted CPA</span>
+                            </div>
+                            <h5 class="feature-title">Spray-and-Pray Broad Interest Targeting</h5>
+                            <p class="feature-desc">Exhausts ad budgets on irrelevant clicks, bot impressions &amp; unqualified leads</p>
+                        </div>
+                        <div class="feature-vs-divider">
+                            <span class="feature-vs-pill">VS</span>
+                        </div>
+                        <div class="feature-side side-ai">
+                            <div class="feature-side-header">
+                                <span class="side-icon-label"><i class="fa-solid fa-circle-check text-success me-1"></i> VG Falcon AI</span>
+                                <span class="feature-tag tag-success"><i class="fa-solid fa-sparkles"></i> Laser-Targeted</span>
+                            </div>
+                            <h5 class="feature-title">High-Intent AI Behavioral Clustering</h5>
+                            <p class="feature-desc">Lookalike modeling &amp; real-time algorithmic bidding for converting buyers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3: Creative Velocity -->
+                <div class="vg-feature-compare-card">
+                    <div class="feature-compare-head">
+                        <span class="feature-cat-badge"><i class="fa-solid fa-palette me-1 text-warning"></i> 3. Creative Velocity</span>
+                    </div>
+                    <div class="feature-compare-body">
+                        <div class="feature-side side-trad">
+                            <div class="feature-side-header">
+                                <span class="side-icon-label"><i class="fa-solid fa-circle-xmark text-danger me-1"></i> Outdated Model</span>
+                                <span class="feature-tag tag-danger"><i class="fa-solid fa-arrow-down-left"></i> Slow Iteration</span>
+                            </div>
+                            <h5 class="feature-title">2–3 Static Banners with 3-Week Delays</h5>
+                            <p class="feature-desc">Rapid ad fatigue; slow updates require weeks of approval meetings</p>
+                        </div>
+                        <div class="feature-vs-divider">
+                            <span class="feature-vs-pill">VS</span>
+                        </div>
+                        <div class="feature-side side-ai">
+                            <div class="feature-side-header">
+                                <span class="side-icon-label"><i class="fa-solid fa-circle-check text-success me-1"></i> VG Falcon AI</span>
+                                <span class="feature-tag tag-success"><i class="fa-solid fa-sparkles"></i> High-Converting</span>
+                            </div>
+                            <h5 class="feature-title">50+ AI Multi-Variants in 48 Hours</h5>
+                            <p class="feature-desc">Dynamic multi-variant testing discovers winning creatives within 48 hours</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Lead Capture Speed -->
+                <div class="vg-feature-compare-card">
+                    <div class="feature-compare-head">
+                        <span class="feature-cat-badge"><i class="fa-solid fa-bolt me-1 text-danger"></i> 4. Lead Capture Speed</span>
+                    </div>
+                    <div class="feature-compare-body">
+                        <div class="feature-side side-trad">
+                            <div class="feature-side-header">
+                                <span class="side-icon-label"><i class="fa-solid fa-circle-xmark text-danger me-1"></i> Outdated Model</span>
+                                <span class="feature-tag tag-danger"><i class="fa-solid fa-arrow-down-left"></i> 70% Lead Drop</span>
+                            </div>
+                            <h5 class="feature-title">24–48hr Spreadsheet Delay (70% Drop)</h5>
+                            <p class="feature-desc">Manual follow-up lag; over 70% of high-intent prospects slip to competitors</p>
+                        </div>
+                        <div class="feature-vs-divider">
+                            <span class="feature-vs-pill">VS</span>
+                        </div>
+                        <div class="feature-side side-ai">
+                            <div class="feature-side-header">
+                                <span class="side-icon-label"><i class="fa-solid fa-circle-check text-success me-1"></i> VG Falcon AI</span>
+                                <span class="feature-tag tag-success"><i class="fa-solid fa-sparkles"></i> &lt; 30s Instant</span>
+                            </div>
+                            <h5 class="feature-title">Sub-30s Instant WhatsApp &amp; CRM Sync</h5>
+                            <p class="feature-desc">Sub-30s CRM sync, instant WhatsApp API nurture &amp; direct calendar booking 24/7</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 5: Optimization & Data -->
+                <div class="vg-feature-compare-card">
+                    <div class="feature-compare-head">
+                        <span class="feature-cat-badge"><i class="fa-solid fa-chart-line me-1 text-success"></i> 5. Optimization &amp; Data</span>
+                    </div>
+                    <div class="feature-compare-body">
+                        <div class="feature-side side-trad">
+                            <div class="feature-side-header">
+                                <span class="side-icon-label"><i class="fa-solid fa-circle-xmark text-danger me-1"></i> Outdated Model</span>
+                                <span class="feature-tag tag-danger"><i class="fa-solid fa-arrow-down-left"></i> Vanity Metrics</span>
+                            </div>
+                            <h5 class="feature-title">Passive Monthly Reviews &amp; Vanity PDFs</h5>
+                            <p class="feature-desc">Budget burns unmonitored, masked by confusing monthly vanity summaries</p>
+                        </div>
+                        <div class="feature-vs-divider">
+                            <span class="feature-vs-pill">VS</span>
+                        </div>
+                        <div class="feature-side side-ai">
+                            <div class="feature-side-header">
+                                <span class="side-icon-label"><i class="fa-solid fa-circle-check text-success me-1"></i> VG Falcon AI</span>
+                                <span class="feature-tag tag-success"><i class="fa-solid fa-sparkles"></i> 24/7 Live ROI</span>
+                            </div>
+                            <h5 class="feature-title">Autonomous 24/7 Shifts &amp; Live GA4</h5>
+                            <p class="feature-desc">Continuous algorithmic shifts cut losing ads and scale highest ROAS channels</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <!-- Dual Battle Arena: Traditional VS VG Digital Falcon AI (Compact High-Impact) -->
@@ -1204,39 +1351,13 @@
                         });
                     });
 
-                    // 3. Mobile / Responsive Arena View Toggle
-                    var toggleBtns = arenaSection.querySelectorAll('.vg-arena-toggle-btn');
-                    var monolithTrad = document.getElementById('monolith-trad');
-                    var monolithAi = document.getElementById('monolith-ai');
-                    var reactorEl = arenaSection.querySelector('.vg-battle-reactor');
-
-                    toggleBtns.forEach(function (btn) {
-                        btn.addEventListener('click', function () {
-                            var filter = this.getAttribute('data-filter');
-                            toggleBtns.forEach(function (b) { b.classList.remove('active'); });
-                            this.classList.add('active');
-
-                            if (filter === 'trad') {
-                                if (monolithTrad) monolithTrad.style.display = 'block';
-                                if (monolithAi) monolithAi.style.display = 'none';
-                                if (reactorEl) reactorEl.style.display = 'none';
-                            } else if (filter === 'ai') {
-                                if (monolithAi) monolithAi.style.display = 'block';
-                                if (monolithTrad) monolithTrad.style.display = 'none';
-                                if (reactorEl) reactorEl.style.display = 'none';
-                            } else {
-                                if (monolithTrad) monolithTrad.style.display = '';
-                                if (monolithAi) monolithAi.style.display = '';
-                                if (reactorEl) reactorEl.style.display = '';
-                            }
-                        });
-                    });
-
-                    // 4. Efficiency Gauges Animated on Scroll
+                    // 3. Efficiency Gauges Animated on Scroll (Desktop & Mobile)
                     var tradValEl = arenaSection.querySelector('.trad-meter-val');
                     var tradFillEl = arenaSection.querySelector('.trad-meter-fill');
                     var aiValEl = arenaSection.querySelector('.ai-meter-val');
                     var aiFillEl = arenaSection.querySelector('.ai-meter-fill');
+                    var tradValMob = arenaSection.querySelector('.trad-meter-val-mob');
+                    var aiValMob = arenaSection.querySelector('.ai-meter-val-mob');
 
                     var gaugesTriggered = false;
                     function triggerGauges() {
@@ -1248,12 +1369,14 @@
                             tradFillEl.style.width = '35%';
                         }
                         if (tradValEl) animateCount(tradValEl, 0, 35, 2200);
+                        if (tradValMob) animateCount(tradValMob, 0, 35, 2200);
 
                         if (aiFillEl) {
-                            aiFillEl.style.transition = 'width 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
+                            aiFillEl.style.transition = 'width 2.2s cubic-bezier(0.16, 1, 0.3, 1)';
                             aiFillEl.style.width = '98%';
                         }
-                        if (aiValEl) animateCount(aiValEl, 0, 98, 1200);
+                        if (aiValEl) animateCount(aiValEl, 0, 98, 2200);
+                        if (aiValMob) animateCount(aiValMob, 0, 98, 2200);
                     }
 
                     if (prefersReduced || !('IntersectionObserver' in window)) {
@@ -1262,7 +1385,7 @@
                         if (aiFillEl) aiFillEl.style.width = '98%';
                         if (aiValEl) aiValEl.textContent = '98%';
                     } else {
-                        var arenaWrap = arenaSection.querySelector('.vg-battle-arena-wrap') || arenaSection;
+                        var arenaWrap = arenaSection;
                         var observer = new IntersectionObserver(function (entries, obs) {
                             entries.forEach(function (entry) {
                                 if (entry.isIntersecting) {
