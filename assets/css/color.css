@@ -3542,23 +3542,30 @@ body {
 .vg-roi-section {
   background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.18) 0%, rgba(7, 2, 18, 0.98) 70%), #070212;
   color: #ffffff;
-  padding: 85px 0;
+  padding: 85px 0 90px;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 100px;
 }
 
 .vg-roi-calculator-box {
   background: rgba(18, 9, 40, 0.82);
   border: 1.5px solid rgba(168, 85, 247, 0.35);
   border-radius: 28px;
-  padding: 45px 42px;
+  padding: 42px 38px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 50px rgba(124, 58, 237, 0.2);
   backdrop-filter: blur(16px);
-  margin-top: 35px;
+  margin-top: 32px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .vg-roi-slider-wrap {
-  margin-bottom: 38px;
+  margin-bottom: 34px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .vg-roi-slider-header {
@@ -3570,57 +3577,88 @@ body {
   gap: 10px;
 }
 
+.vg-roi-slider-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #cbd5e1;
+  display: inline-flex;
+  align-items: center;
+}
+
 .vg-roi-budget-display {
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 900;
   color: #ffffff;
   background: linear-gradient(135deg, #ffffff 40%, #c084fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+  letter-spacing: -0.5px;
 }
 
 /* Custom Slider Styling */
+.vg-roi-slider,
 .vg-range-slider {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   height: 10px;
   border-radius: 9999px;
-  background: linear-gradient(90deg, #7c3aed var(--slider-pct, 30%), #231245 var(--slider-pct, 30%));
+  background: linear-gradient(90deg, #7c3aed var(--slider-pct, 17%), rgba(255, 255, 255, 0.12) var(--slider-pct, 17%));
   outline: none;
   cursor: pointer;
+  margin: 10px 0;
+  box-sizing: border-box;
 }
 
+.vg-roi-slider::-webkit-slider-thumb,
 .vg-range-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
+  appearance: none;
   width: 26px;
   height: 26px;
   border-radius: 50%;
   background: #ffffff;
-  border: 3px solid #9333ea;
-  box-shadow: 0 0 16px rgba(192, 132, 252, 0.9);
+  border: 3.5px solid #9333ea;
+  box-shadow: 0 0 16px rgba(192, 132, 252, 0.95);
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.vg-roi-slider::-moz-range-thumb,
+.vg-range-slider::-moz-range-thumb {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 3.5px solid #9333ea;
+  box-shadow: 0 0 16px rgba(192, 132, 252, 0.95);
+  cursor: pointer;
+}
+
+.vg-roi-slider::-webkit-slider-thumb:hover,
 .vg-range-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
   box-shadow: 0 0 25px #c084fc;
 }
 
 .vg-roi-results-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
-  margin-bottom: 35px;
+  gap: 20px;
+  margin-bottom: 32px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .vg-roi-result-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(168, 85, 247, 0.25);
   border-radius: 20px;
-  padding: 24px;
+  padding: 22px 18px;
   text-align: center;
   transition: var(--vg-transition-fast);
+  box-sizing: border-box;
 }
 
 .vg-roi-result-card:hover {
@@ -3635,14 +3673,17 @@ body {
   color: #94a3b8;
   font-weight: 600;
   margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .vg-roi-result-val {
-  font-size: 34px;
+  font-size: 32px;
   font-weight: 900;
   color: #ffffff;
   letter-spacing: -0.5px;
-  line-height: 1.1;
+  line-height: 1.15;
 }
 
 .vg-roi-result-val.gradient-purple {
@@ -3659,6 +3700,15 @@ body {
   background: linear-gradient(135deg, #4ade80, #2dd4bf);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.vg-roi-btn-wrap {
+  width: 100%;
+}
+
+.vg-roi-cta-btn {
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* ==========================================================================
@@ -6670,11 +6720,30 @@ img, svg, video, canvas {
   }
 
   /* ROI Calculator on Tablet */
+  .vg-roi-section {
+    padding: 70px 0 80px !important;
+  }
+  .vg-roi-calculator-box {
+    padding: 32px 24px !important;
+    border-radius: 22px !important;
+    margin-top: 24px !important;
+  }
+  .vg-roi-budget-display {
+    font-size: 26px !important;
+  }
   .vg-roi-results-grid {
-    gap: 14px !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+    margin-bottom: 26px !important;
+  }
+  .vg-roi-result-card {
+    padding: 16px 10px !important;
   }
   .vg-roi-result-val {
-    font-size: 26px !important;
+    font-size: 24px !important;
+  }
+  .vg-roi-result-label {
+    font-size: 11.5px !important;
   }
 }
 
@@ -6785,23 +6854,97 @@ img, svg, video, canvas {
     font-size: 8px !important;
   }
 
-  /* ROI Calculator Mobile Grid */
-  .vg-roi-results-grid {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
+  /* ROI Calculator on Mobile (<= 767px) */
+  .vg-roi-section {
+    padding: 50px 0 95px !important;
+    scroll-margin-top: 85px !important;
   }
-  .vg-roi-result-card {
-    padding: 16px 14px !important;
-  }
-  .vg-roi-result-val {
-    font-size: 28px !important;
+  .vg-roi-section .vg-section-head {
+    margin-bottom: 20px !important;
+    padding: 0 8px !important;
   }
   .vg-roi-calculator-box {
-    padding: 24px 16px !important;
+    padding: 22px 16px !important;
     border-radius: 20px !important;
+    margin-top: 14px !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(124, 58, 237, 0.18) !important;
   }
-  .vg-roi-budget-display .budget-amount {
-    font-size: 30px !important;
+  .vg-roi-slider-wrap {
+    margin-bottom: 22px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .vg-roi-slider-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    margin-bottom: 12px !important;
+  }
+  .vg-roi-slider-label {
+    font-size: 13px !important;
+  }
+  .vg-roi-budget-display {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+  .vg-roi-results-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    margin-bottom: 22px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .vg-roi-result-card {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 14px 16px !important;
+    border-radius: 14px !important;
+    text-align: left !important;
+    background: rgba(255, 255, 255, 0.04) !important;
+  }
+  .vg-roi-result-label {
+    font-size: 13px !important;
+    margin-bottom: 0 !important;
+    justify-content: flex-start !important;
+    color: #cbd5e1 !important;
+  }
+  .vg-roi-result-val {
+    font-size: 22px !important;
+    line-height: 1 !important;
+    text-align: right !important;
+    white-space: nowrap !important;
+  }
+  .vg-roi-calculator-box .vg-roi-cta-btn,
+  .vg-roi-calculator-box .vg-btn-primary {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 13px 16px !important;
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    text-align: center !important;
+    border-radius: 9999px !important;
+    box-sizing: border-box !important;
+  }
+  .vg-roi-calculator-box .vg-roi-cta-btn span,
+  .vg-roi-calculator-box .vg-btn-primary span {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    text-align: center !important;
   }
 
   /* Blog / Insights Mobile Grid */
@@ -6815,21 +6958,21 @@ img, svg, video, canvas {
 
   /* Floating Mascot & WhatsApp Buttons */
   .vg-floating-whatsapp {
-    bottom: 16px !important;
-    right: 16px !important;
-    width: 48px !important;
-    height: 48px !important;
-    font-size: 22px !important;
+    bottom: 12px !important;
+    right: 12px !important;
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 20px !important;
     z-index: 99999 !important;
   }
   .vg-global-mascot-wrap {
-    bottom: 16px !important;
-    left: 16px !important;
+    bottom: 12px !important;
+    left: 12px !important;
     z-index: 99990 !important;
   }
   .vg-mascot-falcon {
-    width: 44px !important;
-    height: 44px !important;
+    width: 38px !important;
+    height: 38px !important;
   }
   .vg-mascot-bubble {
     display: none !important;
@@ -6932,6 +7075,29 @@ img, svg, video, canvas {
   .vg-cta-actions button {
     width: 100% !important;
     justify-content: center !important;
+  }
+
+  /* ROI Calculator Small Mobile (<= 480px) */
+  .vg-roi-calculator-box {
+    padding: 18px 12px !important;
+    border-radius: 16px !important;
+  }
+  .vg-roi-budget-display {
+    font-size: 21px !important;
+  }
+  .vg-roi-result-card {
+    padding: 12px 12px !important;
+  }
+  .vg-roi-result-label {
+    font-size: 11.5px !important;
+  }
+  .vg-roi-result-val {
+    font-size: 19px !important;
+  }
+  .vg-roi-calculator-box .vg-roi-cta-btn,
+  .vg-roi-calculator-box .vg-btn-primary {
+    font-size: 12px !important;
+    padding: 11px 12px !important;
   }
 }
 
