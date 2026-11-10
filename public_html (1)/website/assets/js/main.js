@@ -404,10 +404,13 @@ CSS TABLE OF CONTENTS
 
         //>> Interactive Challenges Cards Flip/Highlight <<//
         $(".vg-challenge-card").on("click", function() {
-            const isCurrentlyActive = $(this).hasClass("active-solution");
+            const $card = $(this);
+            const isCurrentlyActive = $card.hasClass("active-solution");
             $(".vg-challenge-card").removeClass("active-solution");
+            $(".vg-challenge-card .vg-solution-tag").html('<i class="fa-solid fa-sparkles text-warning me-1"></i> AI Fix: Click to Reveal');
             if (!isCurrentlyActive) {
-                $(this).addClass("active-solution");
+                $card.addClass("active-solution");
+                $card.find(".vg-solution-tag").html('<i class="fa-solid fa-circle-check text-success me-1"></i> AI Fix Active');
             }
         });
 
