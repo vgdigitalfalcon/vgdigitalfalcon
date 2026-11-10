@@ -1343,19 +1343,79 @@ body {
 .vg-section-head h2 {
   font-size: 38px;
   font-weight: 800;
-  color: #ffffff !important;
   letter-spacing: -0.5px;
   margin-bottom: 12px;
 }
 
-.vg-section-head h2 span {
+/* Light Background Sections: Headings MUST be Deep Dark Slate */
+.vg-challenges-section .vg-section-head h2,
+.vg-challenges-section h2,
+.vg-about-section .vg-section-head h2,
+.vg-about-section h2,
+.vg-services-section .vg-section-head h2,
+.vg-services-section h2,
+.vg-process-section .vg-section-head h2,
+.vg-process-section h2,
+.vg-team-section .vg-section-head h2,
+.vg-team-section h2,
+.vg-testimonials-section .vg-section-head h2,
+.vg-testimonials-section h2 {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+}
+
+.vg-challenges-section .vg-section-head h2 span,
+.vg-about-section .vg-section-head h2 span,
+.vg-services-section .vg-section-head h2 span,
+.vg-process-section .vg-section-head h2 span,
+.vg-team-section .vg-section-head h2 span,
+.vg-testimonials-section .vg-section-head h2 span {
+  color: #7c3aed !important;
+}
+
+.vg-challenges-section .vg-section-head p,
+.vg-services-section .vg-section-head p,
+.vg-process-section .vg-section-head p,
+.vg-team-section .vg-section-head p,
+.vg-testimonials-section .vg-section-head p {
+  color: #475569 !important;
+}
+
+/* Dark Background Sections: Headings MUST be Pure Crisp White */
+.vg-wont-do-section .vg-section-head h2,
+.vg-wont-do-section h2,
+.vg-agents-section .vg-section-head h2,
+.vg-agents-section h2,
+.vg-case-studies-section .vg-section-head h2,
+.vg-case-studies-section h2,
+.vg-effective-section .vg-section-head h2,
+.vg-effective-section h2,
+.vg-roi-section .vg-section-head h2,
+.vg-roi-section h2,
+.vg-blog-section .vg-section-head h2,
+.vg-blog-section h2,
+.vg-techstack-section .vg-section-head h2,
+.vg-techstack-section h2,
+.vg-comparison-section .vg-section-head h2,
+.vg-comparison-section h2 {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.vg-wont-do-section .vg-section-head h2 span,
+.vg-case-studies-section .vg-section-head h2 span,
+.vg-effective-section .vg-section-head h2 span,
+.vg-roi-section .vg-section-head h2 span,
+.vg-blog-section .vg-section-head h2 span {
   color: #c084fc !important;
 }
 
-.vg-section-head p {
-  font-size: 16px;
-  color: #cbd5e1 !important;
-  margin: 0;
+.vg-wont-do-section .vg-section-head p,
+.vg-case-studies-section .vg-section-head p,
+.vg-effective-section .vg-section-head p,
+.vg-roi-section .vg-section-head p,
+.vg-blog-section .vg-section-head p {
+  color: #94a3b8 !important;
 }
 
 .vg-challenges-grid {
