@@ -404,10 +404,14 @@ CSS TABLE OF CONTENTS
 
         //>> Interactive Challenges Cards Flip/Highlight <<//
         $(".vg-challenge-card").on("click", function() {
-            $(this).toggleClass("active-solution");
+            const isCurrentlyActive = $(this).hasClass("active-solution");
+            $(".vg-challenge-card").removeClass("active-solution");
+            if (!isCurrentlyActive) {
+                $(this).addClass("active-solution");
+            }
         });
 
-        //>> Smooth Anchor Scroll <<//
+        //>> Smooth Anchor Scroll with Sticky Header Clearance <<//
         $('a[href^="#"]').on("click", function(e) {
             const href = this.getAttribute("href");
             if (href && href.startsWith("#") && href.length > 1) {
@@ -415,7 +419,7 @@ CSS TABLE OF CONTENTS
                 if (target.length) {
                     e.preventDefault();
                     $("html, body").stop().animate({
-                        scrollTop: target.offset().top - 80
+                        scrollTop: target.offset().top - 100
                     }, 700, "swing");
                 }
             }
