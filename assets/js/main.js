@@ -508,7 +508,12 @@ CSS TABLE OF CONTENTS
         //>> Tech Stack Domain Filtering (Click & Hover Interaction) <<//
         const $techPills = $(".vg-code-discipline-pills .vg-code-pill");
         const $techCards = $(".vg-square-tech-card");
-        let activeTechDomain = "ai-automation";
+        let activeTechDomain = null; // Default is null: all tech stack icons normal!
+
+        const defaultIdePreset = {
+            spec: "AI Marketing • Performance Ads • Automation",
+            stack: "React • Python • Node.js • Meta & Google Ads"
+        };
 
         const idePresets = {
             "ai-automation": {
@@ -533,8 +538,19 @@ CSS TABLE OF CONTENTS
             }
         };
 
+        function resetTechDomain() {
+            $techCards.removeClass("is-active-tech is-dimmed-tech");
+            const $spec = $("#ide-spec");
+            const $stack = $("#ide-stack");
+            if ($spec.length) $spec.text('"' + defaultIdePreset.spec + '"');
+            if ($stack.length) $stack.text('"' + defaultIdePreset.stack + '"');
+        }
+
         function applyTechDomain(domain) {
-            if (!domain) return;
+            if (!domain) {
+                resetTechDomain();
+                return;
+            }
             $techCards.each(function() {
                 const cats = ($(this).attr("data-category") || "").split(" ");
                 if (cats.indexOf(domain) !== -1) {
@@ -554,10 +570,10 @@ CSS TABLE OF CONTENTS
         }
 
         if ($techPills.length && $techCards.length) {
-            // Apply default active domain on page load
-            applyTechDomain(activeTechDomain);
+            // Default state: all icons remain visible with normal opacity (no tab active)
+            resetTechDomain();
 
-            // Hover preview: temporarily illuminate domain tech stack
+            // Hover preview: temporarily highlight corresponding domain tech stack & dim remaining
             $techPills.on("mouseenter", function() {
                 const domain = $(this).attr("data-domain");
                 if (domain) {
@@ -567,13 +583,26 @@ CSS TABLE OF CONTENTS
                 }
             }).on("mouseleave", function() {
                 $techPills.removeClass("hover-preview");
-                applyTechDomain(activeTechDomain);
+                // If a tab was clicked, restore it; otherwise reset all icons back to normal!
+                if (activeTechDomain) {
+                    applyTechDomain(activeTechDomain);
+                } else {
+                    resetTechDomain();
+                }
             });
 
-            // Click: permanently activate selected domain tab
+            // Click: toggle domain tab selection on/off
             $techPills.on("click", function() {
                 const domain = $(this).attr("data-domain");
-                if (domain) {
+                if (!domain) return;
+
+                if (activeTechDomain === domain) {
+                    // Clicking the active tab again toggles it off and resets all icons back to normal
+                    activeTechDomain = null;
+                    $techPills.removeClass("active hover-preview");
+                    resetTechDomain();
+                } else {
+                    // Highlight selected domain tab and filter icons
                     activeTechDomain = domain;
                     $techPills.removeClass("active");
                     $(this).addClass("active");

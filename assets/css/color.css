@@ -4283,7 +4283,7 @@ body {
 
 /* Domain Filter Dimmed State */
 .vg-square-tech-card.is-dimmed-tech {
-  opacity: 0.2 !important;
+  opacity: 0.3 !important;
   transform: scale(0.96) !important;
   border-color: rgba(255, 255, 255, 0.05) !important;
   background: rgba(10, 4, 22, 0.45) !important;
