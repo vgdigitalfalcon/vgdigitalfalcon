@@ -1790,6 +1790,31 @@ body {
   padding: 90px 0 85px;
 }
 
+.vg-services-section .vg-section-head {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto 38px;
+}
+
+.vg-services-section .vg-section-head h2 {
+  font-size: clamp(26px, 2.7vw, 38px);
+  letter-spacing: -0.5px;
+}
+
+.vg-services-section .vg-section-head p {
+  font-size: clamp(14px, 1.15vw, 16px);
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 860px) {
+  .vg-services-section .vg-section-head h2,
+  .vg-services-section .vg-section-head p {
+    white-space: nowrap;
+  }
+}
+
 .vg-services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
