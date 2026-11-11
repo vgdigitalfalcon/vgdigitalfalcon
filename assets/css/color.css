@@ -2329,6 +2329,25 @@ body {
   position: relative;
 }
 
+.vg-testimonials-section .vg-section-head {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto 38px;
+}
+
+.vg-testimonials-section .vg-section-head p {
+  font-size: clamp(14px, 1.15vw, 16px);
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 860px) {
+  .vg-testimonials-section .vg-section-head p {
+    white-space: nowrap;
+  }
+}
+
 /* Google Trust Bar */
 .vg-google-trust-bar {
   display: flex;
