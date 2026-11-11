@@ -2633,6 +2633,30 @@ body {
   border-top: 1px solid rgba(168, 85, 247, 0.18);
 }
 
+.vg-effective-section .vg-section-head {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto 38px;
+}
+
+.vg-effective-section .vg-section-head h2 {
+  font-size: clamp(26px, 2.7vw, 38px);
+  letter-spacing: -0.5px;
+}
+
+.vg-effective-section .vg-section-head p {
+  font-size: clamp(14px, 1.15vw, 16px);
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 860px) {
+  .vg-effective-section .vg-section-head h2 {
+    white-space: nowrap;
+  }
+}
+
 .vg-effective-section::before {
   content: '';
   position: absolute;
