@@ -8051,11 +8051,11 @@ img, svg, video, canvas {
 }
 
 .vg-founder-card {
-  background: rgba(18, 10, 36, 0.85);
+  background: #0d081f;
   border: 1px solid rgba(168, 85, 247, 0.3);
   border-radius: 24px;
   padding: 34px 28px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.55);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -8253,11 +8253,12 @@ img, svg, video, canvas {
 
 .vg-vm-card {
   position: relative;
-  background: rgba(18, 10, 36, 0.75);
+  background: #0d081f;
   border: 1px solid rgba(168, 85, 247, 0.28);
   border-radius: 24px;
   padding: 38px 34px;
-  backdrop-filter: blur(14px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
 }
@@ -8348,11 +8349,12 @@ img, svg, video, canvas {
 
 .vg-value-card {
   position: relative;
-  background: rgba(18, 10, 36, 0.7);
+  background: #0d081f;
   border: 1px solid rgba(168, 85, 247, 0.22);
   border-radius: 20px;
   padding: 30px 24px;
-  backdrop-filter: blur(12px);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
@@ -8416,7 +8418,7 @@ img, svg, video, canvas {
 
 .vg-cap-card {
   position: relative;
-  background: rgba(18, 10, 36, 0.7);
+  background: #0d081f;
   border: 1px solid rgba(168, 85, 247, 0.22);
   border-radius: 20px;
   padding: 30px 24px;
@@ -8531,7 +8533,7 @@ img, svg, video, canvas {
 }
 
 .vg-adv-card {
-  background: rgba(18, 10, 36, 0.7);
+  background: #0d081f;
   border: 1px solid rgba(168, 85, 247, 0.22);
   border-radius: 20px;
   padding: 32px 26px;
@@ -8660,7 +8662,7 @@ img, svg, video, canvas {
   z-index: 1 !important;
 }
 
-/* Solid, High-Contrast Surface & Razor-Sharp Font Readability (Zero Shake, Zero Blur, ClearType Native) */
+/* Solid, 100% Opaque Dark Surface (Zero Blur, Zero Glassmorphism, Zero Shaking) */
 .vg-bento-card,
 .vg-telemetry-card,
 .vg-founder-card,
@@ -8670,7 +8672,7 @@ img, svg, video, canvas {
 .vg-adv-card {
   position: relative !important;
   background: #0d081f !important;
-  border: 1px solid rgba(168, 85, 247, 0.3) !important;
+  border: 1px solid rgba(168, 85, 247, 0.28) !important;
   border-radius: 20px !important;
   overflow: hidden !important;
   opacity: 1 !important;
@@ -8678,6 +8680,7 @@ img, svg, video, canvas {
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55) !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
+  filter: none !important;
   transform: none !important;
   -webkit-transform: none !important;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
@@ -8691,12 +8694,24 @@ img, svg, video, canvas {
 .vg-cap-card:hover,
 .vg-adv-card:hover {
   transform: translateY(-4px) !important;
-  border-color: rgba(0, 240, 255, 0.55) !important;
+  border-color: rgba(0, 240, 255, 0.5) !important;
   background: #110b28 !important;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.7), 0 0 25px rgba(139, 92, 246, 0.22) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7), 0 0 20px rgba(139, 92, 246, 0.18) !important;
 }
 
-/* 1.5px Glowing Radial Spotlight Border on About Us Cards */
+/* Ensure all card content is strictly in front of any border spotlight with razor-sharp readability */
+.vg-bento-card > *,
+.vg-telemetry-card > *,
+.vg-founder-card > *,
+.vg-vm-card > *,
+.vg-value-card > *,
+.vg-cap-card > *,
+.vg-adv-card > * {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* 1.5px Neon Spotlight Border Effect on Hover (Strictly masked to border outline, no interior fog) */
 .vg-bento-card::before,
 .vg-telemetry-card::before,
 .vg-founder-card::before,
@@ -8712,7 +8727,7 @@ img, svg, video, canvas {
   background: radial-gradient(
     320px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
     #00F0FF 0%,
-    #8B5CF6 45%,
+    #8B5CF6 50%,
     transparent 80%
   ) !important;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
@@ -8720,11 +8735,21 @@ img, svg, video, canvas {
   mask-composite: exclude !important;
   pointer-events: none !important;
   opacity: 0 !important;
-  transition: opacity 0.35s ease !important;
+  transition: opacity 0.3s ease !important;
   z-index: 1 !important;
 }
 
-/* Subtle Cursor-Following Surface Ambient Reflection on About Us Cards */
+.vg-bento-card:hover::before,
+.vg-telemetry-card:hover::before,
+.vg-founder-card:hover::before,
+.vg-vm-card:hover::before,
+.vg-value-card:hover::before,
+.vg-cap-card:hover::before,
+.vg-adv-card:hover::before {
+  opacity: 1 !important;
+}
+
+/* Disable any ::after surface fog or glassmorphic wash completely */
 .vg-bento-card::after,
 .vg-telemetry-card::after,
 .vg-founder-card::after,
@@ -8732,37 +8757,8 @@ img, svg, video, canvas {
 .vg-value-card::after,
 .vg-cap-card::after,
 .vg-adv-card::after {
-  content: '' !important;
-  position: absolute !important;
-  inset: 0 !important;
-  border-radius: inherit !important;
-  background: radial-gradient(
-    380px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
-    rgba(0, 240, 255, 0.08) 0%,
-    rgba(139, 92, 246, 0.04) 40%,
-    transparent 70%
-  ) !important;
-  pointer-events: none !important;
-  opacity: 0 !important;
-  transition: opacity 0.35s ease !important;
-  z-index: 1 !important;
-}
-
-.vg-bento-card:hover::before,
-.vg-bento-card:hover::after,
-.vg-telemetry-card:hover::before,
-.vg-telemetry-card:hover::after,
-.vg-founder-card:hover::before,
-.vg-founder-card:hover::after,
-.vg-vm-card:hover::before,
-.vg-vm-card:hover::after,
-.vg-value-card:hover::before,
-.vg-value-card:hover::after,
-.vg-cap-card:hover::before,
-.vg-cap-card:hover::after,
-.vg-adv-card:hover::before,
-.vg-adv-card:hover::after {
-  opacity: 1 !important;
+  display: none !important;
+  content: none !important;
 }
 
 /* Crisp, Proportional Card Headings */
@@ -9012,8 +9008,8 @@ img, svg, video, canvas {
 }
 
 .vg-bento-agent-node {
-  background: rgba(20, 20, 43, 0.9) !important;
-  border: 1px solid rgba(139, 92, 246, 0.4) !important;
+  background: #140d2e !important;
+  border: 1px solid rgba(139, 92, 246, 0.35) !important;
   border-radius: 14px;
   padding: 14px 18px;
   display: flex;
@@ -9024,7 +9020,7 @@ img, svg, video, canvas {
 }
 
 .vg-bento-agent-node:hover {
-  background: rgba(28, 28, 58, 0.95) !important;
+  background: #1c1340 !important;
   border-color: #00F0FF !important;
 }
 
@@ -9061,7 +9057,7 @@ img, svg, video, canvas {
   justify-content: space-between;
   gap: 16px;
   padding: 20px 22px;
-  background: rgba(20, 20, 43, 0.9) !important;
+  background: #140d2e !important;
   border: 1px solid rgba(0, 240, 255, 0.4) !important;
   border-radius: 16px;
   opacity: 1 !important;
@@ -9074,8 +9070,8 @@ img, svg, video, canvas {
   gap: 12px;
   flex-wrap: wrap;
   padding: 16px 20px;
-  background: rgba(20, 20, 43, 0.9) !important;
-  border: 1px solid rgba(139, 92, 246, 0.4) !important;
+  background: #140d2e !important;
+  border: 1px solid rgba(139, 92, 246, 0.35) !important;
   border-radius: 14px;
   opacity: 1 !important;
 }
