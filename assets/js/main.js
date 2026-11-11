@@ -77,14 +77,20 @@ CSS TABLE OF CONTENTS
             }
         });
         
-        //>> Counterup Start <<//
+        //>> Counterup Start (Fast, lively count-up) <<//
         $(".count").counterUp({
             delay: 15,
-            time: 4000,
+            time: 1200,
         });
 
-        //>> Wow Animation Start <<//
-        new WOW().init();
+        //>> Wow Animation Start (Instant on-scroll trigger & zero polling) <<//
+        new WOW({
+            boxClass: 'wow',
+            animateClass: 'animated',
+            offset: 60,
+            mobile: true,
+            live: false
+        }).init();
 
         //>> Nice Select Start <<//
         $('select').niceSelect();
@@ -243,33 +249,7 @@ CSS TABLE OF CONTENTS
             });
         }
 
-        //>> CountDown Start <<//
-        let targetDate = new Date("2024-07-12 00:00:00").getTime();
-        const countdownInterval = setInterval(function () {
-            let currentDate = new Date().getTime();
-            let remainingTime = targetDate - currentDate;
 
-            if (remainingTime <= 0) {
-                clearInterval(countdownInterval);
-                // Display a message or perform any action when the countdown timer reaches zero
-                $("#countdown-container").text("Countdown has ended!");
-            } else {
-                let days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
-                let hours = Math.floor(
-                    (remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-                );
-                let minutes = Math.floor(
-                    (remainingTime % (1000 * 60 * 60)) / (1000 * 60)
-                );
-                let seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
-
-                // Pad single-digit values with leading zeros
-                $("#day").text(days.toString().padStart(2, "0"));
-                $("#hour").text(hours.toString().padStart(2, "0"));
-                $("#min").text(minutes.toString().padStart(2, "0"));
-                $("#sec").text(seconds.toString().padStart(2, "0"));
-            }
-        }, 1000);
         
 
         //>> Search Popup Start <<//
@@ -772,9 +752,8 @@ CSS TABLE OF CONTENTS
 
     function loader() {
         $(window).on('load', function() {
-            // Animate loader off screen
-            $(".preloader").addClass('loaded');                    
-            $(".preloader").delay(600).fadeOut();                       
+            // Animate loader off screen immediately
+            $(".preloader").addClass('loaded').fadeOut(250);
         });
     }
 

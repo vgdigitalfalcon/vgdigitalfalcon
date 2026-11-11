@@ -131,6 +131,23 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
+/* Snappy, Instant On-Scroll Animation Reveal (Zero Lag & 60-120fps) */
+.animated {
+  -webkit-animation-duration: 0.38s !important;
+  animation-duration: 0.38s !important;
+  -webkit-animation-fill-mode: both !important;
+  animation-fill-mode: both !important;
+}
+
+[data-wow-delay] {
+  animation-delay: 0.05s !important;
+}
+
+.wow {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
 /* Scroll Progress Bar at Top */
 #scroll-progress-bar {
   position: fixed;
