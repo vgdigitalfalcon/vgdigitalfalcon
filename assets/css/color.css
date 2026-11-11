@@ -3598,6 +3598,25 @@ body {
   scroll-margin-top: 100px;
 }
 
+.vg-roi-section .vg-section-head {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto 38px;
+}
+
+.vg-roi-section .vg-section-head p {
+  font-size: clamp(14px, 1.15vw, 16px);
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 860px) {
+  .vg-roi-section .vg-section-head p {
+    white-space: nowrap;
+  }
+}
+
 .vg-roi-calculator-box {
   background: rgba(18, 9, 40, 0.82);
   border: 1.5px solid rgba(168, 85, 247, 0.35);
