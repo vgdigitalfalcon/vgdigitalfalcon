@@ -351,15 +351,9 @@
   // ==========================================================================
   function initSpotlightCards() {
     const selector = [
-      '.vg-spotlight-card',
       '.vg-bento-card',
-      '.vg-square-tech-card',
-      '.vg-ide-terminal-card',
-      '.vg-kpi-card',
-      '.vg-battle-monolith',
-      '.vg-battle-chip',
-      '.vg-feature-compare-card',
       '.vg-telemetry-card',
+      '.vg-founder-card',
       '.vg-vm-card',
       '.vg-value-card',
       '.vg-cap-card',
@@ -418,6 +412,11 @@
 
     let canvas = document.getElementById('vg-global-dtapex-canvas');
     if (!canvas) {
+      const isAboutPage = document.querySelector('.vg-about-hero') || 
+                          document.querySelector('.vg-bento-section') || 
+                          window.location.pathname.includes('about');
+      if (!isAboutPage) return;
+
       canvas = document.createElement('canvas');
       canvas.id = 'vg-global-dtapex-canvas';
       canvas.className = 'vg-global-dtapex-canvas';

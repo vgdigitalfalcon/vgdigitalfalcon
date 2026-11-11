@@ -9,6 +9,16 @@
 /* ==========================================================================
    RESTORE NORMAL BROWSER CURSOR (NO OVERLOADED CUSTOM CURSORS)
    ========================================================================== */
+html, body,
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, button,
+input, select, textarea {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
+}
+
 html, body {
   overflow-x: hidden !important;
   max-width: 100vw;
@@ -8641,21 +8651,14 @@ img, svg, video, canvas {
   z-index: 1 !important;
 }
 
-/* Ensure 100% Content Opacity & Razor-Sharp Font Readability (Zero Shake, Zero Blur) */
-.vg-spotlight-card,
+/* Ensure 100% Content Opacity & Razor-Sharp Font Readability (Zero Shake, Zero Blur) on About Us */
 .vg-bento-card,
 .vg-telemetry-card,
 .vg-founder-card,
 .vg-vm-card,
 .vg-value-card,
 .vg-cap-card,
-.vg-adv-card,
-.vg-square-tech-card,
-.vg-ide-terminal-card,
-.vg-kpi-card,
-.vg-battle-monolith,
-.vg-battle-chip,
-.vg-feature-compare-card {
+.vg-adv-card {
   position: relative !important;
   background-color: #0d0d1b !important;
   border: 1px solid rgba(139, 92, 246, 0.35) !important;
@@ -8673,15 +8676,14 @@ img, svg, video, canvas {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
 }
 
-/* 1.5px Glowing Radial Spotlight Border */
-.vg-spotlight-card::before,
+/* 1.5px Glowing Radial Spotlight Border on About Us Cards */
 .vg-bento-card::before,
-.vg-square-tech-card::before,
-.vg-ide-terminal-card::before,
-.vg-kpi-card::before,
-.vg-battle-monolith::before,
-.vg-battle-chip::before,
-.vg-feature-compare-card::before {
+.vg-telemetry-card::before,
+.vg-founder-card::before,
+.vg-vm-card::before,
+.vg-value-card::before,
+.vg-cap-card::before,
+.vg-adv-card::before {
   content: '' !important;
   position: absolute !important;
   inset: 0 !important;
@@ -8702,15 +8704,14 @@ img, svg, video, canvas {
   z-index: 2 !important;
 }
 
-/* Subtle Cursor-Following Surface Ambient Reflection */
-.vg-spotlight-card::after,
+/* Subtle Cursor-Following Surface Ambient Reflection on About Us Cards */
 .vg-bento-card::after,
-.vg-square-tech-card::after,
-.vg-ide-terminal-card::after,
-.vg-kpi-card::after,
-.vg-battle-monolith::after,
-.vg-battle-chip::after,
-.vg-feature-compare-card::after {
+.vg-telemetry-card::after,
+.vg-founder-card::after,
+.vg-vm-card::after,
+.vg-value-card::after,
+.vg-cap-card::after,
+.vg-adv-card::after {
   content: '' !important;
   position: absolute !important;
   inset: 0 !important;
@@ -8727,22 +8728,20 @@ img, svg, video, canvas {
   z-index: 1 !important;
 }
 
-.vg-spotlight-card:hover::before,
-.vg-spotlight-card:hover::after,
 .vg-bento-card:hover::before,
 .vg-bento-card:hover::after,
-.vg-square-tech-card:hover::before,
-.vg-square-tech-card:hover::after,
-.vg-ide-terminal-card:hover::before,
-.vg-ide-terminal-card:hover::after,
-.vg-kpi-card:hover::before,
-.vg-kpi-card:hover::after,
-.vg-battle-monolith:hover::before,
-.vg-battle-monolith:hover::after,
-.vg-battle-chip:hover::before,
-.vg-battle-chip:hover::after,
-.vg-feature-compare-card:hover::before,
-.vg-feature-compare-card:hover::after {
+.vg-telemetry-card:hover::before,
+.vg-telemetry-card:hover::after,
+.vg-founder-card:hover::before,
+.vg-founder-card:hover::after,
+.vg-vm-card:hover::before,
+.vg-vm-card:hover::after,
+.vg-value-card:hover::before,
+.vg-value-card:hover::after,
+.vg-cap-card:hover::before,
+.vg-cap-card:hover::after,
+.vg-adv-card:hover::before,
+.vg-adv-card:hover::after {
   opacity: 1 !important;
 }
 

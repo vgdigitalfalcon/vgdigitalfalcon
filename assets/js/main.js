@@ -394,20 +394,6 @@ CSS TABLE OF CONTENTS
             }
         });
 
-        //>> Smooth Anchor Scroll with Sticky Header Clearance <<//
-        $('a[href^="#"]').on("click", function(e) {
-            const href = this.getAttribute("href");
-            if (href && href.startsWith("#") && href.length > 1) {
-                const target = $(href);
-                if (target.length) {
-                    e.preventDefault();
-                    $("html, body").stop().animate({
-                        scrollTop: target.offset().top - 100
-                    }, 700, "swing");
-                }
-            }
-        });
-
         //>> Flying Falcon Interactive Flight & Physics <<//
         const $falcon = $("#vg-flying-falcon");
         const $hero = $(".vg-hero-section");
@@ -725,10 +711,10 @@ CSS TABLE OF CONTENTS
             const filter = $(this).data("filter");
 
             if (filter === "all") {
-                $(".vg-service-card").fadeIn(300);
+                $(".vg-service-card").css("display", "flex").hide().fadeIn(300);
             } else {
                 $(".vg-service-card").hide();
-                $('.vg-service-card[data-category="' + filter + '"]').fadeIn(300);
+                $('.vg-service-card[data-category="' + filter + '"]').css("display", "flex").hide().fadeIn(300);
             }
         });
 
