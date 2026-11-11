@@ -3886,7 +3886,7 @@ body {
 .vg-techstack-section {
   position: relative;
   background: radial-gradient(ellipse at 50% -20%, #1a0b3e 0%, #080214 60%, #04010a 100%);
-  padding: 85px 0 50px;
+  padding: 70px 0 50px;
   overflow: hidden;
   border-top: 1px solid rgba(168, 85, 247, 0.18);
   border-bottom: 1px solid rgba(168, 85, 247, 0.18);
@@ -3985,9 +3985,12 @@ body {
 .vg-code-discipline-pills {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 14px 10px;
+  row-gap: 14px;
+  column-gap: 10px;
   justify-content: center;
   align-items: center;
+  margin-bottom: 2rem !important;
   position: relative;
   z-index: 5;
 }
@@ -4424,7 +4427,10 @@ body {
     justify-content: center;
   }
   .vg-code-discipline-pills {
-    gap: 6px;
+    row-gap: 10px !important;
+    column-gap: 6px !important;
+    gap: 10px 6px !important;
+    margin-bottom: 1.75rem !important;
   }
   .vg-code-pill {
     padding: 6px 14px;
@@ -7211,7 +7217,10 @@ img, svg, video, canvas {
 
   /* Architecture & Tech Stack Mobile */
   .vg-code-discipline-pills {
-    gap: 6px !important;
+    row-gap: 10px !important;
+    column-gap: 6px !important;
+    gap: 10px 6px !important;
+    margin-bottom: 1.5rem !important;
   }
   .vg-code-pill {
     padding: 6px 12px !important;
