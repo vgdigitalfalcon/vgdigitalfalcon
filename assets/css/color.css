@@ -3174,15 +3174,25 @@ body {
     justify-content: center;
   }
   .vg-engine-stage {
-    width: 310px;
-    height: 310px;
+    width: 320px;
+    height: 320px;
+    max-width: 90vw;
   }
   .vg-node {
-    padding: 3px 8px;
-    font-size: 9.5px;
+    padding: 3px 7px;
+    font-size: 9px;
+    gap: 4px;
   }
   .vg-node i, .vg-node svg {
-    font-size: 10px;
+    font-size: 9.5px;
+  }
+  .node-analytics {
+    top: 91%;
+    left: 24%;
+  }
+  .node-crm {
+    top: 91%;
+    left: 76%;
   }
   .vg-engine-core {
     width: 90px;
@@ -3213,8 +3223,24 @@ body {
     padding: 11px 18px;
   }
   .vg-engine-stage {
-    width: 270px;
-    height: 270px;
+    width: 280px;
+    height: 280px;
+  }
+  .vg-node {
+    padding: 2.5px 6px !important;
+    font-size: 8px !important;
+    gap: 3px !important;
+  }
+  .vg-node i, .vg-node svg {
+    font-size: 9px !important;
+  }
+  .node-analytics {
+    top: 90% !important;
+    left: 21% !important;
+  }
+  .node-crm {
+    top: 93% !important;
+    left: 75% !important;
   }
   .vg-engine-core {
     width: 78px;
