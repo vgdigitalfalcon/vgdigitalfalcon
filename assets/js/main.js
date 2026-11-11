@@ -508,42 +508,82 @@ CSS TABLE OF CONTENTS
         //>> Tech Stack Domain Filtering (Click & Hover Interaction) <<//
         const $techPills = $(".vg-code-discipline-pills .vg-code-pill");
         const $techCards = $(".vg-square-tech-card");
+        const $codeDisplay = $("#vg-ide-code-display");
         let activeTechDomain = null; // Default is null: all tech stack icons normal!
 
-        const defaultIdePreset = {
-            spec: "AI Marketing • Performance Ads • Automation",
-            stack: "React • Python • Node.js • Meta & Google Ads"
-        };
+        const defaultIdeCode = `<span class="c-comment"># AI-Powered Digital Marketing &amp; Growth Engine</span>
+<span class="c-kw">class</span> <span class="c-class">VGDigitalFalcon</span>(<span class="c-parent">AIGrowthPartner</span>):
+    <span class="c-prop">specialization</span>   = <span class="c-str">"AI Marketing • Performance Ads • Automation"</span>
+    <span class="c-prop">core_stack</span>       = <span class="c-str">"React • Python • Node.js • Meta &amp; Google Ads"</span>
+    <span class="c-prop">avg_roas</span>         = <span class="c-str">"4.8x"</span>  <span class="c-comment"># Proven client scaling</span>
+    <span class="c-prop">lead_latency</span>     = <span class="c-str">"&lt; 30s"</span>  <span class="c-comment"># Automated CRM sync</span>
+    <span class="c-prop">client_retention</span> = <span class="c-str">"95%"</span>
 
-        const idePresets = {
-            "ai-automation": {
-                spec: "Autonomous AI Agents • LLM Workflows • Bots",
-                stack: "OpenAI • Python • Node.js • WhatsApp API"
-            },
-            "performance-marketing": {
-                spec: "Multi-Channel Paid Ads • Algorithmic ROAS",
-                stack: "Google Ads • Meta Ads • GA4 • Semrush"
-            },
-            "web-engineering": {
-                spec: "High-Performance Web Apps • Custom E-Commerce",
-                stack: "React • Node.js • Laravel • Cloudflare"
-            },
-            "lead-funnels": {
-                spec: "Omni-Channel Lead Capture • Instant CRM Sync",
-                stack: "WhatsApp API • HubSpot • Zapier • Meta Ads"
-            },
-            "roi-attribution": {
-                spec: "Closed-Loop Revenue Tracking • Predictive LTV",
-                stack: "GA4 • Server-Side CAPI • Python Analytics"
-            }
+    <span class="c-kw">def</span> <span class="c-func">scale_business</span>(<span class="c-self">self</span>, <span class="c-param">client</span>):
+        <span class="c-kw">return</span> <span class="c-var">predictable_revenue</span> + <span class="c-var">10x_growth</span>`;
+
+        const ideCodePresets = {
+            "ai-automation": `<span class="c-comment"># Autonomous AI Agents &amp; Intelligent Workflows</span>
+<span class="c-kw">class</span> <span class="c-class">VGDigitalFalcon</span>(<span class="c-parent">AIGrowthPartner</span>):
+    <span class="c-prop">specialization</span>     = <span class="c-str">"Autonomous AI Agents • LLM Workflows • Bots"</span>
+    <span class="c-prop">core_stack</span>         = <span class="c-str">"OpenAI • Python • Node.js • WhatsApp API"</span>
+    <span class="c-prop">lead_response</span>      = <span class="c-str">"&lt; 30s"</span>  <span class="c-comment"># 24/7 intelligent agent sync</span>
+    <span class="c-prop">workflow_uptime</span>    = <span class="c-str">"99.98%"</span>  <span class="c-comment"># Self-healing microservices</span>
+    <span class="c-prop">manual_hours_saved</span> = <span class="c-str">"85%"</span>
+
+    <span class="c-kw">def</span> <span class="c-func">automate_growth</span>(<span class="c-self">self</span>, <span class="c-param">pipeline</span>):
+        <span class="c-kw">return</span> <span class="c-var">autonomous_agents</span>.<span class="c-func">scale</span>(<span class="c-param">pipeline</span>)`,
+
+            "performance-marketing": `<span class="c-comment"># Multi-Channel Paid Ads &amp; Algorithmic ROAS Engine</span>
+<span class="c-kw">class</span> <span class="c-class">VGDigitalFalcon</span>(<span class="c-parent">AIGrowthPartner</span>):
+    <span class="c-prop">specialization</span>     = <span class="c-str">"Multi-Channel Paid Ads • Algorithmic ROAS"</span>
+    <span class="c-prop">core_stack</span>         = <span class="c-str">"Google Ads • Meta Ads • GA4 • Semrush"</span>
+    <span class="c-prop">avg_roas</span>           = <span class="c-str">"4.8x - 8.6x"</span>  <span class="c-comment"># Proven client scaling</span>
+    <span class="c-prop">cpa_reduction</span>      = <span class="c-str">"-40%"</span>  <span class="c-comment"># Algorithmic bidding optimization</span>
+    <span class="c-prop">creative_velocity</span>  = <span class="c-str">"50+ variations/48h"</span>
+
+    <span class="c-kw">def</span> <span class="c-func">maximize_ad_spend</span>(<span class="c-self">self</span>, <span class="c-param">campaign</span>):
+        <span class="c-kw">return</span> <span class="c-var">algorithmic_bidding</span>.<span class="c-func">optimize_roas</span>(<span class="c-param">campaign</span>)`,
+
+            "web-engineering": `<span class="c-comment"># Sub-Second Speed &amp; High-Performance Web Engineering</span>
+<span class="c-kw">class</span> <span class="c-class">VGDigitalFalcon</span>(<span class="c-parent">AIGrowthPartner</span>):
+    <span class="c-prop">specialization</span>     = <span class="c-str">"High-Performance Web Apps • Custom E-Commerce"</span>
+    <span class="c-prop">core_stack</span>         = <span class="c-str">"React • Node.js • Laravel • Cloudflare"</span>
+    <span class="c-prop">page_speed_fcp</span>     = <span class="c-str">"0.8s"</span>  <span class="c-comment"># Ultra-fast TTFB edge caching</span>
+    <span class="c-prop">lighthouse_score</span>   = <span class="c-str">"98/100"</span>  <span class="c-comment"># Core Web Vitals optimized</span>
+    <span class="c-prop">uptime_sla</span>         = <span class="c-str">"99.99%"</span>
+
+    <span class="c-kw">def</span> <span class="c-func">deploy_web_engine</span>(<span class="c-self">self</span>, <span class="c-param">platform</span>):
+        <span class="c-kw">return</span> <span class="c-var">zero_downtime_deploy</span>(<span class="c-param">platform</span>) + <span class="c-var">sub_second_loads</span>`,
+
+            "lead-funnels": `<span class="c-comment"># Omni-Channel Lead Funnels &amp; Real-Time CRM Automation</span>
+<span class="c-kw">class</span> <span class="c-class">VGDigitalFalcon</span>(<span class="c-parent">AIGrowthPartner</span>):
+    <span class="c-prop">specialization</span>     = <span class="c-str">"Omni-Channel Lead Capture • Instant CRM Sync"</span>
+    <span class="c-prop">core_stack</span>         = <span class="c-str">"WhatsApp API • HubSpot • Zapier • Meta Ads"</span>
+    <span class="c-prop">funnel_conv_rate</span>   = <span class="c-str">"18.4%"</span>  <span class="c-comment"># High-intent buyer routing</span>
+    <span class="c-prop">crm_sync_latency</span>   = <span class="c-str">"&lt; 15s"</span>  <span class="c-comment"># Instant webhook automation</span>
+    <span class="c-prop">dropoff_reduction</span>  = <span class="c-str">"-55%"</span>
+
+    <span class="c-kw">def</span> <span class="c-func">route_inbound_prospect</span>(<span class="c-self">self</span>, <span class="c-param">lead</span>):
+        <span class="c-kw">return</span> <span class="c-var">instant_whatsapp_sync</span>(<span class="c-param">lead</span>) + <span class="c-var">direct_calendar_book</span>`,
+
+            "roi-attribution": `<span class="c-comment"># Server-Side CAPI &amp; Closed-Loop Revenue Attribution</span>
+<span class="c-kw">class</span> <span class="c-class">VGDigitalFalcon</span>(<span class="c-parent">AIGrowthPartner</span>):
+    <span class="c-prop">specialization</span>     = <span class="c-str">"Closed-Loop Revenue Tracking • Predictive LTV"</span>
+    <span class="c-prop">core_stack</span>         = <span class="c-str">"GA4 • Server-Side CAPI • Python Analytics"</span>
+    <span class="c-prop">data_accuracy</span>      = <span class="c-str">"99.4%"</span>  <span class="c-comment"># Server-side cookieless tracking</span>
+    <span class="c-prop">revenue_tracked</span>    = <span class="c-str">"₹50+ Cr"</span>  <span class="c-comment"># Real-time multi-touch GA4</span>
+    <span class="c-prop">roas_visibility</span>    = <span class="c-str">"100% Live"</span>
+
+    <span class="c-kw">def</span> <span class="c-func">verify_roi_data</span>(<span class="c-self">self</span>, <span class="c-param">journey</span>):
+        <span class="c-kw">return</span> <span class="c-var">server_side_attribution</span>.<span class="c-func">audit_revenue</span>(<span class="c-param">journey</span>)`
         };
 
         function resetTechDomain() {
             $techCards.removeClass("is-active-tech is-dimmed-tech");
-            const $spec = $("#ide-spec");
-            const $stack = $("#ide-stack");
-            if ($spec.length) $spec.text('"' + defaultIdePreset.spec + '"');
-            if ($stack.length) $stack.text('"' + defaultIdePreset.stack + '"');
+            if ($codeDisplay.length) {
+                $codeDisplay.html(defaultIdeCode);
+            }
         }
 
         function applyTechDomain(domain) {
@@ -560,12 +600,9 @@ CSS TABLE OF CONTENTS
                 }
             });
 
-            const preset = idePresets[domain];
-            if (preset) {
-                const $spec = $("#ide-spec");
-                const $stack = $("#ide-stack");
-                if ($spec.length) $spec.text('"' + preset.spec + '"');
-                if ($stack.length) $stack.text('"' + preset.stack + '"');
+            const codeHtml = ideCodePresets[domain];
+            if (codeHtml && $codeDisplay.length) {
+                $codeDisplay.html(codeHtml);
             }
         }
 
