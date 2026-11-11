@@ -19,6 +19,15 @@ input, select, textarea {
   text-rendering: optimizeLegibility !important;
 }
 
+/* Ensure FontAwesome Icons ALWAYS preserve their icon font family */
+i, [class*="fa-"], .fa, .fas, .far, .fal, .fad, .fab, .svg-inline--fa {
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free", "FontAwesome" !important;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
 html, body {
   overflow-x: hidden !important;
   max-width: 100vw;
@@ -8651,7 +8660,7 @@ img, svg, video, canvas {
   z-index: 1 !important;
 }
 
-/* Ensure 100% Content Opacity & Razor-Sharp Font Readability (Zero Shake, Zero Blur) on About Us */
+/* Solid, High-Contrast Surface & Razor-Sharp Font Readability (Zero Shake, Zero Blur, ClearType Native) */
 .vg-bento-card,
 .vg-telemetry-card,
 .vg-founder-card,
@@ -8660,20 +8669,31 @@ img, svg, video, canvas {
 .vg-cap-card,
 .vg-adv-card {
   position: relative !important;
-  background-color: #0d0d1b !important;
-  border: 1px solid rgba(139, 92, 246, 0.35) !important;
+  background: #0d081f !important;
+  border: 1px solid rgba(168, 85, 247, 0.3) !important;
+  border-radius: 20px !important;
   overflow: hidden !important;
-  isolation: auto !important; /* Prevents disabling ClearType subpixel rendering */
   opacity: 1 !important;
   z-index: 2 !important;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55) !important;
-  backdrop-filter: none !important; /* Removes 60fps recomposition jitter from underlying canvas */
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.55) !important;
+  backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  transform: translate3d(0, 0, 0) !important;
-  -webkit-transform: translate3d(0, 0, 0) !important;
-  backface-visibility: hidden !important;
-  -webkit-backface-visibility: hidden !important;
+  transform: none !important;
+  -webkit-transform: none !important;
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease !important;
+}
+
+.vg-bento-card:hover,
+.vg-telemetry-card:hover,
+.vg-founder-card:hover,
+.vg-vm-card:hover,
+.vg-value-card:hover,
+.vg-cap-card:hover,
+.vg-adv-card:hover {
+  transform: translateY(-4px) !important;
+  border-color: rgba(0, 240, 255, 0.55) !important;
+  background: #110b28 !important;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.7), 0 0 25px rgba(139, 92, 246, 0.22) !important;
 }
 
 /* 1.5px Glowing Radial Spotlight Border on About Us Cards */
@@ -8701,7 +8721,7 @@ img, svg, video, canvas {
   pointer-events: none !important;
   opacity: 0 !important;
   transition: opacity 0.35s ease !important;
-  z-index: 2 !important;
+  z-index: 1 !important;
 }
 
 /* Subtle Cursor-Following Surface Ambient Reflection on About Us Cards */
@@ -8745,98 +8765,57 @@ img, svg, video, canvas {
   opacity: 1 !important;
 }
 
-.vg-spotlight-card:hover,
-.vg-bento-card:hover {
-  transform: translate3d(0, -4px, 0) !important;
-  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.75), 0 0 25px -5px rgba(0, 240, 255, 0.2) !important;
-}
-
-/* 100% Crisp Typography - Anti-Aliased & Zero-Blur */
-.vg-bento-card *,
-.vg-telemetry-card *,
-.vg-founder-card *,
-.vg-vm-card *,
-.vg-value-card *,
-.vg-cap-card *,
-.vg-adv-card *,
-.vg-trust-section * {
-  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  -webkit-font-smoothing: antialiased !important;
-  -moz-osx-font-smoothing: grayscale !important;
-  text-rendering: optimizeLegibility !important;
-}
-
-/* Headings: Luminous White, Pure Bold 800, Razor-Sharp */
+/* Crisp, Proportional Card Headings (NOT oversized heading subcontext) */
 .vg-bento-card h3,
 .vg-telemetry-card h3,
 .vg-founder-card h3,
 .vg-vm-card h3,
 .vg-value-card h4,
 .vg-cap-card h4,
-.vg-adv-card h4,
+.vg-adv-card h4 {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  line-height: 1.35 !important;
+  margin: 0 0 8px 0 !important;
+  letter-spacing: -0.2px !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
 .vg-about-hero-title,
 .vg-story-content h2,
 .vg-cta-text h3 {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   color: #ffffff !important;
-  opacity: 1 !important;
   font-weight: 800 !important;
-  text-shadow: none !important;
-  letter-spacing: -0.4px !important;
   -webkit-font-smoothing: antialiased !important;
 }
 
-/* Bento Card Headings */
-.vg-bento-card h3 {
-  font-size: 24px !important;
-  font-weight: 800 !important;
-  line-height: 1.3 !important;
-  margin-bottom: 14px !important;
-}
-
-/* Body Copy & Card Paragraphs: Crystal-Clear, High-Contrast Platinum (#f1f5f9 / #e2e8f0) */
-.vg-bento-card p {
-  color: #f1f5f9 !important;
-  opacity: 1 !important;
-  font-size: 15.5px !important;
-  line-height: 1.7 !important;
-  font-weight: 400 !important;
-  letter-spacing: -0.1px !important;
-  margin-bottom: 22px !important;
-  text-shadow: none !important;
-}
-
-.vg-about-hero-sub {
-  color: #f1f5f9 !important;
-  opacity: 1 !important;
-  font-size: 17.5px !important;
-  line-height: 1.75 !important;
-  font-weight: 400 !important;
-  text-shadow: none !important;
-}
-
-.vg-story-lead {
-  color: #f1f5f9 !important;
-  opacity: 1 !important;
-  font-size: 16.5px !important;
-  line-height: 1.75 !important;
-  font-weight: 400 !important;
-  margin-bottom: 18px !important;
-  text-shadow: none !important;
-}
-
-.vg-story-text,
+/* Compact, Razor-Sharp Card Body Copy (Distinct from page heading subcontext) */
+.vg-bento-card p,
 .vg-vm-card p,
 .vg-value-card p,
 .vg-cap-card p,
-.vg-adv-card p,
+.vg-adv-card p {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  color: #cbd5e1 !important;
+  font-size: 13.5px !important;
+  line-height: 1.55 !important;
+  font-weight: 400 !important;
+  margin: 0 0 16px 0 !important;
+  letter-spacing: normal !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.vg-about-hero-sub,
+.vg-story-lead,
+.vg-story-text,
 .vg-cta-text p {
   color: #e2e8f0 !important;
-  opacity: 1 !important;
   font-size: 15.5px !important;
   line-height: 1.7 !important;
   font-weight: 400 !important;
-  text-shadow: none !important;
 }
 
 /* Section Header Paragraphs */
