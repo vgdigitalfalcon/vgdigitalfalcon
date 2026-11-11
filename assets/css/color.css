@@ -1921,6 +1921,23 @@ body {
   overflow: hidden;
 }
 
+.vg-process-section .vg-section-head {
+  max-width: 1050px;
+  width: 100%;
+  margin: 0 auto 38px;
+}
+
+.vg-process-section .vg-section-head h2 {
+  font-size: clamp(26px, 2.6vw, 36px);
+  letter-spacing: -0.5px;
+}
+
+@media (min-width: 860px) {
+  .vg-process-section .vg-section-head h2 {
+    white-space: nowrap;
+  }
+}
+
 .vg-process-section::before {
   content: '';
   position: absolute;
