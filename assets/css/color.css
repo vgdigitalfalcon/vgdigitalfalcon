@@ -3220,6 +3220,7 @@ body {
   .vg-hero-title {
     font-size: 28px;
     line-height: 1.25;
+    text-align: left !important;
   }
   .vg-hero-desc {
     font-size: 13.5px;
@@ -7711,6 +7712,7 @@ img, svg, video, canvas {
   .vg-hero-title {
     font-size: 24px !important;
     line-height: 1.25 !important;
+    text-align: left !important;
   }
   .vg-hero-actions {
     flex-direction: column !important;
@@ -9329,10 +9331,17 @@ img, svg, video, canvas {
 }
 
 @media (max-width: 991px) {
+  .vg-hero-title {
+    text-align: left !important;
+  }
+  .vg-hero-content .vg-pill-badge {
+    align-self: flex-start !important;
+  }
   .vg-hero-desc {
     text-align: justify !important;
     text-justify: inter-word !important;
-    text-align-last: center !important;
+    text-align-last: left !important;
+    margin-left: 0 !important;
   }
   .vg-wont-do-subtitle,
   .vg-arch-subtitle {
