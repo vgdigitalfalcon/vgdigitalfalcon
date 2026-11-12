@@ -8261,6 +8261,8 @@ img, svg, video, canvas {
   -webkit-backdrop-filter: none;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .vg-vm-card::before {
@@ -8321,6 +8323,7 @@ img, svg, video, canvas {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin-top: auto;
 }
 
 .vg-vm-chip {
