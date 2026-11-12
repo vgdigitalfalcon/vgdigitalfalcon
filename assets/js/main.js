@@ -46,8 +46,12 @@ CSS TABLE OF CONTENTS
             $(".offcanvas__info").addClass("info-open");
             $(".offcanvas__overlay").addClass("overlay-open");
         });
-        // Auto-close mobile drawer when navigating to in-page hash links
-        $(".offcanvas__info a").on("click", function() {
+        // Auto-close mobile drawer when navigating to in-page hash links (exclude dropdown toggles)
+        $(".offcanvas__info a").on("click", function(e) {
+            // Never auto-close drawer or refresh on dropdown parent toggle or dummy links
+            if ($(this).hasClass("vg-mobile-parent-link") || $(this).closest(".vg-mobile-parent-link").length || $(this).attr("href") === "javascript:void(0)" || $(this).attr("href") === "#") {
+                return;
+            }
             if (!$(this).hasClass("mean-expand")) {
                 $(".offcanvas__info").removeClass("info-open");
                 $(".offcanvas__overlay").removeClass("overlay-open");

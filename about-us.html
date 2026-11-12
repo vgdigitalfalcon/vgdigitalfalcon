@@ -26,8 +26,8 @@
     <link rel="stylesheet" href="assets/css/nice-select.css">
     
     <!--<< Custom Theme & Color CSS >>-->
-    <link rel="stylesheet" href="assets/css/main.css?v=57.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=57.0">
+    <link rel="stylesheet" href="assets/css/main.css?v=58.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=58.0">
 
     <!-- Resource Hints & Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -88,10 +88,11 @@
                             <li><a href="index.html">Home</a></li>
                             <li><a href="about-us.html" class="active">About Us</a></li>
                             <li class="has-dropdown">
-                                <a href="javascript:void(0)" class="vg-mobile-parent-link">
+                                <a href="#" class="vg-mobile-parent-link" role="button" aria-expanded="false">
                                     <span>Services</span> <i class="fas fa-chevron-down"></i>
                                 </a>
                                 <ul class="vg-mobile-sub">
+                                    <li><a href="index.html#services" style="color: #c084fc; font-weight: 600;"><i class="fa-solid fa-arrow-right me-1"></i> All Services Overview</a></li>
                                     <li><a href="seo-service.html">SEO Optimization</a></li>
                                     <li><a href="performance-marketing.html">Google & Meta Ads</a></li>
                                     <li><a href="web-development.html">Website Development</a></li>
@@ -995,7 +996,7 @@
     <script src="assets/js/jquery.meanmenu.min.js"></script>
     <script src="assets/js/jquery.magnific-popup.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/main.js?v=57.0"></script>
+    <script src="assets/js/main.js?v=58.0"></script>
     <script src="assets/js/dtapex-particles.js?v=52.0"></script>
     <script>
         // Dedicated Mobile Drawer Menu Accordion & Auto-Close
@@ -1004,19 +1005,27 @@
             parentLinks.forEach(function(link) {
                 link.addEventListener('click', function(e) {
                     e.preventDefault();
+                    e.stopPropagation();
                     var sub = this.nextElementSibling;
                     var icon = this.querySelector('i');
                     if (sub) {
                         sub.classList.toggle('is-open');
+                        var isOpen = sub.classList.contains('is-open');
+                        this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
                         if (icon) {
-                            icon.classList.toggle('fa-chevron-up');
-                            icon.classList.toggle('fa-chevron-down');
+                            if (isOpen) {
+                                icon.classList.remove('fa-chevron-down');
+                                icon.classList.add('fa-chevron-up');
+                            } else {
+                                icon.classList.remove('fa-chevron-up');
+                                icon.classList.add('fa-chevron-down');
+                            }
                         }
                     }
                 });
             });
 
-            var drawerCloseLinks = document.querySelectorAll('.offcanvas__wrapper a[href^="#"], .vg-mobile-nav-list a:not(.vg-mobile-parent-link)');
+            var drawerCloseLinks = document.querySelectorAll('.offcanvas__wrapper a[href^="#"]:not(.vg-mobile-parent-link), .vg-mobile-nav-list a:not(.vg-mobile-parent-link)');
             drawerCloseLinks.forEach(function(link) {
                 link.addEventListener('click', function() {
                     var info = document.querySelector('.offcanvas__info');
