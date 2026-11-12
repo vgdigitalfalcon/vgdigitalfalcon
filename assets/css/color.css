@@ -9695,3 +9695,786 @@ img, svg, video, canvas {
   }
 }
 
+/* ==========================================================================
+   VG DIGITAL FALCON - SEO SERVICE PAGE CYBERNETIC THEME (v60.0)
+   ========================================================================== */
+
+/* Universal Dark Canvas & Section Wrapper for SEO Page */
+.vg-seo-page {
+  background-color: #070212 !important;
+  color: #cbd5e1;
+  overflow-x: hidden;
+}
+
+/* Scoped Exclusive Canvas: Hide body-level global canvas on SEO page so only hero canvas renders */
+.vg-seo-page .vg-global-dtapex-canvas:not(.vg-seo-hero-canvas) {
+  display: none !important;
+}
+
+/* 1. SEO Hero Section (Strictly Scoped 3D Network Canvas Container) */
+.vg-seo-hero {
+  position: relative !important;
+  background: radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.28) 0%, rgba(10, 3, 25, 0.98) 65%, #070212 100%), #070212 !important;
+  padding: 140px 0 90px;
+  overflow: hidden !important;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.18);
+  z-index: 1 !important;
+}
+
+/* 3D Search & Backlink Node Network Canvas (Strictly Inside Hero) */
+.vg-seo-hero-canvas {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
+  background: transparent !important;
+}
+
+.vg-seo-hero > .container,
+.vg-seo-hero .container {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.vg-seo-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: 
+    linear-gradient(rgba(168, 85, 247, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+  pointer-events: none;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.vg-seo-hero-title {
+  font-size: 46px;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 1.18;
+  letter-spacing: -0.8px;
+  margin-bottom: 18px;
+}
+
+.vg-seo-hero-title .vg-hero-partner {
+  font-size: 28px;
+  font-weight: 700;
+  color: #cbd5e1;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.vg-seo-hero-title .vg-hero-dominate {
+  font-size: 26px;
+  font-weight: 700;
+  color: #ffffff;
+  display: block;
+  margin-top: 8px;
+}
+
+.vg-seo-hero-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #cbd5e1;
+  margin-bottom: 30px;
+  text-align: justify;
+}
+
+/* SEO Audit High-Tech Form Card */
+.vg-seo-audit-card {
+  position: relative;
+  background: rgba(18, 10, 36, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: 24px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(124, 58, 237, 0.2);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.vg-seo-audit-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #c084fc, transparent);
+}
+
+.vg-seo-form-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.vg-seo-form-subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.vg-seo-form-group {
+  margin-bottom: 16px;
+}
+
+.vg-seo-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+  letter-spacing: 0.2px;
+}
+
+.vg-seo-form-input {
+  width: 100%;
+  background: rgba(10, 5, 22, 0.75);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 12px;
+  color: #ffffff;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.vg-seo-form-input::placeholder {
+  color: #64748b;
+}
+
+.vg-seo-form-input:focus {
+  border-color: #c084fc;
+  box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.25);
+  background: rgba(15, 8, 30, 0.95);
+  color: #ffffff;
+}
+
+.vg-seo-submit-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%);
+  color: #ffffff !important;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 8px;
+  text-decoration: none;
+}
+
+.vg-seo-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(139, 92, 246, 0.55);
+  filter: brightness(1.1);
+}
+
+/* 2. SEO Tools Section */
+.vg-seo-tools-section {
+  position: relative;
+  background: #090317;
+  padding: 55px 0 65px;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+.vg-tool-slide-box {
+  background: rgba(18, 10, 36, 0.6);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 16px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.vg-tool-slide-box:hover {
+  border-color: rgba(192, 132, 252, 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.22);
+  background: rgba(28, 15, 52, 0.85);
+}
+
+.vg-tool-slide-box img {
+  max-height: 48px;
+  max-width: 100%;
+  object-fit: contain;
+  filter: brightness(0.95) contrast(1.05);
+  transition: transform 0.3s ease;
+}
+
+.vg-tool-slide-box:hover img {
+  transform: scale(1.05);
+}
+
+/* 3. Our SEO Service Overview Section */
+.vg-seo-about-section {
+  position: relative;
+  padding: 95px 0;
+  background: radial-gradient(circle at 10% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 60%), #070212;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+.vg-seo-img-card {
+  position: relative;
+  background: rgba(18, 10, 36, 0.7);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(124, 58, 237, 0.18);
+  backdrop-filter: blur(16px);
+}
+
+.vg-seo-img-card img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+.vg-seo-floating-pill {
+  position: absolute;
+  background: rgba(18, 10, 36, 0.9);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 14px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.3);
+  backdrop-filter: blur(12px);
+  z-index: 3;
+}
+
+.vg-seo-floating-pill-1 {
+  top: -18px;
+  left: 20px;
+}
+
+.vg-seo-floating-pill-2 {
+  bottom: -18px;
+  right: 20px;
+}
+
+.vg-seo-floating-pill img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+/* 4. Why SEO Section */
+.vg-seo-why-section {
+  position: relative;
+  padding: 95px 0;
+  background: #080315;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+.vg-seo-why-card {
+  background: rgba(18, 10, 36, 0.7);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 20px;
+  padding: 32px 30px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px);
+  height: 100%;
+}
+
+/* 5. CTA Contact Strip */
+.vg-seo-cta-strip {
+  position: relative;
+  padding: 80px 0;
+  background: #070212;
+}
+
+.vg-seo-cta-banner {
+  background: linear-gradient(135deg, rgba(38, 14, 75, 0.95) 0%, rgba(18, 7, 36, 0.98) 100%);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  border-radius: 28px;
+  padding: 50px 48px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 45px rgba(168, 85, 247, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.vg-seo-cta-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* 6. Premium SEO Services Cards */
+.vg-seo-services-section {
+  position: relative;
+  padding: 95px 0;
+  background: #080315;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+.vg-seo-service-card {
+  background: rgba(18, 10, 36, 0.72);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 22px;
+  padding: 30px 24px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px);
+  position: relative;
+}
+
+.vg-seo-service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(192, 132, 252, 0.65);
+  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.28);
+  background: rgba(26, 14, 50, 0.85);
+}
+
+.vg-seo-card-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(124, 58, 237, 0.18);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+}
+
+.vg-seo-card-icon img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.vg-seo-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.vg-seo-card-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #94a3b8;
+  margin-bottom: 0;
+  text-align: justify;
+  flex-grow: 1;
+}
+
+/* 7. How SEO Works (6 Steps) */
+.vg-seo-process-section {
+  position: relative;
+  padding: 95px 0;
+  background: #070212;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+.vg-seo-step-card {
+  background: rgba(18, 10, 36, 0.72);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 22px;
+  padding: 32px 26px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s ease;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(14px);
+  position: relative;
+}
+
+.vg-seo-step-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(192, 132, 252, 0.6);
+  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.25);
+  background: rgba(26, 14, 50, 0.85);
+}
+
+.vg-seo-step-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.vg-seo-step-badge {
+  background: rgba(168, 85, 247, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #c084fc;
+  font-size: 11.5px;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 8px;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.vg-seo-step-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(124, 58, 237, 0.15);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vg-seo-step-icon img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.vg-seo-step-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.vg-seo-step-intro {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+}
+
+.vg-seo-step-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.vg-seo-step-list li {
+  font-size: 13px;
+  line-height: 1.55;
+  color: #94a3b8;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+
+.vg-seo-step-list li i {
+  color: #10b981;
+  font-size: 14px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+/* 8. Testimonials Section */
+.vg-seo-testimonials-section {
+  position: relative;
+  padding: 95px 0;
+  background: #080315;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+.vg-seo-testimonial-card {
+  background: rgba(18, 10, 36, 0.75);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 22px;
+  padding: 32px 28px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(14px);
+  transition: all 0.35s ease;
+}
+
+.vg-seo-testimonial-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(192, 132, 252, 0.6);
+  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.25);
+}
+
+.vg-seo-stars {
+  display: flex;
+  gap: 4px;
+  color: #fbbf24;
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.vg-seo-quote-text {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: #cbd5e1;
+  font-style: italic;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.vg-seo-client-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.vg-seo-client-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(168, 85, 247, 0.5);
+  object-fit: cover;
+}
+
+.vg-seo-client-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2px;
+}
+
+.vg-seo-client-tag {
+  font-size: 12px;
+  color: #c084fc;
+}
+
+/* 9. FAQs Section */
+.vg-seo-faq-section {
+  position: relative;
+  padding: 95px 0;
+  background: #070212;
+}
+
+.vg-seo-faq-img-frame {
+  background: rgba(18, 10, 36, 0.7);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 24px;
+  padding: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(124, 58, 237, 0.18);
+  backdrop-filter: blur(16px);
+  position: relative;
+}
+
+.vg-seo-faq-img-frame img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+/* Mobile Media Queries */
+@media (max-width: 991px) {
+  .vg-seo-hero {
+    padding: 110px 0 65px;
+  }
+  .vg-seo-hero-title {
+    font-size: 34px;
+  }
+  .vg-seo-hero-title .vg-hero-partner {
+    font-size: 24px;
+  }
+  .vg-seo-hero-title .vg-hero-dominate {
+    font-size: 20px;
+  }
+  .vg-seo-cta-banner {
+    padding: 36px 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .vg-seo-hero {
+    padding: 95px 0 50px;
+  }
+  .vg-seo-hero-title {
+    font-size: 28px;
+  }
+  .vg-seo-hero-title .vg-hero-partner {
+    font-size: 20px;
+  }
+  .vg-seo-hero-title .vg-hero-dominate {
+    font-size: 18px;
+  }
+  .vg-seo-audit-card {
+    padding: 24px 18px;
+  }
+  .vg-seo-cta-banner {
+    padding: 30px 20px;
+  }
+  .vg-seo-about-section,
+  .vg-seo-why-section,
+  .vg-seo-services-section,
+  .vg-seo-process-section,
+  .vg-seo-testimonials-section,
+  .vg-seo-faq-section {
+    padding: 60px 0;
+  }
+}
+
+/* ==========================================================================
+   VG DIGITAL FALCON - 3D SOARING FALCON (HERO BACKGROUND EXCLUSIVE)
+   ========================================================================== */
+
+/* 3D Falcon Canvas & Mascot Wrapper */
+.vg-seo-falcon-3d-wrap {
+  position: absolute;
+  top: 48%;
+  left: 32%;
+  transform: translate(-50%, -50%);
+  width: 520px;
+  height: 440px;
+  max-width: 55vw;
+  max-height: 80vh;
+  z-index: 1; /* Below text/form (z-index: 2), above starfield (z-index: 0) */
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 0 45px rgba(108, 92, 231, 0.45)) drop-shadow(0 0 25px rgba(56, 189, 248, 0.35));
+  opacity: 0.88;
+  transition: opacity 0.6s ease;
+  user-select: none;
+}
+
+/* 3D Canvas element */
+.vg-seo-falcon-canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+  pointer-events: none;
+}
+
+/* Static Fallback Image */
+.vg-seo-falcon-fallback-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  animation: falconStaticSoar 4.8s ease-in-out infinite;
+}
+
+/* When 3D WebGL scene is active, hide the static fallback */
+.vg-seo-falcon-3d-wrap.is-3d-active .vg-seo-falcon-fallback-img {
+  display: none !important;
+}
+
+/* Fallback floating animation when static */
+@keyframes falconStaticSoar {
+  0%, 100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) scale(1.02) rotate(-1.5deg);
+  }
+}
+
+/* Ambient Purple/Blue Glow Aura Behind Falcon */
+.vg-seo-falcon-aura {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(108, 92, 231, 0.35) 0%, rgba(56, 189, 248, 0.18) 45%, transparent 70%);
+  filter: blur(35px);
+  z-index: -1;
+  pointer-events: none;
+  animation: falconAuraPulse 5.5s ease-in-out infinite;
+}
+
+@keyframes falconAuraPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(0.92);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 1;
+  }
+}
+
+/* Tablet view (768px - 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+  .vg-seo-falcon-3d-wrap {
+    width: 420px;
+    height: 380px;
+    left: 35%;
+    top: 45%;
+    opacity: 0.75;
+  }
+  .vg-seo-falcon-aura {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Mobile & Small Tablet (Below 768px): Disable 3D scene, show subtle static falcon image */
+@media (max-width: 767px) {
+  .vg-seo-falcon-3d-wrap {
+    width: 240px;
+    height: 240px;
+    top: 32%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.32; /* Low opacity on mobile to guarantee 100% text readability */
+    filter: drop-shadow(0 0 20px rgba(108, 92, 231, 0.4));
+  }
+  .vg-seo-falcon-canvas {
+    display: none !important; /* Never render 3D WebGL on mobile */
+  }
+  .vg-seo-falcon-fallback-img {
+    display: block !important;
+  }
+  .vg-seo-falcon-aura {
+    width: 220px;
+    height: 220px;
+    filter: blur(25px);
+  }
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  .vg-seo-falcon-3d-wrap {
+    animation: none !important;
+  }
+  .vg-seo-falcon-fallback-img {
+    animation: none !important;
+  }
+  .vg-seo-falcon-aura {
+    animation: none !important;
+  }
+  .vg-seo-falcon-canvas {
+    display: none !important;
+  }
+  .vg-seo-falcon-fallback-img {
+    display: block !important;
+  }
+}
+
+
