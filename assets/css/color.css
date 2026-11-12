@@ -8171,26 +8171,26 @@ img, svg, video, canvas {
 }
 
 .vg-story-content h2 {
-  font-size: 38px;
+  font-size: 34px;
   font-weight: 800;
   color: #ffffff;
   line-height: 1.25;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
   letter-spacing: -0.5px;
 }
 
 .vg-story-lead {
-  font-size: 16.5px;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.68;
   color: #f1f5f9;
-  margin-bottom: 18px;
+  margin-bottom: 14px;
 }
 
 .vg-story-text {
-  font-size: 15.5px;
-  line-height: 1.75;
+  font-size: 15px;
+  line-height: 1.68;
   color: #e2e8f0;
-  margin-bottom: 28px;
+  margin-bottom: 14px;
 }
 
 .vg-story-bullets {
@@ -8869,6 +8869,17 @@ img, svg, video, canvas {
 
 .vg-value-card p,
 .vg-adv-card p {
+  margin-bottom: 0 !important;
+}
+
+.vg-story-lead,
+.vg-story-text {
+  font-size: 15px !important;
+  line-height: 1.68 !important;
+  margin: 0 0 14px 0 !important;
+}
+
+.vg-story-content p:last-child {
   margin-bottom: 0 !important;
 }
 
