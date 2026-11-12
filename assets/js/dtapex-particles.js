@@ -429,6 +429,36 @@
     }
   }
 
+  // ==========================================================================
+  // 3b. MOUNT DTAPEX 3D CANVAS (ABOUT METRICS STRIP)
+  // ==========================================================================
+  function initMetricsStripCanvas() {
+    const strip = document.querySelector('.vg-about-metrics-strip');
+    if (!strip) return;
+
+    let canvas = document.getElementById('vg-metrics-strip-canvas');
+    if (!canvas) {
+      canvas = document.createElement('canvas');
+      canvas.id = 'vg-metrics-strip-canvas';
+      canvas.className = 'vg-metrics-strip-canvas';
+      strip.prepend(canvas);
+    }
+
+    if (!canvas._dtapexInstance) {
+      canvas._dtapexInstance = new GlobalDtapexParticleMesh(canvas, {
+        cols: 28,
+        rows: 8,
+        spacingX: 60,
+        spacingY: 20,
+        fov: 340,
+        orbitCount: 12,
+        maxTilt: 0.16,
+        cyan: { r: 56, g: 189, b: 248 },    // #38bdf8
+        violet: { r: 192, g: 132, b: 252 } // #c084fc
+      });
+    }
+  }
+
 
   // ==========================================================================
   // 4. DOM READY INITIALIZATION
@@ -436,10 +466,12 @@
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
       initHeroDtapexCanvas();
+      initMetricsStripCanvas();
       initSpotlightCards();
     });
   } else {
     initHeroDtapexCanvas();
+    initMetricsStripCanvas();
     initSpotlightCards();
   }
 
@@ -447,7 +479,8 @@
   window.VG_Dtapex = {
     GlobalDtapexParticleMesh,
     initSpotlightCards,
-    initHeroDtapexCanvas
+    initHeroDtapexCanvas,
+    initMetricsStripCanvas
   };
 
 })();
