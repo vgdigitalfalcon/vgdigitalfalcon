@@ -8633,31 +8633,75 @@ img, svg, video, canvas {
   --vg-gradient-dtapex-subtle: linear-gradient(135deg, rgba(0, 240, 255, 0.15) 0%, rgba(139, 92, 246, 0.15) 100%);
 }
 
-/* Global Fixed Background Canvas (flows behind entire page) */
-.vg-global-dtapex-canvas {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  z-index: -1 !important;
-  pointer-events: none !important;
+/* ==========================================================================
+   DTAPEX-STYLE 3D PARTICLE MESH (HERO SECTION ONLY)
+   ========================================================================== */
+
+/* Hero Container holding the 3D particle mesh canvas */
+.vg-about-hero {
+  position: relative !important;
+  overflow: hidden !important;
   background: #07070F !important;
-  transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  will-change: transform;
+  z-index: 1 !important;
 }
 
-/* Make sections translucent so global 3D particle mesh flows gracefully behind */
-.vg-about-hero,
-.vg-story-section,
-.vg-bento-section,
-.vg-vm-section,
-.vg-values-section,
-.vg-cap-section,
-.vg-advantage-section {
+/* 3D Particle Canvas Confined Strictly to Hero Section */
+.vg-about-hero-canvas,
+.vg-about-hero .vg-global-dtapex-canvas {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 0 !important;
+  pointer-events: none !important;
   background: transparent !important;
+}
+
+.vg-about-hero > .container,
+.vg-about-hero .container {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Remove Fixed Global Canvas */
+.vg-global-dtapex-canvas:not(.vg-about-hero-canvas) {
+  display: none !important;
+}
+
+/* All Other Sections — Clean, Solid Dark Backgrounds (NO 3D Animation Behind) */
+.vg-story-section {
+  background: #070212 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.vg-bento-section {
+  background: #0a0418 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.vg-vm-section {
+  background: #070212 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.vg-values-section {
+  background: #0b041c !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.vg-cap-section {
+  background: #070212 !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.vg-advantage-section {
+  background: #0b041c !important;
   position: relative !important;
   z-index: 1 !important;
 }
@@ -8890,9 +8934,9 @@ img, svg, video, canvas {
 }
 
 .vg-trust-stat-lbl {
-  color: #e2e8f0 !important;
+  color: #334155 !important;
   opacity: 1 !important;
-  font-size: 13.5px !important;
+  font-size: 14px !important;
   font-weight: 700 !important;
   text-shadow: none !important;
 }

@@ -64,8 +64,9 @@
     }
 
     resize() {
-      this.width = window.innerWidth;
-      this.height = window.innerHeight;
+      const container = this.canvas.parentElement || document.body;
+      this.width = container.clientWidth || window.innerWidth;
+      this.height = container.clientHeight || window.innerHeight;
 
       this.canvas.width = this.width * this.dpr;
       this.canvas.height = this.height * this.dpr;
@@ -146,15 +147,16 @@
         resizeTimer = setTimeout(() => this.resize(), 120);
       }, { passive: true });
 
-      // Window-wide cursor tracking
+      // Cursor tracking relative to canvas
       window.addEventListener('mousemove', (e) => {
-        this.mouse.x = e.clientX;
-        this.mouse.y = e.clientY;
+        const rect = this.canvas.getBoundingClientRect();
+        this.mouse.x = e.clientX - rect.left;
+        this.mouse.y = e.clientY - rect.top;
 
-        const nx = (e.clientX / this.width - 0.5) * 2;
-        const ny = (e.clientY / this.height - 0.5) * 2;
-        this.tilt.targetY = nx * this.options.maxTilt;
-        this.tilt.targetX = -ny * this.options.maxTilt;
+        const nx = ((e.clientX - rect.left) / this.width - 0.5) * 2;
+        const ny = ((e.clientY - rect.top) / this.height - 0.5) * 2;
+        this.tilt.targetY = Math.max(-1, Math.min(1, nx)) * this.options.maxTilt;
+        this.tilt.targetX = -Math.max(-1, Math.min(1, ny)) * this.options.maxTilt;
       }, { passive: true });
 
       // Window scroll tracking for wave progression
@@ -404,23 +406,22 @@
 
 
   // ==========================================================================
-  // 3. MOUNT GLOBAL FIXED BACKGROUND CANVAS (z-index: -1)
+  // 3. MOUNT DTAPEX 3D CANVAS (SCOPED STRICTLY TO HERO SECTION)
   // ==========================================================================
-  function initGlobalDtapexCanvas() {
-    // Clean up any local section canvases so only one global fixed canvas exists
-    document.querySelectorAll('.vg-dtapex-canvas:not(#vg-global-dtapex-canvas)').forEach(c => c.remove());
+  function initHeroDtapexCanvas() {
+    // Remove any legacy global body canvas
+    const oldGlobal = document.getElementById('vg-global-dtapex-canvas');
+    if (oldGlobal) oldGlobal.remove();
 
-    let canvas = document.getElementById('vg-global-dtapex-canvas');
+    const hero = document.querySelector('.vg-about-hero');
+    if (!hero) return;
+
+    let canvas = document.getElementById('vg-about-hero-canvas');
     if (!canvas) {
-      const isAboutPage = document.querySelector('.vg-about-hero') || 
-                          document.querySelector('.vg-bento-section') || 
-                          window.location.pathname.includes('about');
-      if (!isAboutPage) return;
-
       canvas = document.createElement('canvas');
-      canvas.id = 'vg-global-dtapex-canvas';
-      canvas.className = 'vg-global-dtapex-canvas';
-      document.body.prepend(canvas);
+      canvas.id = 'vg-about-hero-canvas';
+      canvas.className = 'vg-about-hero-canvas';
+      hero.prepend(canvas);
     }
 
     if (!canvas._dtapexInstance) {
@@ -434,11 +435,11 @@
   // ==========================================================================
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-      initGlobalDtapexCanvas();
+      initHeroDtapexCanvas();
       initSpotlightCards();
     });
   } else {
-    initGlobalDtapexCanvas();
+    initHeroDtapexCanvas();
     initSpotlightCards();
   }
 
@@ -446,7 +447,7 @@
   window.VG_Dtapex = {
     GlobalDtapexParticleMesh,
     initSpotlightCards,
-    initGlobalDtapexCanvas
+    initHeroDtapexCanvas
   };
 
 })();
