@@ -3347,9 +3347,6 @@ body {
   .vg-services-grid {
     grid-template-columns: 1fr;
   }
-  .vg-footer-grid {
-    grid-template-columns: 1fr;
-  }
   .vg-floating-whatsapp {
     bottom: 16px;
     right: 16px;
@@ -9445,5 +9442,110 @@ img, svg, video, canvas {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
   text-rendering: optimizeLegibility !important;
+}
+
+/* ==========================================================================
+   MOBILE-ONLY (< 768px): CHALLENGE CARDS COLLAPSE & FOOTER 2-COLUMN
+   ========================================================================== */
+@media (max-width: 767px) {
+  /* 1. Challenge Card: Tap opens/closes card; hover must NEVER force open on mobile/touch */
+  .vg-challenge-card:not(.active-solution) .vg-challenge-solution-box,
+  .vg-challenge-card:not(.active-solution):hover .vg-challenge-solution-box,
+  .vg-challenge-card:hover:not(.active-solution) .vg-challenge-solution-box {
+    max-height: 0 !important;
+    opacity: 0 !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    overflow: hidden !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+  }
+
+  .vg-challenge-card.active-solution .vg-challenge-solution-box {
+    max-height: 260px !important;
+    opacity: 1 !important;
+    margin-top: 12px !important;
+    padding-top: 10px !important;
+    overflow: visible !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+  }
+
+  .vg-challenge-card:hover:not(.active-solution) {
+    transform: none !important;
+    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.06) !important;
+    border-color: rgba(147, 51, 234, 0.16) !important;
+  }
+
+  /* 2. Footer Section: 2-Column Mobile Optimization */
+  .vg-footer-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 28px 18px !important;
+    margin-bottom: 36px !important;
+  }
+
+  .vg-footer-about {
+    grid-column: 1 / -1 !important;
+    margin-bottom: 8px !important;
+  }
+
+  .vg-footer-about p {
+    max-width: 100% !important;
+    margin: 12px 0 16px !important;
+  }
+
+  .vg-footer-col {
+    min-width: 0 !important;
+  }
+
+  .vg-footer-col h5 {
+    font-size: 15px !important;
+    margin-bottom: 12px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  .vg-footer-col ul {
+    gap: 8px !important;
+  }
+
+  .vg-footer-col ul li {
+    margin-bottom: 0 !important;
+  }
+
+  .vg-footer-col ul a {
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    display: inline-block !important;
+    word-break: break-word !important;
+  }
+
+  .vg-newsletter-box {
+    margin-top: 10px !important;
+  }
+
+  .vg-newsletter-box input {
+    font-size: 12px !important;
+    padding: 10px 38px 10px 12px !important;
+  }
+
+  .vg-newsletter-box button {
+    width: 32px !important;
+    height: 32px !important;
+    right: 4px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .vg-footer-grid {
+    gap: 22px 12px !important;
+  }
+  .vg-footer-col h5 {
+    font-size: 14px !important;
+  }
+  .vg-footer-col ul a {
+    font-size: 12.5px !important;
+  }
 }
 

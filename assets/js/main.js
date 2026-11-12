@@ -382,15 +382,68 @@ CSS TABLE OF CONTENTS
             });
         });
 
-        //>> Interactive Challenges Cards Flip/Highlight <<//
-        $(".vg-challenge-card").on("click", function() {
+        //>> Interactive Challenges Cards Flip/Highlight with Mobile Auto-Collapse <<//
+        let challengeMobileTimer = null;
+
+        function closeAllChallengeCards() {
+            if (challengeMobileTimer) {
+                clearTimeout(challengeMobileTimer);
+                challengeMobileTimer = null;
+            }
+            const $activeCards = $(".vg-challenge-card.active-solution");
+            if ($activeCards.length) {
+                $activeCards.removeClass("active-solution");
+                $activeCards.find(".vg-solution-tag").html('<i class="fa-solid fa-sparkles text-warning me-1"></i> AI Fix: Click to Reveal');
+            }
+        }
+
+        $(".vg-challenge-card").on("click", function(e) {
+            // Prevent event from bubbling to document tap-outside listener
+            e.stopPropagation();
+
             const $card = $(this);
             const isCurrentlyActive = $card.hasClass("active-solution");
-            $(".vg-challenge-card").removeClass("active-solution");
-            $(".vg-challenge-card .vg-solution-tag").html('<i class="fa-solid fa-sparkles text-warning me-1"></i> AI Fix: Click to Reveal');
-            if (!isCurrentlyActive) {
+            const isMobile = window.innerWidth < 768;
+
+            // Clear any active mobile auto-close timer
+            if (challengeMobileTimer) {
+                clearTimeout(challengeMobileTimer);
+                challengeMobileTimer = null;
+            }
+
+            if (isCurrentlyActive) {
+                // If already active, toggle off immediately
+                $card.removeClass("active-solution");
+                $card.find(".vg-solution-tag").html('<i class="fa-solid fa-sparkles text-warning me-1"></i> AI Fix: Click to Reveal');
+                $card.blur();
+            } else {
+                // Accordion behavior: close any other open challenge cards
+                $(".vg-challenge-card").removeClass("active-solution");
+                $(".vg-challenge-card .vg-solution-tag").html('<i class="fa-solid fa-sparkles text-warning me-1"></i> AI Fix: Click to Reveal');
+
+                // Activate the selected card
                 $card.addClass("active-solution");
                 $card.find(".vg-solution-tag").html('<i class="fa-solid fa-circle-check text-success me-1"></i> AI Fix Active');
+
+                // Mobile view only (< 768px): automatically collapse after 4.5 seconds
+                if (isMobile) {
+                    challengeMobileTimer = setTimeout(function() {
+                        if ($card.hasClass("active-solution")) {
+                            $card.removeClass("active-solution");
+                            $card.find(".vg-solution-tag").html('<i class="fa-solid fa-sparkles text-warning me-1"></i> AI Fix: Click to Reveal');
+                        }
+                        challengeMobileTimer = null;
+                    }, 4500);
+                }
+            }
+        });
+
+        // Mobile view (< 768px): automatically close open challenge card when tapping outside
+        $(document).on("click", function(e) {
+            if (window.innerWidth < 768) {
+                if (!$(e.target).closest(".vg-challenge-card").length) {
+                    closeAllChallengeCards();
+                }
             }
         });
 
