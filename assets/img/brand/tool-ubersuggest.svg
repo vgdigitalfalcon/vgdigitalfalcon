@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 175 44" fill="none">
+  <!-- Ubersuggest Icon -->
+  <g transform="translate(6, 4)">
+    <rect width="36" height="36" rx="10" fill="url(#uberBg)" stroke="rgba(242, 92, 5, 0.4)" stroke-width="1.2"/>
+    <!-- Stylized Modern U Badge -->
+    <path d="M13 13V20.5C13 23.5 15.2 25.5 18 25.5C20.8 25.5 23 23.5 23 20.5V13H20V20.2C20 21.6 19.1 22.8 18 22.8C16.9 22.8 16 21.6 16 20.2V13H13Z" fill="#ffffff"/>
+    <circle cx="24.5" cy="13.5" r="2" fill="#F25C05"/>
+  </g>
+  <!-- Text Lockup -->
+  <g transform="translate(50, 0)">
+    <text x="0" y="22" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="800" font-size="14" fill="#ffffff" letter-spacing="-0.2">Ubersuggest</text>
+    <text x="0" y="34" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" fill="#F25C05" letter-spacing="0.5">KEYWORD DISCOVERY</text>
+  </g>
+  <defs>
+    <linearGradient id="uberBg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#F25C05"/>
+      <stop offset="100%" stop-color="#C2410C"/>
+    </linearGradient>
+  </defs>
+</svg>
+

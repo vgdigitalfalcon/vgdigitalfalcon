@@ -9893,35 +9893,73 @@ img, svg, video, canvas {
 }
 
 .vg-tool-slide-box {
-  background: rgba(18, 10, 36, 0.6);
-  border: 1px solid rgba(168, 85, 247, 0.22);
+  background: rgba(16, 8, 36, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.25);
   border-radius: 16px;
-  padding: 14px 20px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80px;
-  backdrop-filter: blur(12px);
-  transition: all 0.3s ease;
+  min-height: 84px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+/* Glowing Top Accent Line with Brand Color */
+.vg-tool-slide-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--tool-glow, #c084fc), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Ambient Radial Glow on Hover */
+.vg-tool-slide-box::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, var(--tool-glow-soft, rgba(168, 85, 247, 0.12)) 0%, transparent 70%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 .vg-tool-slide-box:hover {
-  border-color: rgba(192, 132, 252, 0.6);
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(124, 58, 237, 0.22);
-  background: rgba(28, 15, 52, 0.85);
+  border-color: rgba(192, 132, 252, 0.75);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), 0 0 25px var(--tool-glow-soft, rgba(168, 85, 247, 0.3));
+  background: rgba(26, 12, 54, 0.95);
 }
 
-.vg-tool-slide-box img {
-  max-height: 48px;
+.vg-tool-slide-box:hover::before,
+.vg-tool-slide-box:hover::after {
+  opacity: 1;
+}
+
+.vg-tool-slide-box img,
+.vg-tool-slide-box svg {
+  max-height: 42px;
+  width: auto;
   max-width: 100%;
   object-fit: contain;
-  filter: brightness(0.95) contrast(1.05);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
 }
 
-.vg-tool-slide-box:hover img {
-  transform: scale(1.05);
+.vg-tool-slide-box:hover img,
+.vg-tool-slide-box:hover svg {
+  transform: scale(1.06);
+  filter: drop-shadow(0 0 12px var(--tool-glow, #c084fc));
 }
 
 /* 3. Our SEO Service Overview Section */

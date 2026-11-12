@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 44" fill="none">
+  <!-- Semrush Icon -->
+  <g transform="translate(6, 4)">
+    <rect width="36" height="36" rx="10" fill="url(#semrushBg)" stroke="rgba(255, 100, 45, 0.4)" stroke-width="1.2"/>
+    <!-- Iconic 5-Point Fireball Crown -->
+    <path d="M18 10L20.5 15.5L26 14L23 19L27 23.5L21 23L20 27L18 22.5L16 27L15 23L9 23.5L13 19L10 14L15.5 15.5L18 10Z" fill="#FF642D"/>
+  </g>
+  <!-- Text Lockup -->
+  <g transform="translate(50, 0)">
+    <text x="0" y="22" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="14.5" fill="#ffffff" letter-spacing="0.3">SEMRUSH</text>
+    <text x="0" y="34" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" fill="#FF642D" letter-spacing="0.5">COMPETITOR INTEL</text>
+  </g>
+  <defs>
+    <linearGradient id="semrushBg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2a120a"/>
+      <stop offset="100%" stop-color="#120603"/>
+    </linearGradient>
+  </defs>
+</svg>
+

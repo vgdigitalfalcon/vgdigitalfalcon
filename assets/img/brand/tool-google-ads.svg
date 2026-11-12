@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 170 44" fill="none">
+  <!-- Google Ads Icon -->
+  <g transform="translate(6, 4)">
+    <rect width="36" height="36" rx="10" fill="url(#gAdsBg)" stroke="rgba(251, 188, 4, 0.4)" stroke-width="1.2"/>
+    <!-- Yellow slanted pill -->
+    <path d="M12 25L21.5 8.5C22.3 7 24.3 6.5 25.8 7.3C27.3 8.1 27.8 10.1 27 11.6L17.5 28.1C16.7 29.6 14.7 30.1 13.2 29.3C11.7 28.5 11.2 26.5 12 25Z" fill="#FBBC04"/>
+    <!-- Blue slanted polygon -->
+    <path d="M17.5 28.1L27 11.6C26.5 10.7 25.5 10.2 24.5 10.2C23.5 10.2 22.5 10.7 22 11.6L12.5 28.1C13.3 29.6 15.3 30.1 16.8 29.3C17.1 29 17.3 28.6 17.5 28.1Z" fill="#4285F4"/>
+    <!-- Green circle -->
+    <circle cx="11.5" cy="26" r="3.2" fill="#34A853"/>
+  </g>
+  <!-- Text Lockup -->
+  <g transform="translate(50, 0)">
+    <text x="0" y="22" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="800" font-size="14" fill="#ffffff" letter-spacing="-0.3">Google <tspan fill="#60A5FA">Ads</tspan></text>
+    <text x="0" y="34" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="9.5" fill="#FBBC04" letter-spacing="0.5">KEYWORD PLANNER</text>
+  </g>
+  <defs>
+    <linearGradient id="gAdsBg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e1035"/>
+      <stop offset="100%" stop-color="#0e061e"/>
+    </linearGradient>
+  </defs>
+</svg>
+
