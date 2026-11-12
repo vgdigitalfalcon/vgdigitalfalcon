@@ -1448,6 +1448,25 @@ body {
   margin-bottom: 12px;
 }
 
+/* Challenges Section Single-Line Heading */
+.vg-challenges-section .vg-section-head {
+  max-width: 920px !important;
+}
+
+.vg-challenges-section .vg-section-head h2,
+.vg-challenges-title {
+  font-size: clamp(22px, 2.4vw, 36px) !important;
+  letter-spacing: -0.5px !important;
+  margin-bottom: 12px !important;
+}
+
+@media (min-width: 992px) {
+  .vg-challenges-section .vg-section-head h2,
+  .vg-challenges-title {
+    white-space: nowrap !important;
+  }
+}
+
 /* Light Background Sections: Headings MUST be Deep Dark Slate */
 .vg-challenges-section .vg-section-head h2,
 .vg-challenges-section h2,
