@@ -48,6 +48,10 @@
       this.scrollY = 0;
       this.time = 0;
       this.animId = null;
+      this.isPaused = false;
+      this.isIntersecting = true;
+      this.cachedRect = null;
+      this.prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       this.particles = [];
       this.orbitParticles = [];
@@ -144,17 +148,22 @@
       let resizeTimer = null;
       window.addEventListener('resize', () => {
         clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => this.resize(), 120);
+        resizeTimer = setTimeout(() => {
+          this.resize();
+          this.cachedRect = this.canvas.getBoundingClientRect();
+        }, 120);
       }, { passive: true });
 
-      // Cursor tracking relative to canvas
-      window.addEventListener('mousemove', (e) => {
-        const rect = this.canvas.getBoundingClientRect();
-        this.mouse.x = e.clientX - rect.left;
-        this.mouse.y = e.clientY - rect.top;
+      this.cachedRect = this.canvas.getBoundingClientRect();
 
-        const nx = ((e.clientX - rect.left) / this.width - 0.5) * 2;
-        const ny = ((e.clientY - rect.top) / this.height - 0.5) * 2;
+      // Cursor tracking relative to canvas (cached rect to avoid layout thrashing)
+      window.addEventListener('mousemove', (e) => {
+        if (!this.cachedRect) this.cachedRect = this.canvas.getBoundingClientRect();
+        this.mouse.x = e.clientX - this.cachedRect.left;
+        this.mouse.y = e.clientY - this.cachedRect.top;
+
+        const nx = ((e.clientX - this.cachedRect.left) / this.width - 0.5) * 2;
+        const ny = ((e.clientY - this.cachedRect.top) / this.height - 0.5) * 2;
         this.tilt.targetY = Math.max(-1, Math.min(1, nx)) * this.options.maxTilt;
         this.tilt.targetX = -Math.max(-1, Math.min(1, ny)) * this.options.maxTilt;
       }, { passive: true });
@@ -162,17 +171,76 @@
       // Window scroll tracking for wave progression
       window.addEventListener('scroll', () => {
         this.scrollY = window.pageYOffset || document.documentElement.scrollTop;
+        this.cachedRect = null; // Invalidate cache on scroll
       }, { passive: true });
+
+      // Tab visibility change: pause loop when tab hidden to save 60fps GPU/battery
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          this.stop();
+        } else if (this.isIntersecting && !this.prefersReducedMotion) {
+          this.start();
+        }
+      });
+
+      // Reduced motion listener
+      if (window.matchMedia) {
+        const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (motionQuery.addEventListener) {
+          motionQuery.addEventListener('change', (e) => {
+            this.prefersReducedMotion = e.matches;
+            if (this.prefersReducedMotion) {
+              this.stop();
+              this.update();
+              this.render(); // Render single static frame
+            } else {
+              this.start();
+            }
+          });
+        }
+      }
+
+      // Intersection Observer: pause when canvas scrolled out of viewport
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            this.isIntersecting = entry.isIntersecting;
+            if (entry.isIntersecting) {
+              if (!this.prefersReducedMotion && !document.hidden) {
+                this.start();
+              }
+            } else {
+              this.stop();
+            }
+          });
+        }, { threshold: 0.05 });
+        observer.observe(this.canvas.parentElement || this.canvas);
+      }
     }
 
     start() {
       if (this.animId) cancelAnimationFrame(this.animId);
+      if (this.prefersReducedMotion) {
+        this.update();
+        this.render();
+        return;
+      }
+      this.isPaused = false;
       const loop = () => {
+        if (this.isPaused) return;
         this.update();
         this.render();
         this.animId = requestAnimationFrame(loop);
       };
       this.animId = requestAnimationFrame(loop);
+    }
+
+    stop() {
+      this.isPaused = true;
+      if (this.animId) {
+        cancelAnimationFrame(this.animId);
+        this.animId = null;
+      }
     }
 
     update() {

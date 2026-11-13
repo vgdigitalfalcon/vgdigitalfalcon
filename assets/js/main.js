@@ -37,14 +37,30 @@ CSS TABLE OF CONTENTS
             meanExpand: ['<i class="far fa-plus"></i>'],
         });
 
-        //>> Sidebar Toggle Js Start <<//
+        //>> Sidebar Toggle Js Start (Click + Keyboard Accessible) <<//
         $(".offcanvas__close,.offcanvas__overlay").on("click", function() {
             $(".offcanvas__info").removeClass("info-open");
             $(".offcanvas__overlay").removeClass("overlay-open");
+            $(".sidebar__toggle").trigger("focus");
         });
-        $(".sidebar__toggle").on("click", function() {
+        $(".sidebar__toggle").attr({ "role": "button", "tabindex": "0", "aria-label": "Toggle navigation menu" }).on("click", function() {
             $(".offcanvas__info").addClass("info-open");
             $(".offcanvas__overlay").addClass("overlay-open");
+            $(".offcanvas__close").trigger("focus");
+        }).on("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                $(this).trigger("click");
+            }
+        });
+
+        // Close offcanvas drawer on Escape key and restore focus
+        $(document).on("keydown", function(e) {
+            if (e.key === "Escape" && $(".offcanvas__info").hasClass("info-open")) {
+                $(".offcanvas__info").removeClass("info-open");
+                $(".offcanvas__overlay").removeClass("overlay-open");
+                $(".sidebar__toggle").trigger("focus");
+            }
         });
         // Auto-close mobile drawer when navigating to in-page hash links (exclude dropdown toggles)
         $(".offcanvas__info a").on("click", function(e) {
@@ -451,14 +467,48 @@ CSS TABLE OF CONTENTS
             }
         });
 
-        //>> Flying Falcon Interactive Flight & Physics <<//
+        //>> Flying Falcon Interactive Flight & Physics (Optimized RAF Lifecycle) <<//
         const $falcon = $("#vg-flying-falcon");
         const $hero = $(".vg-hero-section");
         let falconX = 80, falconY = 110;
         let targetX = 80, targetY = 110;
         let isHeroHovered = false;
+        let falconRafId = null;
 
         if ($falcon.length && $hero.length) {
+            function updateFalconFlight() {
+                if (!isHeroHovered) {
+                    falconRafId = null;
+                    return;
+                }
+                const dx = targetX - falconX;
+                const dy = targetY - falconY;
+                falconX += dx * 0.08;
+                falconY += dy * 0.08;
+
+                const bankAngle = Math.max(-28, Math.min(28, dx * 0.18));
+                $falcon.css({
+                    "left": falconX + "px",
+                    "top": falconY + "px",
+                    "transform": "rotate(" + bankAngle + "deg)"
+                });
+
+                falconRafId = requestAnimationFrame(updateFalconFlight);
+            }
+
+            function startFalconFlight() {
+                if (!falconRafId) {
+                    falconRafId = requestAnimationFrame(updateFalconFlight);
+                }
+            }
+
+            function stopFalconFlight() {
+                if (falconRafId) {
+                    cancelAnimationFrame(falconRafId);
+                    falconRafId = null;
+                }
+            }
+
             $hero.on("mousemove", function(e) {
                 const heroOffset = $hero.offset();
                 targetX = e.pageX - heroOffset.left - 60;
@@ -467,6 +517,7 @@ CSS TABLE OF CONTENTS
                 if (!isHeroHovered) {
                     isHeroHovered = true;
                     $falcon.removeClass("autonomous-flight").addClass("interactive-flight");
+                    startFalconFlight();
                 }
             });
 
@@ -474,25 +525,14 @@ CSS TABLE OF CONTENTS
                 isHeroHovered = false;
                 $falcon.removeClass("interactive-flight").addClass("autonomous-flight");
                 $falcon.css("transform", "");
+                stopFalconFlight();
             });
 
-            function updateFalconFlight() {
-                if (isHeroHovered) {
-                    const dx = targetX - falconX;
-                    const dy = targetY - falconY;
-                    falconX += dx * 0.08;
-                    falconY += dy * 0.08;
-
-                    const bankAngle = Math.max(-28, Math.min(28, dx * 0.18));
-                    $falcon.css({
-                        "left": falconX + "px",
-                        "top": falconY + "px",
-                        "transform": "rotate(" + bankAngle + "deg)"
-                    });
+            document.addEventListener("visibilitychange", function() {
+                if (document.hidden) {
+                    stopFalconFlight();
                 }
-                requestAnimationFrame(updateFalconFlight);
-            }
-            requestAnimationFrame(updateFalconFlight);
+            });
 
             // Falcon Click Sonic Boost & Burst
             $falcon.on("click", function(e) {
@@ -671,14 +711,39 @@ CSS TABLE OF CONTENTS
             });
         }
 
-        //>> Magnetic CTA Buttons <<//
-        $(".vg-btn-primary, .vg-btn-glass, .vg-btn-whatsapp").addClass("vg-btn-magnetic").on("mousemove", function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            $(this).css("transform", "translate(" + (x * 0.2) + "px, " + (y * 0.25) + "px)");
-        }).on("mouseleave", function() {
-            $(this).css("transform", "translate(0px, 0px)");
+        //>> Magnetic CTA Buttons (Throttled with RAF & Cached Dimensions) <<//
+        $(".vg-btn-primary, .vg-btn-glass, .vg-btn-whatsapp").addClass("vg-btn-magnetic").each(function() {
+            const btn = this;
+            let btnRect = null;
+            let btnRaf = null;
+
+            btn.addEventListener("mouseenter", function() {
+                btnRect = btn.getBoundingClientRect();
+            }, { passive: true });
+
+            btn.addEventListener("mousemove", function(e) {
+                if (!btnRect) btnRect = btn.getBoundingClientRect();
+                if (btnRaf) return;
+                const clientX = e.clientX;
+                const clientY = e.clientY;
+                btnRaf = requestAnimationFrame(function() {
+                    if (btnRect) {
+                        const x = clientX - btnRect.left - btnRect.width / 2;
+                        const y = clientY - btnRect.top - btnRect.height / 2;
+                        btn.style.transform = "translate(" + (x * 0.2) + "px, " + (y * 0.25) + "px)";
+                    }
+                    btnRaf = null;
+                });
+            }, { passive: true });
+
+            btn.addEventListener("mouseleave", function() {
+                if (btnRaf) {
+                    cancelAnimationFrame(btnRaf);
+                    btnRaf = null;
+                }
+                btnRect = null;
+                btn.style.transform = "translate(0px, 0px)";
+            }, { passive: true });
         });
 
         //>> Inject Floating Cosmic Particles in Hero <<//
