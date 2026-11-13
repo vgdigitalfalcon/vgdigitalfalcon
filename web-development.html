@@ -1,1352 +1,976 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!--<< Header Area >>-->
-    <head>
-        <!-- ========== Meta Tags ========== -->
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="gramentheme">
-        <meta name="description" content="Web hosting & WHMCS Html Template ">
-        <!-- ======== Page title ============ -->
-        <title>Web Development - VG Digital Falcon</title>
-        <!--<< Favcion >>-->
-                <link rel="shortcut icon" href="assets/img/dficon2.png">
-        <!--<< Bootstrap min.css >>-->
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <!--<< All Min Css >>-->
-        <link rel="stylesheet" href="assets/css/all.min.css">
-        <!--<< Animate.css >>-->
-        <link rel="stylesheet" href="assets/css/animate.css">
-        <!--<< Magnific Popup.css >>-->
-        <link rel="stylesheet" href="assets/css/magnific-popup.css">
-        <!--<< MeanMenu.css >>-->
-        <link rel="stylesheet" href="assets/css/meanmenu.css">
-        <!--<< Swiper Bundle.css >>-->
-        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-        <!--<< Nice Select.css >>-->
-        <link rel="stylesheet" href="assets/css/nice-select.css">
-        <!--<< Color.css >>-->
-        <link rel="stylesheet" href="assets/css/color.css">
-        <!--<< Main.css >>-->
-        <link rel="stylesheet" href="assets/css/main.css">
-    </head>
-    <body>
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="VG Digital Falcon">
+    <meta name="description" content="Custom Website Development Services Tailored for Business Growth - VG Digital Falcon">
+    
+    <!-- ======== Page title ============ -->
+    <title>Web Development - VG Digital Falcon</title>
+    
+    <!--<< Favicon >>-->
+    <link rel="shortcut icon" href="assets/img/dficon2.png">
+    
+    <!--<< Bootstrap min.css >>-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--<< All Min Css >>-->
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <!--<< Animate.css >>-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--<< Magnific Popup.css >>-->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!--<< MeanMenu.css >>-->
+    <link rel="stylesheet" href="assets/css/meanmenu.css">
+    <!--<< Swiper Bundle.css >>-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+    <!--<< Nice Select.css >>-->
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <!--<< Color.css (Unified Cybernetic Theme) >>-->
+    <link rel="stylesheet" href="assets/css/color.css">
+    <!--<< Main.css >>-->
+    <link rel="stylesheet" href="assets/css/main.css">
+    
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.clarity.ms">
 
-        <!-- Preloader Start -->
-        <div id="preloader" class="preloader">
-            <div class="animation-preloader">
-                <div class="spinner">                
-                </div>
-                <div class="txt-loading">
-                    <span data-text-preloader="V" class="letters-loading">
-                        V
-                    </span>
-                    <span data-text-preloader="G" class="letters-loading">
-                        G
-                    </span>
-                     <span data-text-preloader="D" class="letters-loading">
-                        D
-                    </span> <span data-text-preloader="I" class="letters-loading">
-                        I
-                    </span>
-                     <span data-text-preloader="G" class="letters-loading">
-                        G
-                    </span>
-                     <span data-text-preloader="I" class="letters-loading">
-                        I
-                    </span>
-                    <span data-text-preloader="T" class="letters-loading">
-                        T
-                    </span>
-                     <span data-text-preloader="A" class="letters-loading">
-                        A
-                    </span>
-                     <span data-text-preloader="L" class="letters-loading">
-                        L
-                    </span>
-                   
-                </div>
-                <p class="text-center">Loading</p>
-            </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- Deferred Non-Blocking Analytics Tracking -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.addEventListener('load', function() {
+            var gtm = document.createElement('script');
+            gtm.async = true;
+            gtm.src = 'https://www.googletagmanager.com/gtag/js?id=G-SHM6SNGHL8';
+            document.head.appendChild(gtm);
+            gtag('js', new Date());
+            gtag('config', 'G-SHM6SNGHL8');
 
-        <!--<< Mouse Cursor Start >>-->  
-        <div class="mouse-cursor cursor-outer"></div>
-        <div class="mouse-cursor cursor-inner"></div>
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "xdwd8oxpkn");
+        });
+    </script>
+</head>
+<body class="vg-webdev-page">
 
-        <!-- Offcanvas Area Start -->
-        <div class="fix-area">
-            <div class="offcanvas__info">
-                <div class="offcanvas__wrapper">
-                    <div class="offcanvas__content">
-                        <div class="offcanvas__top mb-5 d-flex justify-content-between align-items-center">
-                            <div class="offcanvas__logo">
-                                <a href="index.html">
-                                    <img src="assets/img/logo/dflogo.png" alt="logo-img">
-                                </a>
-                            </div>
-                            <div class="offcanvas__close">
-                                <button>
-                                <i class="fas fa-times"></i>
-                                </button>
-                            </div>
+    <!-- Global Fixed Dtapex 3D Particle Mesh Background -->
+    <canvas id="vg-global-dtapex-canvas" class="vg-global-dtapex-canvas"></canvas>
+
+    <!-- Top Smooth Scroll Progress Indicator -->
+    <div id="scroll-progress-bar"></div>
+
+    <!-- Offcanvas Mobile Drawer Area Start -->
+    <div class="fix-area">
+        <div class="offcanvas__info">
+            <div class="offcanvas__wrapper">
+                <div class="offcanvas__content">
+                    <div class="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
+                        <div class="offcanvas__logo">
+                            <a href="index.html" class="vg-brand-wrap">
+                                <img src="assets/img/logo/dflogo-white.png?v=2" alt="VG Digital Falcon Logo" class="vg-header-brand-logo">
+                            </a>
                         </div>
-                        <p class="text d-none d-xl-block">
-At Digital Falcon, our mission is to empower businesses with the tools and strategies they need to thrive in today’s competitive market. We believe in building strong, authentic brands that resonate with audiences and drive lasting success.
-                        </p>
-                        <div class="mobile-menu fix mb-3"></div>
-                        <div class="offcanvas__contact">
-                            <h4>Contact Info</h4>
-                            <ul>
-                                <li class="d-flex align-items-center">
-                                    <div class="offcanvas__contact-icon">
-                                        <i class="fal fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="offcanvas__contact-text">
-                                        <a target="_blank" href="#">Alandur, Tamil Nadu</a>
-                                    </div>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <div class="offcanvas__contact-icon mr-15">
-                                        <i class="fal fa-envelope"></i>
-                                    </div>
-                                    <div class="offcanvas__contact-text">
-                                        <a href="mailto:contact@vgdigitalfalcon.com"><span class="mailto:contact@vgdigitalfalcon.com">contact@vgdigitalfalcon.com</span></a>
-                                    </div>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <div class="offcanvas__contact-icon mr-15">
-                                        <i class="fal fa-clock"></i>
-                                    </div>
-                                    <div class="offcanvas__contact-text">
-                                        <a target="_blank" href="#">Mod-friday, 09am -05pm</a>
-                                    </div>
-                                </li>
-                                <li class="d-flex align-items-center">
-                                    <div class="offcanvas__contact-icon mr-15">
-                                        <i class="far fa-phone"></i>
-                                    </div>
-                                    <div class="offcanvas__contact-text">
-                                        <a href="tel:+11002345909">+91 8695776922</a>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="header-button mt-4">
-                                <a href="contact.html" class="theme-btn text-center">
-                                   Get A Quote <i class="fa-solid fa-arrow-right-long"></i>
-                                </a>
-                            </div>
-                            <div class="social-icon d-flex align-items-center">
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#"><i class="fab fa-twitter"></i></a>
-                                <a href="#"><i class="fab fa-youtube"></i></a>
-                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
+                        <div class="offcanvas__close">
+                            <button aria-label="Close navigation menu"><i class="fas fa-times"></i></button>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="offcanvas__overlay"></div>
-
-        <!-- Header Section Start -->
-        <header class="header-section-1">
-            <div class="header-top">
-                <div class="container">
-                    <div class="header-top-wrapper">
-                        <ul class="contact-list">
-                            <li>
-                                <i class="far fa-envelope"></i>
-                                <a href="mailto:contact@vgdigitalfalcon.com">contact@vgdigitalfalcon.com</a>
+                    <p class="text mb-4" style="color: #cbd5e1; font-size: 14px;">
+                        At Digital Falcon, our mission is to empower businesses with the tools and strategies they need to thrive in today’s competitive market. We build fast, scalable, and conversion-focused websites that drive measurable revenue.
+                    </p>
+                    <!-- Dedicated Touch-Friendly Mobile Drawer Menu -->
+                    <div class="vg-mobile-drawer-menu mb-4">
+                        <ul class="vg-mobile-nav-list">
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about-us.html">About Us</a></li>
+                            <li class="has-dropdown">
+                                <a href="#" class="vg-mobile-parent-link" role="button" aria-expanded="false">
+                                    <span>Services</span> <i class="fas fa-chevron-down"></i>
+                                </a>
+                                <ul class="vg-mobile-sub">
+                                    <li><a href="index.html#services" style="color: #c084fc; font-weight: 600;"><i class="fa-solid fa-arrow-right me-1"></i> All Services Overview</a></li>
+                                    <li><a href="seo-service.html">SEO Optimization</a></li>
+                                    <li><a href="performance-marketing.html">Google &amp; Meta Ads</a></li>
+                                    <li><a href="web-development.html" class="active">Website Development</a></li>
+                                    <li><a href="personal-branding-service.html">Personal Branding</a></li>
+                                    <li><a href="ecommerce-seo-service.html">Ecommerce SEO</a></li>
+                                    <li><a href="youtube-seo-agency.html">YouTube SEO Agency</a></li>
+                                </ul>
                             </li>
-                            <li>
-                                <i class="fa-regular fa-phone"></i>
-                                <a href="tel:+91 8695776922">+91 8695776922</a>
+                            <li><a href="index.html#case-studies">Case Studies</a></li>
+                            <li><a href="index.html#insights">Insights</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="offcanvas__contact">
+                        <h4 style="color: #ffffff; font-size: 18px; margin-bottom: 15px;">Get In Touch</h4>
+                        <ul>
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="fal fa-map-marker-alt me-2" style="color: #38bdf8;"></i>
+                                <span style="color: #cbd5e1;">Alandur, Chennai, Tamil Nadu</span>
+                            </li>
+                            <li class="d-flex align-items-center mb-2">
+                                <i class="fal fa-envelope me-2" style="color: #38bdf8;"></i>
+                                <a href="mailto:contact@vgdigitalfalcon.com" style="color: #cbd5e1;">contact@vgdigitalfalcon.com</a>
+                            </li>
+                            <li class="d-flex align-items-center mb-3">
+                                <i class="far fa-phone me-2" style="color: #38bdf8;"></i>
+                                <a href="tel:+918695776922" style="color: #cbd5e1;">+91 86957 76922</a>
                             </li>
                         </ul>
-                    <!--   <p>Hostech Flash Discount: Starting at <b>$3.49/mo</b> for a Limited time</p>
-                        <ul class="list">
-                            <li><i class="fa-light fa-comments"></i><a href="contact.html">Live Chat</a></li>
-                            <li><i class="fa-light fa-user"></i>
-                                <button data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                                    Login
-                                </button>
-                            </li>
-                        </ul>-->
-                    </div>
-                </div>
-            </div>
-            <div id="header-sticky" class="header-1">
-                <div class="container">
-                    <div class="mega-menu-wrapper">
-                        <div class="header-main">
-                            <div class="header-left">
-                                <div class="logo">
-                                    <a href="index.html" class="header-logo">
-                                        <img src="assets/img/logo/dflogo-white.png" alt="logo-img">
-                                    </a>
-                                    <a href="index.html" class="header-logo-2">
-                                        <img src="assets/img/logo/dflogo-black.png" alt="logo-img">
-                                    </a>
-                                </div>
-                            </div>
-                                                    <div class="header-right d-flex justify-content-end align-items-center">
-                                <div class="mean__menu-wrapper">
-                                    <div class="main-menu">
-                                        <nav id="mobile-menu">
-                                            <ul>
-                                                 <li>
-                                                    <a href="index.html">Home</a>
-                                                </li>
-                                                <li>
-                                                    <a href="about-us.html">About Us</a>
-                                                </li>
-                                                
-                                                <li class="has-dropdown menu-thumb">
-                                                    <a href="#">
-                                                    Service
-                                                    <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu has-homemenu">
-                                                        <li class="border-none">
-                                                            <div class="homemenu-items">
-                                                                <div class="row">
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img src="assets/img/choose/menu-8.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="#">Digital Marketing</a></h6>
-                                                                                <p>
-                                                                                    Digital Marketing Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img src="assets/img/choose/menu-1.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="seo-service.html">SEO</a></h6>
-                                                                                <p>
-                                                                                    SEO Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img src="assets/img/choose/menu-3.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="web-development.html">Web Development</a></h6>
-                                                                                <p>
-                                                                                    Website Development Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img src="assets/img/choose/menu-4.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="performance-marketing.html">Performance Marketing</a></h6>
-                                                                                <p>
-                                                                                    Performance Marketing Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img src="assets/img/choose/menu-2.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="social-media-optimization-agency.html">SMO</a></h6>
-                                                                                <p>
-                                                                                    SMO Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img src="assets/img/choose/menu-5.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="personal-branding-service.html">Personal Branding</a></h6>
-                                                                                <p>
-                                                                                    Personal Branding Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img src="assets/img/choose/menu-6.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="youtube-seo-agency.html">Youtube SEO</a></h6>
-                                                                                <p>
-                                                                                    Youtube SEO Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img src="assets/img/choose/menu-7.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="ecommerce-seo-service.html">Ecommerce SEO</a></h6>
-                                                                                <p>
-                                                                                    Ecommerce SEO Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown active d-xl-none">
-                                                    <a href="#" class="border-none">
-                                                    Service
-                                                    <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Digital Marketing</a></li>
-                                                        <li><a href="seo-service.html">SEO</a></li>
-                                                        <li><a href="web-development.html">Web Development</a></li>
-                                                        <li><a href="performance-marketing.html">Performance Marketing</a></li>
-                                                        <li><a href="social-media-optimization-agency.html">SMO </a></li>
-                                                        <li><a href="personal-branding-service.html">Personal Branding</a></li>
-                                                        <li><a href="youtube-seo-agency.html">Youtube SEO</a></li>
-                                                        <li><a href="ecommerce-seo-service.html">Ecommerce SEO</a></li>
-                                                      
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Portfolio</a>
-                                                </li>
-                                                
-                                               <li>
-                                                    <a href="#">Blogs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="contact.html">Contact</a>
-                                                </li>
-                                                <li>
-                                                </li>
-                                                
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                                    <div class="header__hamburger d-xl-block my-auto">
-                                    <div class="sidebar__toggle">
-                                        <i class="fas fa-bars"></i>
-                                    </div>
-                                </div>
-                                <div class="header-button">
-                                    <a href="contact.html" class="theme-btn">
-                                        get Started
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Modal Version 1 -->
-        <div class="modal modal-common-wrap fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-md-flex d-grid gap-md-0 gap-5 align-items-center">
-                        <div class="modal-common-content">
-                            <div class="box">
-                                <h2>
-                                    welcome back!
-                                </h2>
-                                <form action="#" class="login-from">
-                                    <div class="form-grp cmn-mb">
-                                        <input type="email" placeholder="Email Address">
-                                    </div>
-                                    <div class="form-grp">
-                                        <input type="text" placeholder="Enter Password">
-                                    </div>
-                                    <div
-                                        class="d-flex forgot-inner-area cmn-mb justify-content-between gap-2 flex-wrap align-items-center">
-                                        <div class="form-check checkmark-inner">
-                                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                                checked>
-                                            <label class="form-check-label" for="flexCheckChecked">
-                                                Remember me
-                                            </label>
-                                        </div>
-                                        <a href="#" class="forgot">
-                                            Forgot Your password?
-                                        </a>
-                                    </div>
-                                    <button type="button" class="theme-btn w-100">
-                                        <span>
-                                            Log in
-                                        </span>
-                                    </button>
-                                </form>
-                                <span class="orting-badge">
-                                    Or
-                                </span>
-                                <div class="d-grid gap-3">
-                                    <a href="#" class="cmn-social">
-                                        <img src="assets/img/sign/google.png" alt="img">
-                                        Continue With Google
-                                    </a>
-                                    <a href="#" class="cmn-social">
-                                        <img src="assets/img/sign/fb.png" alt="img">
-                                        continue with facebook
-                                    </a>
-                                </div>
-                                <div class="form-check d-flex align-items-center gap-2 from-customradio">
-                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                        id="flexRadioDefault1">
-                                    <label class="form-check-label" for="flexRadioDefault1">
-                                        i accept your terms & conditions
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-right-thumb position-relative">
-                            <img src="assets/img/sign/login.png" alt="img">
-                            <div class="signlogin-btnwrap">
-                                <button class="theme-create style-border" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    create account
-                                </button>
-                                <button class="theme-btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                                    Log In
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal Version 2 -->
-        <div class="modal modal-common-wrap fade" id="exampleModal2" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body d-md-flex d-grid gap-md-0 gap-5 align-items-center">
-                        <div class="modal-common-content">
-                            <div class="box">
-                                <h2>
-                                    Create account
-                                </h2>
-                                <form action="#" class="login-from">
-                                    <div class="form-grp cmn-mb">
-                                        <input type="text" placeholder="User name">
-                                    </div>
-                                    <div class="form-grp cmn-mb">
-                                        <input type="email" placeholder="Email Address">
-                                    </div>
-                                    <div class="form-grp cmn-mb">
-                                        <input type="text" placeholder="Enter Password">
-                                    </div>
-                                    <div class="form-grp">
-                                        <input type="text" placeholder="Enter Confirm password">
-                                    </div>
-                                </form>
-                                <span class="orting-badge">
-                                    Or
-                                </span>
-                                <div class="d-grid gap-3">
-                                    <a href="#" class="cmn-social">
-                                        <img src="assets/img/sign/google.png" alt="img">
-                                        Continue With Google
-                                    </a>
-                                    <a href="#" class="cmn-social">
-                                        <img src="assets/img/sign/fb.png" alt="img">
-                                        continue with facebook
-                                    </a>
-                                </div>
-                                <div class="pb-xxl-3">
-                                    <div class="form-check d-flex align-items-center gap-2 from-customradio">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault11">
-                                        <label class="form-check-label" for="flexRadioDefault11">
-                                            i accept your terms & conditions
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="mt-4">
-                                    <button type="button" class="theme-btn w-100">
-                                        <span>
-                                            Log in
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal-right-thumb position-relative">
-                            <img src="assets/img/sign/create.png" alt="img">
-                            <div class="signlogin-btnwrap">
-                                <button class="theme-create style-border" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    create account
-                                </button>
-                                <button class="theme-btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                                    Log In
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Search Area Start -->
-        <div class="search-wrap">
-            <div class="search-inner">
-                <i class="fas fa-times search-close" id="search-close"></i>
-                <div class="search-cell">
-                    <form method="get">
-                        <div class="search-field-holder">
-                            <input type="search" class="main-search-input" placeholder="Search...">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-
-
-       <!-- Hero Section Start -->
-<section class="hero-section hero-1 style-hero-3 bg-cover fix" style="background-image: url('assets/img/hero/hero-bg-3.jpg');">
-    <div class="dot-right">
-        <img src="assets/img/hero/hero-2-dot-right.png" alt="img">
-    </div>
-    
-    <div class="container">
-        <div class="row g-4 justify-content-between align-items-center">
-            <div class="col-lg-6">
-                <div class="hero-content">
-                     <style>
-@media (max-width: 768px) {
-  .mobile-hide {
-    display: none;
-  }
-}
-</style>
-                    <h1 class="wow fadeInUp text-white" data-wow-delay=".3s" style="font-size: 35px;"><span>Turn Visitors into Customers</span></h1>
-                   
-                    <h2 class="wow fadeInUp text-white" data-wow-delay=".3s" style="font-size: 30px;">with the Best Website Development Company </h2>
-<br>
-                    <p class="wow fadeInUp mobile-hide" data-wow-delay=".5s" style="text-align: justify;">Partner with a custom website development agency that’s focused on lead generation and business growth. From startups to established brands, we craft strategic websites that attract, engage, and convert.</p>
-                    <div class="hero-author">
-                        <a href="https://wa.me/918695776922?text=Hii%20VG%20Digital%20Falcon%2C%20I%20would%20like%20to%20get%20a%20quote%20for%20website%20development.%20Please%20share%20the%20details." class="theme-btn bg-color-2 wow fadeInUp" data-wow-delay=".7s">
-                            Request a Quote <i class="fas fa-long-arrow-alt-right"></i>
-                        </a>
-                       
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-5 wow fadeInUp" data-wow-delay=".4s">
-                <div class="hero-form-container" style="background: #fff; padding: 25px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); height: auto;">
-                    <h3 style="color: #333; font-size: 22px; margin-bottom: 15px; text-align: center; font-weight: 700; line-height: 1.3;">Get Your Website Now!!</h3>
-                    <form id="youtubeSeoForm" action="process_form.php" method="POST" style="display: flex; flex-direction: column; gap: 12px;">
-                        <div class="form-group" style="margin-bottom: 12px;">
-                            <label for="name" style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">Company Name:</label>
-                            <input type="text" id="name" name="name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 15px; color: #333; transition: all 0.3s ease;">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 12px;">
-                            <label for="channel" style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">Country:</label>
-                            <input type="text" id="channel" name="channel" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 15px; color: #333; transition: all 0.3s ease;">
-                        </div>
-                        <div class="form-group" style="margin-bottom: 15px;">
-                            <label for="whatsapp" style="display: block; margin-bottom: 5px; font-weight: 600; color: #555;">WhatsApp Number:</label>
-                            <input type="tel" id="whatsapp" name="whatsapp" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 15px; color: #333; transition: all 0.3s ease;">
-                        </div>
-                        <button type="submit" style="background: linear-gradient(135deg, #6e8efb, #a777e3); color: white; border: none; padding: 12px; border-radius: 5px; font-size: 15px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-top: 5px;">
-                            Get My Website Plan
-                            <span style="display: inline-block; transition: transform 0.3s ease;">→</span>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<br><br>        
-        <!-- Doming Name Section Start -->
-        <section class="doming-name-area section-padding-2 pt-0">
-            <div class="container">
-                <div class="doming-name-wrapper style-1">
-                    <h3 class="text-white wow fadeInUp" data-wow-delay=".3s">Our Techstack</h3>
-                    
-                    <div class="swiper brand-slider pb-70 pt-0">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-1.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-10.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-11.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-2.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-3.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-4.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-5.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-6.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-7.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-8.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                         <div class="swiper-slide">
-                            <div class="brand-img center">
-                                <img src="assets/img/brand/techstack-9.png" alt="img" style="border-radius: 10px;">
-                            </div>
-                        </div>
-                       
-                    </div>
-            </div>
-            </div>
-            </div>
-        </section>
-
-
-         <!-- Hosting Section Start -->
-        <section class="hosting-section fix section-padding">
-            <div class="container">
-                <div class="section-title text-center">
-                    <span class="style-border wow fadeInUp"> We Live your Business Online </span>
-                    <h2 class="mb-3 wow fadeInUp" data-wow-delay=".3s">Custom Website Development Services <br>Tailored for Business Growth</h2>
-                    <p class="wow fadeInUp" data-wow-delay=".5s">As a leading custom website development agency, we offer a full suite of professional web development services designed to drive results. <br> Whether you're a startup or an enterprise, our scalable and affordable solutions help you grow online with impact.</p>
-                </div>
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="hosting-box-items">
-                            
-                            <div class="content"> 
-                                <h3><a href="#">Custom Website Development</a></h3>
-<p style="text-align: justify;">Partner with the best website development company to create fully customized, performance-driven websites tailored to your unique business needs. Built with clean code and modern frameworks, our websites are designed to convert visitors into paying customers effectively.</p>
-<!--                                <a href="cloud-hosting.html" class="theme-btn mt-4">"We turned a 2K-subscriber tech channel into 100K+ in 6 months." <i class="fa-regular fa-chevrons-right"></i></a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="hosting-box-items">
-                            
-                            <div class="content"> 
-                                <h3><a href="#">Web App Development</a></h3>
-<p style="text-align: justify;">Our full-stack web development agency specializes in building high-performance web apps using the latest technologies like React and Node.js. We deliver custom solutions that integrate with your workflows, enhance productivity, and scale with your business growth seamlessly.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="hosting-box-items">
-                           
-                            <div class="content"> 
-                                <h3><a href="#">WordPress Development</a></h3>
-<p style="text-align: justify;">Get dynamic, SEO-optimized websites built on WordPress by a top web development company in the USA and India. Whether it’s a blog, corporate site, or portfolio, our WordPress solutions are fast, flexible, secure, and fully future-ready for long-term business success.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="hosting-box-items">
-                            
-                            <div class="content"> 
-                                <h3><a href="#">CMS System Development</a></h3>
-<p style="text-align: justify;">Manage your website content with ease using our CMS development services. We build intuitive and secure platforms using WordPress, Joomla, Wix, Shopify, and Drupal for businesses needing control, security, and the flexibility to manage content anytime.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <br>
-                                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="hosting-box-items">
-                            
-                            <div class="content"> 
-                                <h3><a href="#">E-commerce Website Development</a></h3>
-<p style="text-align: justify;">As an experienced e-commerce website development company, we build powerful online stores on Shopify, Magento, and WooCommerce. Our designs drive traffic, improve user experience, and boost sales with secure, fast, and user-friendly checkout systems.</p>
-<!--                                <a href="cloud-hosting.html" class="theme-btn mt-4">"We turned a 2K-subscriber tech channel into 100K+ in 6 months." <i class="fa-regular fa-chevrons-right"></i></a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="hosting-box-items">
-                            
-                            <div class="content"> 
-                                <h3><a href="#">Custom ERP Development</a></h3>
-<p style="text-align: justify;">Empower your business operations with custom ERP solutions. From inventory to HR and finance, our USA-based website development agency delivers fully integrated ERP systems tailored to your workflows, improving efficiency and decision-making processes.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="hosting-box-items">
-                           
-                            <div class="content"> 
-                                <h3><a href="#">Shopify Store Development</a></h3>
-<p style="text-align: justify;">Looking for affordable website developers near you? Our Shopify experts create sleek, mobile-optimized online stores that improve user experience, enhance product visibility, and simplify product management for growing e-commerce brands worldwide.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="hosting-box-items">
-                            
-                            <div class="content"> 
-                                <h3><a href="#">Web Maintenance & Updates</a></h3>
-<p style="text-align: justify;">Stay secure and competitive with ongoing maintenance. Our affordable website development services include scheduled updates, speed optimization, bug fixes, and security enhancements to keep your website performing at its best every day. We Maintain Website on Yearly Basis.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-<!-- Cta Contact Section Start -->
-        <section class="cta-contct-section section-padding bg-cover fix" style="background-image: url('assets/img/cta/cta-conact-bg-2.jpg');">
-            <div class="container">
-                <div class="row g-4 justify-content-between align-items-center">
-                    
-                    <div class="col-lg-9">
-                                <h2 class="text-white wow fadeInUp" data-wow-delay=".3s" >Looking For Website Development Company?</h2>
-                          </div>
-                            <div class="col-lg-3">
-                            <div class="cta-contact-button mt-4 mt-md-0">
-                                <a href="https://wa.me/918695776922?text=Hii%20VG%20Digital%20Falcon%2C%20I%20would%20like%20to%20get%20a%20quote%20for%20website%20development.%20Please%20share%20the%20details." class="theme-btn bg-color-2 wow fadeInUp" data-wow-delay=".5s">WhatsApp Now <i class="fas fa-long-arrow-alt-right"></i></a>
-                               </div></div>
-                            </div>
-                       </div>
-                 
-                   
-             
-        </section>
-
-           <!-- Feature Section Start -->
-        <section class="feature-hosting-section fix section-padding section-bg">
-            <div class="container">
-                <div class="feature-content-warpper style-3">
-                    <div class="row g-4 justify-content-between align-items-center">
-                        
-                        <div class="col-lg-12">
-                            <div class="feature-hosting-content">
-                                                <div class="section-title text-center">
-                    <span class="style-border wow fadeInUp">How it Works?</span>
-                    <h2 class="mb-3 wow fadeInUp" data-wow-delay=".3s">How We Build Websites That Actually Deliver Results?</h2>
-                    <p class="wow fadeInUp" data-wow-delay=".5s">Want a website that loads fast, looks amazing, and converts visitors into customers?<br>Here’s how our professional web development services work — simple, transparent, and built for results.</p>
-                </div>
-
-                <div class="tab-content">
-                    <div id="monthly" class="tab-pane fade show active" role="tabpanel">
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                                <div class="pricing-card-items responsive-pricing-style ">
-                                    <div class="wing-shape">
-                                        <img src="assets/img/wing-shape.png" alt="img">
-                                    </div>
-                                    <div class="icon">
-                                        <img src="assets/img/pricing/step1.png" alt="img">
-                                    </div>
-                                    <div class="pricing-bg">
-                                        <img src="assets/img/pricing/400.png" alt="img">
-                                    </div>
-                                    <div class="pricing-header">
-                                        <div class="price-content">
-                                            <h3>Strategy Session</h3>
-                                        </div>
-                                    </div>
-                                        <p class="text-justify pricing-list">Let’s talk about your goals. We dive deep into your business, understand your audience, and map out the best strategy.</p><br>
-                                        
-                                   
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                                <div class="pricing-card-items responsive-pricing-style">
-                                    <div class="wing-shape">
-                                        <img src="assets/img/wing-shape.png" alt="img">
-                                    </div>
-                                    <div class="icon">
-                                        <img src="assets/img/pricing/step2.png" alt="img">
-                                    </div>
-                                    <div class="pricing-bg">
-                                        <img src="assets/img/pricing/400.png" alt="img">
-                                    </div>
-                                    <div class="pricing-header">
-                                        <div class="price-content">
-                                            <h3>Selecting TechStack</h3>
-                                        </div>
-                                    </div>
-                         <p class="text-justify pricing-list">From HTML to React / Node.js, we help you choose the right tools — no bloated code or unnecessary features.</p><br>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                                <div class="pricing-card-items responsive-pricing-style">
-                                    <div class="wing-shape">
-                                        <img src="assets/img/wing-shape.png" alt="img">
-                                    </div>
-                                    <div class="icon">
-                                        <img src="assets/img/pricing/step3.png" alt="img">
-                                    </div>
-                                    <div class="pricing-bg">
-                                        <img src="assets/img/pricing/400.png" alt="img">
-                                    </div>
-                                    <div class="pricing-header">
-                                        <div class="price-content">
-                                            <h3>UI/UX Design</h3>
-                                        </div>
-                                    </div>
-                  <p class="text-justify pricing-list">Our design team creates user experiences that are beautiful, intuitive, and conversion-focused in Figma..</p><br>
-
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                          
-                    </div>
-
-
-                    
-
-                </div>
-                </div>
-                </div>    
-                </div>
-            </div>
-        </section>
-
-
-
-
-    <!-- Feature Section Start -->
-        <section class="feature-hosting-section fix section-padding2 section-bg">
-            <div class="container">
-                <div class="feature-content-warpper style-3">
-                    <div class="row g-4 justify-content-between align-items-center">
-                        
-                        <div class="col-lg-12">
-                            <div class="feature-hosting-content">
-                                               
-
-                <div class="tab-content">
-                    <div id="monthly" class="tab-pane fade show active" role="tabpanel">
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                                <div class="pricing-card-items responsive-pricing-style">
-                                    <div class="wing-shape">
-                                        <img src="assets/img/wing-shape.png" alt="img">
-                                    </div>
-                                    <div class="icon">
-                                        <img src="assets/img/pricing/step4.png" alt="img">
-                                    </div>
-                                    <div class="pricing-bg">
-                                        <img src="assets/img/pricing/400.png" alt="img">
-                                    </div>
-                                    <div class="pricing-header">
-                                        <div class="price-content">
-                                            <h3>Development by Experts</h3>
-                                        </div>
-                                    </div>
-                  <p class="text-justify pricing-list">Your website is built by our full-stack developers with clean code, fast loading times, and scalability in mind.</p><br>
-     
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                                <div class="pricing-card-items responsive-pricing-style">
-                                    <div class="wing-shape">
-                                        <img src="assets/img/wing-shape.png" alt="img">
-                                    </div>
-                                    <div class="icon">
-                                        <img src="assets/img/pricing/step5.png" alt="img">
-                                    </div>
-                                    <div class="pricing-bg">
-                                        <img src="assets/img/pricing/400.png" alt="img">
-                                    </div>
-                                    <div class="pricing-header">
-                                        <div class="price-content">
-                                            <h3>Onboarding & Intro</h3>
-
-                                        </div>
-                                    </div>
-                              <p class="text-justify pricing-list">Before launch, we run a full suite of tests to catch bugs, optimize performance, and ensure responsiveness.</p><br>
-
-                                    
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                                <div class="pricing-card-items responsive-pricing-style">
-                                    <div class="wing-shape">
-                                        <img src="assets/img/wing-shape.png" alt="img">
-                                    </div>
-                                    <div class="icon">
-                                        <img src="assets/img/pricing/step6.png" alt="img">
-                                    </div>
-                                    <div class="pricing-bg">
-                                        <img src="assets/img/pricing/400.png" alt="img">
-                                    </div>
-                                    <div class="pricing-header">
-                                        <div class="price-content">
-                                            <h3>Monthly Reporting</h3>
-                                        </div>
-                                    </div>
-                       <p class="text-justify pricing-list">We don’t stop at launch. Our custom website development agency offers ongoing support, updates, and growth strategies.</p><br>
-
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                          
-                    </div>
-
-
-                    
-
-                </div>
-                </div>
-                </div>    
-                </div>
-            </div><br><br>
-        </section>
-
-
-          <!-- Hosting Section Start -->
-        <section class="hosting section-padding fix">
-            <div class="container">
-                 <div class="section-title text-center">
-                    <span class="style-border wow fadeInUp">Why Us?</span>
-                    <h2 class="mb-3 wow fadeInUp" data-wow-delay=".3s">Why Choose Our Web Development Services?</h2>
-                    <p class="wow fadeInUp" data-wow-delay=".5s">At VG Digital Falcon, we follow a structured, transparent, and collaborative approach to deliver<br> websites — on time and on budget.</p>
-                </div><br><br>
-                <div class="hosting-wrapper">
-                    
-                    <div class="row g-4 justify-content-between align-items-center">
-                        <div class="col-lg-6">
-                            <div class="hosting-content">
-                              
-                                <div class="hosting-items wow fadeInUp mt-4 mt-md-0" data-wow-delay=".5s">
-                                    <div class="icon">
-                                        <img src="assets/img/hosting/web1.png" alt="img">                                          
-                                    </div>
-                                    <div class="content">
-                                        <h4>Project Kickoff with Clear Roadmap</h4>
-                                        <p class="text-justify">We begin with a detailed project kickoff meeting to understand your business, goals, and vision.</p>
-                                    </div>
-                                </div>
-                                <div class="hosting-items wow fadeInUp" data-wow-delay=".7s">
-                                    <div class="icon">
-                                        <img src="assets/img/hosting/web2.png" alt="img">                                          
-                                    </div>
-                                    <div class="content">
-                                        <h4>In-House Development Team</h4>
-                                        <p class="text-justify">Our skilled designers, developers, and strategists work together under one roof — ensuring smooth communication, faster delivery, and top-tier quality.</p>
-                                    </div>
-                                </div>
-                                 <div class="hosting-items wow fadeInUp mt-4 mt-md-0" data-wow-delay=".5s">
-                                    <div class="icon">
-                                        <img src="assets/img/hosting/web3.png" alt="img">                                          
-                                    </div>
-                                    <div class="content">
-                                        <h4>Streamlined Work Schedule</h4>
-                                        <p class="text-justify">You’ll receive a realistic timeline with milestones and regular updates. We stick to deadlines, keep you informed, and stay agile if priorities shift.</p>
-                                    </div>
-                                </div>
-                                
-                                
-
-                            </div>
-                        </div>
-                       
-                        <div class="col-lg-6">
-                            <div class="hosting-content">
-                                
-                                <div class="hosting-items wow fadeInUp mt-4 mt-md-0" data-wow-delay=".5s">
-                                    <div class="icon">
-                                        <img src="assets/img/hosting/web4.png" alt="img">                                          
-                                    </div>
-                                    <div class="content">
-                                        <h4>Custom Design & Development</h4>
-                                        <p class="text-justify">No cookie-cutter templates. We design and develop your site from scratch, tailored to your brand’s identity, audience, and business goals.</p>
-                                    </div>
-                                </div>
-                                <div class="hosting-items wow fadeInUp" data-wow-delay=".7s">
-                                    <div class="icon">
-                                        <img src="assets/img/hosting/web5.png" alt="img">                                          
-                                    </div>
-                                    <div class="content">
-                                        <h4>Continuous Testing & Quality Checks</h4>
-                                        <p class="text-justify">Every page, feature, and function is rigorously tested across devices and browsers. We deliver a bug-free, smooth user experience — every time.</p>
-                                    </div>
-                                </div>
-                                 <div class="hosting-items wow fadeInUp mt-4 mt-md-0" data-wow-delay=".5s">
-                                    <div class="icon">
-                                        <img src="assets/img/hosting/web6.png" alt="img">                                          
-                                    </div>
-                                    <div class="content">
-                                        <h4>Ongoing Support & Maintenance</h4>
-                                        <p class="text-justify">Post-launch, we offer flexible support packages to help you update, grow, and scale — so your website evolves with your business.</p>
-                                    </div>
-                                </div>
-                                
-                                
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>  
-
-
-
-
-<!-- Faq Section Start -->
-<section class="faq-section fix section-padding section-bg" id="faq">
-    <div class="container">
-        <div class="faq-wrapper">
-            <div class="row g-4">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay=".3s">
-                    <div class="faq-image">
-                        <img src="assets/img/FAQ2.png" alt="img" style="border-radius: 20px; border-color: #000000; border-width: 12px;">
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="faq-content">
-                        <div class="section-title text-left">
-                            <span class="style-border wow fadeInUp">FAQs</span>
-                            <h2 class="mb-3 wow fadeInUp text-left" data-wow-delay=".3s" style="font-size: 40px;">Know About VG Digital Falcon</h2>
-                            <p>We know choosing the right web development partner is a big decision. Here are answers to common questions that help you move forward with confidence.</p>
-                        </div>
-                        <div class="faq-accordion mt-4 mt-md-0">
-                            <div class="accordion" id="accordion">
-                                
-                                <div class="accordion-item wow fadeInUp" data-wow-delay=".5s">
-                                    <h5 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2" style="font-size:20px;">
-                                            How long does it take to develop a website?
-                                        </button>
-                                    </h5>
-                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                        <div class="accordion-body">
-                                            Timelines vary based on project scope. A basic business site can take 2–4 weeks, while more complex web apps or eCommerce projects may take 6–12 weeks. We provide a clear timeline during project kickoff.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item wow fadeInUp" data-wow-delay=".7s">
-                                    <h5 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3" style="font-size:20px;">
-                                            How much does a website cost?
-                                        </button>
-                                    </h5>
-                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                        <div class="accordion-body">
-                                            Our pricing is transparent and tailored to your needs. Whether you're looking for affordable website developers near you or a full-scale custom build, we offer flexible packages that deliver value without compromise.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item wow fadeInUp" data-wow-delay=".7s">
-                                    <h5 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4" style="font-size:20px;">
-                                            Can you redesign or improve my existing website?
-                                        </button>
-                                    </h5>
-                                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                        <div class="accordion-body">
-                                            Absolutely! We offer professional redesign services to improve performance, design, speed, and conversions. Let's turn your outdated site into a modern business tool.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item wow fadeInUp" data-wow-delay=".7s">
-                                    <h5 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5" style="font-size:20px;">
-                                            Will my website be mobile-friendly and SEO-optimized?
-                                        </button>
-                                    </h5>
-                                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                        <div class="accordion-body">
-                                            Yes. Every site we build is fully responsive and follows SEO best practices — helping you rank better on Google and deliver a smooth experience on any device.
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion-item wow fadeInUp" data-wow-delay=".7s">
-                                    <h5 class="accordion-header">
-                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6" aria-expanded="false" aria-controls="faq6" style="font-size:20px;">
-                                            What support do you offer after the site goes live?
-                                        </button>
-                                    </h5>
-                                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#accordion">
-                                        <div class="accordion-body">
-                                            We provide ongoing maintenance, security updates, content changes, and technical support. You'll never be left alone after launch — we grow with you.
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="mt-4">
+                            <a href="contact.html" class="vg-btn-primary w-100 text-center">
+                                Get A Quote <i class="fa-solid fa-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</section>
-      
+    <div class="offcanvas__overlay"></div>
 
-        <!--<< Footer Section Start >>-->
-        <footer class="footer-section fix bg-cover" style="background-image: url('assets/img/section-bg.jpg');">
-            <div class="footer-widgets-wrapper">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                            <div class="single-footer-widget">
-                                <div class="widget-head">
-                                    <a href="index.html">
-                                        <img src="assets/img/logo/dflogo-white.png" alt="logo-img">
-                                    </a>
-                                </div>
-                                <div class="footer-content">
-                                    <p>
-                                        At Digital Falcon, our mission is to empower businesses with tools and strategies they need to thrive in today’s market. We believe in building strong, authentic brands that resonate with audiences and drive lasting success. 
-                                    </p>
-                                    <ul class="contact-info">
-                                        <li>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                <g clip-path="url(#clip0_4461_529)">
-                                                  <path d="M18.7719 14.1213C18.7388 14.0938 14.9913 11.4275 13.9794 11.5906C13.4913 11.6769 13.2125 12.01 12.6531 12.6762C12.4985 12.8617 12.3403 13.0443 12.1788 13.2238C11.8252 13.1086 11.4804 12.9682 11.1469 12.8038C9.42533 11.9656 8.03437 10.5747 7.19625 8.85312C7.03179 8.51964 6.89143 8.1748 6.77625 7.82125C6.96 7.65312 7.2175 7.43625 7.3275 7.34375C7.99062 6.7875 8.32312 6.50812 8.40938 6.01937C8.58625 5.0075 5.90625 1.26125 5.87875 1.2275C5.7567 1.05441 5.59775 0.910578 5.41336 0.806386C5.22897 0.702193 5.02374 0.640241 4.8125 0.625C3.72625 0.625 0.625 4.6475 0.625 5.32562C0.625 5.365 0.681875 9.3675 5.6175 14.3881C10.6325 19.3181 14.635 19.375 14.6744 19.375C15.3519 19.375 19.375 16.2737 19.375 15.1875C19.3596 14.9762 19.2975 14.771 19.1932 14.5866C19.0889 14.4022 18.945 14.2433 18.7719 14.1213ZM14.605 18.1213C14.0625 18.075 10.7 17.6319 6.5 13.5063C2.35437 9.28563 1.9225 5.9175 1.87937 5.39563C2.69861 4.10978 3.68799 2.94064 4.82062 1.92C4.84562 1.945 4.87875 1.9825 4.92125 2.03125C5.78989 3.21702 6.53817 4.48642 7.155 5.82062C6.95441 6.02242 6.7424 6.21253 6.52 6.39C6.17512 6.65278 5.85843 6.95063 5.575 7.27875C5.52704 7.34604 5.4929 7.42217 5.47456 7.50274C5.45621 7.5833 5.45403 7.66671 5.46812 7.74813C5.60039 8.32108 5.80297 8.87549 6.07125 9.39875C7.03243 11.3725 8.62735 12.9672 10.6012 13.9281C11.1244 14.1968 11.6788 14.3996 12.2519 14.5319C12.3333 14.5463 12.4168 14.5443 12.4974 14.5259C12.578 14.5075 12.6541 14.4732 12.7213 14.425C13.0505 14.1404 13.3494 13.8225 13.6131 13.4762C13.8094 13.2425 14.0712 12.9306 14.1706 12.8425C15.5082 13.4587 16.7805 14.2079 17.9681 15.0787C18.02 15.1225 18.0569 15.1562 18.0812 15.1781C17.0606 16.3111 15.8912 17.3007 14.605 18.12V18.1213ZM14.375 9.375H15.625C15.6235 8.04937 15.0962 6.77847 14.1589 5.84111C13.2215 4.90375 11.9506 4.37649 10.625 4.375V5.625C11.6193 5.62599 12.5725 6.0214 13.2756 6.72445C13.9786 7.42749 14.374 8.38074 14.375 9.375Z" fill="white"/>
-                                                  <path d="M17.5 9.375H18.75C18.7475 7.22088 17.8907 5.15569 16.3675 3.6325C14.8443 2.1093 12.7791 1.25248 10.625 1.25V2.5C12.4477 2.50215 14.1951 3.22717 15.484 4.51602C16.7728 5.80486 17.4978 7.5523 17.5 9.375Z" fill="white"/>
-                                                </g>
-                                                <defs>
-                                                  <clipPath id="clip0_4461_529">
-                                                    <rect width="20" height="20" fill="white"/>
-                                                  </clipPath>
-                                                </defs>
-                                              </svg>
-                                            <a href="tel:+91 8695776922">+91 8695776922</a>
-                                        </li>
-                                        <li>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0812 13.1941C18.0812 14.883 16.7074 16.2547 15.0206 16.2547H4.97935C3.2926 16.2547 1.91873 14.883 1.91873 13.1941V6.805C1.91835 6.26068 2.06418 5.72624 2.34096 5.25754L7.24049 10.1571C7.9735 10.8922 8.9551 11.2973 10.001 11.2973C11.0448 11.2973 12.0264 10.8922 12.7594 10.1571L17.659 5.25754C17.9358 5.72623 18.0816 6.26067 18.0812 6.805V13.1941H18.0812ZM15.0206 3.74441H4.97935C4.28279 3.74441 3.63978 3.98016 3.12541 4.37238L8.07424 9.32336C8.5865 9.83344 9.27017 10.1164 10.001 10.1164C10.7297 10.1164 11.4135 9.83344 11.9257 9.32336L16.8745 4.37238C16.3602 3.98016 15.7172 3.74441 15.0206 3.74441ZM15.0206 2.56348H4.97935C2.64103 2.56348 0.737793 4.46672 0.737793 6.80504V13.1942C0.737793 15.5346 2.64103 17.4357 4.97935 17.4357H15.0206C17.3589 17.4357 19.2622 15.5346 19.2622 13.1942V6.805C19.2622 4.46668 17.3589 2.56348 15.0206 2.56348Z" fill="white"/>
-                                              </svg>
-                                            <a href="mailto:contact@vgdigitalfalcon.com">contact@vgdigitalfalcon.com</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".4s">
-                            <div class="single-footer-widget ml-50">
-                                <div class="widget-head">
-                                    <h3>Company</h3>
-                                </div>
-                                <ul class="list-area">
-                                    <li>
-                                        <a href="about-us.html">
-                                            <i class="fa-regular fa-chevrons-right"></i>
-                                            About VG Digital Falcon
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html">
-                                            <i class="fa-regular fa-chevrons-right"></i>
-                                            Contact Us
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa-regular fa-chevrons-right"></i>
-                                            Blogs
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa-regular fa-chevrons-right"></i>
-                                            Portfolio
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#faq">
-                                            <i class="fa-regular fa-chevrons-right"></i>
-                                            FAQ’S
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-5 wow fadeInUp" data-wow-delay=".6s">
-                            <div class="single-footer-widget style-margin">
-                                <div class="widget-head">
-                                    <h3>Our Services</h3>
-                                </div>
-                                <ul class="list-area">
-                                    <li>
-                                        <a href="web-development.html">
-                                            <i class="fa-regular fa-chevrons-right"></i>
-                                            Web Development
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="social-media-optimization-agency.html">
-                                            <i class="fa-regular fa-chevrons-right"></i>
-                                            SMO Service
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="seo-service.html">
-                                            <i class="fa-regular fa-chevrons-right"></i>
-                                            SEO Service
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="performance-marketing.html">
-                                            <i class="fa-regular fa-chevrons-right"></i>
-                                            Performance Marketing
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="personal-branding-service.html">
-                                            <i class="fa-regular fa-chevrons-right"></i>
-                                            Personal Branding
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-lg-4 col-md-6 ps-lg-4 wow fadeInUp" data-wow-delay=".9s">
-                            <div class="single-footer-widget">
-                                <div class="widget-head">
-                                    <h3>Newsletter</h3>
-                                </div>
-                                <div class="footer-content">
-                                    <p>
-                                        Sign up to seargin weekly newsletter to get the latest updates.
-                                    </p>
-                                    <div class="footer-input">
-                                        <input type="email" id="email2" placeholder="Enter Email Address">
-                                        <button class="newsletter-btn" type="submit">
-                                            <i class="fa-regular fa-paper-plane"></i>
-                                        </button>
-                                    </div>
-                                    <div class="social-icon d-flex align-items-center">
-                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                        <a href="#"><i class="fab fa-twitter"></i></a>
-                                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                        <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="footer-wrapper d-flex align-items-center justify-content-between">
-                        <p class="wow fadeInLeft" data-wow-delay=".3s">
-                            © All Copyright 2025 by <a href="index.html">VG Digital Falcon</a>
-                        </p>
-                       
-                    </div>
-                </div>
-                <a href="#" id="scrollUp" class="scroll-icon">
-                    <i class="far fa-arrow-up"></i>
+    <!-- ==========================================================================
+         NAVIGATION HEADER (STICKY GLASSMORPHISM WITH UNIFIED THEME)
+         ========================================================================== -->
+    <header class="vg-header" id="header-sticky">
+        <div class="vg-nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="vg-brand-wrap" aria-label="VG Digital Falcon Homepage">
+                <img src="assets/img/logo/dflogo-white.png?v=2" alt="VG Digital Falcon Logo" class="vg-header-brand-logo">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="vg-nav-menu">
+                <ul class="vg-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li>
+                        <a href="index.html#services" class="active">Services <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                        <ul class="vg-dropdown-menu">
+                            <li><a href="seo-service.html">SEO Optimization</a></li>
+                            <li><a href="performance-marketing.html">Google &amp; Meta Ads</a></li>
+                            <li><a href="web-development.html" class="active">Website Development</a></li>
+                            <li><a href="personal-branding-service.html">Personal Branding</a></li>
+                            <li><a href="ecommerce-seo-service.html">Ecommerce SEO</a></li>
+                            <li><a href="youtube-seo-agency.html">YouTube SEO Agency</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#case-studies">Case Studies</a></li>
+                    <li><a href="index.html#insights">Insights</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Button & Mobile Toggle -->
+            <div class="d-flex align-items-center gap-3">
+                <a href="contact.html" class="vg-btn-primary d-none d-sm-inline-flex">
+                    Get Free Strategy <i class="fa-solid fa-arrow-right"></i>
                 </a>
+                <div class="sidebar__toggle d-xl-none" role="button" tabindex="0" aria-label="Open mobile navigation menu" style="color: #ffffff; font-size: 22px; cursor: pointer;">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
-        </footer>
+        </div>
+    </header>
 
+    <!-- ==========================================================================
+         HERO SECTION: WEBSITE DEVELOPMENT (CYBERNETIC DARK THEME WITH 3D CANVAS & LEAD FORM)
+         ========================================================================== -->
+    <section class="vg-webdev-hero">
+        <!-- Interactive 3D Isometric Wireframe Architecture & Code Particle Mesh Canvas (Scoped to Hero) -->
+        <canvas id="vg-webdev-hero-canvas" class="vg-webdev-hero-canvas"></canvas>
 
-        <!--<< All JS Plugins >>-->
-        <script src="assets/js/jquery-3.7.1.min.js"></script>
-        <!--<< Viewport Js >>-->
-        <script src="assets/js/viewport.jquery.js"></script>
-        <!--<< Bootstrap Js >>-->
-        <script src="assets/js/bootstrap.bundle.min.js"></script>
-        <!--<< Nice Select Js >>-->
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <!--<< Waypoints Js >>-->
-        <script src="assets/js/jquery.waypoints.js"></script>
-        <!--<< Counterup Js >>-->
-        <script src="assets/js/jquery.counterup.min.js"></script>
-        <!--<< Swiper Slider Js >>-->
-        <script src="assets/js/swiper-bundle.min.js"></script>
-        <!--<< MeanMenu Js >>-->
-        <script src="assets/js/jquery.meanmenu.min.js"></script>
-        <!--<< Magnific Popup Js >>-->
-        <script src="assets/js/jquery.magnific-popup.min.js"></script>
-        <!--<< Wow Animation Js >>-->
-        <script src="assets/js/wow.min.js"></script>
-        <!--<< Main.js >>-->
-        <script src="assets/js/main.js"></script>
-    </body>
+        <div class="container position-relative" style="z-index: 2;">
+            <div class="row align-items-center g-5">
+                <!-- Left Hero Content -->
+                <div class="col-lg-7">
+                    <!-- Breadcrumb Navigation -->
+                    <div class="vg-breadcrumb-wrap wow fadeInUp" data-wow-delay=".1s">
+                        <a href="index.html">Home</a>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+                        <a href="index.html#services">Services</a>
+                        <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
+                        <span class="active">Website Development</span>
+                    </div>
+
+                    <!-- Badge -->
+                    <div class="vg-section-badge mb-3 wow fadeInUp" data-wow-delay=".15s">
+                        <span class="vg-pill-badge"><i class="fa-solid fa-code me-2"></i> Custom Web Development Agency</span>
+                    </div>
+
+                    <!-- Main Headings (100% Content Preserved) -->
+                    <h1 class="vg-seo-hero-title wow fadeInUp" data-wow-delay=".2s">
+                        <span class="vg-hero-partner">Turn Visitors into Customers with the</span>
+                        <span class="vg-gradient-text">Best Website Development</span>
+                        <span class="vg-hero-dominate">Company for High-Impact Growth</span>
+                    </h1>
+
+                    <!-- Paragraph (100% Content Preserved) -->
+                    <p class="vg-seo-hero-sub wow fadeInUp" data-wow-delay=".3s">
+                        Partner with a custom website development agency that’s focused on lead generation and business growth. From startups to established brands, we craft strategic websites that attract, engage, and convert.
+                    </p>
+
+                    <!-- Hero Actions (100% Links Preserved) -->
+                    <div class="d-flex align-items-center gap-3 flex-wrap wow fadeInUp" data-wow-delay=".4s">
+                        <a href="https://wa.me/918695776922?text=Hii%20VG%20Digital%20Falcon%2C%20I%20would%20like%20to%20get%20a%20quote%20for%20website%20development.%20Please%20share%20the%20details." class="vg-btn-primary" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp me-2"></i> Request a Quote <i class="fa-solid fa-arrow-right ms-1"></i>
+                        </a>
+                        <a href="#techstack" class="vg-btn-glass">
+                            <i class="fa-solid fa-layer-group me-2"></i> Explore Tech Stack
+                        </a>
+                    </div>
+
+                    <!-- Quick Telemetry Proof Badges -->
+                    <div class="d-flex align-items-center gap-3 flex-wrap mt-4 pt-2 wow fadeInUp" data-wow-delay=".45s">
+                        <div class="d-flex align-items-center gap-2" style="font-size: 13px; color: #cbd5e1;">
+                            <i class="fa-solid fa-gauge-high" style="color: #10b981;"></i>
+                            <span>Core Web Vitals: <strong>95+ Speed</strong></span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2" style="font-size: 13px; color: #cbd5e1;">
+                            <i class="fa-solid fa-mobile-screen-button" style="color: #38bdf8;"></i>
+                            <span>Responsive: <strong>100% Mobile Ready</strong></span>
+                        </div>
+                        <div class="d-flex align-items-center gap-2" style="font-size: 13px; color: #cbd5e1;">
+                            <i class="fa-solid fa-shield-halved" style="color: #c084fc;"></i>
+                            <span>Enterprise: <strong>Clean Scalable Code</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero Lead Form Card (100% Fields & Actions Preserved) -->
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay=".35s">
+                    <div class="vg-seo-audit-card">
+                        <!-- High-Tech Moving Laser Scanline Beam -->
+                        <div class="vg-scanline-beam"></div>
+
+                        <!-- Live Architect Telemetry Pill -->
+                        <div class="vg-seo-telemetry-pill">
+                            <span class="vg-live-pulse-dot"></span>
+                            <span class="vg-telemetry-tag">Full-Stack Architect: Online • 24/7 Deployment Ready</span>
+                        </div>
+
+                        <h3 class="vg-seo-form-title">Get Your Website Now!!</h3>
+                        <p class="vg-seo-form-subtitle">Fill in your details below to get your strategic website plan &amp; quote.</p>
+
+                        <form id="webDevLeadForm" action="process_form.php" method="POST">
+                            <div class="vg-seo-form-group">
+                                <label for="name">Company Name:</label>
+                                <input type="text" id="name" name="name" class="vg-seo-form-input" placeholder="e.g. Acme Corporation" aria-label="Company Name" required>
+                            </div>
+
+                            <div class="vg-seo-form-group">
+                                <label for="channel">Country:</label>
+                                <input type="text" id="channel" name="channel" class="vg-seo-form-input" placeholder="e.g. United States, India, UAE" aria-label="Country" required>
+                            </div>
+
+                            <div class="vg-seo-form-group">
+                                <label for="whatsapp">WhatsApp Number:</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" class="vg-seo-form-input" placeholder="+91 86957 76922" aria-label="WhatsApp Number" required>
+                            </div>
+
+                            <button type="submit" class="vg-seo-form-btn mt-3">
+                                <span>Get My Website Plan</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ==========================================================================
+         OUR TECH STACK: 3D ROTATING TECH SPHERE (BOX-FREE CLEAN TAG CLOUD)
+         ========================================================================== -->
+    <section class="vg-tech-sphere-section" id="techstack">
+        <div class="container">
+            <div class="text-center mx-auto mb-4" style="max-width: 720px;">
+                <span class="vg-pill-badge wow fadeInUp" data-wow-delay=".1s"><i class="fa-solid fa-cube me-2"></i> Modern Engineering</span>
+                <h2 class="mt-2 wow fadeInUp" data-wow-delay=".2s" style="font-size: 38px; font-weight: 800; color: #F8FAFC !important;">
+                    Our <span class="vg-gradient-text">Tech Stack</span>
+                </h2>
+                <p class="vg-tech-subtitle wow fadeInUp" data-wow-delay=".3s" style="color: #94A3B8 !important; font-size: 16px; line-height: 1.6; max-width: 640px; margin: 10px auto 0;">
+                    Engineered with modern, scalable, and future-proof technologies.
+                </p>
+            </div>
+
+            <!-- 3D Interactive Tech Sphere Viewport (Clean, Transparent, Box-Free) -->
+            <div class="vg-tech-sphere-wrapper wow fadeInUp" data-wow-delay=".35s">
+                <!-- Ambient Holographic Glow Aura -->
+                <div class="vg-sphere-ambient-glow"></div>
+
+                <!-- 3D Tag Cloud Stage -->
+                <div class="vg-tech-sphere-stage" id="vg-tech-sphere-stage" aria-label="Interactive 3D Tech Sphere">
+                    <!-- Tech tags are rendered & animated dynamically in 3D by webdev-tech-sphere.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CUSTOM WEBSITE DEVELOPMENT SERVICES: SPLIT-SCREEN SERVICE SHOWCASE
+         ========================================================================== -->
+    <section class="vg-split-services-section" id="services">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="text-center mx-auto mb-4 pb-1" style="max-width: 1100px;">
+                <span class="vg-pill-badge wow fadeInUp" data-wow-delay=".1s"><i class="fa-solid fa-laptop-code me-2"></i> We Live your Business Online</span>
+                <h2 class="vg-services-heading text-white mt-2 wow fadeInUp" data-wow-delay=".2s" style="font-size: clamp(26px, 2.3vw, 36px); font-weight: 800; color: #F8FAFC !important;">
+                    Custom Website Development Services <span class="vg-gradient-text">Tailored for Business Growth</span>
+                </h2>
+                <p class="vg-services-sub wow fadeInUp" data-wow-delay=".3s" style="color: #cbd5e1; font-size: 15px; line-height: 1.7; margin-top: 12px; max-width: 1060px; margin-left: auto; margin-right: auto; margin-bottom: 0;">
+                    As a leading custom website development agency, we offer a full suite of professional web development services designed to drive results.<br class="d-none d-lg-block">Whether you're a startup or an enterprise, our scalable and affordable solutions help you grow online with impact.
+                </p>
+            </div>
+
+            <!-- Split-Screen Interactive Showcase -->
+            <div class="row g-4 align-items-start vg-split-showcase-row">
+                <!-- Left Column: Interactive Service Selector (8 Services) -->
+                <div class="col-lg-6 col-xl-6">
+                    <div class="vg-service-nav-list" role="tablist" aria-label="Website Development Services">
+                        <!-- Populated and managed dynamically by webdev-services-showcase.js -->
+                        <div class="vg-service-nav-item" data-service-key="custom-web" role="tab" aria-selected="false" tabindex="0">
+                            <div class="vg-nav-item-left">
+                                <div class="vg-nav-icon-wrap" style="--item-color: #00F0FF;"><i class="fa-solid fa-globe"></i></div>
+                                <div class="vg-nav-text-wrap">
+                                    <h4 class="vg-nav-title">Custom Website Development</h4>
+                                    <span class="vg-service-tag tag-cyan"><i class="fa-solid fa-bolt me-1"></i> Next.js / SSR</span>
+                                </div>
+                            </div>
+                            <div class="vg-nav-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                        </div>
+
+                        <div class="vg-service-nav-item" data-service-key="web-app" role="tab" aria-selected="false" tabindex="0">
+                            <div class="vg-nav-item-left">
+                                <div class="vg-nav-icon-wrap" style="--item-color: #A855F7;"><i class="fa-solid fa-window-restore"></i></div>
+                                <div class="vg-nav-text-wrap">
+                                    <h4 class="vg-nav-title">Web App Development</h4>
+                                    <span class="vg-service-tag tag-violet"><i class="fa-solid fa-bolt me-1"></i> React + Node.js</span>
+                                </div>
+                            </div>
+                            <div class="vg-nav-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                        </div>
+
+                        <div class="vg-service-nav-item" data-service-key="wordpress" role="tab" aria-selected="false" tabindex="0">
+                            <div class="vg-nav-item-left">
+                                <div class="vg-nav-icon-wrap" style="--item-color: #38BDF8;"><i class="fa-brands fa-wordpress"></i></div>
+                                <div class="vg-nav-text-wrap">
+                                    <h4 class="vg-nav-title">WordPress Development</h4>
+                                    <span class="vg-service-tag tag-sky"><i class="fa-solid fa-bolt me-1"></i> Headless / Speed</span>
+                                </div>
+                            </div>
+                            <div class="vg-nav-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                        </div>
+
+                        <div class="vg-service-nav-item" data-service-key="cms" role="tab" aria-selected="false" tabindex="0">
+                            <div class="vg-nav-item-left">
+                                <div class="vg-nav-icon-wrap" style="--item-color: #F59E0B;"><i class="fa-solid fa-sliders"></i></div>
+                                <div class="vg-nav-text-wrap">
+                                    <h4 class="vg-nav-title">CMS System Development</h4>
+                                    <span class="vg-service-tag tag-amber"><i class="fa-solid fa-bolt me-1"></i> Custom Admin</span>
+                                </div>
+                            </div>
+                            <div class="vg-nav-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                        </div>
+
+                        <div class="vg-service-nav-item" data-service-key="ecommerce" role="tab" aria-selected="false" tabindex="0">
+                            <div class="vg-nav-item-left">
+                                <div class="vg-nav-icon-wrap" style="--item-color: #F43F5E;"><i class="fa-solid fa-cart-shopping"></i></div>
+                                <div class="vg-nav-text-wrap">
+                                    <h4 class="vg-nav-title">E-Commerce Website Development</h4>
+                                    <span class="vg-service-tag tag-rose"><i class="fa-solid fa-bolt me-1"></i> High Conversion</span>
+                                </div>
+                            </div>
+                            <div class="vg-nav-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                        </div>
+
+                        <div class="vg-service-nav-item" data-service-key="erp" role="tab" aria-selected="false" tabindex="0">
+                            <div class="vg-nav-item-left">
+                                <div class="vg-nav-icon-wrap" style="--item-color: #818CF8;"><i class="fa-solid fa-network-wired"></i></div>
+                                <div class="vg-nav-text-wrap">
+                                    <h4 class="vg-nav-title">Custom ERP Development</h4>
+                                    <span class="vg-service-tag tag-indigo"><i class="fa-solid fa-bolt me-1"></i> Automated Ops</span>
+                                </div>
+                            </div>
+                            <div class="vg-nav-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                        </div>
+
+                        <div class="vg-service-nav-item" data-service-key="shopify" role="tab" aria-selected="false" tabindex="0">
+                            <div class="vg-nav-item-left">
+                                <div class="vg-nav-icon-wrap" style="--item-color: #10B981;"><i class="fa-brands fa-shopify"></i></div>
+                                <div class="vg-nav-text-wrap">
+                                    <h4 class="vg-nav-title">Shopify Store Development</h4>
+                                    <span class="vg-service-tag tag-emerald"><i class="fa-solid fa-bolt me-1"></i> Liquid / 95+ Vitals</span>
+                                </div>
+                            </div>
+                            <div class="vg-nav-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                        </div>
+
+                        <div class="vg-service-nav-item" data-service-key="maintenance" role="tab" aria-selected="false" tabindex="0">
+                            <div class="vg-nav-item-left">
+                                <div class="vg-nav-icon-wrap" style="--item-color: #C084FC;"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                                <div class="vg-nav-text-wrap">
+                                    <h4 class="vg-nav-title">Web Maintenance &amp; Updates</h4>
+                                    <span class="vg-service-tag tag-purple"><i class="fa-solid fa-bolt me-1"></i> 24/7 Security</span>
+                                </div>
+                            </div>
+                            <div class="vg-nav-chevron"><i class="fa-solid fa-chevron-right"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Dynamic Live Preview Panel (Sticky) -->
+                <div class="col-lg-6 col-xl-6">
+                    <div class="vg-service-preview-sticky">
+                        <div class="vg-service-preview-card" id="vg-service-preview-card">
+                            <!-- Populated dynamically with smooth cross-fade by webdev-services-showcase.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         CALL TO ACTION BANNER (HIGH-IMPACT CYBERNETIC STRIP)
+         ========================================================================== -->
+    <section class="vg-seo-cta-strip">
+        <div class="container">
+            <div class="vg-seo-cta-banner wow fadeInUp" data-wow-delay=".2s">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-8">
+                        <span class="vg-pill-badge mb-2"><i class="fa-solid fa-rocket me-2"></i> Launch Your Digital Platform</span>
+                        <h2 class="text-white mt-2" style="font-size: 34px; font-weight: 800;">Looking For Website Development Company?</h2>
+                        <p style="color: #cbd5e1; font-size: 15px; margin-top: 8px; margin-bottom: 0;">
+                            Let’s discuss your vision, map out the tech stack, and deliver an enterprise-grade website on time and on budget.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="https://wa.me/918695776922?text=Hii%20VG%20Digital%20Falcon%2C%20I%20would%20like%20to%20get%20a%20quote%20for%20website%20development.%20Please%20share%20the%20details." class="vg-btn-primary" target="_blank" rel="noopener">
+                            <i class="fa-brands fa-whatsapp me-2"></i> WhatsApp Now <i class="fa-solid fa-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         ENGINEERING DEPLOYMENT PIPELINE: 6-STAGE AGILE WORKFLOW
+         ========================================================================== -->
+    <section class="vg-seo-process-section vg-pipeline-section" id="how-it-works">
+        <div class="container position-relative">
+            <!-- Section Header -->
+            <div class="text-center max-w-750 mx-auto mb-4 pb-1">
+                <span class="vg-pill-badge wow fadeInUp" data-wow-delay=".1s"><i class="fa-solid fa-microchip me-2"></i> Agile Engineering Lifecycle</span>
+                <h2 class="text-white mt-2 wow fadeInUp" data-wow-delay=".2s" style="font-size: clamp(26px, 2.4vw, 36px); font-weight: 800;">
+                    How We Build Websites <span class="vg-gradient-text">That Actually Deliver Results?</span>
+                </h2>
+                <p class="wow fadeInUp" data-wow-delay=".3s" style="color: #cbd5e1; font-size: 15px; line-height: 1.6; margin-top: 10px;">
+                    Want a website that loads fast, looks amazing, and converts visitors into customers?<br class="d-none d-lg-block">Here’s how our professional web development services work — simple, transparent, and built for results.
+                </p>
+            </div>
+
+            <div class="vg-pipeline-grid-wrap">
+                <!-- Algorithm Phase 1 Header -->
+                <div class="vg-pipeline-phase-wrap wow fadeInUp" data-wow-delay=".15s">
+                    <span class="vg-pipeline-phase-badge phase-1">
+                        <span class="vg-phase-pip"></span> Phase 1: Architecture, Strategy &amp; UI/UX Blueprint
+                    </span>
+                    <div class="vg-pipeline-phase-line"></div>
+                </div>
+
+                <!-- Step Cards Row 1 (Steps 01 - 03) -->
+                <div class="row g-3 g-xl-4 mb-4 vg-pipeline-row">
+                    <!-- Step 1: Strategy Session -->
+                    <div class="col-lg-4 col-md-6 vg-pipeline-col wow fadeInUp" data-wow-delay=".2s">
+                        <div class="vg-pipeline-card" data-step="1">
+                            <div class="vg-pipeline-card-top">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="vg-pipeline-glow-circle">01</div>
+                                    <span class="vg-pipeline-badge">Step 01</span>
+                                </div>
+                                <div class="vg-pipeline-tech-icon" style="--icon-color: #00F0FF;">
+                                    <i class="fa-solid fa-chess-knight"></i>
+                                </div>
+                            </div>
+                            <h3 class="vg-pipeline-title">Strategy Session</h3>
+                            <p class="vg-pipeline-desc">Let’s talk about your goals. We dive deep into your business, understand your audience, and map out the best strategy.</p>
+                            <div class="vg-pipeline-deliverable">
+                                <i class="fa-solid fa-file-contract text-cyan me-1"></i>
+                                <span class="deliverable-label">Deliverable:</span>
+                                <span class="deliverable-val">Strategic Architecture &amp; Roadmap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Selecting TechStack -->
+                    <div class="col-lg-4 col-md-6 vg-pipeline-col wow fadeInUp" data-wow-delay=".3s">
+                        <div class="vg-pipeline-card" data-step="2">
+                            <div class="vg-pipeline-card-top">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="vg-pipeline-glow-circle">02</div>
+                                    <span class="vg-pipeline-badge">Step 02</span>
+                                </div>
+                                <div class="vg-pipeline-tech-icon" style="--icon-color: #38BDF8;">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                </div>
+                            </div>
+                            <h3 class="vg-pipeline-title">Selecting TechStack</h3>
+                            <p class="vg-pipeline-desc">From HTML to React / Node.js, we help you choose the right tools — no bloated code or unnecessary features.</p>
+                            <div class="vg-pipeline-deliverable">
+                                <i class="fa-solid fa-microchip text-sky me-1"></i>
+                                <span class="deliverable-label">Deliverable:</span>
+                                <span class="deliverable-val">Optimized Tech Stack Specification</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: UI/UX Design -->
+                    <div class="col-lg-4 col-md-6 vg-pipeline-col wow fadeInUp" data-wow-delay=".4s">
+                        <div class="vg-pipeline-card" data-step="3">
+                            <div class="vg-pipeline-card-top">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="vg-pipeline-glow-circle">03</div>
+                                    <span class="vg-pipeline-badge">Step 03</span>
+                                </div>
+                                <div class="vg-pipeline-tech-icon" style="--icon-color: #A855F7;">
+                                    <i class="fa-solid fa-bezier-curve"></i>
+                                </div>
+                            </div>
+                            <h3 class="vg-pipeline-title">UI/UX Design</h3>
+                            <p class="vg-pipeline-desc">Our design team creates user experiences that are beautiful, intuitive, and conversion-focused in Figma.</p>
+                            <div class="vg-pipeline-deliverable">
+                                <i class="fa-solid fa-pen-ruler text-violet me-1"></i>
+                                <span class="deliverable-label">Deliverable:</span>
+                                <span class="deliverable-val">Interactive Figma Prototype</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Algorithm Phase 2 Header -->
+                <div class="vg-pipeline-phase-wrap wow fadeInUp mt-3" data-wow-delay=".15s">
+                    <span class="vg-pipeline-phase-badge phase-2">
+                        <span class="vg-phase-pip"></span> Phase 2: Full-Stack Engineering, QA &amp; Continuous Growth
+                    </span>
+                    <div class="vg-pipeline-phase-line"></div>
+                </div>
+
+                <!-- Step Cards Row 2 (Steps 04 - 06) -->
+                <div class="row g-3 g-xl-4 vg-pipeline-row">
+                    <!-- Step 4: Full-Stack Development -->
+                    <div class="col-lg-4 col-md-6 vg-pipeline-col wow fadeInUp" data-wow-delay=".2s">
+                        <div class="vg-pipeline-card" data-step="4">
+                            <div class="vg-pipeline-card-top">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="vg-pipeline-glow-circle">04</div>
+                                    <span class="vg-pipeline-badge">Step 04</span>
+                                </div>
+                                <div class="vg-pipeline-tech-icon" style="--icon-color: #00F0FF;">
+                                    <i class="fa-solid fa-code"></i>
+                                </div>
+                            </div>
+                            <h3 class="vg-pipeline-title">Full-Stack Development</h3>
+                            <p class="vg-pipeline-desc">Your website is built by our full-stack developers with clean code, fast loading times, and scalability in mind.</p>
+                            <div class="vg-pipeline-deliverable">
+                                <i class="fa-solid fa-code-branch text-cyan me-1"></i>
+                                <span class="deliverable-label">Deliverable:</span>
+                                <span class="deliverable-val">Clean Production Code &amp; API Integration</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: QA Testing & Launch -->
+                    <div class="col-lg-4 col-md-6 vg-pipeline-col wow fadeInUp" data-wow-delay=".3s">
+                        <div class="vg-pipeline-card" data-step="5">
+                            <div class="vg-pipeline-card-top">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="vg-pipeline-glow-circle">05</div>
+                                    <span class="vg-pipeline-badge">Step 05</span>
+                                </div>
+                                <div class="vg-pipeline-tech-icon" style="--icon-color: #10B981;">
+                                    <i class="fa-solid fa-vial-circle-check"></i>
+                                </div>
+                            </div>
+                            <h3 class="vg-pipeline-title">QA Testing &amp; Launch</h3>
+                            <p class="vg-pipeline-desc">Before launch, we run a full suite of automated cross-browser tests, speed audits, security checks, and zero-downtime deployment.</p>
+                            <div class="vg-pipeline-deliverable">
+                                <i class="fa-solid fa-rocket text-emerald me-1"></i>
+                                <span class="deliverable-label">Deliverable:</span>
+                                <span class="deliverable-val">100% QA Audit &amp; Live Server Deployment</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Monthly Growth & Reporting -->
+                    <div class="col-lg-4 col-md-6 vg-pipeline-col wow fadeInUp" data-wow-delay=".4s">
+                        <div class="vg-pipeline-card" data-step="6">
+                            <div class="vg-pipeline-card-top">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="vg-pipeline-glow-circle">06</div>
+                                    <span class="vg-pipeline-badge">Step 06</span>
+                                </div>
+                                <div class="vg-pipeline-tech-icon" style="--icon-color: #F59E0B;">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                            </div>
+                            <h3 class="vg-pipeline-title">Monthly Growth &amp; Reporting</h3>
+                            <p class="vg-pipeline-desc">We don’t stop at launch. Our custom website development agency offers ongoing support, updates, and continuous growth strategies.</p>
+                            <div class="vg-pipeline-deliverable">
+                                <i class="fa-solid fa-chart-pie text-amber me-1"></i>
+                                <span class="deliverable-label">Deliverable:</span>
+                                <span class="deliverable-val">Analytics Dashboard &amp; Monthly Growth Audits</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         WHY CHOOSE OUR WEB DEVELOPMENT SERVICES? (6 VALUE PILLARS)
+         ========================================================================== -->
+    <section class="vg-seo-why-section">
+        <div class="container">
+            <div class="text-center max-w-750 mx-auto mb-5">
+                <span class="vg-pill-badge wow fadeInUp" data-wow-delay=".1s"><i class="fa-solid fa-shield-halved me-2"></i> Why Us?</span>
+                <h2 class="text-white mt-2 wow fadeInUp" data-wow-delay=".2s" style="font-size: 38px; font-weight: 800;">
+                    Why Choose Our <span class="vg-gradient-text">Web Development Services?</span>
+                </h2>
+                <p class="wow fadeInUp" data-wow-delay=".3s" style="color: #cbd5e1; font-size: 15.5px; line-height: 1.6; margin-top: 10px;">
+                    At VG Digital Falcon, we follow a structured, transparent, and collaborative approach to deliver websites — on time and on budget.
+                </p>
+            </div>
+
+            <div class="row g-4">
+                <!-- Pillar 1 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="vg-pillar-card">
+                        <div class="vg-pillar-icon">
+                            <img loading="lazy" decoding="async" src="assets/img/hosting/web1.png" alt="Project Kickoff">
+                        </div>
+                        <h3 class="vg-pillar-title">Project Kickoff with Clear Roadmap</h3>
+                        <p class="vg-pillar-desc">
+                            We begin with a detailed project kickoff meeting to understand your business, goals, and vision.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="vg-pillar-card">
+                        <div class="vg-pillar-icon">
+                            <img loading="lazy" decoding="async" src="assets/img/hosting/web2.png" alt="In-House Development">
+                        </div>
+                        <h3 class="vg-pillar-title">In-House Development Team</h3>
+                        <p class="vg-pillar-desc">
+                            Our skilled designers, developers, and strategists work together under one roof — ensuring smooth communication, faster delivery, and top-tier quality.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="vg-pillar-card">
+                        <div class="vg-pillar-icon">
+                            <img loading="lazy" decoding="async" src="assets/img/hosting/web3.png" alt="Streamlined Work Schedule">
+                        </div>
+                        <h3 class="vg-pillar-title">Streamlined Work Schedule</h3>
+                        <p class="vg-pillar-desc">
+                            You’ll receive a realistic timeline with milestones and regular updates. We stick to deadlines, keep you informed, and stay agile if priorities shift.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="vg-pillar-card">
+                        <div class="vg-pillar-icon">
+                            <img loading="lazy" decoding="async" src="assets/img/hosting/web4.png" alt="Custom Design">
+                        </div>
+                        <h3 class="vg-pillar-title">Custom Design &amp; Development</h3>
+                        <p class="vg-pillar-desc">
+                            No cookie-cutter templates. We design and develop your site from scratch, tailored to your brand’s identity, audience, and business goals.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pillar 5 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
+                    <div class="vg-pillar-card">
+                        <div class="vg-pillar-icon">
+                            <img loading="lazy" decoding="async" src="assets/img/hosting/web5.png" alt="Continuous Testing">
+                        </div>
+                        <h3 class="vg-pillar-title">Continuous Testing &amp; Quality Checks</h3>
+                        <p class="vg-pillar-desc">
+                            Every page, feature, and function is rigorously tested across devices and browsers. We deliver a bug-free, smooth user experience — every time.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Pillar 6 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="vg-pillar-card">
+                        <div class="vg-pillar-icon">
+                            <img loading="lazy" decoding="async" src="assets/img/hosting/web6.png" alt="Ongoing Support">
+                        </div>
+                        <h3 class="vg-pillar-title">Ongoing Support &amp; Maintenance</h3>
+                        <p class="vg-pillar-desc">
+                            Post-launch, we offer flexible support packages to help you update, grow, and scale — so your website evolves with your business.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         WEB DEVELOPMENT FAQS SECTION (MODERN CYBERNETIC ACCORDION)
+         ========================================================================== -->
+    <section class="vg-seo-faq-section" id="faq">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <!-- FAQ Left Image Frame -->
+                <div class="col-lg-5 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="vg-seo-faq-img-frame">
+                        <img loading="lazy" decoding="async" src="assets/img/FAQ2.png" alt="Web Development FAQs VG Digital Falcon">
+                    </div>
+                </div>
+
+                <!-- FAQ Right Accordion -->
+                <div class="col-lg-7">
+                    <div class="vg-section-badge mb-3 wow fadeInUp" data-wow-delay=".1s">
+                        <span class="vg-pill-badge"><i class="fa-solid fa-circle-question me-2"></i> FAQs</span>
+                    </div>
+                    <h2 class="text-white mb-3 wow fadeInUp" data-wow-delay=".2s" style="font-size: 38px; font-weight: 800;">
+                        Know About <span class="vg-gradient-text">VG Digital Falcon</span>
+                    </h2>
+                    <p class="wow fadeInUp mb-4" data-wow-delay=".25s" style="color: #cbd5e1; font-size: 15px;">
+                        We know choosing the right web development partner is a big decision. Here are answers to common questions that help you move forward with confidence.
+                    </p>
+
+                    <!-- Developer Intelligence Bar -->
+                    <div class="vg-faq-search-console-bar mb-4 wow fadeInUp" data-wow-delay=".3s">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="fa-solid fa-terminal" style="color: #38bdf8;"></i>
+                            <span class="vg-faq-search-prompt">Engineering Intelligence • Frequently Asked Questions</span>
+                        </div>
+                        <span class="vg-badge-verified"><i class="fa-solid fa-circle-check"></i> 100% Verified Quality</span>
+                    </div>
+
+                    <!-- Modern Cybernetic Accordion (100% Questions & Answers Preserved) -->
+                    <div class="accordion vg-faq-accordion" id="vgWebDevFaqAccordion">
+                        <!-- FAQ 1 -->
+                        <div class="vg-faq-item is-open wow fadeInUp" data-wow-delay=".3s">
+                            <h3 class="vg-faq-header" id="headingWebDevFaq1">
+                                <button class="vg-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebDevFaq1" aria-expanded="true" aria-controls="collapseWebDevFaq1">
+                                    <span class="vg-faq-qnum">01</span>
+                                    <span class="vg-faq-qtext">How long does it take to develop a website?</span>
+                                    <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                                </button>
+                            </h3>
+                            <div id="collapseWebDevFaq1" class="accordion-collapse collapse show" aria-labelledby="headingWebDevFaq1" data-bs-parent="#vgWebDevFaqAccordion">
+                                <div class="vg-faq-body">
+                                    <p>Timelines vary based on project scope. A basic business site can take 2–4 weeks, while more complex web apps or eCommerce projects may take 6–12 weeks. We provide a clear timeline during project kickoff.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="vg-faq-item wow fadeInUp" data-wow-delay=".35s">
+                            <h3 class="vg-faq-header" id="headingWebDevFaq2">
+                                <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebDevFaq2" aria-expanded="false" aria-controls="collapseWebDevFaq2">
+                                    <span class="vg-faq-qnum">02</span>
+                                    <span class="vg-faq-qtext">How much does a website cost?</span>
+                                    <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                                </button>
+                            </h3>
+                            <div id="collapseWebDevFaq2" class="accordion-collapse collapse" aria-labelledby="headingWebDevFaq2" data-bs-parent="#vgWebDevFaqAccordion">
+                                <div class="vg-faq-body">
+                                    <p>Our pricing is transparent and tailored to your needs. Whether you're looking for affordable website developers near you or a full-scale custom build, we offer flexible packages that deliver value without compromise.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="vg-faq-item wow fadeInUp" data-wow-delay=".4s">
+                            <h3 class="vg-faq-header" id="headingWebDevFaq3">
+                                <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebDevFaq3" aria-expanded="false" aria-controls="collapseWebDevFaq3">
+                                    <span class="vg-faq-qnum">03</span>
+                                    <span class="vg-faq-qtext">Can you redesign or improve my existing website?</span>
+                                    <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                                </button>
+                            </h3>
+                            <div id="collapseWebDevFaq3" class="accordion-collapse collapse" aria-labelledby="headingWebDevFaq3" data-bs-parent="#vgWebDevFaqAccordion">
+                                <div class="vg-faq-body">
+                                    <p>Absolutely! We offer professional redesign services to improve performance, design, speed, and conversions. Let's turn your outdated site into a modern business tool.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="vg-faq-item wow fadeInUp" data-wow-delay=".45s">
+                            <h3 class="vg-faq-header" id="headingWebDevFaq4">
+                                <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebDevFaq4" aria-expanded="false" aria-controls="collapseWebDevFaq4">
+                                    <span class="vg-faq-qnum">04</span>
+                                    <span class="vg-faq-qtext">Will my website be mobile-friendly and SEO-optimized?</span>
+                                    <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                                </button>
+                            </h3>
+                            <div id="collapseWebDevFaq4" class="accordion-collapse collapse" aria-labelledby="headingWebDevFaq4" data-bs-parent="#vgWebDevFaqAccordion">
+                                <div class="vg-faq-body">
+                                    <p>Yes. Every site we build is fully responsive and follows SEO best practices — helping you rank better on Google and deliver a smooth experience on any device.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="vg-faq-item wow fadeInUp" data-wow-delay=".5s">
+                            <h3 class="vg-faq-header" id="headingWebDevFaq5">
+                                <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWebDevFaq5" aria-expanded="false" aria-controls="collapseWebDevFaq5">
+                                    <span class="vg-faq-qnum">05</span>
+                                    <span class="vg-faq-qtext">What support do you offer after the site goes live?</span>
+                                    <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                                </button>
+                            </h3>
+                            <div id="collapseWebDevFaq5" class="accordion-collapse collapse" aria-labelledby="headingWebDevFaq5" data-bs-parent="#vgWebDevFaqAccordion">
+                                <div class="vg-faq-body">
+                                    <p>We provide ongoing maintenance, security updates, content changes, and technical support. You'll never be left alone after launch — we grow with you.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ==========================================================================
+         FOOTER SECTION (UNIFIED HOME PAGE OBSIDIAN THEME)
+         ========================================================================== -->
+    <footer class="vg-footer">
+        <div class="container">
+            <div class="vg-footer-grid">
+                <!-- Col 1: Brand Info -->
+                <div class="vg-footer-about">
+                    <a href="index.html" class="vg-brand-wrap mb-3" aria-label="VG Digital Falcon Homepage">
+                        <img src="assets/img/logo/dflogo-white.png?v=2" alt="VG Digital Falcon Logo" class="vg-header-brand-logo vg-footer-brand-logo">
+                    </a>
+                    <p>
+                        We help businesses grow smarter, faster and stronger with AI-powered digital marketing and performance systems.
+                    </p>
+                    <div class="vg-footer-socials">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/vgdigitalfalcon/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/vgdigitalfalcon/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Company -->
+                <div class="vg-footer-col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                        <li><a href="index.html#insights">Blog &amp; Insights</a></li>
+                        <li><a href="index.html#case-studies">Case Studies</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Services -->
+                <div class="vg-footer-col">
+                    <h5>Services</h5>
+                    <ul>
+                        <li><a href="seo-service.html">SEO</a></li>
+                        <li><a href="performance-marketing.html">Google Ads</a></li>
+                        <li><a href="performance-marketing.html">Meta Ads</a></li>
+                        <li><a href="performance-marketing.html">Performance Marketing</a></li>
+                        <li><a href="personal-branding-service.html">Content Marketing</a></li>
+                        <li><a href="web-development.html">Website Development</a></li>
+                        <li><a href="index.html#services">AI Automation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Industries -->
+                <div class="vg-footer-col">
+                    <h5>Industries</h5>
+                    <ul>
+                        <li><a href="#">Healthcare</a></li>
+                        <li><a href="#">Education</a></li>
+                        <li><a href="#">Real Estate</a></li>
+                        <li><a href="#">E-commerce</a></li>
+                        <li><a href="#">Manufacturing</a></li>
+                        <li><a href="#">Retail</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 5: Resources & Newsletter -->
+                <div class="vg-footer-col">
+                    <h5>Newsletter</h5>
+                    <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">Get the latest marketing insights &amp; AI growth updates.</p>
+                    <form action="#" method="POST" class="vg-newsletter-box">
+                        <input type="email" placeholder="Enter your email" aria-label="Enter your email" required>
+                        <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-regular fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="vg-footer-bottom">
+                <div>
+                    © 2026 VG Digital Falcon. All Rights Reserved.
+                </div>
+                <div>
+                    <a href="index.html">Privacy Policy</a>
+                    <a href="index.html">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Global Floating WhatsApp Quick Connect Button -->
+    <a href="https://wa.me/918695776922?text=Hii%20VG%20Digital%20Falcon%2C%20I%20would%20like%20to%20get%20a%20quote%20for%20website%20development.%20Please%20share%20the%20details." class="vg-floating-whatsapp" target="_blank" rel="noopener" aria-label="Chat on WhatsApp with VG Digital Falcon">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- Global Interactive Flying Mascot Companion -->
+    <div id="vg-global-mascot" class="vg-global-mascot" title="Click me for AI Flight Stunts!">
+        <div class="vg-mascot-bubble">⚡ Full-stack web architecture ready to scale!</div>
+        <img src="assets/img/dficon2.png" alt="VG Digital Falcon Mascot" class="vg-mascot-falcon">
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/viewport.jquery.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/jquery.nice-select.min.js"></script>
+    <script src="assets/js/jquery.waypoints.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/jquery.meanmenu.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/wow.min.js"></script>
+    <!-- Dedicated Web Development Hero 3D Architecture Canvas -->
+    <script src="assets/js/webdev-hero-canvas.js"></script>
+    <!-- Dedicated Web Development 3D Rotating Tech Sphere Engine -->
+    <script src="assets/js/webdev-tech-sphere.js"></script>
+    <!-- Dedicated Web Development Split-Screen Service Showcase -->
+    <script src="assets/js/webdev-services-showcase.js"></script>
+    <!-- Dedicated Web Development Laser Circuit Pipeline Track -->
+    <script src="assets/js/webdev-circuit.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
 </html>
