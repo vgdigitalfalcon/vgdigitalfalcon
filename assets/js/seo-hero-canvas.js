@@ -41,6 +41,8 @@
       this.time = 0;
       this.animId = null;
       this.isPaused = false;
+      this.isIntersecting = true;
+      this.prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
       // Mouse & Parallax
       this.mouse = { x: 0, y: 0, targetX: 0, targetY: 0 };
@@ -151,21 +153,43 @@
       if ('IntersectionObserver' in window && this.hero) {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach(entry => {
+            this.isIntersecting = entry.isIntersecting;
             if (entry.isIntersecting) {
-              if (this.isPaused) {
-                this.isPaused = false;
+              if (!this.prefersReducedMotion && !document.hidden) {
                 this.start();
               }
             } else {
-              this.isPaused = true;
-              if (this.animId) {
-                cancelAnimationFrame(this.animId);
-                this.animId = null;
-              }
+              this.stop();
             }
           });
         }, { threshold: 0.05 });
         observer.observe(this.hero);
+      }
+
+      // Tab visibility change listener: pause loop when tab is hidden
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          this.stop();
+        } else if (this.isIntersecting && !this.prefersReducedMotion) {
+          this.start();
+        }
+      });
+
+      // Reduced motion listener
+      if (window.matchMedia) {
+        const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (motionQuery.addEventListener) {
+          motionQuery.addEventListener('change', (e) => {
+            this.prefersReducedMotion = e.matches;
+            if (this.prefersReducedMotion) {
+              this.stop();
+              this.update();
+              this.render();
+            } else {
+              this.start();
+            }
+          });
+        }
       }
     }
 
@@ -354,6 +378,13 @@
     }
 
     start() {
+      if (this.animId) cancelAnimationFrame(this.animId);
+      if (this.prefersReducedMotion) {
+        this.update();
+        this.render();
+        return;
+      }
+      this.isPaused = false;
       const loop = () => {
         if (!this.isPaused) {
           this.update();
@@ -361,8 +392,15 @@
           this.animId = requestAnimationFrame(loop);
         }
       };
-      if (this.animId) cancelAnimationFrame(this.animId);
       this.animId = requestAnimationFrame(loop);
+    }
+
+    stop() {
+      this.isPaused = true;
+      if (this.animId) {
+        cancelAnimationFrame(this.animId);
+        this.animId = null;
+      }
     }
   }
 
