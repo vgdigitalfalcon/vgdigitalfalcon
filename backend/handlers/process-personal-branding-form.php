@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = htmlspecialchars($_POST['name']);
-    $mobile = htmlspecialchars($_POST['mobile']);
-    $linkedin = htmlspecialchars($_POST['linkedin']);
+    $name = htmlspecialchars($_POST['name'] ?? $_POST['companyName'] ?? '');
+    $mobile = htmlspecialchars($_POST['mobile'] ?? '');
+    $linkedin = htmlspecialchars($_POST['linkedin'] ?? $_POST['website'] ?? '');
 
     $to = "contact@vgdigitalfalcon.com, madan.n@vgdigitalfalcon.com";
     $subject = "New Personal Branding Enquiry";
