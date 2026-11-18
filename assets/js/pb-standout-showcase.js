@@ -55,14 +55,6 @@
       growthPill: 'Authentic Differentiation',
       metricSub: 'Distinctive Narrative That Cuts Through Generic Noise',
       wavePoints: [28, 50, 90, 130, 175, 240, 330, 440]
-    },
-    {
-      num: '06',
-      title: 'End-to-End Support',
-      metricVal: '24/7',
-      growthPill: 'Dedicated Executive Partner',
-      metricSub: 'Continuous Long-Term Influence & Scalable Momentum',
-      wavePoints: [40, 70, 100, 150, 200, 260, 320, 410]
     }
   ];
 
@@ -144,6 +136,13 @@
       } else {
         this.isIntersecting = true;
         this.startLoop();
+      }
+
+      if ('ResizeObserver' in window && this.canvas && this.canvas.parentElement) {
+        const ro = new ResizeObserver(() => {
+          this.resizeCanvas();
+        });
+        ro.observe(this.canvas.parentElement);
       }
 
       document.addEventListener('visibilitychange', () => {

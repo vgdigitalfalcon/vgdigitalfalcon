@@ -306,6 +306,14 @@
       window.addEventListener('resize', () => {
         this.resizeCanvas();
       }, { passive: true });
+
+      // Automatically re-measure and adapt canvas dimensions on dynamic card resize
+      if (typeof ResizeObserver !== 'undefined' && this.canvas && this.canvas.parentElement) {
+        this.resizeObserver = new ResizeObserver(() => {
+          this.resizeCanvas();
+        });
+        this.resizeObserver.observe(this.canvas.parentElement);
+      }
     }
 
     startLoop() {
