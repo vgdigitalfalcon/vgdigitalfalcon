@@ -641,55 +641,174 @@ body {
   box-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
 }
 
+/* ==========================================================================
+   DESKTOP NAVIGATION — 4 COLUMNS x 2 ROWS WIDE RECTANGLE MEGA-DROPDOWN MENU
+   8 Services with Clean Sub-Descriptions & Dark Luxury Obsidian Glassmorphism
+   ========================================================================== */
 .vg-dropdown-menu {
+  position: absolute !important;
+  top: calc(100% + 4px) !important;
+  left: 50% !important;
+  transform: translateX(-50%) translateY(12px) !important;
+  width: min(860px, 92vw) !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 10px 12px !important;
+  padding: 18px 20px !important;
+  background: rgba(7, 7, 15, 0.95) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.8), 0 0 35px rgba(168, 85, 247, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1), transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s !important;
+  list-style: none !important;
+  margin: 0 !important;
+  z-index: 1000 !important;
+  pointer-events: none !important;
+  box-sizing: border-box !important;
+}
+
+/* Invisible Safe Hover Bridge */
+.vg-dropdown-menu::before {
+  content: '';
   position: absolute;
-  top: 100%;
+  top: -16px;
   left: 0;
-  min-width: 220px;
-  background: rgba(13, 6, 30, 0.98);
-  border: 1px solid rgba(168, 85, 247, 0.25);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-radius: 12px;
-  padding: 8px 0;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(124, 58, 237, 0.15);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px);
-  transition: var(--vg-transition-fast);
-  list-style: none;
-  z-index: 100;
+  width: 100%;
+  height: 16px;
+  background: transparent;
 }
 
 .vg-nav-links li:hover .vg-dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(4px);
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateX(-50%) translateY(4px) !important;
+  pointer-events: auto !important;
 }
 
 .vg-dropdown-menu li {
-  display: block !important;
+  display: flex !important;
   width: 100% !important;
   list-style: none !important;
   margin: 0 !important;
   padding: 0 !important;
 }
 
-.vg-dropdown-menu li a {
-  padding: 10px 20px !important;
-  color: #cbd5e1 !important;
-  font-size: 13.5px !important;
-  display: block !important;
+/* 8 Service Cards */
+.vg-dropdown-menu li a.vg-dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
   width: 100% !important;
+  padding: 10px 10px !important;
+  border-radius: 10px !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  text-decoration: none !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  box-sizing: border-box !important;
 }
 
-.vg-dropdown-menu li a:hover {
-  background: rgba(147, 51, 234, 0.15);
+.vg-dropdown-menu li a.vg-dropdown-item:hover {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.14), rgba(0, 240, 255, 0.08)) !important;
+  border-color: rgba(0, 240, 255, 0.35) !important;
+  box-shadow: 0 4px 16px rgba(0, 240, 255, 0.09), 0 0 14px rgba(168, 85, 247, 0.16) !important;
+  transform: translateY(-2px) !important;
+}
+
+.vg-dropdown-menu li a.vg-dropdown-item.active {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(0, 240, 255, 0.14)) !important;
+  border-color: rgba(0, 240, 255, 0.5) !important;
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.2) !important;
+}
+
+/* Vector Icon Box */
+.vg-dd-icon-box {
+  width: 34px !important;
+  height: 34px !important;
+  border-radius: 8px !important;
+  background: rgba(168, 85, 247, 0.12) !important;
+  border: 1px solid rgba(168, 85, 247, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #c084fc !important;
+  font-size: 13px !important;
+  flex-shrink: 0 !important;
+  transition: all 0.22s ease !important;
+}
+
+.vg-dropdown-item:hover .vg-dd-icon-box {
+  background: linear-gradient(135deg, #7c3aed, #00f0ff) !important;
+  border-color: #00f0ff !important;
   color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.4) !important;
+  transform: scale(1.05) !important;
+}
+
+.vg-dropdown-item.active .vg-dd-icon-box {
+  background: linear-gradient(135deg, #7c3aed, #00f0ff) !important;
+  border-color: #00f0ff !important;
+  color: #ffffff !important;
+}
+
+/* Typography Wrapper */
+.vg-dd-content {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0 !important;
+  flex: 1 !important;
+  text-align: left !important;
+}
+
+.vg-dd-title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 700 !important;
+  color: #f8fafc !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  transition: color 0.2s ease !important;
+}
+
+.vg-dropdown-item:hover .vg-dd-title {
+  color: #ffffff !important;
+}
+
+.vg-dropdown-item.active .vg-dd-title {
+  color: #00f0ff !important;
+}
+
+.vg-dd-desc {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 10.5px !important;
+  font-weight: 400 !important;
+  color: #94a3b8 !important;
+  line-height: 1.25 !important;
+  margin-top: 2px !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  transition: color 0.2s ease !important;
+}
+
+.vg-dropdown-item:hover .vg-dd-desc {
+  color: #cbd5e1 !important;
 }
 
 .vg-dropdown-menu li a::after {
   display: none !important;
+}
+
+@media (max-width: 1199px) {
+  .vg-dropdown-menu {
+    display: none !important;
+  }
 }
 
 /* ==========================================================================
