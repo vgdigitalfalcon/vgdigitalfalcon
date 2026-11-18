@@ -82,7 +82,7 @@
       icon: 'fa-brands fa-wordpress',
       accentColor: '#38BDF8',
       accentGradient: 'linear-gradient(135deg, #38BDF8, #60A5FA)',
-      overview: 'We deliver enterprise-grade, headless and custom-tailored WordPress solutions engineered for exceptional load speed and top-tier SEO rankings. Gain total editorial independence with customized Gutenberg/ACF workflows without sacrificing front-end security or speed.',
+      overview: 'We deliver enterprise-grade custom WordPress solutions engineered for top-tier speed and rankings. Gain total editorial control with customized Gutenberg/ACF workflows without sacrificing security or speed.',
       metrics: [
         {
           icon: 'fa-solid fa-stopwatch',
@@ -110,17 +110,17 @@
       icon: 'fa-solid fa-sliders',
       accentColor: '#F59E0B',
       accentGradient: 'linear-gradient(135deg, #F59E0B, #FBBF24)',
-      overview: 'Gain effortless content management and centralized digital governance with custom CMS architectures built around your exact operational workflows. We develop secure, role-based admin portals that allow your marketing team to launch campaigns and update content in seconds.',
+      overview: 'Gain effortless content management with custom CMS architectures tailored to your workflow. We develop secure, role-based admin portals that allow your team to launch campaigns and update content in seconds.',
       metrics: [
         {
           icon: 'fa-solid fa-wand-magic-sparkles',
           val: 'Instant Publishing',
-          desc: 'Intuitive drag-and-drop editorial governance with live previews'
+          desc: 'Intuitive drag-and-drop editorial control with live previews'
         },
         {
           icon: 'fa-solid fa-language',
           val: 'Multi-Language / i18n',
-          desc: 'Localized multilingual content delivery across global territories'
+          desc: 'Localized multilingual content delivery across all global regions'
         },
         {
           icon: 'fa-solid fa-magnifying-glass-chart',
@@ -138,7 +138,7 @@
       icon: 'fa-solid fa-cart-shopping',
       accentColor: '#F43F5E',
       accentGradient: 'linear-gradient(135deg, #F43F5E, #FB7185)',
-      overview: 'We build conversion-obsessed online storefronts across Shopify, Magento, and WooCommerce that handle high-volume sales with zero friction. From frictionless 1-click checkouts to custom product configurators, our e-commerce platforms turn browsing into immediate buying.',
+      overview: 'We build conversion-obsessed online storefronts across Shopify, Magento, and WooCommerce. From 1-click checkouts to custom product configurators, our platforms turn browsing into immediate buying.',
       metrics: [
         {
           icon: 'fa-solid fa-chart-line',
@@ -166,7 +166,7 @@
       icon: 'fa-solid fa-network-wired',
       accentColor: '#818CF8',
       accentGradient: 'linear-gradient(135deg, #818CF8, #A78BFA)',
-      overview: 'Transform your enterprise operations with tailored ERP systems that unify inventory, logistics, HR, and financial reporting into one real-time dashboard. Automate repetitive workflows, eliminate data silos, and scale operations globally with mission-critical precision.',
+      overview: 'Transform your operations with tailored ERP systems unifying inventory, logistics, HR, and finance into one real-time dashboard. Automate workflows and eliminate data silos with mission-critical precision.',
       metrics: [
         {
           icon: 'fa-solid fa-robot',
@@ -194,7 +194,7 @@
       icon: 'fa-brands fa-shopify',
       accentColor: '#10B981',
       accentGradient: 'linear-gradient(135deg, #10B981, #34D399)',
-      overview: 'We design and build bespoke, high-converting Shopify stores with customized Liquid themes, custom app integrations, and sub-second Core Web Vitals. Engineered to elevate your brand presence and maximize Average Order Value (AOV) across global markets.',
+      overview: 'We design bespoke, high-converting Shopify stores with customized Liquid themes, custom app integrations, and sub-second Core Web Vitals. Engineered to elevate your brand presence and maximize Average Order Value.',
       metrics: [
         {
           icon: 'fa-solid fa-gauge',
@@ -222,17 +222,17 @@
       icon: 'fa-solid fa-screwdriver-wrench',
       accentColor: '#C084FC',
       accentGradient: 'linear-gradient(135deg, #C084FC, #E879F9)',
-      overview: 'Keep your mission-critical web platforms airtight, ultra-fast, and continuously optimized with 24/7 engineering support. Our proactive maintenance plans include weekly security patches, continuous speed tuning, automated daily backups, and uptime monitoring.',
+      overview: 'Keep your mission-critical web platforms secure, fast, and continuously optimized with 24/7 engineering support. Includes weekly security patches, speed tuning, automated daily backups, and uptime monitoring.',
       metrics: [
         {
           icon: 'fa-solid fa-shield-cat',
           val: '24/7 Security Shield',
-          desc: 'Continuous automated malware scanning & real-time threat mitigation'
+          desc: 'Automated malware scanning & real-time threat mitigation'
         },
         {
           icon: 'fa-solid fa-heart-pulse',
           val: 'Weekly Health Audits',
-          desc: 'Scheduled database optimization, core updates & link checking'
+          desc: 'Scheduled database optimization, core updates & link audits'
         },
         {
           icon: 'fa-solid fa-headset',
