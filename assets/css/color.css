@@ -20724,11 +20724,11 @@ body.vg-pb-page h6,
 /* Master Brand Gradients (Matching Homepage Design System) */
 .vg-yt-page .gradient-text-red,
 .vg-yt-page .gradient-text {
-  background: linear-gradient(135deg, #00f0ff 0%, #c084fc 45%, #a855f7 75%, #f472b6 100%) !important;
+  background: linear-gradient(135deg, #C084FC 0%, #8B5CF6 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   display: inline-block;
-  filter: drop-shadow(0 2px 24px rgba(168, 85, 247, 0.4));
+  filter: drop-shadow(0 2px 18px rgba(139, 92, 246, 0.35));
 }
 
 .vg-yt-page .gradient-text-cyan {
@@ -20803,6 +20803,187 @@ body.vg-pb-page h6,
 .vg-yt-hero-section .container {
   position: relative !important;
   z-index: 2 !important;
+}
+
+/* YouTube Hero Corridor Translucent Glass Growth Signals */
+.vg-yt-corridor-signals {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.vg-yt-signal-pill {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(13, 10, 28, 0.78) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(139, 92, 246, 0.22) !important;
+  border-radius: 999px;
+  opacity: 0.88;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55), 0 0 12px rgba(124, 58, 237, 0.12);
+  pointer-events: none;
+  white-space: nowrap;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #E2E8F0 !important;
+  letter-spacing: 0.02em;
+}
+
+.vg-yt-signal-pill .signal-text {
+  color: #E2E8F0 !important;
+  font-weight: 600;
+}
+
+.vg-yt-signal-pill .signal-icon {
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vg-yt-signal-pill .text-rose {
+  color: #FB7185 !important;
+  filter: drop-shadow(0 0 4px rgba(251, 113, 133, 0.45));
+}
+
+.vg-yt-signal-pill .text-emerald {
+  color: #34D399 !important;
+  filter: drop-shadow(0 0 4px rgba(52, 211, 153, 0.45));
+}
+
+.vg-yt-signal-pill .text-cyan {
+  color: #38BDF8 !important;
+  filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.45));
+}
+
+.vg-yt-signal-pill .text-violet {
+  color: #C084FC !important;
+  filter: drop-shadow(0 0 4px rgba(192, 132, 252, 0.45));
+}
+
+.vg-yt-signal-pill.signal-pill-1 {
+  top: 22%;
+  left: 51.5%;
+  animation: floatBob1 7s ease-in-out infinite;
+}
+
+.vg-yt-signal-pill.signal-pill-2 {
+  top: 40%;
+  left: 54.5%;
+  animation: floatBob2 8.5s ease-in-out 1.2s infinite;
+}
+
+.vg-yt-signal-pill.signal-pill-3 {
+  top: 58%;
+  left: 50%;
+  animation: floatBob3 7.8s ease-in-out 2.5s infinite;
+}
+
+.vg-yt-signal-pill.signal-pill-4 {
+  top: 76%;
+  left: 53.5%;
+  animation: floatBob4 9s ease-in-out 3.8s infinite;
+}
+
+@keyframes floatBob1 {
+  0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
+  50% { transform: translate(-50%, -14px) rotate(1.2deg); }
+}
+
+@keyframes floatBob2 {
+  0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
+  50% { transform: translate(-50%, -18px) rotate(-1.5deg); }
+}
+
+@keyframes floatBob3 {
+  0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
+  50% { transform: translate(-50%, -15px) rotate(1deg); }
+}
+
+@keyframes floatBob4 {
+  0%, 100% { transform: translate(-50%, 0) rotate(0deg); }
+  50% { transform: translate(-50%, -12px) rotate(-1deg); }
+}
+
+@media (max-width: 991px) {
+  .vg-yt-corridor-signals {
+    display: none !important;
+  }
+}
+
+/* YouTube Hero Audit Form CTA Button (Signature Royal Violet-Purple Gradient) */
+.vg-yt-page .vg-pb-form-btn,
+.vg-yt-page .vg-yt-form-submit-btn,
+.vg-yt-audit-card .vg-pb-form-btn {
+  width: 100% !important;
+  padding: 14px 22px !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%) !important;
+  color: #FFFFFF !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.38) !important;
+  margin-top: 8px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  text-decoration: none !important;
+}
+
+.vg-yt-page .vg-pb-form-btn::before,
+.vg-yt-page .vg-yt-form-submit-btn::before,
+.vg-yt-audit-card .vg-pb-form-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transition: left 0.6s ease;
+}
+
+.vg-yt-page .vg-pb-form-btn:hover::before,
+.vg-yt-page .vg-yt-form-submit-btn:hover::before,
+.vg-yt-audit-card .vg-pb-form-btn:hover::before {
+  left: 100%;
+}
+
+.vg-yt-page .vg-pb-form-btn:hover,
+.vg-yt-page .vg-yt-form-submit-btn:hover,
+.vg-yt-audit-card .vg-pb-form-btn:hover {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%) !important;
+  box-shadow: 0 14px 34px rgba(124, 58, 237, 0.55), 0 0 24px rgba(168, 85, 247, 0.4) !important;
+  color: #FFFFFF !important;
+}
+
+.vg-yt-page .vg-pb-form-btn span,
+.vg-yt-page .vg-yt-form-submit-btn span,
+.vg-yt-audit-card .vg-pb-form-btn span {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+}
+
+.vg-yt-page .vg-pb-form-btn:hover span,
+.vg-yt-page .vg-yt-form-submit-btn:hover span,
+.vg-yt-audit-card .vg-pb-form-btn:hover span {
+  transform: translateX(4px) !important;
 }
 
 @media (max-width: 991px) {
