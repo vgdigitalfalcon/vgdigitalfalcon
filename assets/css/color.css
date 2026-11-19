@@ -4,7 +4,7 @@
    Color Theme & Interactive Experience (Matching Reference Mockups)
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap');
 
 /* ==========================================================================
    RESTORE NORMAL BROWSER CURSOR (NO OVERLOADED CUSTOM CURSORS)
@@ -18245,6 +18245,12 @@ body.vg-pb-page h3,
 body.vg-pb-page h4,
 body.vg-pb-page h5,
 body.vg-pb-page h6,
+body.vg-pm-page h1,
+body.vg-pm-page h2,
+body.vg-pm-page h3,
+body.vg-pm-page h4,
+body.vg-pm-page h5,
+body.vg-pm-page h6,
 .vg-pb-page .vg-pb-hero-title,
 .vg-pb-page .vg-pb-badge,
 .vg-pb-page .vg-pb-btn-primary,
@@ -18253,7 +18259,15 @@ body.vg-pb-page h6,
 .vg-pb-page .vg-pb-audit-card h3,
 .vg-pb-page .vg-section-title,
 .vg-pb-page .vg-pb-step-title,
-.vg-pb-page .vg-faq-question {
+.vg-pb-page .vg-faq-question,
+.vg-pm-page .vg-pm-hero-title,
+.vg-pm-page .vg-pm-badge,
+.vg-pm-page .vg-pm-btn-primary,
+.vg-pm-page .vg-pm-btn-secondary,
+.vg-pm-page .vg-pm-form-btn,
+.vg-pm-page .vg-pm-form-title,
+.vg-pm-page .vg-pm-kpi-val,
+.vg-pm-page .vg-pm-channel-pill {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
 }
 
@@ -18268,7 +18282,15 @@ body.vg-pb-page h6,
 .vg-pb-form-label,
 .vg-pb-form-input,
 .vg-pb-trust-text,
-.vg-pb-form-trust-note {
+.vg-pb-form-trust-note,
+.vg-pm-page p,
+.vg-pm-hero-subtitle,
+.vg-pm-kpi-lbl,
+.vg-pm-form-label,
+.vg-pm-form-input,
+.vg-pm-form-trust-note,
+.vg-pm-channel-label,
+.vg-pm-page .vg-pb-trust-text {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
 }
 
@@ -23196,10 +23218,11 @@ body.vg-pb-page h6,
    PAGE: PERFORMANCE MARKETING (GOOGLE & META ADS)
    Scoped strictly to .vg-pm-page for 100% brand consistency with the Homepage
    ============================================================================= */
+body.vg-pm-page,
 .vg-pm-page {
   background-color: #070212 !important;
   color: #cbd5e1 !important;
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   overflow-x: clip !important;
   position: relative;
   contain: paint;
@@ -23228,26 +23251,90 @@ body.vg-pb-page h6,
 
 /* Sections */
 .vg-pm-hero-section {
-  position: relative;
-  padding: 150px 0 95px;
-  background-color: #07070F !important;
-  background: radial-gradient(circle at 18% 22%, rgba(147, 51, 234, 0.14) 0%, transparent 52%),
-    radial-gradient(circle at 82% 55%, rgba(0, 240, 255, 0.08) 0%, transparent 48%),
-    radial-gradient(circle at 50% 85%, rgba(124, 58, 237, 0.1) 0%, transparent 60%),
-    #07070F !important;
-  overflow: hidden;
+  position: relative !important;
+  padding: 112px 0 68px !important;
+  background-color: #0a0614 !important;
+  background-image: 
+    linear-gradient(rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.05) 1px, transparent 1px),
+    radial-gradient(ellipse at 50% 0%, rgba(124, 58, 237, 0.16), transparent 65%) !important;
+  background-size: 44px 44px, 44px 44px, 100% 100% !important;
+  background-repeat: repeat, repeat, no-repeat !important;
+  overflow: hidden !important;
 }
 
-/* 3D Fiber-Optic Ascent Trails Stage (100% pure widget-free architectural 3D art) */
-.vg-pm-surge-stage-wrap {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
-  overflow: hidden !important;
-  contain: layout paint !important;
+.vg-pm-hero-section .row {
+  align-items: center !important;
+}
+
+/* Sleek 3-Column Glass KPI Strip */
+.vg-pm-kpi-strip {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 12px !important;
+  margin-top: 24px !important;
+}
+
+.vg-pm-kpi-card {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(139, 92, 246, 0.2) !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  transition: all 0.3s ease !important;
+}
+
+.vg-pm-kpi-card:hover {
+  background: rgba(124, 58, 237, 0.08) !important;
+  border-color: rgba(168, 85, 247, 0.4) !important;
+  transform: translateY(-2px) !important;
+}
+
+.vg-pm-kpi-val {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  margin-bottom: 4px !important;
+  letter-spacing: -0.02em !important;
+}
+
+.vg-pm-kpi-val.text-gradient-cyan {
+  color: #38BDF8 !important;
+  background: linear-gradient(135deg, #38BDF8 0%, #22D3EE 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.vg-pm-kpi-val.text-gradient-emerald {
+  color: #34D399 !important;
+  background: linear-gradient(135deg, #34D399 0%, #10B981 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.vg-pm-kpi-val.text-gradient-violet {
+  color: #C084FC !important;
+  background: linear-gradient(135deg, #C084FC 0%, #A855F7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.vg-pm-kpi-lbl {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #94A3B8 !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+  letter-spacing: 0.01em !important;
+}
+
+@media (max-width: 575px) {
+  .vg-pm-kpi-strip {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
 }
 
 .vg-pm-ascent-canvas {
@@ -23302,20 +23389,22 @@ body.vg-pb-page h6,
   display: inline-flex !important;
   align-items: center !important;
   gap: 8px !important;
-  padding: 8px 20px !important;
-  border-radius: 999px !important;
+  padding: 6px 18px !important;
+  border-radius: 9999px !important;
   background: rgba(168, 85, 247, 0.12) !important;
   border: 1px solid rgba(168, 85, 247, 0.35) !important;
   color: #c084fc !important;
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: 0.8px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
   text-transform: uppercase !important;
-  margin-bottom: 22px !important;
-  box-shadow: 0 0 24px rgba(168, 85, 247, 0.2), inset 0 0 14px rgba(168, 85, 247, 0.1) !important;
+  margin-bottom: 16px !important;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.18), inset 0 0 12px rgba(168, 85, 247, 0.08) !important;
   backdrop-filter: blur(12px) !important;
   -webkit-backdrop-filter: blur(12px) !important;
   transition: all 0.35s ease !important;
+  align-self: flex-start !important;
 }
 
 .vg-pm-badge:hover {
@@ -23327,33 +23416,38 @@ body.vg-pb-page h6,
 
 /* Hero Titles */
 .vg-pm-hero-title {
-  font-size: 50px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: clamp(32px, 3.2vw, 44px) !important;
   font-weight: 800 !important;
-  line-height: 1.18 !important;
+  line-height: 1.15 !important;
   color: #FFFFFF !important;
-  margin-bottom: 22px !important;
-  letter-spacing: -0.5px !important;
+  margin-bottom: 16px !important;
+  letter-spacing: -0.02em !important;
 }
 
 @media (max-width: 991px) {
   .vg-pm-hero-title {
-    font-size: 38px !important;
+    font-size: 34px !important;
+    line-height: 1.2 !important;
   }
 }
 
 @media (max-width: 575px) {
   .vg-pm-hero-title {
     font-size: 28px !important;
+    line-height: 1.22 !important;
   }
 }
 
 .vg-pm-hero-subtitle {
-  color: #94A3B8 !important;
-  font-size: 16px !important;
-  line-height: 1.7 !important;
-  margin-bottom: 30px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #CBD5E1 !important;
+  font-size: 15px !important;
+  line-height: 1.65 !important;
+  margin-bottom: 24px !important;
   text-align: left !important;
   max-width: 560px !important;
+  letter-spacing: normal !important;
 }
 
 /* Buttons */
@@ -23361,38 +23455,62 @@ body.vg-pb-page h6,
   display: inline-flex !important;
   align-items: center !important;
   gap: 10px !important;
-  padding: 14px 28px !important;
-  border-radius: 12px !important;
-  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #00F0FF 100%) !important;
+  padding: 12px 26px !important;
+  border-radius: 9999px !important;
+  background: linear-gradient(135deg, #6d28d9 0%, #8b5cf6 50%, #a855f7 100%) !important;
   color: #FFFFFF !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
   font-weight: 700 !important;
-  font-size: 15px !important;
-  border: none !important;
-  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.35) !important;
-  transition: all 0.35s ease !important;
+  font-size: 14.5px !important;
+  letter-spacing: -0.01em !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.5), 0 8px 10px -6px rgba(124, 58, 237, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
   text-decoration: none !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.vg-pm-btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.6s ease;
+}
+
+.vg-pm-btn-primary:hover::before {
+  left: 100%;
 }
 
 .vg-pm-btn-primary:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 15px 35px rgba(0, 240, 255, 0.45) !important;
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%) !important;
+  box-shadow: 0 14px 30px -5px rgba(147, 51, 234, 0.65), 0 0 25px rgba(192, 132, 252, 0.5) !important;
   color: #FFFFFF !important;
 }
 
 .vg-pm-btn-secondary {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 10px !important;
-  padding: 13px 26px !important;
-  border-radius: 12px !important;
-  background: rgba(18, 10, 36, 0.6) !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  padding: 12px 24px !important;
+  border-radius: 9999px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
   border: 1px solid rgba(168, 85, 247, 0.35) !important;
   color: #FFFFFF !important;
-  font-weight: 700 !important;
-  font-size: 15px !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-  transition: all 0.35s ease !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 600 !important;
+  font-size: 14.5px !important;
+  letter-spacing: -0.01em !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.15) !important;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
   text-decoration: none !important;
 }
 
@@ -23418,10 +23536,103 @@ body.vg-pb-page h6,
 
 .vg-pm-form-title {
   color: #FFFFFF !important;
-  font-size: 22px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 21px !important;
   font-weight: 800 !important;
-  margin-bottom: 20px !important;
+  margin-bottom: 4px !important;
   text-align: center !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.25 !important;
+}
+
+.vg-pm-form-trust-note {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  color: #94A3B8 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 500 !important;
+  margin-bottom: 16px !important;
+  text-align: center !important;
+  letter-spacing: 0.01em !important;
+}
+
+.vg-pm-form-trust-note i {
+  color: #22D3EE !important;
+  font-size: 11.5px !important;
+}
+
+/* Interactive Ad Channel Selector Pills */
+.vg-pm-channel-selector-wrap {
+  margin-bottom: 18px !important;
+}
+
+.vg-pm-channel-label {
+  display: block !important;
+  color: #C084FC !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 600 !important;
+  margin-bottom: 8px !important;
+  letter-spacing: 0.01em !important;
+}
+
+.vg-pm-channel-pills {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 8px !important;
+}
+
+.vg-pm-channel-pill {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 10px !important;
+  padding: 8px 6px !important;
+  color: #CBD5E1 !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.01em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  outline: none !important;
+}
+
+.vg-pm-channel-pill i {
+  font-size: 11px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.vg-pm-channel-pill:hover {
+  background: rgba(124, 58, 237, 0.1) !important;
+  border-color: rgba(168, 85, 247, 0.35) !important;
+  color: #FFFFFF !important;
+}
+
+.vg-pm-channel-pill.active {
+  border-color: #8B5CF6 !important;
+  background: rgba(124, 58, 237, 0.18) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.32), inset 0 0 10px rgba(124, 58, 237, 0.2) !important;
+}
+
+.vg-pm-channel-pill.active i {
+  color: #00F0FF !important;
+  transform: scale(1.1) !important;
+}
+
+@media (max-width: 420px) {
+  .vg-pm-channel-pills {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 .vg-pm-form-group {
@@ -23430,10 +23641,12 @@ body.vg-pb-page h6,
 
 .vg-pm-form-label {
   display: block !important;
-  color: #C084FC !important;
-  font-size: 13px !important;
+  color: #CBD5E1 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 12.5px !important;
   font-weight: 600 !important;
-  margin-bottom: 6px !important;
+  margin-bottom: 5px !important;
+  letter-spacing: 0.01em !important;
 }
 
 .vg-pm-form-input {
@@ -23441,9 +23654,11 @@ body.vg-pb-page h6,
   background: rgba(10, 4, 25, 0.75) !important;
   border: 1px solid rgba(168, 85, 247, 0.25) !important;
   border-radius: 12px !important;
-  padding: 12px 16px !important;
+  padding: 11px 16px !important;
   color: #FFFFFF !important;
-  font-size: 14.5px !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 14px !important;
+  letter-spacing: normal !important;
   transition: all 0.3s ease !important;
   outline: none !important;
 }
@@ -23456,22 +23671,57 @@ body.vg-pb-page h6,
 
 .vg-pm-form-btn {
   width: 100% !important;
-  background: linear-gradient(135deg, #7C3AED 0%, #A855F7 50%, #00F0FF 100%) !important;
+  background: linear-gradient(135deg, #7C3AED 0%, #9333EA 100%) !important;
   color: #FFFFFF !important;
-  border: none !important;
+  border: 1px solid rgba(255, 255, 255, 0.16) !important;
   border-radius: 12px !important;
-  padding: 14px 20px !important;
+  padding: 13px 22px !important;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
   font-size: 15px !important;
   font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
   cursor: pointer !important;
-  transition: all 0.35s ease !important;
-  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.35) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1) !important;
+  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.36) !important;
   margin-top: 10px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.vg-pm-form-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.22), transparent);
+  transition: left 0.6s ease;
+}
+
+.vg-pm-form-btn:hover::before {
+  left: 100%;
 }
 
 .vg-pm-form-btn:hover {
   transform: translateY(-2px) !important;
-  box-shadow: 0 15px 35px rgba(0, 240, 255, 0.45) !important;
+  background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%) !important;
+  box-shadow: 0 14px 34px rgba(124, 58, 237, 0.55), 0 0 22px rgba(168, 85, 247, 0.35) !important;
+  color: #FFFFFF !important;
+}
+
+.vg-pm-form-btn span {
+  color: #FFFFFF !important;
+  opacity: 1 !important;
+  font-weight: 700 !important;
+}
+
+.vg-pm-form-btn:hover span {
+  transform: translateX(4px) !important;
 }
 
 /* Service & Feature Cards */

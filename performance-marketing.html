@@ -31,13 +31,13 @@
 
     <!--<< Custom Theme & Color CSS >>-->
     <link rel="stylesheet" href="assets/css/main.css?v=60.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=89.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=128.0">
 
     <!-- Resource Hints & Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap">
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://www.clarity.ms">
 
@@ -280,9 +280,6 @@
          SECTION 1: HERO & PERFORMANCE MARKETING LEAD FORM
          ========================================================================== -->
     <section class="vg-pm-hero-section" id="performance-marketing-hero">
-        <!-- 3D Fiber-Optic Ascent Trails (Skyrocket Momentum - strictly z-index: 0, pure architectural art) -->
-        <div class="vg-pm-surge-stage-wrap" id="vgPmSurgeStageWrap" aria-hidden="true"></div>
-
         <div class="container" style="position: relative; z-index: 2;">
             <div class="row g-4 align-items-center justify-content-between">
                 <!-- Left Hero Content -->
@@ -290,7 +287,7 @@
                     <div class="hero-content">
                         <div class="vg-pm-badge wow fadeInUp">
                             <span class="vg-yt-pulse-beacon" aria-hidden="true"></span>
-                            <i class="fa-solid fa-bullhorn" style="color: #c084fc; font-size: 15px;"></i>
+                            <i class="fa-solid fa-bullhorn" style="color: #c084fc; font-size: 13px;"></i>
                             Partner with the
                         </div>
                         <h1 class="vg-pm-hero-title wow fadeInUp" data-wow-delay=".2s">
@@ -365,6 +362,22 @@
                             <span class="vg-pb-trust-text">Trusted by 20+ High-Growth Brands</span>
                             <span class="vg-pb-rating-stars">★★★★★ 4.9/5</span>
                         </div>
+
+                        <!-- Sleek 3-Column Glass KPI Strip -->
+                        <div class="vg-pm-kpi-strip wow fadeInUp" data-wow-delay=".8s">
+                            <div class="vg-pm-kpi-card">
+                                <div class="vg-pm-kpi-val text-gradient-cyan">4.8x</div>
+                                <div class="vg-pm-kpi-lbl">Average Ad ROAS</div>
+                            </div>
+                            <div class="vg-pm-kpi-card">
+                                <div class="vg-pm-kpi-val text-gradient-emerald">-38%</div>
+                                <div class="vg-pm-kpi-lbl">Lower Cost Per Lead</div>
+                            </div>
+                            <div class="vg-pm-kpi-card">
+                                <div class="vg-pm-kpi-val text-gradient-violet">₹50Cr+</div>
+                                <div class="vg-pm-kpi-lbl">Client Revenue Scaled</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -372,6 +385,27 @@
                 <div class="col-lg-5 wow fadeInUp" data-wow-delay=".4s">
                     <div class="vg-pm-form-container" id="performanceAuditCard">
                         <h3 class="vg-pm-form-title">Hire With Our Experts</h3>
+                        <div class="vg-pm-form-trust-note">
+                            <i class="fa-solid fa-shield-halved"></i> 100% Free • Custom ROAS &amp; Ad Funnel Audit in 24h
+                        </div>
+
+                        <!-- Interactive Channel Selector Row -->
+                        <div class="vg-pm-channel-selector-wrap">
+                            <label class="vg-pm-channel-label">Select Primary Ad Channel:</label>
+                            <div class="vg-pm-channel-pills" role="radiogroup" aria-label="Primary Ad Channel">
+                                <button type="button" class="vg-pm-channel-pill active" data-channel="Google Ads">
+                                    <i class="fa-brands fa-google"></i> Google Ads
+                                </button>
+                                <button type="button" class="vg-pm-channel-pill" data-channel="Meta Ads">
+                                    <i class="fa-brands fa-meta"></i> Meta Ads
+                                </button>
+                                <button type="button" class="vg-pm-channel-pill" data-channel="LinkedIn B2B">
+                                    <i class="fa-brands fa-linkedin-in"></i> LinkedIn B2B
+                                </button>
+                            </div>
+                            <input type="hidden" id="selectedAdChannel" name="adChannel" value="Google Ads">
+                        </div>
+
                         <form id="enquiryForm" action="process-form.php" method="POST">
                             <div class="vg-pm-form-group">
                                 <label for="companyName" class="vg-pm-form-label">Company Name:</label>
@@ -389,7 +423,8 @@
                                     placeholder="https://yourwebsite.com">
                             </div>
                             <button type="submit" class="vg-pm-form-btn">
-                                Get My Free Ad Audit <span style="display: inline-block; transition: transform 0.3s ease;">→</span>
+                                Get My Free Ad Audit <span
+                                    style="display: inline-block; transition: transform 0.3s ease; color: #FFFFFF !important; opacity: 1 !important; font-weight: 700;">→</span>
                             </button>
                         </form>
                     </div>
@@ -1043,10 +1078,22 @@
     <script src="assets/js/wow.min.js"></script>
     <script src="assets/js/main.js?v=60.0"></script>
     <script src="assets/js/dtapex-particles.js?v=52.0"></script>
-    <script src="assets/js/pm-ascent-trails.js?v=1.0"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Interactive Ad Channel Selector Pills
+            var channelPills = document.querySelectorAll('.vg-pm-channel-pill');
+            var channelInput = document.getElementById('selectedAdChannel');
+            channelPills.forEach(function (pill) {
+                pill.addEventListener('click', function () {
+                    channelPills.forEach(function (p) { p.classList.remove('active'); });
+                    this.classList.add('active');
+                    if (channelInput) {
+                        channelInput.value = this.getAttribute('data-channel');
+                    }
+                });
+            });
+
             // Form Card Cursor Spotlight Tracker
             var auditCard = document.getElementById('performanceAuditCard');
             if (auditCard) {
