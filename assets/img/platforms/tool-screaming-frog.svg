@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 185 44" fill="none">
+  <!-- Screaming Frog Icon -->
+  <g transform="translate(6, 4)">
+    <rect width="36" height="36" rx="10" fill="url(#frogBg)" stroke="rgba(34, 197, 94, 0.4)" stroke-width="1.2"/>
+    <!-- Stylized Frog Head -->
+    <path d="M10 21C10 16 13.5 12 18 12C22.5 12 26 16 26 21C26 26 22.5 28 18 28C13.5 28 10 26 10 21Z" fill="#22C55E"/>
+    <!-- Left Eye -->
+    <circle cx="13.5" cy="14" r="3.5" fill="#22C55E"/>
+    <circle cx="13.5" cy="14" r="2.2" fill="#ffffff"/>
+    <circle cx="13.5" cy="14" r="1.1" fill="#0f172a"/>
+    <!-- Right Eye -->
+    <circle cx="22.5" cy="14" r="3.5" fill="#22C55E"/>
+    <circle cx="22.5" cy="14" r="2.2" fill="#ffffff"/>
+    <circle cx="22.5" cy="14" r="1.1" fill="#0f172a"/>
+    <!-- Wide Screaming Mouth -->
+    <ellipse cx="18" cy="22" rx="4.5" ry="3" fill="#0f172a"/>
+    <path d="M15 22C15 24 16.5 24.5 18 24.5C19.5 24.5 21 24 21 22" fill="#EF4444"/>
+  </g>
+  <!-- Text Lockup -->
+  <g transform="translate(50, 0)">
+    <text x="0" y="22" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="800" font-size="13.5" fill="#ffffff" letter-spacing="-0.3">Screaming<tspan fill="#4ADE80">frog</tspan></text>
+    <text x="0" y="34" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="9.5" fill="#22C55E" letter-spacing="0.5">SEO SPIDER</text>
+  </g>
+  <defs>
+    <linearGradient id="frogBg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#12251a"/>
+      <stop offset="100%" stop-color="#07120a"/>
+    </linearGradient>
+  </defs>
+</svg>
+

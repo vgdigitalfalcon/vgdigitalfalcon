@@ -1,0 +1,22 @@
+{
+  "name": "vgdigitalfalcon",
+  "version": "2.0.0",
+  "private": true,
+  "description": "VG Digital Falcon — Autonomous AI Marketing Engine & Performance Agency",
+  "scripts": {
+    "test": "node tests/accessibility/wcag-check.js && node tests/functional/link-checker.js",
+    "test:a11y": "node tests/accessibility/wcag-check.js",
+    "test:links": "node tests/functional/link-checker.js",
+    "test:perf": "node tests/performance/audit-assets.js",
+    "serve": "npx serve ."
+  },
+  "keywords": [
+    "digital-marketing",
+    "seo",
+    "smo",
+    "performance-marketing",
+    "personal-branding"
+  ],
+  "author": "VG Digital Falcon",
+  "license": "UNLICENSED"
+}

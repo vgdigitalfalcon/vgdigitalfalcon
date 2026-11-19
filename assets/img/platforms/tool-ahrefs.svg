@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 44" fill="none">
+  <!-- Ahrefs Icon -->
+  <g transform="translate(6, 4)">
+    <rect width="36" height="36" rx="10" fill="url(#ahrefsBg)" stroke="rgba(0, 113, 227, 0.4)" stroke-width="1.2"/>
+    <!-- Ahrefs iconic geometric "a" -->
+    <path d="M12 26V13L18 20L24 13V26H20.5V18.5L18 21.5L15.5 18.5V26H12Z" fill="#0071E3"/>
+    <circle cx="23.5" cy="14" r="2" fill="#FF5E00"/>
+  </g>
+  <!-- Text Lockup -->
+  <g transform="translate(50, 0)">
+    <text x="0" y="22" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="16" fill="#ffffff" letter-spacing="-0.3">ahrefs</text>
+    <text x="0" y="34" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" fill="#0071E3" letter-spacing="0.5">BACKLINK EXPLORER</text>
+  </g>
+  <defs>
+    <linearGradient id="ahrefsBg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a1c35"/>
+      <stop offset="100%" stop-color="#050e1c"/>
+    </linearGradient>
+  </defs>
+</svg>
+
