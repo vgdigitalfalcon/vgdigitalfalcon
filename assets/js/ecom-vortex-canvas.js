@@ -58,6 +58,8 @@
       // Perspective Grid Pulses
       this.gridPulses = [];
 
+      this.render = this.render.bind(this);
+
       this.init();
     }
 
@@ -92,15 +94,19 @@
           type: i % 2 === 0 ? 'longitudinal' : 'transverse',
           lineIndex: i,
           progress: Math.random(), // 0 to 1 along the line
-          speed: 0.0018 + Math.random() * 0.0022, // Slow, refined pace
-          length: 50 + Math.random() * 40,
-          opacity: 0.22 + Math.random() * 0.12 // 22% - 34% soft glow
+          speed: 0.0020 + Math.random() * 0.0025, // Slow, refined pace
+          length: 60 + Math.random() * 50,
+          opacity: 0.32 + Math.random() * 0.16 // 32% - 48% soft glow
         });
       }
     }
 
     bindEvents() {
       window.addEventListener('resize', () => {
+        this.resize();
+      }, { passive: true });
+
+      window.addEventListener('load', () => {
         this.resize();
       }, { passive: true });
 
@@ -140,7 +146,7 @@
               this.stop();
             }
           });
-        }, { threshold: 0.1 });
+        }, { threshold: 0 });
         observer.observe(this.hero);
       }
     }
@@ -148,7 +154,6 @@
     start() {
       if (!this.animId) {
         this.lastTime = performance.now();
-        this.render = this.render.bind(this);
         this.animId = requestAnimationFrame(this.render);
       }
     }
@@ -325,49 +330,49 @@
       // Wave 1: Deep Cyber Violet Velvet Wave
       this.renderFlowingRibbon({
         baseY: h * 0.52 + this.mouse.y * 14,
-        amplitude1: 55,
-        amplitude2: 32,
+        amplitude1: 58,
+        amplitude2: 34,
         freq1: 0.0016,
         freq2: 0.0034,
         speed1: 0.32,
         speed2: 0.45,
-        colorStart: 'rgba(168, 85, 247, 0.23)', // 23% opacity
-        colorMid: 'rgba(126, 34, 206, 0.12)',
+        colorStart: 'rgba(168, 85, 247, 0.28)', // 28% opacity
+        colorMid: 'rgba(126, 34, 206, 0.15)',
         colorEnd: 'rgba(7, 7, 15, 0)',
-        sheenColor: 'rgba(168, 85, 247, 0.25)',
-        depthHeight: 180
+        sheenColor: 'rgba(168, 85, 247, 0.40)',
+        depthHeight: 190
       });
 
       // Wave 2: Electric Cyan Flowing Aurora Crest
       this.renderFlowingRibbon({
         baseY: h * 0.46 + this.mouse.y * 18,
-        amplitude1: 48,
-        amplitude2: 28,
+        amplitude1: 50,
+        amplitude2: 30,
         freq1: 0.0020,
         freq2: 0.0040,
         speed1: -0.38,
         speed2: 0.50,
-        colorStart: 'rgba(0, 240, 255, 0.21)',  // 21% opacity
-        colorMid: 'rgba(56, 189, 248, 0.09)',
+        colorStart: 'rgba(0, 240, 255, 0.26)',  // 26% opacity
+        colorMid: 'rgba(56, 189, 248, 0.13)',
         colorEnd: 'rgba(7, 7, 15, 0)',
-        sheenColor: 'rgba(0, 240, 255, 0.28)',
-        depthHeight: 160
+        sheenColor: 'rgba(0, 240, 255, 0.42)',
+        depthHeight: 170
       });
 
       // Wave 3: Subtle Violet-Cyan Harmonic Wave (Interweaving)
       this.renderFlowingRibbon({
         baseY: h * 0.58 + this.mouse.y * 10,
-        amplitude1: 42,
-        amplitude2: 24,
+        amplitude1: 44,
+        amplitude2: 26,
         freq1: 0.0018,
         freq2: 0.0030,
         speed1: 0.25,
         speed2: -0.30,
-        colorStart: 'rgba(147, 51, 234, 0.18)', // 18% opacity
-        colorMid: 'rgba(0, 240, 255, 0.08)',
+        colorStart: 'rgba(147, 51, 234, 0.24)', // 24% opacity
+        colorMid: 'rgba(0, 240, 255, 0.11)',
         colorEnd: 'rgba(7, 7, 15, 0)',
-        sheenColor: 'rgba(0, 240, 255, 0.20)',
-        depthHeight: 190
+        sheenColor: 'rgba(0, 240, 255, 0.32)',
+        depthHeight: 200
       });
 
       ctx.restore();

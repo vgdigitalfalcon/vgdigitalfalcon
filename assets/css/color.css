@@ -1066,7 +1066,7 @@ body {
     radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.12) 0%, rgba(7, 2, 18, 1) 70%),
     #070212;
   color: #ffffff;
-  padding: 8px 0 16px;
+  padding: 96px 0 24px !important;
   overflow: hidden;
 }
 
@@ -1091,6 +1091,7 @@ body {
   padding: 0 24px;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .vg-hero-grid {
@@ -1105,6 +1106,18 @@ body {
   flex-direction: column;
   justify-content: center;
   z-index: 5;
+  padding-top: 6px;
+}
+
+.vg-hero-content .vg-pill-badge {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: fit-content !important;
+  align-self: flex-start !important;
+  margin-bottom: 16px !important;
+  position: relative !important;
+  z-index: 10 !important;
 }
 
 /* Universal Pill Badge */
@@ -1272,6 +1285,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 24px !important;
 }
 
 /* Perfect Stage for Geometric Symmetry */
@@ -4044,25 +4058,14 @@ body {
   }
 }
 
-/* 3. AI Growth Engine Core Falcon */
-.core-real-falcon-img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto 3px;
-  filter: drop-shadow(0 0 10px rgba(192, 132, 252, 0.9)) drop-shadow(0 0 18px rgba(239, 68, 68, 0.7));
-  animation: coreFalconHover 2.5s ease-in-out infinite alternate;
-}
-
-@keyframes coreFalconHover {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.12);
-  }
+/* 3. AI Growth Engine Core Falcon & Flying Sky Falcon (Clean Orbit Hero) */
+.core-real-falcon-img,
+.vg-hero-sky,
+#vg-flying-falcon,
+.vg-flying-falcon-container {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
 }
 
 /* 4. Strategy Call CTA Falcon Badge */
@@ -10533,14 +10536,71 @@ canvas {
   display: none !important;
 }
 
-/* 1. SEO Hero Section (Strictly Scoped 3D Network Canvas Container) */
+/* 1. SEO Hero Section (Strictly Scoped Dark-Luxury Layout & 2-Column Grid) */
+.hero-section,
 .vg-seo-hero {
+  background: radial-gradient(circle at 20% 35%, rgba(124, 58, 237, 0.16), transparent 55%),
+              radial-gradient(circle at 82% 45%, rgba(34, 211, 238, 0.09), transparent 50%),
+              #0a0614 !important;
+  padding: 120px 0 96px !important;
   position: relative !important;
-  background: radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.16) 0%, rgba(9, 6, 18, 0.98) 65%, #07070F 100%), #07070F !important;
-  padding: 65px 0 65px;
   overflow: hidden !important;
   border-bottom: 1px solid rgba(168, 85, 247, 0.18);
   z-index: 1 !important;
+}
+
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  align-items: center !important;
+  gap: 48px !important;
+}
+
+.hero-grid > * {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 991px) {
+  .hero-section,
+  .vg-seo-hero {
+    padding: 100px 0 60px !important;
+  }
+  .hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+}
+
+.vg-audit-trust-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(34, 211, 238, 0.08);
+  border: 1px solid rgba(34, 211, 238, 0.22);
+  color: #22d3ee;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.vg-hero-trust-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 18px;
+  font-size: 13.5px;
+  color: #CBD5E1;
+  flex-wrap: wrap;
+}
+
+.vg-hero-trust-row .vg-trust-stars {
+  color: #F59E0B;
+  display: inline-flex;
+  gap: 3px;
+  font-size: 13px;
 }
 
 /* 3D Search & Backlink Node Network Canvas (Strictly Inside Hero) */
@@ -10836,9 +10896,184 @@ canvas {
 /* 3. Our SEO Service Overview Section */
 .vg-seo-about-section {
   position: relative;
-  padding: 95px 0;
+  padding: 72px 0 !important;
   background: radial-gradient(circle at 10% 50%, rgba(124, 58, 237, 0.15) 0%, transparent 60%), #070212;
   border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+/* Dark-Luxury Ecommerce SEO Growth Dashboard Card (Left Visual) */
+.vg-ecom-dashboard-card {
+  position: relative;
+  background: linear-gradient(145deg, #16102c 0%, #0d0a1c 100%) !important;
+  border: 1px solid rgba(168, 85, 247, 0.28) !important;
+  border-radius: 20px !important;
+  padding: 24px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 35px rgba(168, 85, 247, 0.14) !important;
+  overflow: hidden;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.vg-ecom-dashboard-card::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vg-dash-topbar {
+  position: relative;
+  z-index: 1;
+}
+
+.vg-dash-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  display: inline-block;
+  animation: pulseGreen 2s infinite;
+}
+
+.vg-dash-title {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+}
+
+.vg-dash-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+.vg-dash-kpi-strip {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+.vg-dash-kpi-label {
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.vg-dash-kpi-value {
+  font-size: 32px;
+  font-weight: 800;
+  color: #00F0FF;
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.35);
+  line-height: 1.1;
+  margin-top: 3px;
+}
+
+.vg-dash-growth-pill {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+  border: 1px solid rgba(34, 197, 94, 0.25);
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  padding: 3px 9px;
+}
+
+.vg-dash-kpi-sub {
+  font-size: 11px;
+  color: #64748B;
+  margin-top: 3px;
+}
+
+.vg-dash-chart-wrap {
+  position: relative;
+  z-index: 1;
+  background: rgba(10, 6, 20, 0.45);
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 14px;
+  padding: 10px 12px 6px;
+}
+
+.vg-dash-rank-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 7px 12px;
+  transition: all 0.2s ease;
+}
+
+.vg-dash-rank-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(168, 85, 247, 0.35);
+  transform: translateX(3px);
+}
+
+.vg-dash-rank-num {
+  background: linear-gradient(135deg, #A855F7, #6366F1);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 800;
+  border-radius: 4px;
+  padding: 2px 6px;
+  letter-spacing: 0.02em;
+}
+
+.vg-dash-keyword {
+  font-size: 12px;
+  color: #E2E8F0;
+  font-weight: 500;
+}
+
+.vg-dash-serp-tag {
+  font-size: 11px;
+  font-weight: 600;
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.08);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+
+/* Sleek Dark-Glass Bullet Strips */
+.vg-seo-bullet-item {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  margin-bottom: 10px !important;
+  color: #cbd5e1 !important;
+  font-size: 14.5px !important;
+  transition: all 0.25s ease !important;
+}
+
+.vg-seo-bullet-item:hover {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border-color: rgba(34, 211, 238, 0.35) !important;
+  transform: translateX(4px);
+}
+
+.vg-seo-bullet-item i {
+  color: #22d3ee !important;
+  font-size: 16px;
+  filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.4));
+  flex-shrink: 0;
 }
 
 .vg-seo-img-card {
@@ -10905,19 +11140,21 @@ canvas {
   height: 100%;
 }
 
-/* 5. CTA Contact Strip */
+/* 5. CTA Contact Strip (Sleek Dark-Luxury 1160px Card) */
 .vg-seo-cta-strip {
   position: relative;
-  padding: 80px 0;
+  padding: 60px 0;
   background: #070212;
 }
 
 .vg-seo-cta-banner {
-  background: linear-gradient(135deg, rgba(38, 14, 75, 0.95) 0%, rgba(18, 7, 36, 0.98) 100%);
-  border: 1px solid rgba(168, 85, 247, 0.4);
-  border-radius: 28px;
-  padding: 50px 48px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6), 0 0 45px rgba(168, 85, 247, 0.25);
+  max-width: 1160px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(28, 17, 56, 0.92) 0%, rgba(14, 10, 30, 0.96) 100%) !important;
+  border: 1px solid rgba(168, 85, 247, 0.28) !important;
+  border-radius: 24px !important;
+  padding: 40px 48px !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 40px rgba(168, 85, 247, 0.16) !important;
   position: relative;
   overflow: hidden;
 }
@@ -10925,12 +11162,110 @@ canvas {
 .vg-seo-cta-banner::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.25) 0%, transparent 70%);
+  top: -40%;
+  right: -15%;
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, rgba(34, 211, 238, 0.08) 45%, transparent 70%);
   pointer-events: none;
+  z-index: 0;
+}
+
+/* Right-Side Visual Frame (Dark-Luxury Seamless Blend) */
+.vg-cta-visual-frame {
+  position: relative;
+  max-width: 340px;
+  margin-left: auto;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5), 0 0 30px rgba(168, 85, 247, 0.15);
+  background: rgba(14, 10, 30, 0.85);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vg-cta-visual-frame:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168, 85, 247, 0.45);
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.6), 0 0 40px rgba(168, 85, 247, 0.25);
+}
+
+.vg-cta-visual-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  filter: contrast(1.05) brightness(0.85);
+  transition: transform 0.4s ease;
+}
+
+.vg-cta-visual-frame:hover .vg-cta-visual-img {
+  transform: scale(1.03);
+}
+
+.vg-cta-visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.22) 0%, rgba(10, 6, 20, 0.48) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.vg-cta-visual-overlay-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.18), rgba(10, 6, 20, 0.35));
+  pointer-events: none;
+}
+
+.vg-cta-floating-chip {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(18, 12, 38, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 10px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.vg-status-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  display: inline-block;
+  animation: pulseGreen 2s infinite;
+}
+
+.vg-chip-title {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.vg-chip-tag {
+  font-size: 11px;
+  font-weight: 700;
+  color: #00F0FF;
+  background: rgba(0, 240, 255, 0.1);
+  padding: 2px 7px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 240, 255, 0.2);
+}
+
+@media (max-width: 991px) {
+  .vg-cta-visual-frame {
+    margin: 16px auto 0;
+  }
 }
 
 /* 6. Premium SEO Services Cards */
@@ -11214,7 +11549,7 @@ canvas {
   }
 
   .vg-seo-cta-banner {
-    padding: 36px 28px;
+    padding: 34px 24px !important;
   }
 }
 
@@ -11240,7 +11575,7 @@ canvas {
   }
 
   .vg-seo-cta-banner {
-    padding: 30px 20px;
+    padding: 28px 18px !important;
   }
 
   .vg-seo-about-section,
@@ -13448,16 +13783,17 @@ body.vg-webdev-page,
   display: block;
 }
 
-/* Ecommerce SEO Growth Vortex 3D Canvas (Strictly Inside Hero) */
+/* Ecommerce SEO Growth Vortex Canvas (Strictly Inside Hero: z-index: 1) */
 .vg-ecom-vortex-canvas {
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  z-index: 0 !important;
+  z-index: 1 !important;
   pointer-events: none !important;
   background: transparent !important;
+  display: block !important;
 }
 
 /* ==========================================================================
@@ -14390,125 +14726,395 @@ body.vg-webdev-page,
 
 
 /* ==========================================================================
-   SERVICES OVERVIEW: AUTOMATIC ZOOM & SMOOTH AUTO-SCROLL
+   INTERACTIVE E-COMMERCE GROWTH PILLAR GRID & LIVE METRIC PREVIEW (COMPACT SLEEK)
    ========================================================================== */
 .vg-seo-services-section {
   position: relative;
-  overflow: hidden !important;
+  padding: 64px 0 !important;
+  background: radial-gradient(circle at 50% 0%, rgba(124, 58, 237, 0.12) 0%, rgba(10, 6, 20, 0.98) 60%, #080315 100%), #080315;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+  overflow: hidden;
 }
 
-.vg-ecom-services-slider {
-  padding: 35px 0 50px !important;
-  overflow: visible !important;
+/* Suppress any template pseudo-element lines next to What We Do? */
+.vg-seo-services-section .section-title span::before,
+.vg-seo-services-section .section-title span::after,
+.vg-seo-services-section .vg-pill-badge::before,
+.vg-seo-services-section .vg-pill-badge::after,
+.vg-services-section-header span::before,
+.vg-services-section-header span::after {
+  display: none !important;
+  content: none !important;
+  width: 0 !important;
+  height: 0 !important;
 }
 
-.vg-ecom-services-slider .swiper-wrapper {
-  align-items: center;
-}
-
-/* Inactive / Side Slides (Zoomed Out State) */
-.vg-ecom-services-slider .swiper-slide {
-  transform: scale(0.92);
-  opacity: 0.62;
-  filter: blur(0.4px);
-  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.65s ease,
-    filter 0.65s ease !important;
-  height: auto;
-  display: flex;
-}
-
-/* Centered / Active Slide (AUTOMATIC ZOOM STATE) */
-.vg-ecom-services-slider .swiper-slide.swiper-slide-active {
-  transform: scale(1.08) translateY(-8px) !important;
-  opacity: 1 !important;
-  filter: none !important;
-  z-index: 10 !important;
-}
-
-/* Zoomed Card Aesthetic Upgrade */
-.vg-ecom-services-slider .swiper-slide.swiper-slide-active .vg-ecom-service-card {
-  border-color: #00F0FF !important;
-  background: rgba(22, 12, 48, 0.95) !important;
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.75),
-    0 0 30px rgba(0, 240, 255, 0.32),
-    0 0 65px rgba(168, 85, 247, 0.2) !important;
+/* Section Header Typography */
+.vg-services-section-header {
   position: relative;
+  z-index: 5;
+  max-width: 1080px;
+  margin: 0 auto 20px;
 }
 
-/* Subtle Aurora Halo on Active Zoomed Card */
-.vg-ecom-services-slider .swiper-slide.swiper-slide-active .vg-ecom-service-card::after {
+.vg-services-section-header .vg-services-title {
+  font-size: 36px !important;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-top: 10px;
+  margin-bottom: 10px !important;
+}
+
+.vg-services-section-header .vg-services-subtitle {
+  color: #cbd5e1;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 0 !important;
+  max-width: 1040px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Compact Single-Row Category Filter Bar (No Wrapping on Desktop) */
+.vg-ecom-filter-bar {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 20px auto 28px !important;
+  max-width: 860px !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+.vg-ecom-filter-btn {
+  background: rgba(18, 12, 36, 0.75);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  color: #cbd5e1;
+  padding: 8px 16px !important;
+  border-radius: 999px;
+  font-size: 13px !important;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  outline: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.vg-ecom-filter-btn:hover {
+  color: #ffffff;
+  border-color: rgba(168, 85, 247, 0.55);
+  background: rgba(30, 20, 58, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.25);
+}
+
+.vg-ecom-filter-btn.active {
+  background: linear-gradient(135deg, #7928ca, #a855f7);
+  border-color: #c084fc;
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.45);
+  transform: translateY(-1px);
+}
+
+.vg-ecom-filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px !important;
+  font-size: 10.5px !important;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  padding: 1px 6px !important;
+  border-radius: 999px;
+  min-width: 17px;
+  line-height: 1.4;
+}
+
+.vg-ecom-filter-btn.active .vg-ecom-filter-count {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+@media (max-width: 768px) {
+  .vg-ecom-filter-bar {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    margin: 16px auto 24px !important;
+  }
+}
+
+/* Bento Grid (Max-width 1200px, Gap 20px) */
+.vg-ecom-pillar-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 20px !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  position: relative;
+  z-index: 4;
+}
+
+@media (max-width: 991px) {
+  .vg-ecom-pillar-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .vg-ecom-pillar-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+}
+
+/* Compact Bento Pillar Card */
+.vg-ecom-pillar-card {
+  background: rgba(18, 13, 36, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-radius: 18px;
+  padding: 24px !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 270px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              opacity 0.35s ease,
+              filter 0.35s ease;
+}
+
+/* Interactive Cursor Spotlight Glow (Custom properties --card-mx, --card-my) */
+.vg-ecom-pillar-card::before {
   content: '';
   position: absolute;
-  inset: -1.5px;
-  border-radius: 19px;
-  padding: 1.5px;
-  background: linear-gradient(135deg, rgba(0, 240, 255, 0.7), rgba(168, 85, 247, 0.4), rgba(0, 240, 255, 0.2));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(350px circle at var(--card-mx, 50%) var(--card-my, 50%), rgba(168, 85, 247, 0.2), transparent 70%);
   pointer-events: none;
-  animation: vgActiveCardHalo 3.5s ease-in-out infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
-@keyframes vgActiveCardHalo {
-
-  0%,
-  100% {
-    opacity: 0.65;
-  }
-
-  50% {
-    opacity: 1;
-  }
+.vg-ecom-pillar-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(168, 85, 247, 0.5) !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 30px rgba(168, 85, 247, 0.25) !important;
 }
 
-/* Active Zoomed Title & Icon Highlighting */
-.vg-ecom-services-slider .swiper-slide.swiper-slide-active .vg-ecom-service-title {
-  color: #ffffff !important;
-  text-shadow: 0 0 14px rgba(0, 240, 255, 0.45);
-}
-
-.vg-ecom-services-slider .swiper-slide.swiper-slide-active .vg-ecom-service-card i {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 10px currentColor);
-  transition: transform 0.4s ease, filter 0.4s ease;
-}
-
-/* Interactive Hover Response */
-.vg-ecom-services-slider .swiper-slide:hover {
-  opacity: 0.95;
-  filter: none;
-}
-
-/* Enhanced Pagination Dots with Auto-Scroll Progress */
-.vg-services-dot {
-  margin-top: 25px;
-  text-align: center;
-}
-
-.vg-services-dot .swiper-pagination-bullet {
-  width: 22px;
-  height: 6px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.22);
-  display: inline-block;
-  margin: 0 5px;
-  cursor: pointer;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+.vg-ecom-pillar-card:hover::before {
   opacity: 1;
 }
 
-.vg-services-dot .swiper-pagination-bullet:hover {
-  background: rgba(0, 240, 255, 0.45);
+/* Filter Highlighting & Dimming States */
+.vg-ecom-pillar-card.is-filtered-out {
+  opacity: 0.18 !important;
+  transform: scale(0.96) !important;
+  filter: grayscale(0.85) !important;
+  pointer-events: none !important;
 }
 
-.vg-services-dot .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  width: 50px;
-  background: linear-gradient(90deg, #00F0FF, #A855F7);
-  box-shadow: 0 0 14px rgba(0, 240, 255, 0.6);
-  border-color: #00F0FF;
+.vg-ecom-pillar-card.is-highlighted {
+  border-color: rgba(168, 85, 247, 0.65) !important;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 28px rgba(168, 85, 247, 0.35) !important;
+}
+
+/* Card Top Row */
+.vg-pillar-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px !important;
+  position: relative;
+  z-index: 2;
+}
+
+/* Step Number Badge (01-06) */
+.vg-pillar-num-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', var(--font-body), sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 3px 11px;
+  border-radius: 999px;
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #c084fc;
+}
+
+/* Glowing Icon Containers */
+.vg-pillar-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.vg-pillar-icon-box.icon-cyan {
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.32);
+  color: #22d3ee;
+  box-shadow: 0 0 18px rgba(6, 182, 212, 0.18);
+}
+
+.vg-pillar-icon-box.icon-purple {
+  background: rgba(168, 85, 247, 0.14);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #c084fc;
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.22);
+}
+
+.vg-pillar-icon-box.icon-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.32);
+  color: #34d399;
+  box-shadow: 0 0 18px rgba(16, 185, 129, 0.18);
+}
+
+.vg-pillar-icon-box.icon-blue {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.32);
+  color: #38bdf8;
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.18);
+}
+
+.vg-pillar-icon-box.icon-amber {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  color: #fbbf24;
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.18);
+}
+
+.vg-pillar-icon-box.icon-rose {
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.32);
+  color: #fb7185;
+  box-shadow: 0 0 18px rgba(244, 63, 94, 0.18);
+}
+
+.vg-ecom-pillar-card:hover .vg-pillar-icon-box {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Card Body Content */
+.vg-pillar-content {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 16px;
+}
+
+.vg-pillar-title {
+  font-size: 18px !important;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 0;
+  margin-bottom: 8px !important;
+  line-height: 1.35;
+  transition: color 0.3s ease;
+}
+
+.vg-ecom-pillar-card:hover .vg-pillar-title {
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(168, 85, 247, 0.4);
+}
+
+.vg-pillar-desc {
+  font-size: 14px !important;
+  line-height: 1.55 !important;
+  color: #cbd5e1;
+  margin: 0 0 16px 0 !important;
+}
+
+/* Card Footer & KPI Pill */
+.vg-pillar-kpi-wrap {
+  position: relative;
+  z-index: 2;
+  margin-top: auto !important;
+  padding-top: 14px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vg-kpi-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  width: 100%;
+  letter-spacing: 0.01em;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.vg-kpi-pill strong {
+  font-weight: 800;
+}
+
+.vg-kpi-pill.kpi-cyan {
+  background: rgba(6, 182, 212, 0.12);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: #67e8f9;
+}
+
+.vg-kpi-pill.kpi-purple {
+  background: rgba(168, 85, 247, 0.14);
+  border: 1px solid rgba(168, 85, 247, 0.32);
+  color: #e9d5ff;
+}
+
+.vg-kpi-pill.kpi-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #a7f3d0;
+}
+
+.vg-kpi-pill.kpi-blue {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  color: #bae6fd;
+}
+
+.vg-kpi-pill.kpi-amber {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: #fde68a;
+}
+
+.vg-kpi-pill.kpi-rose {
+  background: rgba(244, 63, 94, 0.12);
+  border: 1px solid rgba(244, 63, 94, 0.3);
+  color: #fecdd3;
+}
+
+.vg-ecom-pillar-card:hover .vg-kpi-pill {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
@@ -23237,308 +23843,6 @@ header.header-scrolled,
 }
 
 /* =============================================================================
-   2. 3D WEBGL FALCON & CANYON CANVAS: STRICTLY INSIDE HERO BANNER ONLY (Z-INDEX: 0)
-   ============================================================================= */
-#falcon-canvas-container,
-#falcon-canvas-container canvas,
-.three-bg-container,
-.three-bg-container canvas,
-#vg-home-peregrine-canvas,
-.vg-home-peregrine-canvas {
-  position: absolute !important;
-  inset: 0 !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  z-index: 0 !important;
-  pointer-events: none !important;
-  display: block !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-}
-
-/* =============================================================================
-   3. ELEVATE ALL HERO CONTENT, ORBIT DIAGRAM, STATS BAR & NAVBAR (Z-INDEX: 10+)
-   ============================================================================= */
-.vg-hero-section {
-  position: relative !important;
-  overflow: hidden !important;
-  background: #0a0614 !important;
-  z-index: 1 !important;
-  padding-top: 108px !important;
-  padding-bottom: 24px !important;
-}
-
-
-
-.vg-hero-container {
-  position: relative !important;
-  z-index: 10 !important;
-}
-
-.vg-hero-grid {
-  position: relative !important;
-  z-index: 10 !important;
-  align-items: center !important;
-}
-
-/* Right-side Orbit Diagram Shifted Downward so Google Ads Chip isn't clipped */
-.vg-engine-wrapper {
-  position: relative !important;
-  margin-top: 28px !important;
-  z-index: 10 !important;
-}
-
-
-
-
-/* Left Hero Card (max-width: 580px !important) */
-.vg-hero-section .vg-hero-content {
-  max-width: 580px !important;
-  width: 100% !important;
-  position: relative !important;
-  z-index: 10 !important;
-  padding: 28px 32px !important;
-  border-radius: 20px !important;
-  background: radial-gradient(circle at 25% 35%, rgba(10, 6, 20, 0.78) 0%, rgba(10, 6, 20, 0.45) 75%, transparent 100%) !important;
-  border: 1px solid rgba(124, 58, 237, 0.28) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 0 20px rgba(124, 58, 237, 0.04) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
-}
-
-
-/* Right Orbit Diagram & Chips Elevate Above 3D Canyon (Zero Clipping) */
-.vg-hero-visual,
-.vg-orbit-showcase,
-.vg-orbit-system,
-.vg-orbit-wrap {
-  position: relative !important;
-  z-index: 12 !important;
-}
-
-.vg-orbit-chip,
-.vg-orbit-node,
-.vg-center-node,
-.vg-tech-badge {
-  z-index: 25 !important;
-}
-
-.vg-hero-stats,
-.vg-stats-bar,
-.vg-metrics-strip {
-  position: relative !important;
-  z-index: 15 !important;
-}
-
-/* Left Hero Typography Polish: Left Aligned Description */
-.vg-hero-desc {
-  text-align: left !important;
-  text-justify: auto !important;
-}
-
-/* Headline Period shares same gradient fill */
-.vg-hero-title .gradient-text {
-  background: linear-gradient(135deg, #c084fc 0%, #e879f9 45%, #a855f7 100%) !important;
-  -webkit-background-clip: text !important;
-  background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  color: transparent !important;
-  display: inline-block;
-}
-
-.vg-hero-section .vg-hero-title,
-.vg-hero-section .vg-hero-desc,
-.vg-hero-section .vg-pill-badge {
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9) !important;
-}
-
-/* Primary CTA Button Diagonal Light-Sweep Shine Hover Animation */
-.vg-btn-primary {
-  position: relative;
-  overflow: hidden;
-}
-
-.vg-btn-primary::after {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -75%;
-  width: 50%;
-  height: 200%;
-  background: linear-gradient(
-    60deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.45) 50%,
-    rgba(255, 255, 255, 0) 70%,
-    transparent 100%
-  );
-  transform: rotate(25deg);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.vg-btn-primary:hover::after {
-  opacity: 1;
-  animation: vgLightSweep 0.85s ease-out forwards;
-}
-
-@keyframes vgLightSweep {
-  0% { left: -75%; }
-  100% { left: 140%; }
-}
-
-/* Social Proof Stack & Standalone 6X ROI Pill Badge */
-.vg-social-proof {
-  display: flex !important;
-  align-items: center !important;
-  gap: 0px !important;
-  flex-wrap: nowrap !important;
-  margin-top: 4px !important;
-}
-
-.vg-avatar-group {
-  display: flex !important;
-  align-items: center !important;
-  flex-shrink: 0 !important;
-}
-
-.vg-avatar-group img {
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 50% !important;
-  border: 2px solid #0a0614 !important;
-  margin-left: -10px !important;
-  object-fit: cover !important;
-}
-
-.vg-avatar-group img:first-child {
-  margin-left: 0 !important;
-}
-
-/* Standalone 6X ROI Pill Badge */
-.vg-roi-pill {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 4px 10px !important;
-  border-radius: 999px !important;
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  background: rgba(124, 58, 237, 0.16) !important;
-  border: 1px solid rgba(168, 85, 247, 0.45) !important;
-  color: #c084fc !important;
-  margin-left: 12px !important;
-  margin-right: 14px !important;
-  flex-shrink: 0 !important;
-  letter-spacing: 0.4px !important;
-  box-shadow: 0 0 12px rgba(124, 58, 237, 0.25) !important;
-  white-space: nowrap !important;
-}
-
-.vg-proof-meta {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 2px !important;
-  flex-shrink: 0 !important;
-}
-
-/* Clean Separation Above Bottom Live Stats Bar (+287, +342%, +185%, +412) */
-.vg-stats-bar-wrap {
-  margin-top: 28px !important;
-  position: relative !important;
-  z-index: 3 !important;
-}
-
-/* De-Crowd & Animate Right-Side 'AI Growth Engine' Orbit Diagram */
-.node-crm {
-  top: 85% !important;
-  left: 68% !important;
-}
-
-.node-analytics {
-  top: 85% !important;
-  left: 32% !important;
-}
-
-@keyframes vgChipFloat {
-  0%, 100% {
-    transform: translate(-50%, -50%) translateY(0px);
-  }
-  50% {
-    transform: translate(-50%, -50%) translateY(-6px);
-  }
-}
-
-.vg-node {
-  animation: vgChipFloat 4s ease-in-out infinite;
-}
-
-.node-google-ads { animation-delay: 0s; }
-.node-meta-ads { animation-delay: 0.5s; }
-.node-seo { animation-delay: 1.0s; }
-.node-automation { animation-delay: 1.5s; }
-.node-crm { animation-delay: 2.0s; }
-.node-analytics { animation-delay: 2.5s; }
-.node-content { animation-delay: 3.0s; }
-.node-whatsapp { animation-delay: 3.5s; }
-.node-email { animation-delay: 0.8s; }
-
-.vg-node:hover {
-  animation-play-state: paused;
-  transform: translate(-50%, -50%) scale(1.08) !important;
-}
-
-@keyframes corePulseRing {
-  0% {
-    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.65), 0 0 35px rgba(147, 51, 234, 0.6), inset 0 0 20px rgba(168, 85, 247, 0.35);
-  }
-  70% {
-    box-shadow: 0 0 0 16px rgba(168, 85, 247, 0), 0 0 52px rgba(147, 51, 234, 0.85), inset 0 0 24px rgba(168, 85, 247, 0.45);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(168, 85, 247, 0), 0 0 35px rgba(147, 51, 234, 0.6), inset 0 0 20px rgba(168, 85, 247, 0.35);
-  }
-}
-
-.vg-engine-core {
-  animation: corePulseRing 3.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-/* Floating WhatsApp Pulse Ring */
-@keyframes pulse-ring {
-  0% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7), 0 6px 20px rgba(34, 197, 94, 0.45);
-  }
-  70% {
-    box-shadow: 0 0 0 16px rgba(34, 197, 94, 0), 0 8px 24px rgba(34, 197, 94, 0.6);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0), 0 6px 20px rgba(34, 197, 94, 0.45);
-  }
-}
-
-.vg-floating-whatsapp {
-  animation: pulse-ring 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
-}
-
-/* Subtle Cosmic Micro-Particle Drift */
-@keyframes vgParticleDrift {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(12px, -18px); }
-}
-
-/* Hide old 2D floating mascot in hero sky since 3D Falcon is active */
-.vg-hero-sky,
-#vg-flying-falcon {
-  display: none !important;
-}
-
-/* =============================================================================
    3. YOUTUBE SEO (YOUTUBE-SEO-AGENCY.HTML) 3D RETENTION GRAPH (HERO BANNER ONLY)
    ============================================================================= */
 #yt-retention-canvas-container,
@@ -23645,22 +23949,4 @@ body.vg-yt-page .vg-yt-section {
 
 
 
-/* =============================================================================
-   PERMANENTLY SUPPRESS FLOATING 2D MASCOTS ON SCROLL
-   ============================================================================= */
-#vg-global-mascot,
-.vg-global-mascot-wrap,
-#vg-flying-falcon,
-.vg-flying-falcon-container,
-.vg-hero-sky,
-.vg-mascot-falcon,
-.vg-mascot-real-img {
-  display: none !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  pointer-events: none !important;
-  position: absolute !important;
-  width: 0 !important;
-  height: 0 !important;
-  overflow: hidden !important;
-}
+
