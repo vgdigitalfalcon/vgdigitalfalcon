@@ -10,7 +10,7 @@
  *    - Primary: Attempts to load rigged .glb (./assets/models/peregrine-falcon.glb).
  *    - Hyper-Realistic Fallback: Uses high-subdivision 3D Wing-Flex Mesh (PlaneGeometry
  *      with 32x16 subdivisions) textured with the authentic alpha-transparent cutout
- *      (./assets/images/peregrine-falcon-real.png).
+ *      (./assets/img/peregrine-falcon-real.png).
  * 2. Custom Wing-Flex Vertex Shader:
  *    - Natural biological wing flexing: wave propagation from body out to wingtips,
  *      aerodynamic camber, and dynamic wing twist during flight & banking.
@@ -65,7 +65,7 @@
       speed: 14.5,
       scrollMultiplier: 260.0,
       glbModelPath: 'assets/models/peregrine-falcon.glb',
-      realCutoutPath: 'assets/images/peregrine-falcon-real.png'
+      realCutoutPath: 'assets/img/peregrine-falcon-real.png'
     }, userOptions || {});
 
     var canvas = document.getElementById(options.canvasId);

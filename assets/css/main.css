@@ -1,3 +1,18 @@
+/* =============================================================================
+   VG DIGITAL FALCON - MODULAR DESIGN SYSTEM ARCHITECTURE
+   Imports Base Tokens, Typography, Layout Components & Scoped Page Styles
+   ============================================================================= */
+@import 'base/variables.css';
+@import 'base/reset.css';
+@import 'base/typography.css';
+@import 'layout/header.css';
+@import 'layout/footer.css';
+@import 'layout/forms.css';
+@import 'pages/page-smo.css';
+@import 'pages/page-seo.css';
+@import 'pages/page-pm.css';
+@import 'pages/page-ecom.css';
+@import 'pages/page-dm.css';
 /*
 Theme Name: Hostech
 Author: Gramentheme
