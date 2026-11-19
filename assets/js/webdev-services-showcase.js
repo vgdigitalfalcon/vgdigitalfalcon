@@ -595,8 +595,8 @@
             <div class="vg-nav-icon-wrap" style="--item-color: ${s.accentColor};">
               <i class="${s.icon}"></i>
             </div>
-            <div class="vg-nav-text-wrap">
-              <h4 class="vg-nav-title">${s.title}</h4>
+            <div class="vg-nav-text-wrap" style="gap: 8px;">
+              <h4 class="vg-nav-title" style="margin-bottom: 0;">${s.title}</h4>
               <span class="vg-service-tag ${s.tagClass}"><i class="fa-solid fa-bolt me-1"></i> ${s.tag}</span>
             </div>
           </div>

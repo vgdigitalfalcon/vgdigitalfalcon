@@ -10577,6 +10577,23 @@ canvas {
   z-index: 1;
 }
 
+/* Hero Left Column & Badge Strict Left Alignment */
+.vg-seo-hero .col-lg-7 {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.vg-seo-hero .vg-section-badge,
+.vg-seo-hero .vg-pill-badge {
+  text-align: left !important;
+  align-self: flex-start !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  display: inline-flex !important;
+}
+
 .vg-seo-hero-title {
   font-size: 46px;
   font-weight: 900;
@@ -12063,6 +12080,10 @@ body.vg-webdev-page,
 /* ==========================================================================
    VG DIGITAL FALCON — SPLIT-SCREEN SERVICE SHOWCASE & 3D DTAPEX ROBOT MASCOT
    ========================================================================== */
+.vg-split-services-section .vg-services-heading {
+  margin-bottom: 16px !important;
+}
+
 @media (min-width: 992px) {
   .vg-split-services-section .vg-services-heading {
     white-space: nowrap !important;
@@ -12072,6 +12093,8 @@ body.vg-webdev-page,
 .vg-split-services-section .vg-services-sub {
   color: #cbd5e1 !important;
   text-align: center !important;
+  margin: 0 auto 44px auto !important;
+  max-width: 1060px !important;
 }
 
 .vg-split-services-section {
@@ -12084,7 +12107,7 @@ body.vg-webdev-page,
 
 /* Vertical Spacing & Equal 2-Column Split (1fr 1fr) with align-items: stretch */
 .vg-split-showcase-row {
-  margin-top: 1.85rem !important;
+  margin-top: 0 !important;
 }
 
 @media (min-width: 992px) {
@@ -12277,20 +12300,23 @@ body.vg-webdev-page,
 }
 
 .vg-nav-text-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
   text-align: left !important;
   min-width: 0;
   flex: 1;
 }
 
 /* NO TRUNCATION: E-Commerce Website Development and all titles wrap naturally without ellipsis */
-.vg-nav-title {
+.vg-nav-title,
+.vg-nav-text-wrap h3,
+.vg-nav-text-wrap h4,
+.vg-nav-text-wrap .card-title {
   font-size: 12.5px;
   font-weight: 700;
   color: #cbd5e1;
-  margin: 0;
+  margin: 0 !important;
   line-height: 1.25;
   text-align: left !important;
   white-space: normal !important;
@@ -18155,13 +18181,39 @@ body.vg-pb-page h6,
    SPOTLIGHT BANNER ("WHY WAIT? YOUR PERSONAL BRAND STARTS NOW")
    Ultra-Luxury Dark Glassmorphism & Interactive 3D Outcome Card
    ============================================================================= */
+#why-wait {
+  position: relative !important;
+}
+
+#why-wait .vg-pb-spotlight-box {
+  margin-top: 80px !important;
+  transform: none !important;
+  padding: 76px 44px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 991px) {
+  #why-wait .vg-pb-spotlight-box {
+    margin-top: 60px !important;
+    padding: 56px 28px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  #why-wait .vg-pb-spotlight-box {
+    margin-top: 48px !important;
+    padding: 44px 20px !important;
+  }
+}
+
 .vg-pb-spotlight-box {
   background: radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.16) 0%, transparent 60%),
     radial-gradient(circle at 90% 80%, rgba(0, 240, 255, 0.12) 0%, transparent 55%),
     rgba(10, 5, 24, 0.90) !important;
   border: 1px solid rgba(0, 240, 255, 0.32) !important;
   border-radius: 24px !important;
-  padding: 48px 44px !important;
+  padding: 76px 44px !important;
+  box-sizing: border-box !important;
   backdrop-filter: blur(24px) !important;
   box-shadow: 0 25px 65px rgba(0, 0, 0, 0.75),
     0 0 40px rgba(168, 85, 247, 0.16),
@@ -19033,7 +19085,8 @@ body.vg-pb-page h6,
    ============================================================================= */
 
 #why-essential {
-  padding: 70px 0 !important;
+  padding-top: 70px !important;
+  padding-bottom: 64px !important;
 }
 
 /* Center-Aligned Section Header Block with guaranteed 40px vertical separation */
@@ -22611,4 +22664,81 @@ body.vg-pb-page h6,
   .vg-pm-page .vg-faq-body {
     padding: 0 18px 18px 18px !important;
   }
+}
+
+
+/* ==========================================================================
+   SEO SERVICE PAGE: JUSTIFIED CONTENT ALIGNMENT (EXCLUDING SUBHEADINGS & SECTION INTROS)
+   ========================================================================== */
+body.vg-seo-page .vg-seo-hero-sub,
+body.vg-seo-page .vg-snapshot-subtext,
+body.vg-seo-page .vg-snapshot-card p,
+body.vg-seo-page .vg-stepper-problem-text,
+body.vg-seo-page .vg-stepper-sol-text,
+body.vg-seo-page .vg-pain-card p,
+body.vg-seo-page .vg-service-card-desc,
+body.vg-seo-page .vg-service-card-new p,
+body.vg-seo-page .vg-service-card-body p,
+body.vg-seo-page .vg-ai-summary-text,
+body.vg-seo-page .vg-mock-snippet,
+body.vg-seo-page .vg-mock-serp-item .vg-mock-snippet,
+body.vg-seo-page .vg-env-desc,
+body.vg-seo-page .vg-env-card p,
+body.vg-seo-page .vg-adapt-left-col p,
+body.vg-seo-page .vg-adapt-pillar p,
+body.vg-seo-page .vg-adapt-body p,
+body.vg-seo-page .vg-seo-step-intro,
+body.vg-seo-page .vg-seo-step-card p,
+body.vg-seo-page .vg-seo-step-list li span,
+body.vg-seo-page .vg-industry-card-desc,
+body.vg-seo-page .vg-industry-card p,
+body.vg-seo-page .vg-industry-feature-list li span,
+body.vg-seo-page .vg-seo-quote-text,
+body.vg-seo-page .vg-faq-body,
+body.vg-seo-page .vg-faq-body p,
+body.vg-seo-page .vg-seo-about-section p,
+body.vg-seo-page .vg-seo-form-subtitle + p {
+  text-align: justify !important;
+  text-justify: inter-word !important;
+}
+
+/* Explicitly preserve alignment on section headings, subheadings, centered badges and section intros */
+body.vg-seo-page .text-center h1,
+body.vg-seo-page .text-center h2,
+body.vg-seo-page .text-center h3,
+body.vg-seo-page .text-center h4,
+body.vg-seo-page .text-center h5,
+body.vg-seo-page .text-center h6,
+body.vg-seo-page .text-center .vg-pill-badge,
+body.vg-seo-page .text-center .vg-section-badge,
+body.vg-seo-page .vg-adapt-badge,
+body.vg-seo-page .vg-phase-badge,
+body.vg-seo-page .vg-seo-form-title,
+body.vg-seo-page .vg-seo-form-subtitle,
+body.vg-seo-page .vg-seo-snapshot-desc,
+body.vg-seo-page .vg-problem-desc,
+body.vg-seo-page .vg-ai-intel-desc,
+body.vg-seo-page .vg-evo-desc,
+body.vg-seo-page .vg-env-section-header p,
+body.vg-seo-page .vg-seo-process-section .text-center p,
+body.vg-seo-page .vg-seo-services-section .text-center p,
+body.vg-seo-page .vg-seo-evolution-section .text-center > p,
+body.vg-seo-page .vg-seo-industry-section .text-center p,
+body.vg-seo-page .vg-seo-testimonial-section .text-center p,
+body.vg-seo-page .vg-seo-faq-section .text-center p {
+  text-align: center !important;
+}
+
+/* Explicitly enforce left alignment on Hero and other left-aligned components */
+body.vg-seo-page .vg-seo-hero .col-lg-7,
+body.vg-seo-page .vg-seo-hero-title,
+body.vg-seo-page .vg-seo-hero .vg-section-badge,
+body.vg-seo-page .vg-seo-hero .vg-pill-badge,
+body.vg-seo-page .vg-adapt-left-col h3,
+body.vg-seo-page .vg-stepper-card-title,
+body.vg-seo-page .vg-service-card-title,
+body.vg-seo-page .vg-industry-card-title,
+body.vg-seo-page .vg-faq-btn {
+  text-align: left !important;
+  align-self: flex-start !important;
 }
