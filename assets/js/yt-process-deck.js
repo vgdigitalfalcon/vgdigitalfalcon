@@ -3,7 +3,7 @@
  * VG Digital Falcon - Executive 3D Interactive UI Component
  */
 
-(function() {
+(function () {
     'use strict';
 
     function initYtProcessDeck() {
@@ -38,7 +38,7 @@
             activeIndex = (newIndex + totalSteps) % totalSteps;
 
             // Update Chapter Tabs
-            tabs.forEach(function(tab, idx) {
+            tabs.forEach(function (tab, idx) {
                 var isActive = (idx === activeIndex);
                 tab.classList.toggle('active', isActive);
                 tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
@@ -60,7 +60,7 @@
             }
 
             // Arrange all cards in 3D perspective depth with strict content isolation
-            cards.forEach(function(card, idx) {
+            cards.forEach(function (card, idx) {
                 var offset = (idx - activeIndex + totalSteps) % totalSteps;
                 card.classList.remove('is-active', 'is-peek-1', 'is-peek-2', 'is-hidden-depth');
 
@@ -103,7 +103,7 @@
                 }
             });
 
-            setTimeout(function() {
+            setTimeout(function () {
                 if (outgoingCard) outgoingCard.classList.remove('is-departing');
                 isShuffling = false;
             }, 450);
@@ -121,7 +121,7 @@
         function startAutoCycle() {
             stopAutoCycle();
             if (!isPlaying) return;
-            autoCycleInterval = setInterval(function() {
+            autoCycleInterval = setInterval(function () {
                 if (!isHovered && isPlaying) {
                     nextStep();
                 }
@@ -141,8 +141,8 @@
         }
 
         // Tab click listeners
-        tabs.forEach(function(tab) {
-            tab.addEventListener('click', function(e) {
+        tabs.forEach(function (tab) {
+            tab.addEventListener('click', function (e) {
                 e.preventDefault();
                 var step = parseInt(tab.getAttribute('data-step'), 10);
                 if (!isNaN(step) && step !== activeIndex) {
@@ -155,7 +155,7 @@
 
         // Prev / Next button listeners
         if (prevBtn) {
-            prevBtn.addEventListener('click', function(e) {
+            prevBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 prevStep();
                 resetAutoCycle();
@@ -163,7 +163,7 @@
         }
 
         if (nextBtn) {
-            nextBtn.addEventListener('click', function(e) {
+            nextBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 nextStep();
                 resetAutoCycle();
@@ -172,7 +172,7 @@
 
         // Play / Pause button
         if (playPauseBtn) {
-            playPauseBtn.addEventListener('click', function(e) {
+            playPauseBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 isPlaying = !isPlaying;
                 var icon = playPauseBtn.querySelector('i');
@@ -195,8 +195,8 @@
         }
 
         // Click on Peek Behind 1 to advance
-        cards.forEach(function(card, idx) {
-            card.addEventListener('click', function(e) {
+        cards.forEach(function (card, idx) {
+            card.addEventListener('click', function (e) {
                 if (card.classList.contains('is-peek-1')) {
                     e.preventDefault();
                     nextStep();
@@ -206,17 +206,17 @@
         });
 
         // Pause on Hover
-        deckWrap.addEventListener('mouseenter', function() {
+        deckWrap.addEventListener('mouseenter', function () {
             isHovered = true;
         });
 
-        deckWrap.addEventListener('mouseleave', function() {
+        deckWrap.addEventListener('mouseleave', function () {
             isHovered = false;
         });
 
         // Cursor-Reactive 3D Tilt on Active Card
         if (viewport) {
-            viewport.addEventListener('mousemove', function(e) {
+            viewport.addEventListener('mousemove', function (e) {
                 var activeCard = deckWrap.querySelector('.vg-yt-deck-card.is-active');
                 if (!activeCard) return;
 
@@ -237,7 +237,7 @@
                 activeCard.style.setProperty('--card-my', y + 'px');
             }, { passive: true });
 
-            viewport.addEventListener('mouseleave', function() {
+            viewport.addEventListener('mouseleave', function () {
                 var activeCard = deckWrap.querySelector('.vg-yt-deck-card.is-active');
                 if (activeCard) {
                     activeCard.style.transform = 'translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)';
@@ -248,12 +248,12 @@
         // Mobile Touch Swipe Navigation
         var touchStartX = 0;
         var touchStartY = 0;
-        deckWrap.addEventListener('touchstart', function(e) {
+        deckWrap.addEventListener('touchstart', function (e) {
             touchStartX = e.changedTouches[0].screenX;
             touchStartY = e.changedTouches[0].screenY;
         }, { passive: true });
 
-        deckWrap.addEventListener('touchend', function(e) {
+        deckWrap.addEventListener('touchend', function (e) {
             var diffX = e.changedTouches[0].screenX - touchStartX;
             var diffY = e.changedTouches[0].screenY - touchStartY;
 
@@ -269,7 +269,7 @@
         }, { passive: true });
 
         // Keyboard navigation (ArrowLeft / ArrowRight) when section is in viewport
-        window.addEventListener('keydown', function(e) {
+        window.addEventListener('keydown', function (e) {
             var rect = deckWrap.getBoundingClientRect();
             var inView = (rect.top < window.innerHeight && rect.bottom > 0);
             if (!inView) return;

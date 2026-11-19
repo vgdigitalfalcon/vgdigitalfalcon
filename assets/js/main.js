@@ -746,22 +746,32 @@ CSS TABLE OF CONTENTS
             }, { passive: true });
         });
 
-        //>> Inject Floating Cosmic Particles in Hero <<//
+        //>> Inject Subtle Floating Cosmic Micro-Dots in Hero <<//
         if ($(".vg-cosmic-particles").length) {
             const $particlesContainer = $(".vg-cosmic-particles");
-            for (let i = 0; i < 22; i++) {
-                const size = Math.random() * 4 + 2;
+            $particlesContainer.empty();
+            for (let i = 0; i < 28; i++) {
+                const size = Math.random() * 2 + 2; // 2px to 4px ultra-subtle
                 const top = Math.random() * 95;
                 const left = Math.random() * 98;
-                const duration = Math.random() * 6 + 6;
+                const duration = Math.random() * 8 + 8;
                 const delay = Math.random() * 5;
+                const isCyan = Math.random() > 0.5;
+                const color = isCyan ? 'rgba(34, 211, 238, 0.25)' : 'rgba(168, 85, 247, 0.25)';
+                const shadow = isCyan ? '0 0 6px rgba(34, 211, 238, 0.45)' : '0 0 6px rgba(168, 85, 247, 0.45)';
+                const opacity = (Math.random() * 0.15 + 0.15).toFixed(2); // 0.15 to 0.30 opacity
                 const $p = $('<div class="cosmic-particle"></div>').css({
+                    "position": "absolute",
                     "width": size + "px",
                     "height": size + "px",
+                    "border-radius": "50%",
+                    "background": color,
+                    "box-shadow": shadow,
+                    "pointer-events": "none",
                     "top": top + "%",
                     "left": left + "%",
-                    "animation-duration": duration + "s",
-                    "animation-delay": delay + "s"
+                    "opacity": opacity,
+                    "animation": `vgParticleDrift ${duration}s ease-in-out ${delay}s infinite alternate`
                 });
                 $particlesContainer.append($p);
             }

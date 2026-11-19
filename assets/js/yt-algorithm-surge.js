@@ -504,37 +504,7 @@
         ctx.arc(peakP.x, peakP.y, beaconSize, 0, Math.PI * 2);
         ctx.fill();
 
-        // Holographic Peak Pill Badge: "#1 BREAKOUT"
-        const badgeY = peakP.y - 28 * globalScale;
-        const badgeText = '#1 ALGO BREAKOUT';
-        ctx.font = '800 11px "Plus Jakarta Sans", sans-serif';
-        const textWidth = ctx.measureText(badgeText).width;
-        const badgePadX = 10;
-        const badgePadY = 5;
-
-        // Badge Pill Background
-        ctx.fillStyle = 'rgba(10, 6, 26, 0.85)';
-        ctx.strokeStyle = 'rgba(0, 240, 255, 0.7)';
-        ctx.lineWidth = 1.2;
-        ctx.shadowColor = '#00F0FF';
-        ctx.shadowBlur = 12;
-
-        ctx.beginPath();
-        const bx = peakP.x - textWidth / 2 - badgePadX;
-        const by = badgeY - 10;
-        const bw = textWidth + badgePadX * 2;
-        const bh = 20;
-        const br = 10;
-        ctx.roundRect(bx, by, bw, bh, br);
-        ctx.fill();
-        ctx.stroke();
-
-        // Badge Text
-        ctx.shadowBlur = 0;
-        ctx.fillStyle = '#00F0FF';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(badgeText, peakP.x, badgeY);
+        // Floating peak pill badge removed as requested
 
         ctx.restore();
       }
