@@ -15,7 +15,9 @@
     <link rel="canonical" href="https://vgdigitalfalcon.com/seo-service.html" />
 
     <!--<< Favicon >>-->
-    <link rel="shortcut icon" href="assets/img/dficon2.png">
+    <link rel="icon" type="image/png" href="assets/img/dficon2.png?v=2">
+    <link rel="shortcut icon" type="image/png" href="assets/img/dficon2.png?v=2">
+    <link rel="apple-touch-icon" href="assets/img/dficon2.png?v=2">
 
     <!--<< CSS Plugins >>-->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -28,7 +30,7 @@
 
     <!--<< Custom Theme & Color CSS >>-->
     <link rel="stylesheet" href="assets/css/main.css?v=60.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=89.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=100.0">
 
     <!-- Resource Hints & Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -359,7 +361,7 @@
     <section class="vg-seo-snapshot-section" id="seo-growth-snapshot">
         <div class="container">
             <!-- Section Header -->
-            <div class="text-center mb-4 pb-2">
+            <div class="text-center vg-seo-snapshot-header">
                 <div class="vg-seo-snapshot-badge wow fadeInUp" data-wow-delay=".1s">
                     <span class="vg-live-pulse-dot"></span>
                     <span>PROVEN PERFORMANCE METRICS</span>
@@ -373,7 +375,7 @@
             </div>
 
             <!-- 4 Metric Cards Grid -->
-            <div class="row g-4 justify-content-center">
+            <div class="row g-4 justify-content-center vg-seo-snapshot-cards-row">
                 <!-- Metric 1: Organic Traffic Growth -->
                 <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".15s">
                     <div class="vg-snapshot-card" style="--card-accent: #00F0FF; --card-accent-rgb: 0, 240, 255;">
@@ -951,7 +953,7 @@
                 <h3 class="text-white mt-2 wow fadeInUp" data-wow-delay=".2s" style="font-size: 26px; font-weight: 700;">SEO Tools We're Using</h3>
             </div>
             
-            <div class="swiper brand-slider">
+            <div class="swiper brand-slider tools-track marquee-wrapper">
                 <div class="swiper-wrapper align-items-center">
                     <div class="swiper-slide">
                         <div class="vg-tool-slide-box" style="--tool-glow: #38bdf8; --tool-glow-soft: rgba(56, 189, 248, 0.25);" title="Google Search Console">
@@ -1218,16 +1220,16 @@
     <section class="vg-seo-evolution-section" id="search-evolution">
         <div class="container">
             <!-- Section Header -->
-            <div class="text-center mx-auto mb-5" style="max-width: 960px;">
+            <div class="text-center mx-auto mb-5 vg-seo-evolution-header" style="max-width: 1180px;">
                 <span class="vg-pill-badge wow fadeInUp" data-wow-delay=".1s">
                     <i class="fa-solid fa-dna me-2"></i> Search Evolution
                 </span>
                 <h2 class="text-white mt-2 wow fadeInUp" data-wow-delay=".2s" style="font-size: 38px; font-weight: 800; line-height: 1.25;">
                     SEO Is Evolving. <span class="vg-gradient-text">Your Business Should Too.</span>
                 </h2>
-                <p class="wow fadeInUp" data-wow-delay=".3s" style="color: #cbd5e1; font-size: 15.5px; line-height: 1.6; max-width: 920px; margin: 10px auto 0;">
-                    Search is no longer just 10 blue links on Google. Generative AI summaries, LLMs, and conversational answer engines are transforming how customers find products.<br class="d-none d-md-block">
-                    Here is how our modern SEO architecture keeps your brand visible, cited, and converting.
+                <p class="wow fadeInUp vg-evo-desc" data-wow-delay=".3s">
+                    <span class="vg-evo-line vg-line-1">Search is no longer just 10 blue links on Google. Generative AI summaries, LLMs, and conversational answer engines are transforming how customers find products.</span>
+                    <span class="vg-evo-line vg-line-2">Here is how our modern SEO architecture keeps your brand visible, cited, and converting.</span>
                 </p>
             </div>
 
@@ -1338,20 +1340,20 @@
             </div>
 
             <!-- 6 Search Environments Section Header -->
-            <div class="text-center max-w-750 mx-auto mt-5 pt-3 mb-4">
+            <div class="text-center max-w-750 mx-auto mt-5 pt-3 vg-env-section-header">
                 <span class="vg-pill-badge wow fadeInUp" data-wow-delay=".1s">
                     <i class="fa-solid fa-network-wired me-2"></i> Multi-Engine Visibility
                 </span>
                 <h3 class="text-white mt-2 wow fadeInUp" data-wow-delay=".2s" style="font-size: 28px; font-weight: 700;">
                     We Optimize Your Brand Across All <span class="vg-gradient-text">6 Search Environments</span>
                 </h3>
-                <p class="wow fadeInUp" data-wow-delay=".3s" style="color: #94a3b8; font-size: 14.5px; margin-top: 6px;">
+                <p class="wow fadeInUp" data-wow-delay=".3s" style="color: #94a3b8; font-size: 14.5px; margin-top: 8px; margin-bottom: 0;">
                     Modern buyers use different tools at every stage of the decision journey. We ensure your brand dominates every touchpoint.
                 </p>
             </div>
 
             <!-- The 6 Modern Search Environments Grid -->
-            <div class="row g-4">
+            <div class="row g-4 vg-env-cards-row">
                 <!-- Environment 1: Traditional Google Search -->
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".1s">
                     <div class="vg-env-card">
@@ -1462,56 +1464,50 @@
             </div>
 
             <!-- Strategy Adaptation Engine: How Your SEO Strategy Adapts -->
-            <div class="vg-adaptation-box wow fadeInUp mt-5" data-wow-delay=".3s">
-                <div class="row align-items-center g-4">
+            <div class="vg-adaptation-box wow fadeInUp" data-wow-delay=".3s">
+                <div class="row align-items-center g-4 g-xl-5 vg-adapt-row">
                     <div class="col-lg-4">
-                        <div class="vg-adapt-badge">
-                            <i class="fa-solid fa-shield-halved text-cyan"></i>
-                            <span>ADAPTIVE SEO STRATEGY</span>
+                        <div class="vg-adapt-left-col pe-lg-2">
+                            <div class="vg-adapt-badge">
+                                <i class="fa-solid fa-shield-halved text-cyan"></i>
+                                <span>ADAPTIVE SEO STRATEGY</span>
+                            </div>
+                            <h3 class="text-white mt-2" style="font-size: 24px; font-weight: 800; line-height: 1.3;">
+                                How Our Strategy Adapts to Changing Search Behaviour
+                            </h3>
+                            <p style="color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 0;">
+                                We don’t fight AI search—we master it. By combining traditional Google Page 1 authority with Generative Engine Optimization (GEO), we ensure your business never loses organic market share.
+                            </p>
                         </div>
-                        <h3 class="text-white mt-2" style="font-size: 24px; font-weight: 800;">
-                            How Our Strategy Adapts to Changing Search Behaviour
-                        </h3>
-                        <p style="color: #94a3b8; font-size: 14px; line-height: 1.6; margin-bottom: 0;">
-                            We don’t fight AI search—we master it. By combining traditional Google Page 1 authority with Generative Engine Optimization (GEO), we ensure your business never loses organic market share.
-                        </p>
                     </div>
                     <div class="col-lg-8">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="vg-adapt-pillar">
-                                    <div class="vg-adapt-num">01</div>
-                                    <div>
-                                        <h5 class="text-white mb-1" style="font-size: 15px; font-weight: 700;">Entity-First Knowledge Graphs</h5>
-                                        <p style="color: #94a3b8; font-size: 12.5px; line-height: 1.5; margin: 0;">We build semantic entity structures so AI engines recognize your brand as the definitive authority in your niche.</p>
-                                    </div>
+                        <div class="vg-adapt-grid">
+                            <div class="vg-adapt-pillar">
+                                <div class="vg-adapt-num">01</div>
+                                <div class="vg-adapt-body">
+                                    <h5 class="text-white mb-1" style="font-size: 15px; font-weight: 700; line-height: 1.35;">Entity-First Knowledge Graphs</h5>
+                                    <p style="color: #94a3b8; font-size: 12.5px; line-height: 1.5; margin: 0;">We build semantic entity structures so AI engines recognize your brand as the definitive authority in your niche.</p>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="vg-adapt-pillar">
-                                    <div class="vg-adapt-num">02</div>
-                                    <div>
-                                        <h5 class="text-white mb-1" style="font-size: 15px; font-weight: 700;">Information Gain Engineering</h5>
-                                        <p style="color: #94a3b8; font-size: 12.5px; line-height: 1.5; margin: 0;">AI summarizes generic web content. We inject proprietary data, case studies, and original insights that AI must cite.</p>
-                                    </div>
+                            <div class="vg-adapt-pillar">
+                                <div class="vg-adapt-num">02</div>
+                                <div class="vg-adapt-body">
+                                    <h5 class="text-white mb-1" style="font-size: 15px; font-weight: 700; line-height: 1.35;">Information Gain Engineering</h5>
+                                    <p style="color: #94a3b8; font-size: 12.5px; line-height: 1.5; margin: 0;">AI summarizes generic web content. We inject proprietary data, case studies, and original insights that AI must cite.</p>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="vg-adapt-pillar">
-                                    <div class="vg-adapt-num">03</div>
-                                    <div>
-                                        <h5 class="text-white mb-1" style="font-size: 15px; font-weight: 700;">Multi-Source Digital PR</h5>
-                                        <p style="color: #94a3b8; font-size: 12.5px; line-height: 1.5; margin: 0;">We distribute authoritative brand mentions across publications and review ecosystems crawled by LLM training pipelines.</p>
-                                    </div>
+                            <div class="vg-adapt-pillar">
+                                <div class="vg-adapt-num">03</div>
+                                <div class="vg-adapt-body">
+                                    <h5 class="text-white mb-1" style="font-size: 15px; font-weight: 700; line-height: 1.35;">Multi-Source Digital PR</h5>
+                                    <p style="color: #94a3b8; font-size: 12.5px; line-height: 1.5; margin: 0;">We distribute authoritative brand mentions across publications and review ecosystems crawled by LLM training pipelines.</p>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="vg-adapt-pillar">
-                                    <div class="vg-adapt-num">04</div>
-                                    <div>
-                                        <h5 class="text-white mb-1" style="font-size: 15px; font-weight: 700;">Dual Capture (SERP + AI Citations)</h5>
-                                        <p style="color: #94a3b8; font-size: 12.5px; line-height: 1.5; margin: 0;">Double your reach: retain 100% of standard Google clicks while commanding the #1 highlighted citation inside AI Overviews.</p>
-                                    </div>
+                            <div class="vg-adapt-pillar">
+                                <div class="vg-adapt-num">04</div>
+                                <div class="vg-adapt-body">
+                                    <h5 class="text-white mb-1" style="font-size: 15px; font-weight: 700; line-height: 1.35;">Dual Capture (SERP + AI Citations)</h5>
+                                    <p style="color: #94a3b8; font-size: 12.5px; line-height: 1.5; margin: 0;">Double your reach: retain 100% of standard Google clicks while commanding the #1 highlighted citation inside AI Overviews.</p>
                                 </div>
                             </div>
                         </div>
@@ -1543,7 +1539,7 @@
             </div>
 
             <!-- Step Cards Row 1 -->
-            <div class="row g-4 mb-4">
+            <div class="row g-4 vg-seo-steps-row">
                 <!-- Step 1: Audit & Analysis -->
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div class="vg-seo-step-card">
@@ -1643,13 +1639,13 @@
             </div>
 
             <!-- Algorithm Phase 2 Header -->
-            <div class="vg-phase-header wow fadeInUp mt-4" data-wow-delay=".15s">
+            <div class="vg-phase-header vg-phase-2-header wow fadeInUp" data-wow-delay=".15s">
                 <span class="vg-phase-badge vg-phase-badge-2"><i class="fa-solid fa-rocket"></i> Phase 2: Execution, Onboarding &amp; Scaling (Months 2–6)</span>
                 <div class="vg-phase-line"></div>
             </div>
 
             <!-- Step Cards Row 2 -->
-            <div class="row g-4">
+            <div class="row g-4 vg-seo-steps-row">
                 <!-- Step 4: Strategy Explanation Call -->
                 <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
                     <div class="vg-seo-step-card">
@@ -2327,12 +2323,6 @@
         </div>
     </footer>
 
-        <!-- Floating Top-Right "Get Free Site Audit" Action Button -->
-    <a href="#free-seo-audit" id="vg-floating-audit-btn" class="vg-floating-top-audit-btn" title="Get Free Site Audit">
-        <span class="vg-floating-audit-text">Get Free Site Audit</span>
-        <i class="fa-solid fa-arrow-right vg-floating-audit-arrow"></i>
-    </a>
-
     <!-- Floating WhatsApp Radar Button -->
     <a href="https://wa.me/917010463050?text=Hi%20VG%20Digital%20Falcon%2C%20I'm%20interested%20in%20scaling%20my%20business%20with%20AI%20marketing." target="_blank" class="vg-floating-whatsapp" title="Chat on WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
@@ -2401,34 +2391,6 @@
             });
 
             // Smooth FAQ active item highlighting
-            
-            // Smooth scroll & focus for floating "Get Free Site Audit" button
-            var floatingAuditBtn = document.getElementById('vg-floating-audit-btn');
-            if (floatingAuditBtn) {
-                floatingAuditBtn.addEventListener('click', function(e) {
-                    var target = document.getElementById('free-seo-audit');
-                    if (target) {
-                        e.preventDefault();
-                        var headerOffset = 90;
-                        var elementPosition = target.getBoundingClientRect().top;
-                        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-                        
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-
-                        target.classList.remove('vg-audit-highlight-pulse');
-                        void target.offsetWidth;
-                        target.classList.add('vg-audit-highlight-pulse');
-
-                        setTimeout(function() {
-                            var input = target.querySelector('input#name');
-                            if (input) input.focus();
-                        }, 600);
-                    }
-                });
-            }
 
             var faqItems = document.querySelectorAll('#vgSeoFaqAccordion .vg-faq-item');
             faqItems.forEach(function(item) {

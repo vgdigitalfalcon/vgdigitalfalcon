@@ -10537,7 +10537,7 @@ canvas {
 .vg-seo-hero {
   position: relative !important;
   background: radial-gradient(circle at 50% 15%, rgba(124, 58, 237, 0.16) 0%, rgba(9, 6, 18, 0.98) 65%, #07070F 100%), #07070F !important;
-  padding: 140px 0 90px;
+  padding: 65px 0 65px;
   overflow: hidden !important;
   border-bottom: 1px solid rgba(168, 85, 247, 0.18);
   z-index: 1 !important;
@@ -10615,8 +10615,8 @@ canvas {
   position: relative;
   background: rgba(18, 10, 36, 0.85);
   border: 1px solid rgba(168, 85, 247, 0.35);
-  border-radius: 24px;
-  padding: 32px 28px;
+  border-radius: 20px;
+  padding: 24px 24px 20px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 35px rgba(124, 58, 237, 0.2);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
@@ -10637,7 +10637,7 @@ canvas {
   font-weight: 800;
   color: #ffffff;
   text-align: center;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   letter-spacing: -0.3px;
 }
 
@@ -10645,11 +10645,11 @@ canvas {
   font-size: 13px;
   color: #94a3b8;
   text-align: center;
-  margin-bottom: 22px;
+  margin-bottom: 14px;
 }
 
 .vg-seo-form-group {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .vg-seo-form-group label {
@@ -10657,7 +10657,7 @@ canvas {
   font-size: 13px;
   font-weight: 600;
   color: #cbd5e1;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
   letter-spacing: 0.2px;
 }
 
@@ -10667,7 +10667,7 @@ canvas {
   border: 1px solid rgba(168, 85, 247, 0.3);
   border-radius: 12px;
   color: #ffffff;
-  padding: 12px 16px;
+  padding: 10px 14px;
   font-size: 14px;
   font-family: inherit;
   transition: all 0.25s ease;
@@ -10694,7 +10694,7 @@ canvas {
   font-weight: 700 !important;
   border: none !important;
   border-radius: 12px !important;
-  padding: 14px 20px !important;
+  padding: 12px 18px !important;
   cursor: pointer !important;
   box-shadow: 0 8px 25px rgba(124, 58, 237, 0.45), 0 0 15px rgba(0, 240, 255, 0.25) !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
@@ -10702,7 +10702,7 @@ canvas {
   align-items: center !important;
   justify-content: center !important;
   gap: 10px !important;
-  margin-top: 8px !important;
+  margin-top: 4px !important;
   text-decoration: none !important;
   letter-spacing: 0.3px !important;
 }
@@ -10722,12 +10722,28 @@ canvas {
   transform: rotate(90deg) !important;
 }
 
-/* 2. SEO Tools Section */
+/* 2. SEO Tools Section & Tech Stack Marquee / Slider */
 .vg-seo-tools-section {
   position: relative;
   background: #090317;
   padding: 55px 0 65px;
   border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+.vg-seo-tools-section .brand-slider,
+.vg-seo-tools-section .tools-track,
+.vg-seo-tools-section .marquee-wrapper,
+.tools-track,
+.marquee-wrapper {
+  overflow-x: hidden !important;
+  padding-top: 18px !important;
+  padding-bottom: 18px !important;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.vg-seo-tools-section .swiper-wrapper {
+  align-items: center;
 }
 
 .vg-tool-slide-box {
@@ -11165,7 +11181,7 @@ canvas {
 /* Mobile Media Queries */
 @media (max-width: 991px) {
   .vg-seo-hero {
-    padding: 110px 0 65px;
+    padding: 55px 0 50px;
   }
 
   .vg-seo-hero-title {
@@ -11187,7 +11203,7 @@ canvas {
 
 @media (max-width: 767px) {
   .vg-seo-hero {
-    padding: 95px 0 50px;
+    padding: 45px 0 40px;
   }
 
   .vg-seo-hero-title {
@@ -11233,7 +11249,7 @@ canvas {
   border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: 999px;
   padding: 6px 14px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 12px rgba(56, 189, 248, 0.2);
   width: 100%;
   justify-content: space-between;
@@ -11550,10 +11566,18 @@ canvas {
 
 /* 5. How SEO Works 6-Stage Algorithm Execution Pipeline */
 .vg-phase-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 22px;
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin-top: 0 !important;
+  margin-bottom: 24px !important;
+}
+
+.vg-phase-header.vg-phase-2-header,
+.vg-phase-header.phase-2-header {
+  margin-top: 48px !important;
+  margin-bottom: 24px !important;
 }
 
 .vg-phase-badge {
@@ -11566,6 +11590,8 @@ canvas {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  position: relative;
+  z-index: 2;
 }
 
 .vg-phase-badge-1 {
@@ -11584,6 +11610,19 @@ canvas {
   flex-grow: 1;
   height: 1px;
   background: linear-gradient(90deg, rgba(168, 85, 247, 0.3), transparent);
+}
+
+/* Process Section Step Cards Rows - Cancel negative margin-top */
+.vg-seo-process-section .row,
+.vg-seo-steps-row {
+  --bs-gutter-y: 0 !important;
+  margin-top: 0 !important;
+  position: relative !important;
+}
+
+.vg-seo-process-section .row > [class*="col-"],
+.vg-seo-steps-row > [class*="col-"] {
+  margin-top: 0 !important;
 }
 
 .vg-step-glow-circle {
@@ -14531,12 +14570,20 @@ body.vg-webdev-page,
   margin-bottom: 10px;
 }
 
+.vg-seo-snapshot-header {
+  margin-bottom: 46px !important;
+}
+
 .vg-seo-snapshot-desc {
   font-size: 15.5px;
   color: #94a3b8;
   max-width: 660px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.vg-seo-snapshot-cards-row {
+  margin-top: 6px;
 }
 
 /* 4 Metric Cards */
@@ -15298,9 +15345,16 @@ body.vg-webdev-page,
 .vg-ai-intel-desc {
   font-size: 13.5px;
   color: #94a3b8;
-  max-width: 650px;
+  max-width: 950px;
   margin: 0 auto;
   line-height: 1.5;
+}
+
+@media (min-width: 992px) {
+  .vg-ai-intel-desc {
+    white-space: nowrap;
+    max-width: none;
+  }
 }
 
 /* ==========================================================================
@@ -16614,6 +16668,31 @@ body.vg-webdev-page,
   z-index: 2 !important;
 }
 
+/* Search Evolution Header & 2-Line Subtitle */
+.vg-seo-evolution-header {
+  max-width: 1180px;
+}
+
+.vg-evo-desc {
+  color: #cbd5e1;
+  font-size: clamp(13.5px, 0.98vw, 15px);
+  line-height: 1.65;
+  max-width: 1160px;
+  margin: 12px auto 0;
+}
+
+.vg-evo-line {
+  display: block;
+}
+
+@media (min-width: 1200px) {
+  .vg-evo-desc .vg-line-1,
+  .vg-evo-desc .vg-line-2 {
+    white-space: nowrap;
+  }
+}
+
+
 /* Evolution Stage Layout */
 .vg-evolution-stage-wrap {
   margin-top: 25px;
@@ -16973,6 +17052,20 @@ body.vg-webdev-page,
 }
 
 /* 6 Search Environments Cards */
+.vg-env-section-header {
+  margin-bottom: 52px !important;
+}
+
+.vg-env-cards-row {
+  margin-top: 12px;
+}
+
+@media (max-width: 767px) {
+  .vg-env-section-header {
+    margin-bottom: 34px !important;
+  }
+}
+
 .vg-env-card {
   background: rgba(13, 8, 28, 0.85);
   border: 1px solid rgba(168, 85, 247, 0.22);
@@ -17068,11 +17161,53 @@ body.vg-webdev-page,
 
 /* Adaptation Strategy Container */
 .vg-adaptation-box {
-  background: radial-gradient(circle at 10% 50%, rgba(0, 240, 255, 0.08) 0%, rgba(13, 8, 28, 0.95) 70%);
-  border: 1px solid rgba(0, 240, 255, 0.25);
-  border-radius: 22px;
-  padding: 32px 30px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+  position: relative !important;
+  height: auto !important;
+  overflow: hidden !important;
+  margin-top: 64px !important;
+  padding: 36px 40px !important;
+  background: radial-gradient(circle at 10% 50%, rgba(0, 240, 255, 0.08) 0%, rgba(13, 8, 28, 0.95) 70%) !important;
+  border: 1px solid rgba(0, 240, 255, 0.28) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6) !important;
+  box-sizing: border-box !important;
+}
+
+.vg-adaptation-box .row,
+.vg-adaptation-box .vg-adapt-row {
+  --bs-gutter-y: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  align-items: center !important;
+}
+
+.vg-adaptation-box .row > [class*="col-"],
+.vg-adaptation-box .vg-adapt-row > [class*="col-"] {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 991px) {
+  .vg-adaptation-box {
+    margin-top: 48px !important;
+    padding: 28px 24px !important;
+    border-radius: 20px !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .vg-adaptation-box {
+    margin-top: 36px !important;
+    padding: 24px 18px !important;
+    border-radius: 16px !important;
+  }
+}
+
+.vg-adapt-left-col {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  height: 100% !important;
 }
 
 .vg-adapt-badge {
@@ -17089,22 +17224,60 @@ body.vg-webdev-page,
   padding: 4px 12px;
 }
 
+/* 2x2 Grid for Pillar Cards with Equal Height and Uniform Gaps */
+.vg-adapt-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  align-items: stretch !important;
+  gap: 16px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+@media (max-width: 767px) {
+  .vg-adapt-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+}
+
 .vg-adapt-pillar {
-  display: flex;
-  gap: 12px;
-  background: rgba(10, 6, 22, 0.7);
-  border: 1px solid rgba(168, 85, 247, 0.18);
-  border-radius: 12px;
-  padding: 14px 16px;
-  height: 100%;
+  display: flex !important;
+  gap: 12px !important;
+  background: rgba(10, 6, 22, 0.75) !important;
+  border: 1px solid rgba(168, 85, 247, 0.2) !important;
+  border-radius: 14px !important;
+  padding: 16px 18px !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  align-items: flex-start !important;
+  margin: 0 !important;
+  transform: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.vg-adapt-pillar:hover {
+  background: rgba(16, 10, 34, 0.9) !important;
+  border-color: rgba(0, 240, 255, 0.4) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.12) !important;
 }
 
 .vg-adapt-num {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 800;
   font-family: monospace;
   color: #00F0FF;
-  opacity: 0.85;
+  opacity: 0.9;
+  line-height: 1.2;
+  padding-top: 1px;
+  flex-shrink: 0;
+}
+
+.vg-adapt-body {
+  flex: 1;
+  min-width: 0;
 }
 
 /* ==========================================================================
@@ -17273,6 +17446,7 @@ body.vg-webdev-page,
    FLOATING TOP-RIGHT "GET FREE SITE AUDIT" ACTION BUTTON
    ========================================================================== */
 .vg-floating-top-audit-btn {
+  display: none !important;
   position: fixed !important;
   top: 92px !important;
   right: 28px !important;
