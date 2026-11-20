@@ -78,8 +78,7 @@
                     <div class="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
                         <div class="offcanvas__logo">
                             <a href="index.html" class="vg-brand-wrap">
-                                <img src="assets/img/logo/dflogo-white.png?v=2" alt="VG Digital Falcon Logo"
-                                    class="vg-header-brand-logo">
+                                <img src="assets/images/vg-digital-falcon-logo.png" alt="VG Digital Falcon - Group of Vilvaa Guru" class="vg-header-brand-logo">
                             </a>
                         </div>
                         <div class="offcanvas__close">
@@ -152,7 +151,7 @@
         <div class="vg-nav-container">
             <!-- Brand Logo -->
             <a href="index.html" class="vg-brand-wrap" aria-label="VG Digital Falcon Homepage">
-                <img src="assets/img/logo/dflogo-white.png?v=2" alt="VG Digital Falcon Logo" class="vg-header-brand-logo">
+                <img src="assets/images/vg-digital-falcon-logo.png" alt="VG Digital Falcon - Group of Vilvaa Guru" class="vg-header-brand-logo">
             </a>
 
             <!-- Navigation Links -->
@@ -160,98 +159,76 @@
                 <ul class="vg-nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about-us.html">About Us</a></li>
-                    <li>
-                        <a href="index.html#services" class="active">Services <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
-                        <ul class="vg-dropdown-menu">
-                            <li>
-                                <a href="digital-marketing-service.html" class="vg-dropdown-item">
-                                    <div class="vg-dd-icon-box">
-                                        <i class="fa-solid fa-chart-line"></i>
-                                    </div>
-                                    <div class="vg-dd-content">
-                                        <span class="vg-dd-title">Digital Marketing</span>
-                                        <span class="vg-dd-desc">Digital Marketing Service</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="seo-service.html" class="vg-dropdown-item">
-                                    <div class="vg-dd-icon-box">
-                                        <i class="fa-solid fa-bolt"></i>
-                                    </div>
-                                    <div class="vg-dd-content">
-                                        <span class="vg-dd-title">SEO</span>
-                                        <span class="vg-dd-desc">SEO Service</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="web-development.html" class="vg-dropdown-item">
-                                    <div class="vg-dd-icon-box">
-                                        <i class="fa-solid fa-laptop-code"></i>
-                                    </div>
-                                    <div class="vg-dd-content">
-                                        <span class="vg-dd-title">Web Development</span>
-                                        <span class="vg-dd-desc">Website Development Service</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="performance-marketing.html" class="vg-dropdown-item">
-                                    <div class="vg-dd-icon-box">
-                                        <i class="fa-solid fa-bullseye"></i>
-                                    </div>
-                                    <div class="vg-dd-content">
-                                        <span class="vg-dd-title">Performance Marketing</span>
-                                        <span class="vg-dd-desc">Performance Marketing Service</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="social-media-optimization-agency.html" class="vg-dropdown-item">
-                                    <div class="vg-dd-icon-box">
-                                        <i class="fa-solid fa-share-nodes"></i>
-                                    </div>
-                                    <div class="vg-dd-content">
-                                        <span class="vg-dd-title">SMO</span>
-                                        <span class="vg-dd-desc">SMO Service</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="personal-branding-service.html" class="vg-dropdown-item">
-                                    <div class="vg-dd-icon-box">
-                                        <i class="fa-solid fa-user-tie"></i>
-                                    </div>
-                                    <div class="vg-dd-content">
-                                        <span class="vg-dd-title">Personal Branding</span>
-                                        <span class="vg-dd-desc">Personal Branding Service</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="youtube-seo-agency.html" class="vg-dropdown-item active">
-                                    <div class="vg-dd-icon-box">
-                                        <i class="fa-brands fa-youtube"></i>
-                                    </div>
-                                    <div class="vg-dd-content">
-                                        <span class="vg-dd-title">YouTube SEO</span>
-                                        <span class="vg-dd-desc">YouTube SEO Service</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="ecommerce-seo-service.html" class="vg-dropdown-item">
-                                    <div class="vg-dd-icon-box">
-                                        <i class="fa-solid fa-cart-shopping"></i>
-                                    </div>
-                                    <div class="vg-dd-content">
-                                        <span class="vg-dd-title">Ecommerce SEO</span>
-                                        <span class="vg-dd-desc">Ecommerce SEO Service</span>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+                                        <li class="nav-item-dropdown has-dropdown">
+                        <a href="#services" class="vg-nav-link-services" role="button" aria-expanded="false" aria-haspopup="true">Services <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                        <div class="vg-dropdown-menu services-dropdown">
+                            <ul class="services-dropdown-grid vg-services-pills-grid">
+                                <li>
+                                    <a href="digital-marketing-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-chart-line"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Digital Marketing</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="seo-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-bolt"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">SEO</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="web-development.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-laptop-code"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Web Development</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="performance-marketing.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-bullseye"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Performance Marketing</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="social-media-optimization-agency.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-share-nodes"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">SMO</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="personal-branding-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-user-tie"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Personal Branding</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="youtube-seo-agency.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-brands fa-youtube"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">YouTube SEO</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="ecommerce-seo-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Ecommerce SEO</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                     <li><a href="index.html#case-studies">Case Studies</a></li>
                     <li><a href="index.html#insights">Insights</a></li>
@@ -1416,8 +1393,7 @@
                 <!-- Col 1: Brand Info -->
                 <div class="vg-footer-col brand-col">
                     <a href="index.html" class="vg-brand-wrap mb-3 d-inline-block">
-                        <img src="assets/img/logo/dflogo-white.png?v=2" alt="VG Digital Falcon Logo"
-                            class="vg-header-brand-logo">
+                        <img src="assets/images/vg-digital-falcon-logo.png" alt="VG Digital Falcon - Group of Vilvaa Guru" class="vg-header-brand-logo">
                     </a>
                     <p style="color: #cbd5e1; font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
                         VG Digital Falcon is an AI-powered growth marketing agency. We engineer predictable, compounding

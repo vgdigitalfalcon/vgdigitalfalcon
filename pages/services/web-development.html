@@ -61,6 +61,39 @@
             })(window, document, "clarity", "script", "xdwd8oxpkn");
         });
     </script>
+    <style>
+        /* Web Development Hero Section Spacing & Vertical Alignment */
+        .vg-webdev-hero,
+        section.vg-webdev-hero {
+            padding: 136px 0 80px !important;
+            min-height: 92vh !important;
+            display: flex !important;
+            align-items: center !important;
+            box-sizing: border-box !important;
+        }
+        .vg-webdev-hero > .container,
+        .vg-webdev-hero .container {
+            width: 100% !important;
+            position: relative !important;
+            z-index: 2 !important;
+        }
+        .vg-webdev-hero .row {
+            align-items: center !important;
+            width: 100% !important;
+        }
+        .vg-webdev-hero .vg-seo-audit-card {
+            margin-top: 0 !important;
+            transform: none !important;
+        }
+        @media (max-width: 991px) {
+            .vg-webdev-hero,
+            section.vg-webdev-hero {
+                padding: 110px 0 60px !important;
+                min-height: auto !important;
+                display: block !important;
+            }
+        }
+    </style>
 </head>
 <body class="vg-webdev-page">
 
@@ -158,20 +191,77 @@
                 <ul class="vg-nav-links">
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="../about-us.html">About Us</a></li>
-                    <li>
-                        <a href="../index.html#services" class="active">Services <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
-                        <ul class="vg-dropdown-menu">
-                            <li>
-                                <a href="digital-marketing-service.html" class="vg-dropdown-item">
-                                    <div class="vg-dd-icon-box">
-                                        <i class="fa-solid fa-chart-line"></i>
-                                    </div>
-                                    <div class="vg-dd-content">
-                                        <span class="vg-dd-title">Digital Marketing</span>
-                                        <span class="vg-dd-desc">Digital Marketing Service</span>
-                                    </div>
-                                </a>
-                            </li>
+                                        <li class="nav-item-dropdown has-dropdown">
+                        <a href="#services" class="vg-nav-link-services" role="button" aria-expanded="false" aria-haspopup="true">Services <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                        <div class="vg-dropdown-menu services-dropdown">
+                            <ul class="services-dropdown-grid vg-services-pills-grid">
+                                <li>
+                                    <a href="digital-marketing-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-chart-line"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Digital Marketing</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="seo-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-bolt"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">SEO</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="web-development.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-laptop-code"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Web Development</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="performance-marketing.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-bullseye"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Performance Marketing</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="social-media-optimization-agency.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-share-nodes"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">SMO</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="personal-branding-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-user-tie"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Personal Branding</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="youtube-seo-agency.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-brands fa-youtube"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">YouTube SEO</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="ecommerce-seo-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Ecommerce SEO</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
                             <li>
                                 <a href="seo-service.html" class="vg-dropdown-item">
                                     <div class="vg-dd-icon-box">
@@ -272,12 +362,12 @@
     <!-- ==========================================================================
          HERO SECTION: WEBSITE DEVELOPMENT (CYBERNETIC DARK THEME WITH 3D CANVAS & LEAD FORM)
          ========================================================================== -->
-    <section class="vg-webdev-hero">
+    <section class="vg-webdev-hero" style="padding: 136px 0 80px !important; min-height: 92vh !important; display: flex !important; align-items: center !important;">
         <!-- Interactive 3D Isometric Wireframe Architecture & Code Particle Mesh Canvas (Scoped to Hero) -->
         <canvas id="vg-webdev-hero-canvas" class="vg-webdev-hero-canvas"></canvas>
 
         <div class="container position-relative" style="z-index: 2;">
-            <div class="row align-items-center g-5">
+            <div class="row align-items-center g-5" style="align-items: center !important; width: 100% !important;">
                 <!-- Left Hero Content -->
                 <div class="col-lg-7">
                     <!-- Breadcrumb Navigation -->
@@ -335,7 +425,7 @@
 
                 <!-- Right Hero Lead Form Card (100% Fields & Actions Preserved) -->
                 <div class="col-lg-5 wow fadeInUp" data-wow-delay=".35s">
-                    <div class="vg-seo-audit-card">
+                    <div class="vg-seo-audit-card" style="margin-top: 0 !important; transform: none !important;">
                         <!-- High-Tech Moving Laser Scanline Beam -->
                         <div class="vg-scanline-beam"></div>
 

@@ -866,6 +866,94 @@ CSS TABLE OF CONTENTS
             });
         }
 
+        //>> Services Dropdown Grace Delay (200ms) & Click-Toggle Handler <<//
+        (function initServicesDropdown() {
+            var $dropdowns = $(".nav-item-dropdown, .vg-nav-links > li:has(.services-dropdown), .vg-nav-links > li:has(.vg-dropdown-menu)");
+            var closeTimer = null;
+
+            $dropdowns.each(function() {
+                var $item = $(this);
+                var $trigger = $item.children("a");
+
+                // Mouse Enter: Clear any active close timeout & reveal instantly
+                $item.on("mouseenter", function() {
+                    if (closeTimer) {
+                        clearTimeout(closeTimer);
+                        closeTimer = null;
+                    }
+                    $dropdowns.not($item).removeClass("hover-open");
+                    $item.addClass("hover-open");
+                });
+
+                // Mouse Leave: 200ms grace delay before closing so cursor movement never breaks hover
+                $item.on("mouseleave", function() {
+                    if (closeTimer) {
+                        clearTimeout(closeTimer);
+                    }
+                    closeTimer = setTimeout(function() {
+                        $item.removeClass("hover-open");
+                        closeTimer = null;
+                    }, 200);
+                });
+
+                // Click Toggle on Services ▾ for mouse & trackpad users
+                $trigger.on("click", function(e) {
+                    if (window.innerWidth >= 1200) {
+                        var href = $(this).attr("href");
+                        if (!href || href === "#" || href.indexOf("#services") !== -1 || href === "service.html") {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            var isActive = $item.hasClass("active");
+                            $dropdowns.removeClass("active hover-open");
+                            if (!isActive) {
+                                $item.addClass("active");
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Live Interactive Preview Card on Hover
+            $(document).on("mouseenter", ".vg-services-pills-grid .services-dropdown-item", function() {
+                var $el = $(this);
+                var title = $el.attr("data-title");
+                var desc = $el.attr("data-desc");
+                var metric = $el.attr("data-metric");
+                var icon = $el.attr("data-icon");
+                var href = $el.attr("data-href");
+
+                $(".vg-services-pills-grid .services-dropdown-item").removeClass("is-previewing");
+                $el.addClass("is-previewing");
+
+                var $card = $("#vg-service-preview-card");
+                if ($card.length && title) {
+                    $card.addClass("updating");
+                    setTimeout(function() {
+                        $("#vg-preview-title").text(title);
+                        $("#vg-preview-desc").text(desc);
+                        $("#vg-preview-metric").text(metric);
+                        $("#vg-preview-icon").html('<i class="' + icon + '"></i>');
+                        $("#vg-preview-link").attr("href", href);
+                        $card.removeClass("updating");
+                    }, 50);
+                }
+            });
+
+            // Click outside closes any active dropdown
+            $(document).on("click", function(e) {
+                if (!$(e.target).closest(".nav-item-dropdown, .services-dropdown, .vg-dropdown-menu").length) {
+                    $dropdowns.removeClass("active hover-open");
+                }
+            });
+
+            // Escape key closes any active dropdown
+            $(document).on("keydown", function(e) {
+                if (e.key === "Escape") {
+                    $dropdowns.removeClass("active hover-open");
+                }
+            });
+        })();
+
     }); // End Document Ready Function
 
     function loader() {
