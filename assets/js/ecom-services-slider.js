@@ -46,24 +46,19 @@
         clickable: true
       },
       breakpoints: {
-        576: {
-          slidesPerView: 1.3,
-          spaceBetween: 20,
+        0: {
+          slidesPerView: 1,
+          spaceBetween: 16,
           centeredSlides: true
         },
-        768: {
+        680: {
           slidesPerView: 2,
           spaceBetween: 24,
-          centeredSlides: true
+          centeredSlides: false
         },
-        992: {
-          slidesPerView: 2.6,
-          spaceBetween: 26,
-          centeredSlides: true
-        },
-        1200: {
+        1024: {
           slidesPerView: 3,
-          spaceBetween: 30,
+          spaceBetween: 24,
           centeredSlides: true
         }
       }

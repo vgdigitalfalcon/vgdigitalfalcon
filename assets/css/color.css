@@ -28328,3 +28328,149 @@ ul.vg-services-pills-grid {
   margin-top: 4px !important;
   line-height: 1.3 !important;
 }
+
+/* =============================================================================
+   ECOMMERCE SEO SERVICES OVERVIEW: ZOOM-SAFE FLUID CAROUSEL & CARDS
+   ============================================================================= */
+.vg-seo-services-section {
+  position: relative !important;
+  padding: 85px 0 !important;
+  background: radial-gradient(circle at 50% 10%, rgba(168, 85, 247, 0.08) 0%, transparent 60%), #070212 !important;
+  overflow: visible !important;
+}
+
+.vg-seo-services-section .container {
+  overflow: visible !important;
+}
+
+/* Outer carousel track / cards wrapper: Prevent Vertical Border & Glow Clipping */
+.vg-ecom-services-slider,
+.swiper.vg-ecom-services-slider {
+  position: relative !important;
+  width: 100% !important;
+  padding-top: 18px !important;
+  padding-bottom: 24px !important;
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+  box-sizing: border-box !important;
+}
+
+.vg-ecom-services-slider .swiper-wrapper {
+  position: relative !important;
+  width: 100% !important;
+  overflow: visible !important;
+  padding: 4px 0 !important;
+  display: flex !important;
+  align-items: stretch !important;
+  box-sizing: border-box !important;
+}
+
+/* Fluid responsive slide cards across viewports & zoom scales */
+.vg-ecom-services-slider .swiper-slide {
+  height: auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+  overflow: visible !important;
+  min-width: 0 !important;
+}
+
+@media (min-width: 1024px) {
+  .vg-ecom-services-slider .swiper-slide {
+    flex: 0 0 calc((100% - 48px) / 3) !important;
+    max-width: calc((100% - 48px) / 3) !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 1023px) and (min-width: 680px) {
+  .vg-ecom-services-slider .swiper-slide {
+    flex: 0 0 calc((100% - 24px) / 2) !important;
+    max-width: calc((100% - 24px) / 2) !important;
+    box-sizing: border-box !important;
+  }
+}
+
+@media (max-width: 679px) {
+  .vg-ecom-services-slider .swiper-slide {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Service Card Styling with Zero Clipping */
+.vg-ecom-service-card {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  height: 100% !important;
+  min-height: 230px !important;
+  background: rgba(14, 8, 32, 0.82) !important;
+  border: 1px solid rgba(168, 85, 247, 0.25) !important;
+  border-radius: 18px !important;
+  padding: 28px 24px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+}
+
+/* Elevated/Zoomed Center Active Card & Hover */
+.vg-ecom-services-slider .swiper-slide-active .vg-ecom-service-card,
+.vg-ecom-services-slider .swiper-slide.swiper-slide-active .vg-ecom-service-card,
+.vg-ecom-service-card:hover {
+  transform: translateY(-8px) !important;
+  border-color: #00F0FF !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.7), 0 0 26px rgba(0, 240, 255, 0.32) !important;
+  background: rgba(22, 12, 48, 0.94) !important;
+}
+
+/* Pagination Dots */
+.vg-services-dot {
+  margin-top: 16px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative !important;
+  z-index: 5 !important;
+  clear: both !important;
+}
+
+.vg-services-dot .dot,
+.vg-services-dot .swiper-pagination {
+  position: relative !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: auto !important;
+}
+
+.vg-services-dot .swiper-pagination-bullet,
+.vg-services-dot .dot span {
+  width: 9px !important;
+  height: 9px !important;
+  border-radius: 50% !important;
+  background: rgba(168, 85, 247, 0.35) !important;
+  opacity: 1 !important;
+  transition: all 0.25s ease !important;
+  cursor: pointer !important;
+  margin: 0 4px !important;
+  display: inline-block !important;
+}
+
+.vg-services-dot .swiper-pagination-bullet-active,
+.vg-services-dot .dot span.active {
+  width: 26px !important;
+  border-radius: 999px !important;
+  background: linear-gradient(135deg, #00F0FF, #A855F7) !important;
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.6) !important;
+}
