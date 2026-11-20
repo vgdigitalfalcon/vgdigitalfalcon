@@ -27958,3 +27958,103 @@ body.vg-smo-page .vg-smo-hero-subtitle {
     padding: 6px 12px !important;
   }
 }
+
+
+/* =============================================================================
+   SERVICES MEGA-DROPDOWN: 4 COLUMNS x 2 ROWS ARCHITECTURAL RECTANGLE
+   ============================================================================= */
+.vg-nav-menu .services-dropdown .services-dropdown-grid,
+.vg-nav-links .services-dropdown-grid,
+.services-dropdown ul.services-dropdown-grid,
+.services-dropdown-grid,
+.vg-services-pills-grid,
+ul.vg-services-pills-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-template-rows: repeat(2, auto) !important;
+  gap: 10px !important;
+  width: 100% !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.vg-nav-menu .services-dropdown .services-dropdown-grid > li,
+.vg-nav-links .services-dropdown-grid > li,
+.services-dropdown-grid > li,
+.vg-services-pills-grid > li,
+.services-dropdown ul.services-dropdown-grid > li {
+  display: flex !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.vg-nav-menu .services-dropdown .services-dropdown-item,
+.vg-nav-links .services-dropdown-item,
+.services-dropdown-item,
+.vg-dropdown-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 11px 14px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+  color: #f8fafc !important;
+  transition: all 0.22s ease !important;
+}
+
+.vg-nav-menu .services-dropdown .services-dropdown-item:hover,
+.vg-nav-links .services-dropdown-item:hover,
+.services-dropdown-item:hover,
+.vg-dropdown-item:hover {
+  background: rgba(124, 58, 237, 0.16) !important;
+  border-color: rgba(139, 92, 246, 0.55) !important;
+  transform: translateY(-1px) !important;
+}
+
+.services-dropdown .vg-dd-icon-box {
+  width: 32px !important;
+  height: 32px !important;
+  min-width: 32px !important;
+  border-radius: 8px !important;
+  background: rgba(168, 85, 247, 0.12) !important;
+  border: 1px solid rgba(168, 85, 247, 0.25) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #c084fc !important;
+  font-size: 13px !important;
+  flex-shrink: 0 !important;
+  transition: all 0.22s ease !important;
+}
+
+.services-dropdown-item:hover .vg-dd-icon-box,
+.vg-dropdown-item:hover .vg-dd-icon-box {
+  background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+  border-color: #c084fc !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.5) !important;
+  transform: scale(1.05) !important;
+}
+
+.services-dropdown-title,
+.services-dropdown .vg-dd-title {
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+}

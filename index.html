@@ -27,7 +27,118 @@
     
     <!--<< Custom Theme & Color CSS >>-->
     <link rel="stylesheet" href="assets/css/main.css?v=59.0">
-    <link rel="stylesheet" href="assets/css/color.css?v=127.0">
+    <link rel="stylesheet" href="assets/css/color.css?v=128.0">
+    <!-- Critical Services Dropdown 4x2 Rectangle Grid Guard -->
+    <style>
+      .vg-nav-menu .services-dropdown,
+      .vg-nav-links .services-dropdown,
+      .services-dropdown,
+      .vg-dropdown-menu {
+        position: absolute !important;
+        top: 100% !important;
+        margin-top: 12px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 920px !important;
+        max-width: calc(100vw - 32px) !important;
+        padding: 14px 16px !important;
+        background: rgba(10, 6, 22, 0.985) !important;
+        backdrop-filter: blur(24px) saturate(140%) !important;
+        -webkit-backdrop-filter: blur(24px) saturate(140%) !important;
+        border: 1px solid rgba(255, 255, 255, 0.09) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 32px 80px rgba(0, 0, 0, 0.85) !important;
+        z-index: 9999 !important;
+        list-style: none !important;
+        margin: 12px 0 0 0 !important;
+      }
+      .services-dropdown-grid,
+      .vg-services-pills-grid,
+      .services-dropdown ul.services-dropdown-grid,
+      .vg-nav-links .services-dropdown-grid,
+      .vg-nav-menu .services-dropdown-grid {
+        display: grid !important;
+        grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+        grid-template-rows: repeat(2, auto) !important;
+        gap: 10px !important;
+        width: 100% !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+      }
+      .services-dropdown-grid > li,
+      .vg-services-pills-grid > li,
+      .services-dropdown ul.services-dropdown-grid > li {
+        display: flex !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      .services-dropdown-item,
+      .vg-dropdown-item {
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 11px 14px !important;
+        border-radius: 8px !important;
+        background: rgba(255, 255, 255, 0.025) !important;
+        border: 1px solid rgba(255, 255, 255, 0.06) !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        white-space: nowrap !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box !important;
+        text-decoration: none !important;
+        color: #f8fafc !important;
+        transition: all 0.22s ease !important;
+      }
+      .services-dropdown-item:hover,
+      .vg-dropdown-item:hover {
+        background: rgba(124, 58, 237, 0.16) !important;
+        border-color: rgba(139, 92, 246, 0.55) !important;
+        transform: translateY(-1px) !important;
+      }
+      .services-dropdown .vg-dd-icon-box {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        border-radius: 8px !important;
+        background: rgba(168, 85, 247, 0.12) !important;
+        border: 1px solid rgba(168, 85, 247, 0.25) !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: #c084fc !important;
+        font-size: 13px !important;
+        flex-shrink: 0 !important;
+        transition: all 0.22s ease !important;
+      }
+      .services-dropdown-item:hover .vg-dd-icon-box,
+      .vg-dropdown-item:hover .vg-dd-icon-box {
+        background: linear-gradient(135deg, #7c3aed, #a855f7) !important;
+        border-color: #c084fc !important;
+        color: #ffffff !important;
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.5) !important;
+        transform: scale(1.05) !important;
+      }
+      .services-dropdown-title,
+      .services-dropdown .vg-dd-title {
+        color: #ffffff !important;
+        font-size: 13px !important;
+        font-weight: 500 !important;
+        white-space: nowrap !important;
+        overflow: visible !important;
+        text-overflow: clip !important;
+      }
+      .services-dropdown-desc,
+      .services-dropdown .vg-dd-desc {
+        display: none !important;
+      }
+    </style>
 
     <!-- Resource Hints & Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
