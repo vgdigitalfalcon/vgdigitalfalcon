@@ -1,0 +1,113 @@
+/**
+ * VG Digital Falcon - Header & Glassmorphic Navigation Component
+ */
+
+.vg-header,
+#header-sticky,
+.sticky#header-sticky {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99999 !important;
+  background: rgba(7, 2, 18, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+  transition: var(--vg-transition-base, all 0.35s ease);
+}
+
+.vg-header.header-scrolled {
+  background: rgba(5, 1, 14, 0.95);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 25px rgba(124, 58, 237, 0.15);
+}
+
+.vg-header.header-scrolled .vg-nav-container {
+  padding: 11px 28px;
+}
+
+.vg-nav-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 15px 28px;
+  min-height: 72px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 20px;
+  transition: padding var(--vg-transition-base, all 0.35s ease);
+}
+
+.vg-brand-wrap {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.vg-header-brand-logo {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.vg-brand-wrap:hover .vg-header-brand-logo {
+  transform: scale(1.03);
+}
+
+.vg-nav-menu,
+#header-sticky .vg-nav-menu {
+  display: flex !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.vg-nav-links,
+#header-sticky .vg-nav-links,
+.vg-nav-menu .vg-nav-links {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 28px !important;
+  flex-shrink: 1 !important;
+}
+
+.vg-nav-links > li > a,
+#header-sticky .vg-nav-links > li > a {
+  color: #e2e8f0;
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  padding: 6px 0;
+  position: relative;
+}
+
+.vg-nav-links > li > a:hover,
+.vg-nav-links > li.active > a {
+  color: #38bdf8;
+}
+
+/* Mobile navigation toggle & drawer */
+.vg-menu-toggle {
+  display: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+@media (max-width: 991px) {
+  .vg-menu-toggle {
+    display: block;
+  }
+  .vg-nav-menu {
+    display: none !important;
+  }
+}

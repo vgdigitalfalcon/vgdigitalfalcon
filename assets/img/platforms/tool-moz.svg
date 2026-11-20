@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 44" fill="none">
+  <!-- Moz Icon -->
+  <g transform="translate(6, 4)">
+    <rect width="36" height="36" rx="10" fill="url(#mozBg)" stroke="rgba(0, 168, 232, 0.4)" stroke-width="1.2"/>
+    <!-- Iconic Bold Moz "M" Shape -->
+    <path d="M10 26V11L14.5 19.5L18 14L21.5 19.5L26 11V26H22.5V17L19.5 22H16.5L13.5 17V26H10Z" fill="#00A8E8"/>
+  </g>
+  <!-- Text Lockup -->
+  <g transform="translate(50, 0)">
+    <text x="0" y="23" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="900" font-size="16" fill="#00A8E8" letter-spacing="1">MOZ <tspan fill="#38BDF8" font-size="12" font-weight="800">PRO</tspan></text>
+    <text x="0" y="34" font-family="'Plus Jakarta Sans', system-ui, -apple-system, sans-serif" font-weight="700" font-size="9" fill="#94A3B8" letter-spacing="0.5">DOMAIN AUTHORITY</text>
+  </g>
+  <defs>
+    <linearGradient id="mozBg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0a2233"/>
+      <stop offset="100%" stop-color="#05101a"/>
+    </linearGradient>
+  </defs>
+</svg>
+

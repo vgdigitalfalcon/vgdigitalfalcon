@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - VG Digital Falcon</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+            animation: rotate 20s linear infinite;
+            z-index: -1;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .logo {
+            margin-bottom: 30px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .logo h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .logo i {
+            color: #6e8efb;
+            font-size: 2.8rem;
+        }
+        
+        .confirmation {
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 0.5s both;
+        }
+        
+        .confirmation h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .confirmation h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, #6e8efb, #a777e3);
+            border-radius: 2px;
+        }
+        
+        .confirmation p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease 1s both;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 12px;
+            width: 180px;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #6e8efb;
+        }
+        
+        .feature h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(to right, #6e8efb, #a777e3);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease 1.5s both;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .social-links {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1s ease 2s both;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.3rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background: #ffeb3b;
+            border-radius: 50%;
+            opacity: 0;
+            z-index: 1000;
+            animation: confettiDrop 5s ease-in-out forwards;
+        }
+        
+        @keyframes confettiDrop {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .logo h1 {
+                font-size: 2rem;
+            }
+            
+            .confirmation h2 {
+                font-size: 2.2rem;
+            }
+            
+            .confirmation p {
+                font-size: 1rem;
+            }
+            
+            .feature {
+                width: 150px;
+                padding: 15px;
+            }
+            
+            .feature i {
+                font-size: 2rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .logo h1 {
+                font-size: 1.8rem;
+            }
+            
+            .confirmation h2 {
+                font-size: 1.8rem;
+            }
+            
+            .features {
+                gap: 10px;
+            }
+            
+            .feature {
+                width: 130px;
+                padding: 12px;
+            }
+            
+            .feature h3 {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <!-- Clarity tracking code for https://vgdigitalfalcon.com/ -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xdwd8oxpkn");
+</script>
+</head>
+<body>
+    <div class="container">
+      
+        
+        <div class="confirmation">
+            <h2>Thank You! 🎉</h2>
+            <p>Your request has been successfully submitted. Our digital marketing experts will contact you within 24 hours to discuss your project and create a customized strategy.</p>
+        </div>
+        
+        
+        
+        <a href="https://vgdigitalfalcon.com" class="cta-button">Go Back to Home</a>
+        
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+    <script>
+        // Create confetti effect
+        function createConfetti() {
+            const colors = ['#ffeb3b', '#e91e63', '#9c27b0', '#2196f3', '#4caf50'];
+            const container = document.body;
+            
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                // Random properties
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const size = Math.random() * 10 + 5;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 5;
+                const duration = Math.random() * 3 + 3;
+                
+                confetti.style.background = color;
+                confetti.style.width = `${size}px`;
+                confetti.style.height = `${size}px`;
+                confetti.style.left = `${left}vw`;
+                confetti.style.animationDelay = `${delay}s`;
+                confetti.style.animationDuration = `${duration}s`;
+                
+                container.appendChild(confetti);
+                
+                // Remove confetti after animation completes
+                setTimeout(() => {
+                    confetti.remove();
+                }, (delay + duration) * 1000);
+            }
+        }
+        
+        // Create confetti on page load and every 5 seconds
+        window.addEventListener('load', () => {
+            createConfetti();
+            setInterval(createConfetti, 5000);
+        });
+        
+        // Add hover effect to features
+        document.querySelectorAll('.feature').forEach(feature => {
+            feature.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+            });
+            
+            feature.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>

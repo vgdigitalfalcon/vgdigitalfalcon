@@ -64,6 +64,7 @@ Icon
 !**/wp-config-sample.php
 
 # CRM / App Sensitive Database Configurations (keep samples tracked)
+backend/config/config.php
 **/client/client/config.php
 **/client/client2/config.php
 !**/config.sample.php
@@ -75,7 +76,8 @@ Icon
 node_modules/
 jspm_packages/
 .pnpm-store/
-vendor/
+/vendor/
+!assets/**/vendor/
 composer.phar
 
 # ------------------------------------------------------------------------------
