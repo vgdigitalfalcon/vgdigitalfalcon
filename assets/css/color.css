@@ -28058,3 +28058,273 @@ ul.vg-services-pills-grid {
   overflow: visible !important;
   text-overflow: clip !important;
 }
+
+/* =============================================================================
+   ECOMMERCE SEO SERVICE: REVENUE & PRODUCT RANKING SHOWCASE
+   ============================================================================= */
+.vg-ecom-overview-section {
+  padding: 84px 0 !important;
+  position: relative !important;
+  background: radial-gradient(circle at 10% 50%, rgba(124, 58, 237, 0.12) 0%, transparent 60%), #070212 !important;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12) !important;
+}
+
+.vg-ecom-overview-grid {
+  display: grid !important;
+  grid-template-columns: 0.95fr 1.05fr !important;
+  gap: 44px !important;
+  align-items: center !important;
+  max-width: 1180px !important;
+  margin: 0 auto !important;
+}
+
+@media (max-width: 991px) {
+  .vg-ecom-overview-grid {
+    grid-template-columns: 1fr !important;
+    gap: 36px !important;
+  }
+}
+
+.vg-ecom-growth-showcase-card {
+  max-width: 470px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  background: rgba(16, 11, 34, 0.92) !important;
+  border: 1px solid rgba(168, 85, 247, 0.28) !important;
+  border-radius: 22px !important;
+  padding: 24px !important;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6), 0 0 35px rgba(168, 85, 247, 0.15) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+.vg-ecom-growth-showcase-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -30% !important;
+  right: -30% !important;
+  width: 260px !important;
+  height: 260px !important;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.18) 0%, transparent 70%) !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+}
+
+.vg-ecom-card-inner {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.vg-ecom-topbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  margin-bottom: 18px !important;
+}
+
+.vg-ecom-platforms {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+}
+
+.vg-platform-pill {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 100px !important;
+  padding: 4px 10px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: #E2E8F0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  transition: all 0.2s ease !important;
+}
+
+.vg-platform-pill:hover {
+  background: rgba(168, 85, 247, 0.12) !important;
+  border-color: rgba(168, 85, 247, 0.3) !important;
+  color: #ffffff !important;
+}
+
+.vg-ecom-rev-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  padding: 5px 12px !important;
+  background: rgba(16, 185, 129, 0.12) !important;
+  border: 1px solid rgba(16, 185, 129, 0.32) !important;
+  border-radius: 100px !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #10B981 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.vg-pulse-dot {
+  width: 7px !important;
+  height: 7px !important;
+  border-radius: 50% !important;
+  background: #10B981 !important;
+  box-shadow: 0 0 8px #10B981 !important;
+  display: inline-block !important;
+  animation: vgPulseGreen 2s infinite !important;
+}
+
+@keyframes vgPulseGreen {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1.05); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.vg-serp-snippet-card {
+  background: rgba(8, 4, 18, 0.85) !important;
+  border: 1px solid rgba(168, 85, 247, 0.22) !important;
+  border-radius: 16px !important;
+  padding: 16px 18px !important;
+  margin-bottom: 18px !important;
+  position: relative !important;
+  overflow: hidden !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+}
+
+.vg-serp-head {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 8px !important;
+}
+
+.vg-serp-crumb {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-size: 11px !important;
+  color: #94A3B8 !important;
+  font-family: 'Inter', -apple-system, sans-serif !important;
+}
+
+.vg-serp-rank-badge {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.22), rgba(34, 211, 238, 0.22)) !important;
+  border: 1px solid rgba(34, 211, 238, 0.4) !important;
+  color: #22D3EE !important;
+  font-size: 10.5px !important;
+  font-weight: 700 !important;
+  padding: 2.5px 9px !important;
+  border-radius: 100px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.vg-serp-title {
+  color: #FFFFFF !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  margin: 0 0 6px 0 !important;
+  line-height: 1.35 !important;
+}
+
+.vg-serp-meta-row {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  font-size: 12px !important;
+  margin-bottom: 10px !important;
+}
+
+.vg-serp-stars {
+  color: #FBBF24 !important;
+  letter-spacing: 1px !important;
+  font-size: 11px !important;
+}
+
+.vg-serp-rating {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+.vg-serp-reviews {
+  color: #94A3B8 !important;
+  font-size: 11.5px !important;
+}
+
+.vg-serp-bullet {
+  color: rgba(255, 255, 255, 0.25) !important;
+}
+
+.vg-serp-stock {
+  color: #10B981 !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.vg-serp-price {
+  color: #F8FAFC !important;
+  font-weight: 700 !important;
+}
+
+.vg-serp-chart-wrap {
+  position: relative !important;
+  width: 100% !important;
+  height: 55px !important;
+  margin-top: 6px !important;
+}
+
+.vg-serp-chart-wrap svg {
+  width: 100% !important;
+  height: 100% !important;
+  overflow: visible !important;
+}
+
+.vg-ecom-metrics-row {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 12px !important;
+}
+
+.vg-ecom-metric-tile {
+  background: rgba(255, 255, 255, 0.025) !important;
+  border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  border-radius: 14px !important;
+  padding: 12px 14px !important;
+  box-sizing: border-box !important;
+  transition: all 0.2s ease !important;
+}
+
+.vg-ecom-metric-tile:hover {
+  background: rgba(168, 85, 247, 0.08) !important;
+  border-color: rgba(168, 85, 247, 0.25) !important;
+}
+
+.vg-ecom-metric-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 2px !important;
+}
+
+.vg-ecom-metric-val {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.vg-ecom-metric-label {
+  color: #94A3B8 !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  margin-top: 4px !important;
+  line-height: 1.3 !important;
+}
