@@ -21,13 +21,13 @@
         <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css">
         <link rel="stylesheet" href="../../assets/css/nice-select.css">
         <link rel="stylesheet" href="../../assets/css/main.css?v=60.0">
-        <link rel="stylesheet" href="../../assets/css/color.css?v=105.0">
-        <link rel="stylesheet" href="../../assets/css/pages/page-dm.css?v=1.0">
+        <link rel="stylesheet" href="../../assets/css/color.css?v=129.0">
+        <link rel="stylesheet" href="../../assets/css/pages/page-dm.css?v=2.0">
 
-        <!-- Preconnect & Google Fonts -->
+        <!-- Preconnect & Google Fonts (Plus Jakarta Sans + Inter + Space Mono) -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800;900&family=Space+Mono:wght@400;700&display=swap">
 
         <!-- Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-SHM6SNGHL8"></script>
@@ -414,8 +414,8 @@
              HERO SECTION: DIGITAL MARKETING & OMNICHANNEL GROWTH MATRIX
              ========================================================================== -->
         <section class="vg-dm-hero-section" id="dm-hero">
-            <!-- 3D Omnichannel Growth Matrix Canvas Stage (z-index: 1) -->
-            <div class="vg-dm-stage-wrap" id="vgDmStageWrap" aria-hidden="true"></div>
+            <!-- 3D Holographic Growth Sphere & Ascending Beams Stage (z-index: 0, opacity: 0.45) -->
+            <div class="vg-dm-stage-wrap" id="vgDmStageWrap" aria-hidden="true" style="z-index: 0; pointer-events: none; opacity: 0.45;"></div>
 
             <div class="container" style="position: relative; z-index: 2;">
                 <div class="row g-4 align-items-center justify-content-between">
@@ -495,52 +495,95 @@
         </section>
 
         <!-- ==========================================================================
-             METRICS / PERFORMANCE COUNTERS SECTION
+             METRICS / PERFORMANCE COUNTERS SECTION: ARCHITECTURAL GROWTH TELEMETRY
              ========================================================================== -->
         <section class="vg-dm-section pt-0">
-            <div class="container">
-                <div class="row g-4">
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="vg-dm-stat-card">
-                            <div class="vg-dm-stat-icon">
-                                <img loading="lazy" decoding="async" src="../../assets/img/feature-icon/icon-1.png" alt="Happy Clients">
+            <div class="container" style="max-width: 1180px; margin: 0 auto;">
+                <div class="vg-telemetry-grid">
+                    <!-- Card 1: Global Trust -->
+                    <div class="vg-dm-stat-card wow fadeInUp" data-wow-delay=".2s">
+                        <div class="vg-telemetry-header">
+                            <span class="vg-telemetry-tag">01 // GLOBAL TRUST</span>
+                            <div class="vg-telemetry-icon icon-emerald">
+                                <i class="fa-solid fa-earth-americas"></i>
                             </div>
-                            <div class="content">
-                                <h3 class="counter" data-target="300">0</h3>
-                                <p>Happy Clients Globally</p>
+                        </div>
+                        <div class="vg-telemetry-body">
+                            <h3 class="counter vg-telemetry-metric" data-target="300" data-suffix="+">0</h3>
+                            <p class="vg-telemetry-label">Happy Clients Globally</p>
+                        </div>
+                        <div class="vg-telemetry-footer">
+                            <div class="vg-telemetry-pill pill-emerald">
+                                <span class="pill-arrow">↗</span> 96% Retention
+                            </div>
+                            <div class="vg-telemetry-bar-wrap">
+                                <div class="vg-telemetry-bar bar-emerald" style="width: 96%;"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="vg-dm-stat-card">
-                            <div class="vg-dm-stat-icon">
-                                <img loading="lazy" decoding="async" src="../../assets/img/feature-icon/icon-8.png" alt="Ad Spend Managed">
+
+                    <!-- Card 2: Ad Velocity -->
+                    <div class="vg-dm-stat-card wow fadeInUp" data-wow-delay=".4s">
+                        <div class="vg-telemetry-header">
+                            <span class="vg-telemetry-tag">02 // AD VELOCITY</span>
+                            <div class="vg-telemetry-icon icon-cyan">
+                                <i class="fa-solid fa-chart-line"></i>
                             </div>
-                            <div class="content">
-                                <h3 class="counter" data-target="5" data-suffix="M+">0</h3>
-                                <p>Ad Spend Managed (USD)</p>
+                        </div>
+                        <div class="vg-telemetry-body">
+                            <h3 class="counter vg-telemetry-metric" data-prefix="$" data-target="5" data-suffix="M+">0</h3>
+                            <p class="vg-telemetry-label">Ad Spend Managed (USD)</p>
+                        </div>
+                        <div class="vg-telemetry-footer">
+                            <div class="vg-telemetry-pill pill-cyan">
+                                <span class="pill-arrow">↗</span> 4.8x Avg ROAS
+                            </div>
+                            <div class="vg-telemetry-bar-wrap">
+                                <div class="vg-telemetry-bar bar-cyan-violet" style="width: 88%;"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="vg-dm-stat-card">
-                            <div class="vg-dm-stat-icon">
-                                <img loading="lazy" decoding="async" src="../../assets/img/feature-icon/icon-3.png" alt="Leads Generated">
+
+                    <!-- Card 3: Lead Engine -->
+                    <div class="vg-dm-stat-card wow fadeInUp" data-wow-delay=".6s">
+                        <div class="vg-telemetry-header">
+                            <span class="vg-telemetry-tag">03 // LEAD ENGINE</span>
+                            <div class="vg-telemetry-icon icon-purple">
+                                <i class="fa-solid fa-bolt"></i>
                             </div>
-                            <div class="content">
-                                <h3 class="counter" data-target="50" data-suffix="K+">0</h3>
-                                <p>Monthly Qualified Leads</p>
+                        </div>
+                        <div class="vg-telemetry-body">
+                            <h3 class="counter vg-telemetry-metric" data-target="50" data-suffix="K+">0</h3>
+                            <p class="vg-telemetry-label">Monthly Qualified Leads</p>
+                        </div>
+                        <div class="vg-telemetry-footer">
+                            <div class="vg-telemetry-pill pill-purple">
+                                <span class="pill-arrow">↗</span> +280% SQL Lift
+                            </div>
+                            <div class="vg-telemetry-bar-wrap">
+                                <div class="vg-telemetry-bar bar-purple" style="width: 92%;"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="vg-dm-stat-card">
-                            <div class="vg-dm-stat-icon">
-                                <img loading="lazy" decoding="async" src="../../assets/img/feature-icon/icon-4.png" alt="Revenue Growth">
+
+                    <!-- Card 4: Scale Factor -->
+                    <div class="vg-dm-stat-card wow fadeInUp" data-wow-delay=".8s">
+                        <div class="vg-telemetry-header">
+                            <span class="vg-telemetry-tag">04 // SCALE FACTOR</span>
+                            <div class="vg-telemetry-icon icon-multi">
+                                <i class="fa-solid fa-arrow-trend-up"></i>
                             </div>
-                            <div class="content">
-                                <h3 class="counter" data-target="4" data-suffix="X">0</h3>
-                                <p>Average Client Growth</p>
+                        </div>
+                        <div class="vg-telemetry-body">
+                            <h3 class="counter vg-telemetry-metric" data-target="4" data-suffix="X">0</h3>
+                            <p class="vg-telemetry-label">Average Client Growth</p>
+                        </div>
+                        <div class="vg-telemetry-footer">
+                            <div class="vg-telemetry-pill pill-multi">
+                                <span class="pill-arrow">↗</span> YoY Revenue
+                            </div>
+                            <div class="vg-telemetry-bar-wrap">
+                                <div class="vg-telemetry-bar bar-multi" style="width: 95%;"></div>
                             </div>
                         </div>
                     </div>
@@ -549,49 +592,119 @@
         </section>
 
         <!-- ==========================================================================
-             INTEGRATED STRATEGY SECTION
+             INTEGRATED STRATEGY SECTION: CONNECTED OMNICHANNEL GROWTH FLYWHEEL
              ========================================================================== -->
         <section class="vg-dm-section-alt">
-            <div class="container">
+            <div class="container" style="max-width: 1180px; margin: 0 auto;">
                 <div class="section-title text-center">
                     <span class="vg-section-badge wow fadeInUp">
                         <i class="fa-solid fa-network-wired"></i> Integrated Strategy
                     </span>
-                    <h2 class="mb-3 wow fadeInUp" data-wow-delay=".3s">The Power of a Unified Digital Marketing Approach</h2>
-                    <p class="mb-4 wow fadeInUp mx-auto" data-wow-delay=".5s" style="max-width: 820px;">
-                        In today’s market, isolated strategies fail. A unified digital marketing plan ensures your brand message is consistent across all channels, driving higher ROI. <br class="d-none d-md-block">As a leading digital marketing agency, we focus on integration through:
+                    <h2 class="vg-strategy-title mb-3 wow fadeInUp" data-wow-delay=".3s">
+                        <span class="vg-strategy-heading-line1">The Power Of A</span>
+                        <span class="vg-strategy-heading-line2">Unified Digital Marketing Approach</span>
+                    </h2>
+                    <p class="vg-strategy-intro wow fadeInUp" data-wow-delay=".4s">
+                        In today’s market, isolated strategies fail. A unified digital marketing plan ensures your brand message is consistent across all channels, driving higher ROI. As a leading digital marketing agency, we focus on integration through:
                     </p>
                     
-                    <div class="row g-4 justify-content-center my-3">
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                            <div class="vg-dm-check-box">
-                                <div class="vg-dm-check-icon">
-                                    <i class="fa-solid fa-check"></i>
+                    <!-- Connected Omnichannel Synergy Architecture -->
+                    <div class="vg-synergy-wrapper my-4">
+                        <!-- Card 1: Organic Search (Emerald Accent) -->
+                        <div class="vg-synergy-card card-emerald wow fadeInUp" data-wow-delay=".2s">
+                            <div class="vg-card-accent-line accent-emerald"></div>
+                            <div class="vg-card-top-row">
+                                <span class="vg-channel-badge badge-emerald">01 • ORGANIC SEARCH</span>
+                                <div class="vg-channel-icon icon-emerald">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
-                                <span>Data-Driven SEO for organic traffic.</span>
+                            </div>
+                            <h3 class="vg-channel-title">Data-Driven SEO For Organic Traffic</h3>
+                            <p class="vg-channel-desc">
+                                Captures high-intent search demand, compounding sustainable organic pipeline and high-authority market visibility without recurring ad costs.
+                            </p>
+                            <div class="vg-card-role-footer">
+                                <span class="vg-role-pill role-emerald">
+                                    <i class="fa-solid fa-layer-group"></i> Role: Long-Term Compounding Demand
+                                </span>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                            <div class="vg-dm-check-box">
-                                <div class="vg-dm-check-icon">
-                                    <i class="fa-solid fa-check"></i>
-                                </div>
-                                <span>PPC Campaigns for immediate conversions.</span>
+
+                        <!-- Synergy Connector 1 (Card 1 -> Card 2) -->
+                        <div class="vg-synergy-node" aria-hidden="true">
+                            <div class="vg-synergy-badge" title="Omnichannel Synergy">
+                                <span class="synergy-symbol">⇄</span>
                             </div>
                         </div>
-                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                            <div class="vg-dm-check-box">
-                                <div class="vg-dm-check-icon">
-                                    <i class="fa-solid fa-check"></i>
+
+                        <!-- Card 2: Paid Performance (Cyan Accent) -->
+                        <div class="vg-synergy-card card-cyan wow fadeInUp" data-wow-delay=".35s">
+                            <div class="vg-card-accent-line accent-cyan"></div>
+                            <div class="vg-card-top-row">
+                                <span class="vg-channel-badge badge-cyan">02 • PAID PERFORMANCE</span>
+                                <div class="vg-channel-icon icon-cyan">
+                                    <i class="fa-solid fa-crosshairs"></i>
                                 </div>
-                                <span>Engaging Social Media Optimization (SMO).</span>
+                            </div>
+                            <h3 class="vg-channel-title">PPC Campaigns For Immediate Conversions</h3>
+                            <p class="vg-channel-desc">
+                                Accelerates instant qualified buyer acquisition across Google and Meta, generating rapid revenue velocity with data-optimized ROAS.
+                            </p>
+                            <div class="vg-card-role-footer">
+                                <span class="vg-role-pill role-cyan">
+                                    <i class="fa-solid fa-bolt"></i> Role: Instant High-Intent Capture
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Synergy Connector 2 (Card 2 -> Card 3) -->
+                        <div class="vg-synergy-node" aria-hidden="true">
+                            <div class="vg-synergy-badge" title="Omnichannel Synergy">
+                                <span class="synergy-symbol">⇄</span>
+                            </div>
+                        </div>
+
+                        <!-- Card 3: Social Growth (Pink-Violet Accent) -->
+                        <div class="vg-synergy-card card-pink wow fadeInUp" data-wow-delay=".5s">
+                            <div class="vg-card-accent-line accent-pink"></div>
+                            <div class="vg-card-top-row">
+                                <span class="vg-channel-badge badge-pink">03 • SOCIAL GROWTH</span>
+                                <div class="vg-channel-icon icon-pink">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </div>
+                            </div>
+                            <h3 class="vg-channel-title">Engaging Social Media Optimization (SMO)</h3>
+                            <p class="vg-channel-desc">
+                                Amplifies brand affinity and viral resonance through social storytelling, converting passive followers into high-retention enterprise advocates.
+                            </p>
+                            <div class="vg-card-role-footer">
+                                <span class="vg-role-pill role-pink">
+                                    <i class="fa-solid fa-arrows-rotate"></i> Role: Brand Recall & Retargeting Fuel
+                                </span>
                             </div>
                         </div>
                     </div>
 
-                    <p class="mt-4 wow fadeInUp mx-auto" data-wow-delay=".5s" style="max-width: 820px;">
-                        From local business visibility to international brand campaigns, we craft solutions that not only increase reach but also convert awareness <br class="d-none d-md-block">into loyal customers. Stop managing multiple agencies. Start seeing results with one partner.
-                    </p>
+                    <!-- Single-Row Unified Funnel Result Bar -->
+                    <div class="vg-funnel-result-bar wow fadeInUp" data-wow-delay=".55s">
+                        <div class="vg-funnel-equation">
+                            <span class="funnel-term term-emerald"><i class="fa-solid fa-magnifying-glass"></i> SEO Demand</span>
+                            <span class="funnel-op">+</span>
+                            <span class="funnel-term term-cyan"><i class="fa-solid fa-crosshairs"></i> Paid Velocity</span>
+                            <span class="funnel-op">+</span>
+                            <span class="funnel-term term-pink"><i class="fa-solid fa-share-nodes"></i> Social Trust</span>
+                            <span class="funnel-eq">=</span>
+                            <span class="funnel-result">
+                                <span class="result-glow">⚡ 4.2x Lower Blended CAC</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-4 wow fadeInUp" data-wow-delay=".65s">
+                        <a href="#digitalMarketingForm" class="vg-dm-btn-primary vg-strategy-cta-btn">
+                            Build My Unified Growth Plan <span style="display: inline-block; margin-left: 6px; transition: transform 0.25s ease;">→</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -628,119 +741,195 @@
         <!-- ==========================================================================
              CORE DIGITAL MARKETING SERVICE PILLARS (100% CONTENT PRESERVED)
              ========================================================================== -->
+        <!-- ==========================================================================
+             CORE DIGITAL MARKETING SERVICE PILLARS (INTERACTIVE FULL-STACK BENTO)
+             ========================================================================== -->
         <section class="vg-dm-section-alt" id="services">
             <div class="container">
-                <div class="section-title text-center mb-5">
+                <div class="section-title text-center mb-4">
                     <span class="vg-section-badge wow fadeInUp">What We Do?</span>
-                    <h2 class="mb-3 wow fadeInUp" data-wow-delay=".3s">Core Digital Marketing Service Pillars</h2>
-                    <p class="wow fadeInUp mx-auto" data-wow-delay=".5s" style="max-width: 820px;">
-                        VG Digital Falcon is a full-stack digital agency. We focus on a holistic approach, combining specialized services to create one powerful strategy <br class="d-none d-md-block"> that delivers exceptional, measurable results across the entire customer journey.
+                    <h2 class="mb-3 wow fadeInUp vg-dm-pillars-heading" data-wow-delay=".3s">Core Digital Marketing <span class="vg-gradient-text">Service Pillars</span></h2>
+                    <p class="wow fadeInUp mx-auto vg-dm-pillars-sub" data-wow-delay=".5s">
+                        VG Digital Falcon is a full-stack digital agency. We focus on a holistic approach, combining specialized services to create one powerful strategy that delivers exceptional, measurable results across the entire customer journey.
                     </p>
                 </div>
 
-                <div class="row g-4">
-                    <!-- Pillar 1: SEO -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".2s">
-                        <div class="vg-dm-pillar-card">
-                            <div class="vg-dm-pillar-header">
-                                <div class="vg-dm-pillar-icon">
-                                    <i class="fa-solid fa-magnifying-glass-chart"></i>
-                                </div>
-                                <h3>Search Engine Optimization (SEO)</h3>
+                <!-- Interactive Funnel-Stage Filter Tabs -->
+                <div class="vg-dm-filter-wrapper text-center mb-5 wow fadeInUp" data-wow-delay=".6s">
+                    <div class="vg-dm-filter-bar" role="tablist" aria-label="Digital Marketing Pillars Filter">
+                        <button type="button" class="vg-dm-filter-tab active" data-filter="all" role="tab" aria-selected="true">
+                            <i class="fa-solid fa-shapes"></i> All 7 Pillars
+                        </button>
+                        <button type="button" class="vg-dm-filter-tab" data-filter="acquisition" role="tab" aria-selected="false">
+                            <i class="fa-solid fa-bolt"></i> Traffic &amp; Acquisition
+                        </button>
+                        <button type="button" class="vg-dm-filter-tab" data-filter="brand" role="tab" aria-selected="false">
+                            <i class="fa-solid fa-bullhorn"></i> Brand &amp; Social
+                        </button>
+                        <button type="button" class="vg-dm-filter-tab" data-filter="web-intel" role="tab" aria-selected="false">
+                            <i class="fa-solid fa-chart-line"></i> Web &amp; Intelligence
+                        </button>
+                    </div>
+                </div>
+
+                <div class="vg-dm-bento-grid">
+                    <!-- Pillar 1: SEO (Emerald) -->
+                    <div class="vg-dm-bento-card vg-dm-card-seo wow fadeInUp" data-category="acquisition" data-wow-delay=".2s">
+                        <div class="vg-dm-card-topbar">
+                            <div class="vg-dm-pillar-icon">
+                                <i class="fa-solid fa-magnifying-glass-chart"></i>
                             </div>
-                            <p>
-                                Increase your organic visibility and drive non-paid, high-quality traffic to your site. Our service includes technical SEO, on-page optimization, and content strategy for sustained growth.
-                            </p>
+                            <span class="vg-dm-pillar-tag">01 // ORGANIC</span>
+                        </div>
+                        <h3 class="vg-dm-card-title">Search Engine Optimization (SEO)</h3>
+                        <p class="vg-dm-card-desc">
+                            Increase your organic visibility and drive non-paid, high-quality traffic to your site. Our service includes technical SEO, on-page optimization, and content strategy for sustained growth.
+                        </p>
+                        <div class="vg-dm-deliverable-chips">
+                            <span class="vg-dm-chip">Technical Audits</span>
+                            <span class="vg-dm-chip">Keyword Authority</span>
+                            <span class="vg-dm-chip">Link Velocity</span>
+                        </div>
+                        <div class="vg-dm-card-footer">
+                            <a href="seo-service.html" class="vg-dm-pillar-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <!-- Pillar 2: PPC -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="vg-dm-pillar-card">
-                            <div class="vg-dm-pillar-header">
-                                <div class="vg-dm-pillar-icon">
-                                    <i class="fa-solid fa-bullseye"></i>
-                                </div>
-                                <h3>Performance Marketing (PPC)</h3>
+                    <!-- Pillar 2: PPC (Cyan) -->
+                    <div class="vg-dm-bento-card vg-dm-card-ppc wow fadeInUp" data-category="acquisition" data-wow-delay=".3s">
+                        <div class="vg-dm-card-topbar">
+                            <div class="vg-dm-pillar-icon">
+                                <i class="fa-solid fa-bullseye"></i>
                             </div>
-                            <p>
-                                Maximize your ad spend ROI on Google Ads, Facebook, and Instagram. We create high-converting campaigns, manage bids, and optimize landing pages for immediate results and lead generation.
-                            </p>
+                            <span class="vg-dm-pillar-tag">02 // PAID ADS</span>
+                        </div>
+                        <h3 class="vg-dm-card-title">Performance Marketing (PPC)</h3>
+                        <p class="vg-dm-card-desc">
+                            Maximize your ad spend ROI on Google Ads, Facebook, and Instagram. We create high-converting campaigns, manage bids, and optimize landing pages for immediate results and lead generation.
+                        </p>
+                        <div class="vg-dm-deliverable-chips">
+                            <span class="vg-dm-chip">Google Search &amp; Shopping</span>
+                            <span class="vg-dm-chip">Meta Ad Funnels</span>
+                            <span class="vg-dm-chip">ROAS Scaling</span>
+                        </div>
+                        <div class="vg-dm-card-footer">
+                            <a href="performance-marketing.html" class="vg-dm-pillar-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <!-- Pillar 3: SMO -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".4s">
-                        <div class="vg-dm-pillar-card">
-                            <div class="vg-dm-pillar-header">
-                                <div class="vg-dm-pillar-icon">
-                                    <i class="fa-solid fa-share-nodes"></i>
-                                </div>
-                                <h3>Social Media Optimization (SMO)</h3>
+                    <!-- Pillar 3: SMO (Pink-Violet) -->
+                    <div class="vg-dm-bento-card vg-dm-card-smo wow fadeInUp" data-category="brand" data-wow-delay=".4s">
+                        <div class="vg-dm-card-topbar">
+                            <div class="vg-dm-pillar-icon">
+                                <i class="fa-solid fa-share-nodes"></i>
                             </div>
-                            <p>
-                                Build brand awareness, foster community, and drive traffic from social channels. We manage content calendars, community engagement, and platform-specific strategies on all major networks.
-                            </p>
+                            <span class="vg-dm-pillar-tag">03 // SOCIAL</span>
+                        </div>
+                        <h3 class="vg-dm-card-title">Social Media Optimization (SMO)</h3>
+                        <p class="vg-dm-card-desc">
+                            Build brand awareness, foster community, and drive traffic from social channels. We manage content calendars, community engagement, and platform-specific strategies on all major networks.
+                        </p>
+                        <div class="vg-dm-deliverable-chips">
+                            <span class="vg-dm-chip">Viral Reels Engine</span>
+                            <span class="vg-dm-chip">Community Growth</span>
+                            <span class="vg-dm-chip">Omnichannel Grids</span>
+                        </div>
+                        <div class="vg-dm-card-footer">
+                            <a href="social-media-optimization-agency.html" class="vg-dm-pillar-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <!-- Pillar 4: Content Marketing -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".5s">
-                        <div class="vg-dm-pillar-card">
-                            <div class="vg-dm-pillar-header">
-                                <div class="vg-dm-pillar-icon">
-                                    <i class="fa-solid fa-pen-nib"></i>
-                                </div>
-                                <h3>Content Marketing Strategy</h3>
+                    <!-- Pillar 4: Content Marketing (Amber-Gold) -->
+                    <div class="vg-dm-bento-card vg-dm-card-content wow fadeInUp" data-category="brand" data-wow-delay=".5s">
+                        <div class="vg-dm-card-topbar">
+                            <div class="vg-dm-pillar-icon">
+                                <i class="fa-solid fa-pen-nib"></i>
                             </div>
-                            <p>
-                                Develop authoritative, engaging content (blogs, videos, case studies) that educates your audience, establishes industry leadership, and guides prospects through the sales funnel.
-                            </p>
+                            <span class="vg-dm-pillar-tag">04 // CONTENT</span>
+                        </div>
+                        <h3 class="vg-dm-card-title">Content Marketing Strategy</h3>
+                        <p class="vg-dm-card-desc">
+                            Develop authoritative, engaging content (blogs, videos, case studies) that educates your audience, establishes industry leadership, and guides prospects through the sales funnel.
+                        </p>
+                        <div class="vg-dm-deliverable-chips">
+                            <span class="vg-dm-chip">Authority Blogs</span>
+                            <span class="vg-dm-chip">Video Scripts</span>
+                            <span class="vg-dm-chip">Case Studies</span>
+                        </div>
+                        <div class="vg-dm-card-footer">
+                            <a href="#digitalMarketingForm" class="vg-dm-pillar-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <!-- Pillar 5: Web Dev & UX -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".6s">
-                        <div class="vg-dm-pillar-card">
-                            <div class="vg-dm-pillar-header">
-                                <div class="vg-dm-pillar-icon">
-                                    <i class="fa-solid fa-laptop-code"></i>
-                                </div>
-                                <h3>Web Development & UX</h3>
+                    <!-- Pillar 5: Web Dev & UX (Indigo-Blue) -->
+                    <div class="vg-dm-bento-card vg-dm-card-web wow fadeInUp" data-category="web-intel" data-wow-delay=".6s">
+                        <div class="vg-dm-card-topbar">
+                            <div class="vg-dm-pillar-icon">
+                                <i class="fa-solid fa-laptop-code"></i>
                             </div>
-                            <p>
-                                A great strategy needs a great site. We ensure your website is fast, mobile-friendly, optimized for conversion, and structurally sound to support all marketing efforts seamlessly.
-                            </p>
+                            <span class="vg-dm-pillar-tag">05 // WEB &amp; CRO</span>
+                        </div>
+                        <h3 class="vg-dm-card-title">Web Development &amp; UX</h3>
+                        <p class="vg-dm-card-desc">
+                            A great strategy needs a great site. We ensure your website is fast, mobile-friendly, optimized for conversion, and structurally sound to support all marketing efforts seamlessly.
+                        </p>
+                        <div class="vg-dm-deliverable-chips">
+                            <span class="vg-dm-chip">95+ Core Web Vitals</span>
+                            <span class="vg-dm-chip">High-CRO Landing Pages</span>
+                            <span class="vg-dm-chip">Custom UI/UX</span>
+                        </div>
+                        <div class="vg-dm-card-footer">
+                            <a href="web-development.html" class="vg-dm-pillar-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <!-- Pillar 6: Data & Analytics -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".7s">
-                        <div class="vg-dm-pillar-card">
-                            <div class="vg-dm-pillar-header">
-                                <div class="vg-dm-pillar-icon">
-                                    <i class="fa-solid fa-chart-pie"></i>
-                                </div>
-                                <h3>Data & Analytics Reporting</h3>
+                    <!-- Pillar 6: Data & Analytics (Teal) -->
+                    <div class="vg-dm-bento-card vg-dm-card-analytics wow fadeInUp" data-category="web-intel" data-wow-delay=".7s">
+                        <div class="vg-dm-card-topbar">
+                            <div class="vg-dm-pillar-icon">
+                                <i class="fa-solid fa-chart-pie"></i>
                             </div>
-                            <p>
-                                We provide transparent, detailed reports on key metrics (ROI, CPA, CLV) to show the true impact of our marketing efforts, allowing for continuous, data-driven optimization.
-                            </p>
+                            <span class="vg-dm-pillar-tag">06 // ANALYTICS</span>
+                        </div>
+                        <h3 class="vg-dm-card-title">Data &amp; Analytics Reporting</h3>
+                        <p class="vg-dm-card-desc">
+                            We provide transparent, detailed reports on key metrics (ROI, CPA, CLV) to show the true impact of our marketing efforts, allowing for continuous, data-driven optimization.
+                        </p>
+                        <div class="vg-dm-deliverable-chips">
+                            <span class="vg-dm-chip">Live Attribution</span>
+                            <span class="vg-dm-chip">CPA &amp; CLV Dashboards</span>
+                            <span class="vg-dm-chip">Funnel Tracking</span>
+                        </div>
+                        <div class="vg-dm-card-footer">
+                            <a href="#digitalMarketingForm" class="vg-dm-pillar-link">Learn More <i class="fa-solid fa-arrow-right"></i></a>
                         </div>
                     </div>
 
-                    <!-- Pillar 7: Email & CRM -->
-                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay=".8s">
-                        <div class="vg-dm-pillar-card">
-                            <div class="vg-dm-pillar-header">
-                                <div class="vg-dm-pillar-icon">
-                                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <!-- Pillar 7: Full-Width Spotlight Flagship Card (Row 3, span 12) -->
+                    <div class="vg-dm-bento-card vg-dm-bento-spotlight vg-dm-card-flagship wow fadeInUp" data-category="brand acquisition web-intel" data-wow-delay=".8s">
+                        <div class="vg-dm-spotlight-inner">
+                            <div class="vg-dm-spotlight-left">
+                                <div class="vg-dm-card-topbar mb-3">
+                                    <div class="vg-dm-pillar-icon vg-dm-spotlight-icon">
+                                        <i class="fa-solid fa-crown"></i>
+                                    </div>
+                                    <span class="vg-dm-pillar-tag vg-dm-spotlight-tag">07 // EXECUTIVE &amp; ENTERPRISE GROWTH</span>
                                 </div>
-                                <h3>Email & CRM Marketing</h3>
+                                <h3 class="vg-dm-card-title vg-dm-spotlight-title">Personal Branding &amp; Full-Funnel Scale</h3>
+                                <p class="vg-dm-card-desc vg-dm-spotlight-desc mb-3">
+                                    Turn captured demand into compounding revenue. We engineer high-converting executive positioning, authority funnels, and automated lifecycle attribution that minimize blended CAC and maximize customer lifetime value (LTV).
+                                </p>
+                                <div class="vg-dm-deliverable-chips vg-dm-spotlight-chips">
+                                    <span class="vg-dm-chip">Founder Positioning</span>
+                                    <span class="vg-dm-chip">LinkedIn Thought Leadership</span>
+                                    <span class="vg-dm-chip">360° Revenue Attribution</span>
+                                </div>
                             </div>
-                            <p>
-                                Nurture leads and retain customers with targeted email campaigns. We integrate your CRM with your marketing efforts to deliver personalized, automated communication.
-                            </p>
+                            <div class="vg-dm-spotlight-right">
+                                <a href="#digitalMarketingForm" class="vg-dm-spotlight-btn">
+                                    Explore Full-Funnel Strategy <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -748,95 +937,157 @@
         </section>
 
         <!-- ==========================================================================
-             FAQ SECTION (100% CONTENT PRESERVED)
+             FAQ SECTION (2 COLUMNS x 4 ROWS = 8 QUESTIONS)
              ========================================================================== -->
-        <section class="vg-dm-section" id="faq">
+        <section class="vg-dm-section vg-dm-faq-section" id="faq">
             <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-lg-5 wow fadeInUp" data-wow-delay=".3s">
-                        <div class="faq-image text-center">
-                            <img loading="lazy" decoding="async" src="../../assets/img/FAQ4.png" alt="Digital Marketing FAQ" style="border-radius: 20px; border: 1px solid rgba(168, 85, 247, 0.3); max-width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.5);">
-                        </div>
-                    </div>
-                    <div class="col-lg-7">
-                        <div class="faq-content">
-                            <div class="section-title text-start mb-4">
-                                <span class="vg-section-badge wow fadeInUp">FAQs</span>
-                                <h2 class="mb-3 wow fadeInUp" data-wow-delay=".3s">Digital Marketing Service FAQ</h2>
-                            </div>
-                            <div class="faq-accordion">
-                                <div class="accordion" id="accordionDigital">
+                <!-- Section Header -->
+                <div class="section-title text-center mb-5" style="max-width: 820px; margin: 0 auto;">
+                    <span class="vg-section-badge wow fadeInUp">FAQs</span>
+                    <h2 class="mb-3 wow fadeInUp vg-dm-faq-heading" data-wow-delay=".3s">
+                        Digital Marketing <span class="vg-gradient-text">Service FAQs</span>
+                    </h2>
+                    <p class="wow fadeInUp mx-auto" data-wow-delay=".5s" style="max-width: 720px; color: #CBD5E1; font-size: 15px; line-height: 1.65;">
+                        Clear answers on strategy execution, multi-channel budget allocation, campaign timelines, and measurable revenue ROI.
+                    </p>
+                </div>
+
+                <!-- FAQ Accordion (2 Columns x 4 Rows = 8 Questions) -->
+                <div class="vg-faq-accordion-wrap">
+                    <div class="accordion vg-faq-accordion" id="vgDmFaqAccordion">
+                        <div class="row g-3 g-lg-4">
+                            <!-- Column 1: Questions 01 to 04 -->
+                            <div class="col-lg-6">
+                                <div class="vg-faq-col">
                                     <!-- FAQ 1 -->
-                                    <div class="vg-dm-faq-item wow fadeInUp" data-wow-delay=".2s">
-                                        <h3 class="accordion-header" id="headingD1" style="margin: 0;">
-                                            <button class="vg-dm-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#faqD1" aria-expanded="true" aria-controls="faqD1">
-                                                <span>What is included in a full-service Digital Marketing package?</span>
-                                                <span class="vg-dm-faq-icon"><i class="fas fa-chevron-down"></i></span>
+                                    <div class="vg-faq-item is-open wow fadeInUp" data-wow-delay=".1s">
+                                        <h3 class="vg-faq-header" id="headingDmFaq1">
+                                            <button class="vg-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDmFaq1" aria-expanded="true" aria-controls="collapseDmFaq1">
+                                                <span class="vg-faq-qnum">01</span>
+                                                <span class="vg-faq-qtext">What is included in a full-service Digital Marketing package?</span>
+                                                <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
                                             </button>
                                         </h3>
-                                        <div id="faqD1" class="accordion-collapse collapse show" aria-labelledby="headingD1" data-bs-parent="#accordionDigital">
-                                            <div class="vg-dm-faq-body">
-                                                Our full-service packages typically include a mix of SEO (Search Engine Optimization), SMO (Social Media Optimization), Performance Marketing (PPC), Content Creation, and regular analytics reporting, tailored to your specific business goals.
+                                        <div id="collapseDmFaq1" class="accordion-collapse collapse show" aria-labelledby="headingDmFaq1" data-bs-parent="#vgDmFaqAccordion">
+                                            <div class="vg-faq-body">
+                                                <p>Our full-service packages combine Search Engine Optimization (SEO), Social Media Optimization (SMO), Performance Marketing (PPC on Google & Meta), authoritative Content Creation, UX conversion optimization, and end-to-end analytics reporting—customized precisely to your business growth milestones.</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- FAQ 2 -->
-                                    <div class="vg-dm-faq-item wow fadeInUp" data-wow-delay=".3s">
-                                        <h3 class="accordion-header" id="headingD2" style="margin: 0;">
-                                            <button class="vg-dm-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqD2" aria-expanded="false" aria-controls="faqD2">
-                                                <span>How long until I see results from a digital marketing campaign?</span>
-                                                <span class="vg-dm-faq-icon"><i class="fas fa-chevron-down"></i></span>
+                                    <div class="vg-faq-item wow fadeInUp" data-wow-delay=".2s">
+                                        <h3 class="vg-faq-header" id="headingDmFaq2">
+                                            <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDmFaq2" aria-expanded="false" aria-controls="collapseDmFaq2">
+                                                <span class="vg-faq-qnum">02</span>
+                                                <span class="vg-faq-qtext">How long until I see results from a digital marketing campaign?</span>
+                                                <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
                                             </button>
                                         </h3>
-                                        <div id="faqD2" class="accordion-collapse collapse" aria-labelledby="headingD2" data-bs-parent="#accordionDigital">
-                                            <div class="vg-dm-faq-body">
-                                                Results vary by channel. PPC (Performance Marketing) can show immediate results. SEO and content marketing typically start showing significant growth within 4-6 months, with returns continually increasing over time.
+                                        <div id="collapseDmFaq2" class="accordion-collapse collapse" aria-labelledby="headingDmFaq2" data-bs-parent="#vgDmFaqAccordion">
+                                            <div class="vg-faq-body">
+                                                <p>Timelines vary by channel velocity. Paid performance marketing (Google & Meta Ads) generates qualified leads and conversions within days of launch. Organic channels like SEO, content marketing, and brand authority compound exponentially, typically delivering significant momentum between months 3 and 6.</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- FAQ 3 -->
-                                    <div class="vg-dm-faq-item wow fadeInUp" data-wow-delay=".4s">
-                                        <h3 class="accordion-header" id="headingD3" style="margin: 0;">
-                                            <button class="vg-dm-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqD3" aria-expanded="false" aria-controls="faqD3">
-                                                <span>Is Digital Marketing better for B2B or B2C businesses?</span>
-                                                <span class="vg-dm-faq-icon"><i class="fas fa-chevron-down"></i></span>
+                                    <div class="vg-faq-item wow fadeInUp" data-wow-delay=".3s">
+                                        <h3 class="vg-faq-header" id="headingDmFaq3">
+                                            <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDmFaq3" aria-expanded="false" aria-controls="collapseDmFaq3">
+                                                <span class="vg-faq-qnum">03</span>
+                                                <span class="vg-faq-qtext">Is Digital Marketing better for B2B or B2C businesses?</span>
+                                                <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
                                             </button>
                                         </h3>
-                                        <div id="faqD3" class="accordion-collapse collapse" aria-labelledby="headingD3" data-bs-parent="#accordionDigital">
-                                            <div class="vg-dm-faq-body">
-                                                Digital marketing is essential for both. We customize the strategy: B2B focuses on LinkedIn, thought leadership, and lead generation, while B2C focuses on social engagement, high-intent keywords, and e-commerce conversions.
+                                        <div id="collapseDmFaq3" class="accordion-collapse collapse" aria-labelledby="headingDmFaq3" data-bs-parent="#vgDmFaqAccordion">
+                                            <div class="vg-faq-body">
+                                                <p>Digital marketing drives compounding ROI for both sectors with tailored playbooks. For B2B brands, we engineer high-trust LinkedIn funnels, executive thought leadership, and account-based lead pipelines. For B2C and ecommerce brands, we focus on viral social engagement, commercial intent search capture, and rapid multi-channel retargeting.</p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- FAQ 4 -->
-                                    <div class="vg-dm-faq-item wow fadeInUp" data-wow-delay=".5s">
-                                        <h3 class="accordion-header" id="headingD4" style="margin: 0;">
-                                            <button class="vg-dm-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqD4" aria-expanded="false" aria-controls="faqD4">
-                                                <span>Why choose a full-service agency over a specialist agency?</span>
-                                                <span class="vg-dm-faq-icon"><i class="fas fa-chevron-down"></i></span>
+                                    <div class="vg-faq-item wow fadeInUp" data-wow-delay=".4s">
+                                        <h3 class="vg-faq-header" id="headingDmFaq4">
+                                            <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDmFaq4" aria-expanded="false" aria-controls="collapseDmFaq4">
+                                                <span class="vg-faq-qnum">04</span>
+                                                <span class="vg-faq-qtext">Why choose a full-service agency over a specialist agency?</span>
+                                                <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
                                             </button>
                                         </h3>
-                                        <div id="faqD4" class="accordion-collapse collapse" aria-labelledby="headingD4" data-bs-parent="#accordionDigital">
-                                            <div class="vg-dm-faq-body">
-                                                A full-service agency like VG Digital Falcon ensures all your online efforts (SEO, social, ads) are unified and work together, leading to a stronger, more consistent brand message and more efficient marketing spend.
+                                        <div id="collapseDmFaq4" class="accordion-collapse collapse" aria-labelledby="headingDmFaq4" data-bs-parent="#vgDmFaqAccordion">
+                                            <div class="vg-faq-body">
+                                                <p>Managing multiple disconnected agencies creates fractured attribution, conflicting goals, and siloed budgets. A unified agency like VG Digital Falcon aligns SEO, paid ads, web UX, and social nurture into one cohesive flywheel—ensuring every channel amplifies the other to maximize blended ROAS and lower customer acquisition costs (CAC).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Column 2: Questions 05 to 08 -->
+                            <div class="col-lg-6">
+                                <div class="vg-faq-col">
+                                    <!-- FAQ 5 -->
+                                    <div class="vg-faq-item wow fadeInUp" data-wow-delay=".5s">
+                                        <h3 class="vg-faq-header" id="headingDmFaq5">
+                                            <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDmFaq5" aria-expanded="false" aria-controls="collapseDmFaq5">
+                                                <span class="vg-faq-qnum">05</span>
+                                                <span class="vg-faq-qtext">Do you offer services beyond the Indian market?</span>
+                                                <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                                            </button>
+                                        </h3>
+                                        <div id="collapseDmFaq5" class="accordion-collapse collapse" aria-labelledby="headingDmFaq5" data-bs-parent="#vgDmFaqAccordion">
+                                            <div class="vg-faq-body">
+                                                <p>Yes. While headquartered in India, VG Digital Falcon serves global enterprises and growth brands across North America, Europe, the Middle East, and APAC. We execute international multi-lingual SEO, global geo-targeted ad campaigns, and localized market expansion strategies.</p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- FAQ 5 -->
-                                    <div class="vg-dm-faq-item wow fadeInUp" data-wow-delay=".6s">
-                                        <h3 class="accordion-header" id="headingD5" style="margin: 0;">
-                                            <button class="vg-dm-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqD5" aria-expanded="false" aria-controls="faqD5">
-                                                <span>Do you offer services beyond the Indian market?</span>
-                                                <span class="vg-dm-faq-icon"><i class="fas fa-chevron-down"></i></span>
+                                    <!-- FAQ 6 -->
+                                    <div class="vg-faq-item wow fadeInUp" data-wow-delay=".6s">
+                                        <h3 class="vg-faq-header" id="headingDmFaq6">
+                                            <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDmFaq6" aria-expanded="false" aria-controls="collapseDmFaq6">
+                                                <span class="vg-faq-qnum">06</span>
+                                                <span class="vg-faq-qtext">How do you measure and report marketing campaign ROI?</span>
+                                                <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
                                             </button>
                                         </h3>
-                                        <div id="faqD5" class="accordion-collapse collapse" aria-labelledby="headingD5" data-bs-parent="#accordionDigital">
-                                            <div class="vg-dm-faq-body">
-                                                Yes, while based in India, we provide global digital marketing services, catering to clients worldwide with international SEO and global performance marketing strategies.
+                                        <div id="collapseDmFaq6" class="accordion-collapse collapse" aria-labelledby="headingDmFaq6" data-bs-parent="#vgDmFaqAccordion">
+                                            <div class="vg-faq-body">
+                                                <p>We eliminate vanity metrics like clicks and impressions. Our clients receive custom live telemetry dashboards tracking real commercial KPIs: Cost Per Acquisition (CPA), Return On Ad Spend (ROAS), Qualified Pipeline Value (SQLs), and Customer Lifetime Value (LTV), backed by bi-weekly strategic review calls.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- FAQ 7 -->
+                                    <div class="vg-faq-item wow fadeInUp" data-wow-delay=".7s">
+                                        <h3 class="vg-faq-header" id="headingDmFaq7">
+                                            <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDmFaq7" aria-expanded="false" aria-controls="collapseDmFaq7">
+                                                <span class="vg-faq-qnum">07</span>
+                                                <span class="vg-faq-qtext">How do you determine the optimal budget allocation across channels?</span>
+                                                <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                                            </button>
+                                        </h3>
+                                        <div id="collapseDmFaq7" class="accordion-collapse collapse" aria-labelledby="headingDmFaq7" data-bs-parent="#vgDmFaqAccordion">
+                                            <div class="vg-faq-body">
+                                                <p>We analyze your industry unit economics, competitor landscape, and target CAC. Typically, we deploy a hybrid split: immediate-capture paid advertising (PPC) to harvest existing high-intent demand while concurrently investing into organic SEO, content, and branding to systematically decrease your blended CAC over time.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- FAQ 8 -->
+                                    <div class="vg-faq-item wow fadeInUp" data-wow-delay=".8s">
+                                        <h3 class="vg-faq-header" id="headingDmFaq8">
+                                            <button class="vg-faq-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDmFaq8" aria-expanded="false" aria-controls="collapseDmFaq8">
+                                                <span class="vg-faq-qnum">08</span>
+                                                <span class="vg-faq-qtext">How does your AI-driven Falcon Marketing Engine give our brand an unfair advantage?</span>
+                                                <span class="vg-faq-icon"><i class="fa-solid fa-chevron-down"></i></span>
+                                            </button>
+                                        </h3>
+                                        <div id="collapseDmFaq8" class="accordion-collapse collapse" aria-labelledby="headingDmFaq8" data-bs-parent="#vgDmFaqAccordion">
+                                            <div class="vg-faq-body">
+                                                <p>We integrate autonomous AI agents and machine-learning workflows across creative iteration, predictive bid management, search query semantic clustering, and lead scoring. This allows our campaigns to adapt in real time to algorithm updates and consumer behavior faster than traditional agency workflows.</p>
                                             </div>
                                         </div>
                                     </div>
@@ -848,85 +1099,86 @@
             </div>
         </section>
 
-        <!-- ==========================================================================
-             EXECUTIVE 5-COLUMN CYBERNETIC FOOTER
+                <!-- ==========================================================================
+             FOOTER SECTION
              ========================================================================== -->
         <footer class="vg-footer">
-            <div class="vg-footer-container">
+            <div class="container">
                 <div class="vg-footer-grid">
-                    <!-- Col 1: Brand & Mission -->
+                    <!-- Col 1: Brand Info -->
                     <div class="vg-footer-about">
-                        <a href="../index.html" class="vg-brand-wrap" aria-label="VG Digital Falcon Homepage">
-                            <img src="../../assets/img/logo/dflogo-white.png?v=2" alt="VG Digital Falcon Logo" class="vg-footer-brand-logo">
+                        <a href="../index.html" class="vg-brand-wrap mb-3" aria-label="VG Digital Falcon Homepage">
+                            <img src="../../assets/img/logo/dflogo-white.png?v=2" alt="VG Digital Falcon - Group of Vilvaa Guru" class="vg-header-brand-logo vg-footer-brand-logo">
                         </a>
-                        <p>At Digital Falcon, our mission is to empower businesses with tools and strategies they need to thrive in today’s market. We believe in building strong, authentic brands that resonate with audiences and drive lasting success.</p>
+                        <p>
+                            We help businesses grow smarter, faster and stronger with AI-powered digital marketing and performance systems.
+                        </p>
                         <div class="vg-footer-socials">
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fa-brands fa-youtube"></i></a>
                         </div>
                     </div>
 
-                    <!-- Col 2: Navigation Links -->
+                    <!-- Col 2: Company -->
                     <div class="vg-footer-col">
                         <h5>Company</h5>
                         <ul>
-                            <li><a href="../about-us.html"><i class="fa-regular fa-chevrons-right"></i> About VG Digital Falcon</a></li>
-                            <li><a href="../contact.html"><i class="fa-regular fa-chevrons-right"></i> Contact Us</a></li>
-                            <li><a href="../index.html#case-studies"><i class="fa-regular fa-chevrons-right"></i> Case Studies</a></li>
-                            <li><a href="../index.html#insights"><i class="fa-regular fa-chevrons-right"></i> Insights & Blogs</a></li>
-                            <li><a href="#faq"><i class="fa-regular fa-chevrons-right"></i> FAQ’S</a></li>
+                            <li><a href="../about-us.html">About Us</a></li>
+                            <li><a href="#faq">FAQs</a></li>
+                            <li><a href="../index.html#insights">Blog &amp; Insights</a></li>
+                            <li><a href="../index.html#case-studies">Case Studies</a></li>
+                            <li><a href="../contact.html">Contact Us</a></li>
                         </ul>
                     </div>
 
                     <!-- Col 3: Services -->
                     <div class="vg-footer-col">
-                        <h5>Our Services</h5>
+                        <h5>Services</h5>
                         <ul>
-                            <li><a href="digital-marketing-service.html"><i class="fa-regular fa-chevrons-right"></i> Digital Marketing</a></li>
-                            <li><a href="seo-service.html"><i class="fa-regular fa-chevrons-right"></i> SEO Service</a></li>
-                            <li><a href="web-development.html"><i class="fa-regular fa-chevrons-right"></i> Web Development</a></li>
-                            <li><a href="performance-marketing.html"><i class="fa-regular fa-chevrons-right"></i> Performance Marketing</a></li>
-                            <li><a href="social-media-optimization-agency.html"><i class="fa-regular fa-chevrons-right"></i> SMO Service</a></li>
+                            <li><a href="seo-service.html">SEO</a></li>
+                            <li><a href="performance-marketing.html">Google Ads</a></li>
+                            <li><a href="performance-marketing.html">Meta Ads</a></li>
+                            <li><a href="performance-marketing.html">Performance Marketing</a></li>
+                            <li><a href="personal-branding-service.html">Content Marketing</a></li>
+                            <li><a href="web-development.html">Website Development</a></li>
+                            <li><a href="../index.html#services">AI Automation</a></li>
                         </ul>
                     </div>
 
-                    <!-- Col 4: Solutions -->
+                    <!-- Col 4: Industries -->
                     <div class="vg-footer-col">
-                        <h5>Growth Solutions</h5>
+                        <h5>Industries</h5>
                         <ul>
-                            <li><a href="ecommerce-seo-service.html"><i class="fa-regular fa-chevrons-right"></i> Ecommerce SEO</a></li>
-                            <li><a href="youtube-seo-agency.html"><i class="fa-regular fa-chevrons-right"></i> YouTube SEO</a></li>
-                            <li><a href="personal-branding-service.html"><i class="fa-regular fa-chevrons-right"></i> Personal Branding</a></li>
-                            <li><a href="../service.html"><i class="fa-regular fa-chevrons-right"></i> All Service Hub</a></li>
-                            <li><a href="../thankyou.html"><i class="fa-regular fa-chevrons-right"></i> Client Success</a></li>
+                            <li><a href="#">Healthcare</a></li>
+                            <li><a href="#">Education</a></li>
+                            <li><a href="#">Real Estate</a></li>
+                            <li><a href="#">E-commerce</a></li>
+                            <li><a href="#">Manufacturing</a></li>
+                            <li><a href="#">Retail</a></li>
                         </ul>
                     </div>
 
-                    <!-- Col 5: Contact Direct -->
+                    <!-- Col 5: Resources & Newsletter -->
                     <div class="vg-footer-col">
-                        <h5>Contact Info</h5>
-                        <ul style="gap: 14px;">
-                            <li style="display: flex; align-items: center; gap: 10px; color: #cbd5e1; font-size: 13.5px;">
-                                <i class="fal fa-map-marker-alt" style="color: #38bdf8;"></i> Alandur, Tamil Nadu
-                            </li>
-                            <li style="display: flex; align-items: center; gap: 10px; font-size: 13.5px;">
-                                <i class="far fa-phone" style="color: #38bdf8;"></i> <a href="tel:+918695776922">+91 8695776922</a>
-                            </li>
-                            <li style="display: flex; align-items: center; gap: 10px; font-size: 13.5px;">
-                                <i class="fal fa-envelope" style="color: #38bdf8;"></i> <a href="mailto:contact@vgdigitalfalcon.com">contact@vgdigitalfalcon.com</a>
-                            </li>
-                        </ul>
+                        <h5>Newsletter</h5>
+                        <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">Get the latest marketing insights &amp; AI growth updates.</p>
+                        <div class="vg-newsletter-box">
+                            <input aria-label="Enter your email" type="email" placeholder="Enter your email">
+                            <button type="submit" aria-label="Subscribe to newsletter"><i class="fa-regular fa-paper-plane"></i></button>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Footer Bottom Bar -->
+                <!-- Footer Bottom -->
                 <div class="vg-footer-bottom">
-                    <p>© All Copyright 2026 by <a href="../index.html" style="color: #38bdf8;">VG Digital Falcon</a>. All Rights Reserved.</p>
-                    <div class="d-flex gap-4">
-                        <a href="../about-us.html" style="color: #64748b;">Terms of Service</a>
-                        <a href="../contact.html" style="color: #64748b;">Privacy Policy</a>
+                    <div>
+                        © 2026 VG Digital Falcon. All Rights Reserved.
+                    </div>
+                    <div>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms &amp; Conditions</a>
                     </div>
                 </div>
             </div>
@@ -945,7 +1197,7 @@
         <script src="../../assets/js/wow.min.js"></script>
         <script src="../../assets/js/main.js?v=60.0"></script>
         <script src="../../assets/js/dtapex-particles.js?v=52.0"></script>
-        <script src="../../assets/js/engines/dm-growth-matrix.js?v=1.0"></script>
+        <script src="../../assets/js/engines/dm-growth-matrix.js?v=2.0"></script>
 
         <script>
             // Simple Mathematical Captcha Generation
@@ -1059,22 +1311,23 @@
                 });
             }
             
-            // Numeric counter animation
+            // Numeric counter animation with prefix & suffix support
             const counters = document.querySelectorAll('.counter');
             const speed = 200;
             
             function runCounter() {
                 counters.forEach(counter => {
                     const target = +counter.getAttribute('data-target');
+                    const prefix = counter.getAttribute('data-prefix') || '';
                     const suffix = counter.getAttribute('data-suffix') || '';
                     let count = +counter.innerText.replace(/[^0-9.]/g, '');
                     const increment = target / speed;
                     
                     if (count < target) {
-                        counter.innerText = Math.ceil(count + increment).toLocaleString() + suffix;
+                        counter.innerText = prefix + Math.ceil(count + increment).toLocaleString() + suffix;
                         setTimeout(runCounter, 1);
                     } else {
-                        counter.innerText = target.toLocaleString() + suffix;
+                        counter.innerText = prefix + target.toLocaleString() + suffix;
                     }
                 });
             }
