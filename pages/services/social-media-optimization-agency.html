@@ -1143,83 +1143,249 @@
                 </h2>
             </div>
 
-            <!-- Centered 3-Column x 2-Row Grid (3 Cards Row 1, 3 Cards Row 2) -->
-            <div class="vg-smo-services-grid" style="display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 20px !important; max-width: 1180px !important; width: 100% !important; margin: 0 auto !important;">
-                <!-- Card 1: Facebook (100% Content Preserved) -->
-                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".2s" style="width: 100% !important; display: flex !important; flex-direction: column !important;">
-                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-fb" style="padding: 22px 24px !important; min-height: auto !important;">
-                        <div class="vg-smo-card-icon fb-glow">
-                            <img loading="lazy" decoding="async" src="../../assets/img/pricing/fb.png" alt="Facebook SMO Icon">
+            <!-- Centered 3-Column x 2-Row Native Dark Social Platform UI Grid -->
+            <div class="vg-smo-services-grid">
+                <!-- Card 1: Facebook (Native Dark Facebook Page Post Card) -->
+                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".2s">
+                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-fb">
+                        <!-- Top Header: Platform Identity & Sub-label -->
+                        <div class="vg-native-header">
+                            <div class="vg-native-avatar fb-avatar">
+                                <img loading="lazy" decoding="async" src="../../assets/img/pricing/fb.png" alt="Facebook SMO Icon">
+                            </div>
+                            <div class="vg-native-meta">
+                                <div class="vg-native-name-row">
+                                    <span class="vg-native-name">VG Digital Falcon</span>
+                                    <span class="vg-native-badge-pill fb-pill">Facebook Growth</span>
+                                </div>
+                                <span class="vg-native-sub">Sponsored • <i class="fa-solid fa-earth-americas"></i></span>
+                            </div>
+                            <div class="vg-native-dots"><i class="fa-solid fa-ellipsis"></i></div>
                         </div>
-                        <h3 class="vg-smo-card-title">Facebook</h3>
-                        <p class="vg-smo-card-desc">
-                            Drive targeted engagement, build high-converting communities, and scale brand visibility through high-impact posts and viral growth strategies.
-                        </p>
+
+                        <!-- Post Body: SMO Description -->
+                        <div class="vg-native-body">
+                            <p class="vg-smo-card-desc">
+                                Drive targeted engagement, build high-converting communities, and scale brand visibility through high-impact posts and viral growth strategies.
+                            </p>
+                        </div>
+
+                        <!-- Bottom Reaction Bar: Likes, Comments & Share -->
+                        <div class="vg-native-footer fb-footer">
+                            <div class="fb-reactions-left">
+                                <span class="fb-reaction-emojis">
+                                    <span class="fb-icon-like"><i class="fa-solid fa-thumbs-up"></i></span>
+                                    <span class="fb-icon-love"><i class="fa-solid fa-heart"></i></span>
+                                </span>
+                                <span class="fb-reaction-count">2.4K</span>
+                                <span class="fb-dot-sep">•</span>
+                                <span class="fb-comment-count">148 Comments</span>
+                            </div>
+                            <div class="fb-share-btn">
+                                <i class="fa-solid fa-share"></i> Share
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 2: Instagram (100% Content Preserved) -->
-                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".3s" style="width: 100% !important; display: flex !important; flex-direction: column !important;">
-                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-insta" style="padding: 22px 24px !important; min-height: auto !important;">
-                        <div class="vg-smo-card-icon insta-glow">
-                            <img loading="lazy" decoding="async" src="../../assets/img/pricing/insta.png" alt="Instagram SMO Icon">
+                <!-- Card 2: Instagram (Native Dark Instagram Reel / Feed Frame) -->
+                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".3s">
+                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-insta">
+                        <!-- Top Header: Gradient-Ring Avatar + Handle + Ellipsis -->
+                        <div class="vg-native-header">
+                            <div class="vg-native-avatar insta-avatar-ring">
+                                <div class="insta-avatar-inner">
+                                    <img loading="lazy" decoding="async" src="../../assets/img/pricing/insta.png" alt="Instagram SMO Icon">
+                                </div>
+                            </div>
+                            <div class="vg-native-meta">
+                                <div class="vg-native-name-row">
+                                    <span class="vg-native-name">@vg_instagram_growth</span>
+                                    <i class="fa-solid fa-circle-check insta-verified"></i>
+                                </div>
+                                <span class="vg-native-sub">Instagram Reels &amp; Story Growth</span>
+                            </div>
+                            <div class="vg-native-dots"><i class="fa-solid fa-ellipsis"></i></div>
                         </div>
-                        <h3 class="vg-smo-card-title">Instagram</h3>
-                        <p class="vg-smo-card-desc">
-                            Amplify visual storytelling with aesthetic feed curation, high-reach Reels, and viral story campaigns designed to turn followers into loyal buyers.
-                        </p>
+
+                        <!-- Post Body: Caption with Handle -->
+                        <div class="vg-native-body">
+                            <p class="vg-smo-card-desc">
+                                Amplify visual storytelling with aesthetic feed curation, high-reach Reels, and viral story campaigns designed to turn followers into loyal buyers.
+                            </p>
+                        </div>
+
+                        <!-- Bottom Action Bar: Heart, Comment, Share + Bookmark + Likes -->
+                        <div class="vg-native-footer insta-footer">
+                            <div class="insta-actions-row">
+                                <div class="insta-actions-left">
+                                    <i class="fa-regular fa-heart"></i>
+                                    <i class="fa-regular fa-comment"></i>
+                                    <i class="fa-regular fa-paper-plane"></i>
+                                </div>
+                                <div class="insta-actions-right">
+                                    <i class="fa-regular fa-bookmark"></i>
+                                </div>
+                            </div>
+                            <div class="insta-likes-row">
+                                <span>Liked by <strong>4,820+ brands</strong></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 3: YouTube Channel (100% Content Preserved) -->
-                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".4s" style="width: 100% !important; display: flex !important; flex-direction: column !important;">
-                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-yt" style="padding: 22px 24px !important; min-height: auto !important;">
-                        <div class="vg-smo-card-icon yt-glow">
-                            <img loading="lazy" decoding="async" src="../../assets/img/pricing/youtube.png" alt="YouTube Channel SMO Icon">
+                <!-- Card 3: YouTube Channel (Native Dark YouTube Studio / Video Card) -->
+                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".4s">
+                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-yt">
+                        <!-- Top Header: YouTube Badge + Channel Title + Glowing Subscribe Pill -->
+                        <div class="vg-native-header">
+                            <div class="vg-native-avatar yt-avatar">
+                                <img loading="lazy" decoding="async" src="../../assets/img/pricing/youtube.png" alt="YouTube Channel SMO Icon">
+                            </div>
+                            <div class="vg-native-meta">
+                                <span class="vg-native-name">YouTube Channel Growth</span>
+                                <span class="vg-native-sub">VG Digital Falcon • Official</span>
+                            </div>
+                            <div class="yt-subscribe-btn">
+                                Subscribe <i class="fa-solid fa-bell"></i>
+                            </div>
                         </div>
-                        <h3 class="vg-smo-card-title">YouTube Channel</h3>
-                        <p class="vg-smo-card-desc">
-                            Accelerate channel subscribers and watch time with high-CTR thumbnails, algorithmic video SEO, and retention-focused content strategies.
-                        </p>
+
+                        <!-- Video Card Body: Description -->
+                        <div class="vg-native-body">
+                            <p class="vg-smo-card-desc">
+                                Accelerate channel subscribers and watch time with high-CTR thumbnails, algorithmic video SEO, and retention-focused content strategies.
+                            </p>
+                        </div>
+
+                        <!-- Bottom Video Telemetry Strip -->
+                        <div class="vg-native-footer yt-footer">
+                            <div class="yt-telemetry">
+                                <span class="yt-views"><i class="fa-solid fa-play"></i> 1.2M+ Views</span>
+                                <span class="yt-bullet">•</span>
+                                <span class="yt-tag">High-CTR Thumbnails &amp; Video SEO</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 4: Twitter (100% Content Preserved) -->
-                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".5s" style="width: 100% !important; display: flex !important; flex-direction: column !important;">
-                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-tw" style="padding: 22px 24px !important; min-height: auto !important;">
-                        <div class="vg-smo-card-icon tw-glow">
-                            <img loading="lazy" decoding="async" src="../../assets/img/pricing/twitter.png" alt="Twitter SMO Icon">
+                <!-- Card 4: Twitter / X (Native Dark X Viral Post Card) -->
+                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".5s">
+                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-tw">
+                        <!-- Top Header: X Icon + Handle + Verified Badge -->
+                        <div class="vg-native-header">
+                            <div class="vg-native-avatar tw-avatar">
+                                <img loading="lazy" decoding="async" src="../../assets/img/pricing/twitter.png" alt="Twitter / X SMO Icon">
+                            </div>
+                            <div class="vg-native-meta">
+                                <div class="vg-native-name-row">
+                                    <span class="vg-native-name">X Growth Engine</span>
+                                    <i class="fa-solid fa-circle-check tw-verified"></i>
+                                </div>
+                                <span class="vg-native-sub">@vg_x_trends</span>
+                            </div>
+                            <div class="vg-native-dots tw-icon-glyph"><i class="fa-brands fa-x-twitter"></i></div>
                         </div>
-                        <h3 class="vg-smo-card-title">Twitter</h3>
-                        <p class="vg-smo-card-desc">
-                            Dominate real-time industry conversations with trend-jacking tweets, strategic threads, and viral hashtag campaigns that build thought leadership.
-                        </p>
+
+                        <!-- Post Copy: Description -->
+                        <div class="vg-native-body">
+                            <p class="vg-smo-card-desc">
+                                Dominate real-time industry conversations with trend-jacking tweets, strategic threads, and viral hashtag campaigns that build thought leadership.
+                            </p>
+                        </div>
+
+                        <!-- Bottom X Metrics Bar: Replies, Retweets, Likes, Views -->
+                        <div class="vg-native-footer tw-footer">
+                            <div class="tw-metrics-grid">
+                                <span><i class="fa-regular fa-comment"></i> 92</span>
+                                <span><i class="fa-solid fa-retweet"></i> 640</span>
+                                <span><i class="fa-regular fa-heart"></i> 3.1K</span>
+                                <span><i class="fa-solid fa-chart-simple"></i> 180K</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 5: LinkedIn Business (100% Content Preserved) -->
-                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".6s" style="width: 100% !important; display: flex !important; flex-direction: column !important;">
-                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-li" style="padding: 22px 24px !important; min-height: auto !important;">
-                        <div class="vg-smo-card-icon li-glow">
-                            <img loading="lazy" decoding="async" src="../../assets/img/pricing/linkedin.png" alt="LinkedIn Business SMO Icon">
+                <!-- Card 5: LinkedIn Business (Native Dark LinkedIn B2B Post Card) -->
+                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".6s">
+                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-li">
+                        <!-- Top Header: LinkedIn Badge + Name + 1st Connection + Follow Button -->
+                        <div class="vg-native-header">
+                            <div class="vg-native-avatar li-avatar">
+                                <img loading="lazy" decoding="async" src="../../assets/img/pricing/linkedin.png" alt="LinkedIn Business SMO Icon">
+                            </div>
+                            <div class="vg-native-meta">
+                                <div class="vg-native-name-row">
+                                    <span class="vg-native-name">LinkedIn Business</span>
+                                    <span class="li-degree">• 1st</span>
+                                </div>
+                                <span class="vg-native-sub">B2B Authority &amp; Pipeline</span>
+                            </div>
+                            <a href="#enquiryForm" class="li-follow-btn">+ Follow</a>
                         </div>
-                        <h3 class="vg-smo-card-title">LinkedIn Business</h3>
-                        <p class="vg-smo-card-desc">
-                            Establish authority and generate qualified B2B leads through executive thought leadership, polished company updates, and organic decision-maker reach.
-                        </p>
+
+                        <!-- Post Body: Description -->
+                        <div class="vg-native-body">
+                            <p class="vg-smo-card-desc">
+                                Establish authority and generate qualified B2B leads through executive thought leadership, polished company updates, and organic decision-maker reach.
+                            </p>
+                        </div>
+
+                        <!-- Bottom LinkedIn Reaction Bar -->
+                        <div class="vg-native-footer li-footer">
+                            <div class="li-reactions-left">
+                                <span class="li-reaction-icons">
+                                    <span class="li-icon-thumbs"><i class="fa-solid fa-thumbs-up"></i></span>
+                                    <span class="li-icon-bulb"><i class="fa-solid fa-lightbulb"></i></span>
+                                    <span class="li-icon-clap"><i class="fa-solid fa-hands-clapping"></i></span>
+                                </span>
+                                <span class="li-reaction-count">890</span>
+                            </div>
+                            <div class="li-leads-badge">
+                                <i class="fa-solid fa-briefcase"></i> 64 B2B Leads
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Card 6: WhatsApp Marketing (100% Content Preserved) -->
-                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".7s" style="width: 100% !important; display: flex !important; flex-direction: column !important;">
-                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-wa" style="padding: 22px 24px !important; min-height: auto !important;">
-                        <div class="vg-smo-card-icon wa-glow">
-                            <img loading="lazy" decoding="async" src="../../assets/img/pricing/whatsapp.png" alt="WhatsApp Marketing Icon">
+                <!-- Card 6: WhatsApp Marketing (Native Dark WhatsApp Business Chat Card) -->
+                <div class="vg-smo-grid-col wow fadeInUp" data-wow-delay=".7s">
+                    <div class="vg-smo-card vg-smo-platform-card vg-smo-card-wa">
+                        <!-- Top Header: WhatsApp Badge + Status + Call Glyph -->
+                        <div class="vg-native-header">
+                            <div class="vg-native-avatar wa-avatar">
+                                <img loading="lazy" decoding="async" src="../../assets/img/pricing/whatsapp.png" alt="WhatsApp Marketing Icon">
+                            </div>
+                            <div class="vg-native-meta">
+                                <span class="vg-native-name">WhatsApp Marketing</span>
+                                <span class="vg-native-sub wa-online-status">
+                                    <span class="wa-status-dot"></span> Online
+                                </span>
+                            </div>
+                            <div class="vg-native-dots wa-call-icon"><i class="fa-solid fa-phone"></i></div>
                         </div>
-                        <h3 class="vg-smo-card-title">WhatsApp Marketing</h3>
-                        <p class="vg-smo-card-desc">
-                            Engage high-intent customers with personalized 1-on-1 broadcast campaigns, automated flows, and direct-to-chat conversion strategies.
-                        </p>
+
+                        <!-- Middle Body: Chat Bubble with Blue Double Ticks -->
+                        <div class="vg-native-body wa-bubble-body">
+                            <div class="wa-chat-bubble">
+                                <p class="vg-smo-card-desc">
+                                    Engage high-intent customers with personalized 1-on-1 broadcast campaigns, automated flows, and direct-to-chat conversion strategies.
+                                </p>
+                                <div class="wa-msg-meta">
+                                    <span class="wa-msg-time">12:24 PM</span>
+                                    <span class="wa-msg-ticks"><i class="fa-solid fa-check-double"></i></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Bottom Telemetry Strip -->
+                        <div class="vg-native-footer wa-footer">
+                            <div class="wa-telemetry">
+                                <span class="wa-open-rate"><i class="fa-solid fa-bolt"></i> 98% Open Rate</span>
+                                <span class="wa-bullet">•</span>
+                                <span class="wa-tag">Broadcast &amp; Automation</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

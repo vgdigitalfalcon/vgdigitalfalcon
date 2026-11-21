@@ -912,6 +912,27 @@ body {
 
 .vg-mobile-sub.is-open {
   display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+.vg-mobile-parent-link {
+  cursor: pointer !important;
+  user-select: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+}
+
+.vg-mobile-parent-link i {
+  transition: transform 0.25s ease !important;
+  font-size: 11px !important;
+}
+
+.vg-mobile-parent-link[aria-expanded="true"] i,
+.vg-mobile-nav-list li.has-dropdown.is-open > .vg-mobile-parent-link i {
+  transform: rotate(180deg) !important;
 }
 
 .vg-mobile-sub li {
@@ -25995,29 +26016,25 @@ body.vg-yt-page .vg-yt-section {
   }
 }
 
-/* Base Card Surface: Compact 22px 24px padding, 16px radius, min-height: auto */
-.vg-smo-card,
-.vg-smo-platform-card,
-#services .vg-smo-card {
-  background: rgba(17, 11, 36, 0.92) !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 16px !important;
-  padding: 22px 24px !important;
+/* Base Card Surface: Native Dark Platform Frame */
+.vg-smo-card.vg-smo-platform-card {
+  border-radius: 18px !important;
+  padding: 20px 22px !important;
   height: 100% !important;
-  min-height: auto !important;
+  min-height: 290px !important;
   display: flex !important;
   flex-direction: column !important;
-  justify-content: flex-start !important;
+  justify-content: space-between !important;
   position: relative !important;
   overflow: hidden !important;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s ease, box-shadow 0.35s ease !important;
 }
 
-/* 2px Top Gradient Accent Line Across Top Edge */
-.vg-smo-card::before,
-.vg-smo-platform-card::before,
-#services .vg-smo-card::before {
+/* 2px Top Platform Accent Line */
+.vg-smo-card.vg-smo-platform-card::before {
   content: "" !important;
   position: absolute !important;
   top: 0 !important;
@@ -26029,278 +26046,653 @@ body.vg-yt-page .vg-yt-section {
   transition: opacity 0.35s ease, height 0.35s ease, box-shadow 0.35s ease !important;
 }
 
-.vg-smo-card:hover::before,
-.vg-smo-platform-card:hover::before,
-#services .vg-smo-card:hover::before {
+.vg-smo-card.vg-smo-platform-card:hover::before {
   height: 2.5px !important;
   opacity: 1 !important;
 }
 
-/* Soft Top-Left Ambient Radial Glow Behind Icon Badge */
-.vg-smo-card::after,
-.vg-smo-platform-card::after,
-#services .vg-smo-card::after {
-  content: "" !important;
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 180px !important;
-  height: 150px !important;
-  pointer-events: none !important;
-  z-index: 1 !important;
-  opacity: 0.55 !important;
-  transition: opacity 0.35s ease !important;
+/* Native Header Row */
+.vg-native-header {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-bottom: 14px !important;
+  padding-bottom: 12px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  position: relative !important;
+  z-index: 2 !important;
 }
 
-.vg-smo-card:hover::after,
-.vg-smo-platform-card:hover::after,
-#services .vg-smo-card:hover::after {
-  opacity: 1 !important;
-}
-
-/* Compact 38px × 38px Icon Badge with 14px bottom margin */
-.vg-smo-card-icon,
-.vg-smo-platform-card .vg-smo-card-icon,
-#services .vg-smo-card-icon {
+.vg-native-avatar {
   width: 38px !important;
   height: 38px !important;
-  border-radius: 11px !important;
-  display: inline-flex !important;
+  border-radius: 50% !important;
+  display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  flex-shrink: 0 !important;
+  overflow: hidden !important;
+}
+
+.vg-native-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+.vg-native-meta {
+  flex: 1 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  text-align: left !important;
+}
+
+.vg-native-name-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-wrap: wrap !important;
+}
+
+.vg-native-name {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+}
+
+.vg-native-sub {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11.5px !important;
+  color: #94A3B8 !important;
+  line-height: 1.25 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.vg-native-dots {
+  color: #64748B !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  padding: 4px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: color 0.2s ease !important;
+}
+
+.vg-native-dots:hover {
+  color: #CBD5E1 !important;
+}
+
+/* Card Body */
+.vg-native-body {
+  flex-grow: 1 !important;
   margin-bottom: 14px !important;
   position: relative !important;
   z-index: 2 !important;
-  background: rgba(168, 85, 247, 0.12) !important;
-  border: 1px solid rgba(168, 85, 247, 0.35) !important;
-  box-shadow: 0 0 16px rgba(168, 85, 247, 0.22) !important;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease !important;
-  flex-shrink: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
-.vg-smo-card-icon img,
-.vg-smo-platform-card .vg-smo-card-icon img,
-#services .vg-smo-card-icon img {
-  width: 20px !important;
-  height: 20px !important;
-  object-fit: contain !important;
-  transition: transform 0.35s ease !important;
-}
-
-.vg-smo-card:hover .vg-smo-card-icon,
-.vg-smo-platform-card:hover .vg-smo-card-icon,
-#services .vg-smo-card:hover .vg-smo-card-icon {
-  transform: scale(1.08) translateY(-2px) !important;
-}
-
-.vg-smo-card:hover .vg-smo-card-icon img,
-.vg-smo-platform-card:hover .vg-smo-card-icon img,
-#services .vg-smo-card:hover .vg-smo-card-icon img {
-  transform: scale(1.12) !important;
-}
-
-/* Tight Card Title (18px, margin-bottom: 8px) */
-.vg-smo-card-title,
-.vg-smo-platform-card .vg-smo-card-title,
-#services .vg-smo-card-title {
-  color: #ffffff !important;
-  font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: 18px !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.02em !important;
-  line-height: 1.3 !important;
-  margin-bottom: 8px !important;
-  text-align: left !important;
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-/* Concise 2-3 Line Body Copy (13.5px, line-height: 1.55, no trailing bottom space) */
-.vg-smo-card-desc,
-.vg-smo-platform-card .vg-smo-card-desc,
-#services .vg-smo-card-desc {
-  color: #94a3b8 !important;
+.vg-smo-card-desc {
   font-family: 'Inter', sans-serif !important;
   font-size: 13.5px !important;
-  line-height: 1.55 !important;
+  line-height: 1.6 !important;
+  color: #CBD5E1 !important;
   margin: 0 !important;
-  padding: 0 !important;
   text-align: left !important;
-  position: relative !important;
-  z-index: 2 !important;
-  flex-grow: 1 !important;
 }
 
-/* ==========================================================================
-   PLATFORM BRAND COLOR THEMES (ALL 6 CARDS)
-   ========================================================================== */
+/* Card Footer / Reaction Bar */
+.vg-native-footer {
+  margin-top: auto !important;
+  padding-top: 12px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  position: relative !important;
+  z-index: 2 !important;
+  font-family: 'Inter', sans-serif !important;
+}
 
 /* --------------------------------------------------------------------------
-   Card 1 — Facebook: Royal Facebook Blue (#1877F2 -> #38BDF8)
+   Card 1 — Facebook (Deep Royal Blue Tint rgba(24, 119, 242, 0.12))
    -------------------------------------------------------------------------- */
-.vg-smo-card-fb::before,
-#services .vg-smo-card:has(.fb-glow)::before {
+.vg-smo-card-fb {
+  background: radial-gradient(circle at 18% 18%, rgba(24, 119, 242, 0.13) 0%, rgba(15, 10, 31, 0.94) 75%), #0a0614 !important;
+  border: 1px solid rgba(24, 119, 242, 0.28) !important;
+}
+
+.vg-smo-card-fb::before {
   background: linear-gradient(90deg, #1877F2 0%, #38BDF8 100%) !important;
   box-shadow: 0 0 10px rgba(24, 119, 242, 0.45) !important;
 }
 
-.vg-smo-card-fb::after,
-#services .vg-smo-card:has(.fb-glow)::after {
-  background: radial-gradient(circle at 18% 18%, rgba(24, 119, 242, 0.22) 0%, transparent 70%) !important;
+.vg-smo-card-fb .fb-avatar {
+  background: #1877F2 !important;
+  padding: 6px !important;
 }
 
-.vg-smo-card-fb .vg-smo-card-icon,
-.vg-smo-card-icon.fb-glow {
-  background: rgba(24, 119, 242, 0.14) !important;
-  border: 1px solid rgba(24, 119, 242, 0.45) !important;
-  box-shadow: 0 0 20px rgba(24, 119, 242, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+.vg-smo-card-fb .fb-pill {
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #60A5FA !important;
+  background: rgba(24, 119, 242, 0.15) !important;
+  border: 1px solid rgba(24, 119, 242, 0.3) !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
 }
 
-.vg-smo-card-fb:hover,
-#services .vg-smo-card:has(.fb-glow):hover {
-  transform: translateY(-4px) !important;
-  border-color: rgba(24, 119, 242, 0.65) !important;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(24, 119, 242, 0.32) !important;
+.vg-smo-card-fb .fb-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  font-size: 12px !important;
+  color: #94A3B8 !important;
+}
+
+.fb-reactions-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.fb-reaction-emojis {
+  display: inline-flex !important;
+  align-items: center !important;
+  margin-right: 4px !important;
+}
+
+.fb-icon-like,
+.fb-icon-love {
+  width: 18px !important;
+  height: 18px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 9px !important;
+  color: #ffffff !important;
+  margin-right: -4px !important;
+  border: 1.5px solid #0f0a1f !important;
+}
+
+.fb-icon-like {
+  background: #1877F2 !important;
+  z-index: 2 !important;
+}
+
+.fb-icon-love {
+  background: #FA383E !important;
+  z-index: 1 !important;
+}
+
+.fb-reaction-count {
+  font-weight: 600 !important;
+  color: #E2E8F0 !important;
+  margin-left: 6px !important;
+}
+
+.fb-dot-sep {
+  color: #64748B !important;
+}
+
+.fb-comment-count {
+  color: #94A3B8 !important;
+}
+
+.fb-share-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  color: #94A3B8 !important;
+  font-size: 11.5px !important;
+  font-weight: 600 !important;
+  padding: 4px 8px !important;
+  border-radius: 6px !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  transition: all 0.2s ease !important;
+}
+
+.fb-share-btn:hover {
+  color: #60A5FA !important;
+  background: rgba(24, 119, 242, 0.15) !important;
+}
+
+.vg-smo-card-fb:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(24, 119, 242, 0.7) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 32px rgba(24, 119, 242, 0.35) !important;
 }
 
 /* --------------------------------------------------------------------------
-   Card 2 — Instagram: Signature Pink-Orange-Purple Gradient (#F58529 -> #DD2A7B -> #8134AF)
+   Card 2 — Instagram (Sunset Pink-Orange-Purple Tint rgba(225, 48, 108, 0.14))
    -------------------------------------------------------------------------- */
-.vg-smo-card-insta::before,
-#services .vg-smo-card:has(.insta-glow)::before {
+.vg-smo-card-insta {
+  background: radial-gradient(circle at 18% 18%, rgba(225, 48, 108, 0.14) 0%, rgba(15, 10, 31, 0.94) 75%), #0a0614 !important;
+  border: 1px solid rgba(225, 48, 108, 0.28) !important;
+}
+
+.vg-smo-card-insta::before {
   background: linear-gradient(90deg, #F58529 0%, #DD2A7B 50%, #8134AF 100%) !important;
   box-shadow: 0 0 10px rgba(221, 42, 123, 0.45) !important;
 }
 
-.vg-smo-card-insta::after,
-#services .vg-smo-card:has(.insta-glow)::after {
-  background: radial-gradient(circle at 18% 18%, rgba(225, 48, 108, 0.24) 0%, rgba(245, 133, 41, 0.12) 45%, transparent 70%) !important;
+.insta-avatar-ring {
+  padding: 2px !important;
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF) !important;
+  border-radius: 50% !important;
 }
 
-.vg-smo-card-insta .vg-smo-card-icon,
-.vg-smo-card-icon.insta-glow {
-  background: linear-gradient(135deg, rgba(245, 133, 41, 0.15) 0%, rgba(225, 48, 108, 0.18) 50%, rgba(129, 52, 175, 0.15) 100%) !important;
-  border: 1px solid rgba(225, 48, 108, 0.45) !important;
-  box-shadow: 0 0 20px rgba(225, 48, 108, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+.insta-avatar-inner {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  background: #000 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3px !important;
 }
 
-.vg-smo-card-insta:hover,
-#services .vg-smo-card:has(.insta-glow):hover {
-  transform: translateY(-4px) !important;
-  border-color: rgba(225, 48, 108, 0.65) !important;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(225, 48, 108, 0.34) !important;
+.insta-verified {
+  color: #38BDF8 !important;
+  font-size: 12px !important;
+}
+
+.insta-actions-row {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  margin-bottom: 6px !important;
+}
+
+.insta-actions-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  font-size: 15px !important;
+  color: #CBD5E1 !important;
+}
+
+.insta-actions-left i:hover,
+.insta-actions-right i:hover {
+  color: #F43F5E !important;
+  cursor: pointer !important;
+}
+
+.insta-actions-right {
+  font-size: 15px !important;
+  color: #CBD5E1 !important;
+}
+
+.insta-likes-row {
+  font-size: 11.5px !important;
+  color: #94A3B8 !important;
+}
+
+.insta-likes-row strong {
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.vg-smo-card-insta:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(225, 48, 108, 0.7) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 32px rgba(225, 48, 108, 0.35) !important;
 }
 
 /* --------------------------------------------------------------------------
-   Card 3 — YouTube Channel: Vibrant YouTube Red (#FF0000 -> #F43F5E)
+   Card 3 — YouTube Channel (Crimson Red Tint rgba(255, 0, 0, 0.12))
    -------------------------------------------------------------------------- */
-.vg-smo-card-yt::before,
-#services .vg-smo-card:has(.yt-glow)::before {
+.vg-smo-card-yt {
+  background: radial-gradient(circle at 18% 18%, rgba(255, 0, 0, 0.12) 0%, rgba(15, 10, 31, 0.94) 75%), #0a0614 !important;
+  border: 1px solid rgba(255, 0, 0, 0.28) !important;
+}
+
+.vg-smo-card-yt::before {
   background: linear-gradient(90deg, #FF0000 0%, #F43F5E 100%) !important;
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.45) !important;
 }
 
-.vg-smo-card-yt::after,
-#services .vg-smo-card:has(.yt-glow)::after {
-  background: radial-gradient(circle at 18% 18%, rgba(255, 0, 0, 0.22) 0%, transparent 70%) !important;
+.yt-avatar {
+  background: #FF0000 !important;
+  padding: 6px !important;
 }
 
-.vg-smo-card-yt .vg-smo-card-icon,
-.vg-smo-card-icon.yt-glow {
-  background: rgba(255, 0, 0, 0.14) !important;
-  border: 1px solid rgba(255, 0, 0, 0.45) !important;
-  box-shadow: 0 0 20px rgba(239, 68, 68, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+.yt-subscribe-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  background: #CC0000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 9999px !important;
+  padding: 5px 12px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  box-shadow: 0 2px 10px rgba(204, 0, 0, 0.45) !important;
+  white-space: nowrap !important;
 }
 
-.vg-smo-card-yt:hover,
-#services .vg-smo-card:has(.yt-glow):hover {
-  transform: translateY(-4px) !important;
-  border-color: rgba(239, 68, 68, 0.65) !important;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(239, 68, 68, 0.32) !important;
+.yt-telemetry {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 11.5px !important;
+  flex-wrap: wrap !important;
+}
+
+.yt-views {
+  color: #EF4444 !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.yt-bullet {
+  color: #64748B !important;
+}
+
+.yt-tag {
+  color: #CBD5E1 !important;
+  font-weight: 500 !important;
+}
+
+.vg-smo-card-yt:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(255, 0, 0, 0.7) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 32px rgba(255, 0, 0, 0.35) !important;
 }
 
 /* --------------------------------------------------------------------------
-   Card 4 — Twitter (X): Crisp White / Metallic Silver (#FFFFFF -> #94A3B8)
+   Card 4 — Twitter / X (Sleek Silver-Slate Tint rgba(226, 232, 240, 0.08))
    -------------------------------------------------------------------------- */
-.vg-smo-card-tw::before,
-#services .vg-smo-card:has(.tw-glow)::before {
+.vg-smo-card-tw {
+  background: radial-gradient(circle at 18% 18%, rgba(226, 232, 240, 0.08) 0%, rgba(15, 10, 31, 0.94) 75%), #0a0614 !important;
+  border: 1px solid rgba(226, 232, 240, 0.22) !important;
+}
+
+.vg-smo-card-tw::before {
   background: linear-gradient(90deg, #FFFFFF 0%, #94A3B8 100%) !important;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
 }
 
-.vg-smo-card-tw::after,
-#services .vg-smo-card:has(.tw-glow)::after {
-  background: radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.16) 0%, transparent 70%) !important;
+.tw-avatar {
+  background: #000000 !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 6px !important;
 }
 
-.vg-smo-card-tw .vg-smo-card-icon,
-.vg-smo-card-icon.tw-glow {
-  background: rgba(255, 255, 255, 0.12) !important;
-  border: 1px solid rgba(255, 255, 255, 0.45) !important;
-  box-shadow: 0 0 20px rgba(226, 232, 240, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+.tw-verified {
+  color: #38BDF8 !important;
+  font-size: 12px !important;
 }
 
-.vg-smo-card-tw:hover,
-#services .vg-smo-card:has(.tw-glow):hover {
-  transform: translateY(-4px) !important;
-  border-color: rgba(255, 255, 255, 0.65) !important;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(226, 232, 240, 0.28) !important;
+.tw-icon-glyph {
+  font-size: 15px !important;
+  color: #CBD5E1 !important;
+}
+
+.tw-metrics-grid {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  font-size: 11.5px !important;
+  color: #94A3B8 !important;
+}
+
+.tw-metrics-grid span {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  transition: color 0.2s ease !important;
+}
+
+.tw-metrics-grid span:hover {
+  color: #38BDF8 !important;
+}
+
+.vg-smo-card-tw:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 32px rgba(255, 255, 255, 0.25) !important;
 }
 
 /* --------------------------------------------------------------------------
-   Card 5 — LinkedIn Business: Professional LinkedIn Blue (#0A66C2 -> #38BDF8)
+   Card 5 — LinkedIn Business (Executive LinkedIn Blue Tint rgba(10, 102, 194, 0.13))
    -------------------------------------------------------------------------- */
-.vg-smo-card-li::before,
-#services .vg-smo-card:has(.li-glow)::before {
+.vg-smo-card-li {
+  background: radial-gradient(circle at 18% 18%, rgba(10, 102, 194, 0.13) 0%, rgba(15, 10, 31, 0.94) 75%), #0a0614 !important;
+  border: 1px solid rgba(10, 102, 194, 0.28) !important;
+}
+
+.vg-smo-card-li::before {
   background: linear-gradient(90deg, #0A66C2 0%, #38BDF8 100%) !important;
   box-shadow: 0 0 10px rgba(10, 102, 194, 0.45) !important;
 }
 
-.vg-smo-card-li::after,
-#services .vg-smo-card:has(.li-glow)::after {
-  background: radial-gradient(circle at 18% 18%, rgba(10, 102, 194, 0.22) 0%, transparent 70%) !important;
+.li-avatar {
+  background: #0A66C2 !important;
+  padding: 6px !important;
 }
 
-.vg-smo-card-li .vg-smo-card-icon,
-.vg-smo-card-icon.li-glow {
-  background: rgba(10, 102, 194, 0.14) !important;
-  border: 1px solid rgba(10, 102, 194, 0.45) !important;
-  box-shadow: 0 0 20px rgba(10, 102, 194, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+.li-degree {
+  font-size: 11px !important;
+  color: #64748B !important;
+  font-weight: 500 !important;
 }
 
-.vg-smo-card-li:hover,
-#services .vg-smo-card:has(.li-glow):hover {
-  transform: translateY(-4px) !important;
-  border-color: rgba(10, 102, 194, 0.65) !important;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(10, 102, 194, 0.32) !important;
+.li-follow-btn {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  color: #38BDF8 !important;
+  background: rgba(10, 102, 194, 0.15) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  border-radius: 9999px !important;
+  padding: 4px 12px !important;
+  text-decoration: none !important;
+  transition: all 0.2s ease !important;
+  white-space: nowrap !important;
+}
+
+.li-follow-btn:hover {
+  background: #0A66C2 !important;
+  color: #ffffff !important;
+  border-color: #0A66C2 !important;
+}
+
+.li-footer {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  font-size: 11.5px !important;
+}
+
+.li-reactions-left {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.li-reaction-icons {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.li-icon-thumbs,
+.li-icon-bulb,
+.li-icon-clap {
+  width: 17px !important;
+  height: 17px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 8.5px !important;
+  color: #ffffff !important;
+  margin-right: -4px !important;
+  border: 1.5px solid #0f0a1f !important;
+}
+
+.li-icon-thumbs {
+  background: #0A66C2 !important;
+  z-index: 3 !important;
+}
+
+.li-icon-bulb {
+  background: #EAB308 !important;
+  z-index: 2 !important;
+}
+
+.li-icon-clap {
+  background: #10B981 !important;
+  z-index: 1 !important;
+}
+
+.li-reaction-count {
+  font-weight: 600 !important;
+  color: #CBD5E1 !important;
+  margin-left: 6px !important;
+}
+
+.li-leads-badge {
+  font-weight: 600 !important;
+  color: #38BDF8 !important;
+  background: rgba(56, 189, 248, 0.1) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  padding: 2.5px 8px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+}
+
+.vg-smo-card-li:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(10, 102, 194, 0.7) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 32px rgba(10, 102, 194, 0.35) !important;
 }
 
 /* --------------------------------------------------------------------------
-   Card 6 — WhatsApp Marketing: Fresh WhatsApp Emerald Green (#25D366 -> #10B981)
+   Card 6 — WhatsApp Marketing (Emerald Green Tint rgba(37, 211, 102, 0.12))
    -------------------------------------------------------------------------- */
-.vg-smo-card-wa::before,
-#services .vg-smo-card:has(.wa-glow)::before {
+.vg-smo-card-wa {
+  background: radial-gradient(circle at 18% 18%, rgba(37, 211, 102, 0.12) 0%, rgba(15, 10, 31, 0.94) 75%), #0a0614 !important;
+  border: 1px solid rgba(37, 211, 102, 0.28) !important;
+}
+
+.vg-smo-card-wa::before {
   background: linear-gradient(90deg, #25D366 0%, #10B981 100%) !important;
   box-shadow: 0 0 10px rgba(37, 211, 102, 0.45) !important;
 }
 
-.vg-smo-card-wa::after,
-#services .vg-smo-card:has(.wa-glow)::after {
-  background: radial-gradient(circle at 18% 18%, rgba(37, 211, 102, 0.22) 0%, transparent 70%) !important;
+.wa-avatar {
+  background: #25D366 !important;
+  padding: 6px !important;
 }
 
-.vg-smo-card-wa .vg-smo-card-icon,
-.vg-smo-card-icon.wa-glow {
-  background: rgba(37, 211, 102, 0.14) !important;
-  border: 1px solid rgba(37, 211, 102, 0.45) !important;
-  box-shadow: 0 0 20px rgba(37, 211, 102, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+.wa-online-status {
+  color: #25D366 !important;
+  font-weight: 600 !important;
 }
 
-.vg-smo-card-wa:hover,
-#services .vg-smo-card:has(.wa-glow):hover {
-  transform: translateY(-4px) !important;
-  border-color: rgba(37, 211, 102, 0.65) !important;
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.8), 0 0 28px rgba(37, 211, 102, 0.32) !important;
+.wa-status-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: #25D366 !important;
+  display: inline-block !important;
+  margin-right: 2px !important;
+  box-shadow: 0 0 6px #25D366 !important;
+}
+
+.wa-call-icon {
+  color: #25D366 !important;
+  font-size: 13px !important;
+}
+
+.wa-chat-bubble {
+  background: rgba(37, 211, 102, 0.08) !important;
+  border: 1px solid rgba(37, 211, 102, 0.22) !important;
+  border-radius: 12px 12px 12px 2px !important;
+  padding: 11px 13px !important;
+  position: relative !important;
+}
+
+.wa-msg-meta {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 4px !important;
+  margin-top: 6px !important;
+  font-size: 10.5px !important;
+}
+
+.wa-msg-time {
+  color: #94A3B8 !important;
+}
+
+.wa-msg-ticks {
+  color: #38BDF8 !important;
+  font-size: 11px !important;
+}
+
+.wa-telemetry {
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-size: 11.5px !important;
+  flex-wrap: wrap !important;
+}
+
+.wa-open-rate {
+  color: #25D366 !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+}
+
+.wa-bullet {
+  color: #64748B !important;
+}
+
+.wa-tag {
+  color: #CBD5E1 !important;
+  font-weight: 500 !important;
+}
+
+.vg-smo-card-wa:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(37, 211, 102, 0.7) !important;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.75), 0 0 32px rgba(37, 211, 102, 0.35) !important;
+}
+
+/* Responsive Grid Breakpoints */
+@media (max-width: 991px) {
+  .vg-smo-services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .vg-smo-services-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .vg-smo-card.vg-smo-platform-card {
+    padding: 18px 16px !important;
+  }
 }
 
 /* Process Step Badges & Cards */

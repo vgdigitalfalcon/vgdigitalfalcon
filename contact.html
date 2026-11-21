@@ -110,7 +110,32 @@
                         <p class="text d-none d-xl-block">
 At Digital Falcon, our mission is to empower businesses with the tools and strategies they need to thrive in today’s competitive market. We believe in building strong, authentic brands that resonate with audiences and drive lasting success.
                         </p>
-                        <div class="mobile-menu fix mb-3"></div>
+                                                <!-- Dedicated Touch-Friendly Mobile Drawer Menu -->
+                        <div class="vg-mobile-drawer-menu mb-4">
+                            <ul class="vg-mobile-nav-list">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about-us.html">About Us</a></li>
+                                <li class="has-dropdown">
+                                    <a href="#" class="vg-mobile-parent-link" role="button" aria-expanded="false">
+                                        <span>Services</span> <i class="fas fa-chevron-down"></i>
+                                    </a>
+                                    <ul class="vg-mobile-sub">
+                                        <li><a href="index.html#services" style="color: #c084fc; font-weight: 600;"><i class="fa-solid fa-arrow-right me-1"></i> All Services Overview</a></li>
+                                        <li><a href="digital-marketing-service.html">Digital Marketing</a></li>
+                                        <li><a href="seo-service.html">SEO</a></li>
+                                        <li><a href="web-development.html">Web Development</a></li>
+                                        <li><a href="performance-marketing.html">Performance Marketing</a></li>
+                                        <li><a href="social-media-optimization-agency.html">SMO</a></li>
+                                        <li><a href="personal-branding-service.html">Personal Branding</a></li>
+                                        <li><a href="youtube-seo-agency.html">YouTube SEO</a></li>
+                                        <li><a href="ecommerce-seo-service.html">Ecommerce SEO</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="index.html#case-studies">Case Studies</a></li>
+                                <li><a href="index.html#insights">Insights</a></li>
+                                <li><a href="contact.html" class="active">Contact</a></li>
+                            </ul>
+                        </div>
                         <div class="offcanvas__contact">
                             <h4>Contact Info</h4>
                             <ul>
@@ -909,5 +934,57 @@ At Digital Falcon, our mission is to empower businesses with the tools and strat
         <script src="assets/js/wow.min.js"></script>
         <!--<< Main.js >>-->
         <script src="assets/js/main.js"></script>
-    </body>
+        <!-- Dedicated Mobile Drawer Menu Accordion & Auto-Close -->
+    <script>
+        (function() {
+            function initMobileDrawerAccordion() {
+                var parentLinks = document.querySelectorAll('.vg-mobile-parent-link');
+                parentLinks.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        if (e._vgMobileHandled) return;
+                        e._vgMobileHandled = true;
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var sub = this.nextElementSibling;
+                        var icon = this.querySelector('i');
+                        if (sub) {
+                            sub.classList.toggle('is-open');
+                            var isOpen = sub.classList.contains('is-open');
+                            this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                            var parentLi = this.closest('li');
+                            if (parentLi) {
+                                parentLi.classList.toggle('is-open', isOpen);
+                            }
+                            if (icon) {
+                                if (isOpen) {
+                                    icon.classList.remove('fa-chevron-down');
+                                    icon.classList.add('fa-chevron-up');
+                                } else {
+                                    icon.classList.remove('fa-chevron-up');
+                                    icon.classList.add('fa-chevron-down');
+                                }
+                            }
+                        }
+                    });
+                });
+
+                var drawerCloseLinks = document.querySelectorAll('.offcanvas__wrapper a[href^="#"]:not(.vg-mobile-parent-link), .vg-mobile-nav-list a:not(.vg-mobile-parent-link)');
+                drawerCloseLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        var info = document.querySelector('.offcanvas__info');
+                        var overlay = document.querySelector('.offcanvas__overlay');
+                        if (info) info.classList.remove('info-open');
+                        if (overlay) overlay.classList.remove('overlay-open');
+                    });
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileDrawerAccordion);
+            } else {
+                initMobileDrawerAccordion();
+            }
+        })();
+    </script>
+</body>
 </html>

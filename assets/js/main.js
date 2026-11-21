@@ -62,13 +62,66 @@ CSS TABLE OF CONTENTS
                 $(".sidebar__toggle").trigger("focus");
             }
         });
-        // Auto-close mobile drawer when navigating to in-page hash links (exclude dropdown toggles)
-        $(".offcanvas__info a").on("click", function(e) {
+
+        //>> Dedicated Touch-Friendly Mobile Drawer Services Dropdown Toggle <<//
+        $(document).on("click", ".vg-mobile-parent-link", function(e) {
+            if (e.originalEvent && e.originalEvent.__vgMobileHandled) return;
+            if (e.__vgMobileHandled) return;
+            if (e.originalEvent) e.originalEvent.__vgMobileHandled = true;
+            e.__vgMobileHandled = true;
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            var $link = $(this);
+            var $parentLi = $link.closest("li");
+            var $sub = $link.siblings(".vg-mobile-sub");
+            if (!$sub.length) {
+                $sub = $parentLi.children(".vg-mobile-sub");
+            }
+            if (!$sub.length) {
+                $sub = $link.next(".vg-mobile-sub");
+            }
+            if (!$sub.length) return;
+
+            var isCurrentlyOpen = $sub.hasClass("is-open");
+            var willOpen = !isCurrentlyOpen;
+
+            // Close other open submenus within the drawer
+            $parentLi.siblings("li.has-dropdown").each(function() {
+                var $sibling = $(this);
+                $sibling.removeClass("is-open");
+                $sibling.find(".vg-mobile-sub").removeClass("is-open");
+                $sibling.find(".vg-mobile-parent-link").attr("aria-expanded", "false");
+                $sibling.find(".vg-mobile-parent-link i").removeClass("fa-chevron-up").addClass("fa-chevron-down");
+            });
+
+            if (willOpen) {
+                $sub.addClass("is-open");
+                $parentLi.addClass("is-open");
+                $link.attr("aria-expanded", "true");
+                $link.find("i").removeClass("fa-chevron-down").addClass("fa-chevron-up");
+            } else {
+                $sub.removeClass("is-open");
+                $parentLi.removeClass("is-open");
+                $link.attr("aria-expanded", "false");
+                $link.find("i").removeClass("fa-chevron-up").addClass("fa-chevron-down");
+            }
+        });
+
+        // Auto-close mobile drawer when navigating to non-parent links
+        $(document).on("click", ".offcanvas__info a", function(e) {
+            var $target = $(this);
             // Never auto-close drawer or refresh on dropdown parent toggle or dummy links
-            if ($(this).hasClass("vg-mobile-parent-link") || $(this).closest(".vg-mobile-parent-link").length || $(this).attr("href") === "javascript:void(0)" || $(this).attr("href") === "#") {
+            if (
+                $target.hasClass("vg-mobile-parent-link") ||
+                $target.closest(".vg-mobile-parent-link").length ||
+                $target.attr("href") === "#" ||
+                $target.attr("href") === "javascript:void(0)"
+            ) {
                 return;
             }
-            if (!$(this).hasClass("mean-expand")) {
+            if (!$target.hasClass("mean-expand")) {
                 $(".offcanvas__info").removeClass("info-open");
                 $(".offcanvas__overlay").removeClass("overlay-open");
             }

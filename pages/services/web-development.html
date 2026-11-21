@@ -1229,5 +1229,57 @@
             }
         });
     </script>
+    <!-- Dedicated Mobile Drawer Menu Accordion & Auto-Close -->
+    <script>
+        (function() {
+            function initMobileDrawerAccordion() {
+                var parentLinks = document.querySelectorAll('.vg-mobile-parent-link');
+                parentLinks.forEach(function(link) {
+                    link.addEventListener('click', function(e) {
+                        if (e._vgMobileHandled) return;
+                        e._vgMobileHandled = true;
+                        e.preventDefault();
+                        e.stopPropagation();
+                        var sub = this.nextElementSibling;
+                        var icon = this.querySelector('i');
+                        if (sub) {
+                            sub.classList.toggle('is-open');
+                            var isOpen = sub.classList.contains('is-open');
+                            this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                            var parentLi = this.closest('li');
+                            if (parentLi) {
+                                parentLi.classList.toggle('is-open', isOpen);
+                            }
+                            if (icon) {
+                                if (isOpen) {
+                                    icon.classList.remove('fa-chevron-down');
+                                    icon.classList.add('fa-chevron-up');
+                                } else {
+                                    icon.classList.remove('fa-chevron-up');
+                                    icon.classList.add('fa-chevron-down');
+                                }
+                            }
+                        }
+                    });
+                });
+
+                var drawerCloseLinks = document.querySelectorAll('.offcanvas__wrapper a[href^="#"]:not(.vg-mobile-parent-link), .vg-mobile-nav-list a:not(.vg-mobile-parent-link)');
+                drawerCloseLinks.forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        var info = document.querySelector('.offcanvas__info');
+                        var overlay = document.querySelector('.offcanvas__overlay');
+                        if (info) info.classList.remove('info-open');
+                        if (overlay) overlay.classList.remove('overlay-open');
+                    });
+                });
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initMobileDrawerAccordion);
+            } else {
+                initMobileDrawerAccordion();
+            }
+        })();
+    </script>
 </body>
 </html>
