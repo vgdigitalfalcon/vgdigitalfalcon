@@ -32,10 +32,35 @@
   display: inline-block;
 }
 
+/* Top Navigation Bar - Permanently Fixed on Scroll (Desktop & Mobile) */
+body.vg-pm-page header,
+body.vg-pm-page .vg-header,
+body.vg-pm-page #header-sticky,
+.vg-pm-page header,
+.vg-pm-page .vg-header,
+.vg-pm-page #header-sticky,
+header.vg-header,
+#header-sticky.vg-header {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: rgba(10, 6, 20, 0.88) !important;
+  backdrop-filter: blur(14px) !important;
+  -webkit-backdrop-filter: blur(14px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
 /* Sections */
-.vg-pm-hero-section {
+.vg-pm-hero-section,
+#performance-marketing-hero,
+body.vg-pm-page .vg-pm-hero-section,
+body.vg-pm-page #performance-marketing-hero {
   position: relative;
-  padding: 150px 0 95px;
+  padding-top: 128px !important;
+  padding-bottom: 95px;
   background-color: #07070F !important;
   background: radial-gradient(circle at 18% 22%, rgba(147, 51, 234, 0.14) 0%, transparent 52%),
     radial-gradient(circle at 82% 55%, rgba(0, 240, 255, 0.08) 0%, transparent 48%),
@@ -307,8 +332,10 @@
   }
 
   .vg-pm-hero-section,
-  #performance-marketing-hero {
-    padding-top: 122px !important;
+  #performance-marketing-hero,
+  body.vg-pm-page .vg-pm-hero-section,
+  body.vg-pm-page #performance-marketing-hero {
+    padding-top: 118px !important;
     padding-bottom: 52px !important;
     padding-left: 18px !important;
     padding-right: 18px !important;

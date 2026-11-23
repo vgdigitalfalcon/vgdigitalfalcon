@@ -25098,11 +25098,11 @@ header,
   right: 0 !important;
   width: 100% !important;
   height: 76px !important;
-  z-index: 100 !important;
-  background: rgba(10, 6, 20, 0.78) !important;
+  z-index: 9999 !important;
+  background: rgba(10, 6, 20, 0.88) !important;
   backdrop-filter: blur(14px) !important;
   -webkit-backdrop-filter: blur(14px) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   display: flex !important;
   align-items: center !important;
 }
@@ -31407,6 +31407,12 @@ ul.vg-services-pills-grid {
     box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  /* Specific mobile hero clearance for performance marketing */
+  #performance-marketing-hero,
+  body.vg-pm-page .vg-pm-hero-section {
+    padding-top: 118px !important;
   }
 
   /* Ensure inner hero containers and content have zero negative margins */
