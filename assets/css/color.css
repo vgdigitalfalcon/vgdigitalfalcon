@@ -30420,3 +30420,431 @@ ul.vg-services-pills-grid {
   }
 }
 
+
+
+/* =============================================================================
+   MOBILE RESPONSIVE ARCHITECTURE: TOP NAVBAR & HERO/BANNER (@media (max-width: 768px))
+   Strictly scoped to mobile <= 768px — leaving desktop (> 768px) 100% untouched.
+   ============================================================================= */
+
+/* Desktop Desktop Defaults for specific heroes where inline styles were extracted */
+@media (min-width: 769px) {
+  .vg-seo-hero {
+    padding-top: 120px !important;
+    padding-bottom: 64px !important;
+    min-height: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+  .vg-webdev-hero {
+    padding: 136px 0 80px !important;
+    min-height: 92vh !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .vg-smo-hero-section {
+    padding: 108px 0 56px !important;
+    min-height: auto !important;
+    position: relative !important;
+  }
+  .vg-breadcrumb-wrap,
+  .vg-smo-badges-stack .vg-breadcrumb-wrap {
+    white-space: nowrap !important;
+  }
+  .vg-breadcrumb-wrap a,
+  .vg-breadcrumb-wrap span {
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 1. Prevent Horizontal Overflow & Body Constraint */
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  /* 2. Mobile Top Navbar */
+  .vg-header,
+  #header-sticky.vg-header,
+  header.vg-header,
+  #header-sticky {
+    height: 68px !important;
+    min-height: 68px !important;
+    max-height: 68px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .vg-nav-container,
+  #header-sticky .vg-nav-container {
+    height: 68px !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 8px !important;
+  }
+
+  .vg-brand-wrap,
+  .vg-header .vg-brand-wrap {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    max-height: 30px !important;
+  }
+
+  .vg-header-brand-logo,
+  .vg-brand-wrap img {
+    max-height: 30px !important;
+    height: 30px !important;
+    width: auto !important;
+    max-width: 160px !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .vg-header .d-flex.align-items-center {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Compact Navbar Action Pill (white-space: nowrap; font-size: 12px; padding: 7px 12px; border-radius: 999px;) */
+  .vg-header .vg-btn-primary,
+  .vg-header .vg-dm-btn-primary,
+  .vg-header .vg-smo-btn-primary,
+  .vg-header a.theme-btn,
+  .vg-header .header-button a {
+    white-space: nowrap !important;
+    font-size: 12px !important;
+    padding: 7px 12px !important;
+    border-radius: 999px !important;
+    line-height: 1.2 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: 34px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Mobile Hamburger Menu Button: 38px x 38px */
+  .sidebar__toggle,
+  .vg-header .sidebar__toggle {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    max-width: 38px !important;
+    max-height: 38px !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 17px !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+  }
+
+  /* 3. Hero / Banner Section Padding & Height Reset (padding: 96px 16px 48px) */
+  .vg-hero-section,
+  .vg-dm-hero-section,
+  .vg-smo-hero-section,
+  .vg-seo-hero,
+  .vg-webdev-hero,
+  .vg-pm-hero-section,
+  .vg-pb-hero-section,
+  .vg-yt-hero-section,
+  .vg-about-hero,
+  section.hero-section,
+  section.vg-hero {
+    padding: 96px 16px 48px !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* 4. Breadcrumb Wrapping (flex-wrap: wrap; font-size: 12px; line-height: 1.5; max-width: 100%;) */
+  .vg-breadcrumb-wrap,
+  .vg-smo-badges-stack .vg-breadcrumb-wrap,
+  .breadcrumb-wrapper,
+  .breadcrumb-items,
+  .vg-breadcrumb {
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    max-width: 100% !important;
+    width: auto !important;
+    row-gap: 4px !important;
+    column-gap: 6px !important;
+    padding: 6px 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    border-radius: 999px !important;
+    box-sizing: border-box !important;
+    margin-bottom: 12px !important;
+  }
+
+  .vg-breadcrumb-wrap a,
+  .vg-breadcrumb-wrap span,
+  .vg-breadcrumb-wrap i {
+    white-space: normal !important;
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    display: inline !important;
+  }
+
+  /* 5. Eyebrow Pill Badge (font-size: 10.5px; letter-spacing: 0.04em; padding: 6px 12px; max-width: 100%; white-space: nowrap;) */
+  .vg-pill-badge,
+  .vg-section-badge,
+  .vg-smo-badge,
+  .vg-pm-badge,
+  .vg-pb-badge,
+  .vg-yt-signal-pill,
+  .vg-telemetry-pill,
+  .hero-content .vg-section-badge,
+  .hero-content .vg-pill-badge,
+  .vg-hero-section .vg-pill-badge,
+  .vg-smo-badges-stack .vg-smo-badge {
+    font-size: 10.5px !important;
+    letter-spacing: 0.04em !important;
+    padding: 6px 12px !important;
+    max-width: 100% !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    box-sizing: border-box !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+    margin-bottom: 14px !important;
+  }
+
+  .vg-pill-badge i,
+  .vg-section-badge i,
+  .vg-smo-badge i,
+  .vg-pm-badge i,
+  .vg-pb-badge i,
+  .vg-yt-signal-pill i {
+    font-size: 10px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+  }
+
+  /* 6. Hero Headline & Body Scale (clamp(28px, 7.5vw, 34px); line-height: 1.2; body: 14.5px, line-height: 1.6) */
+  .vg-hero-section h1,
+  .vg-dm-hero-section h1,
+  .vg-smo-hero-section h1,
+  .vg-seo-hero h1,
+  .vg-webdev-hero h1,
+  .vg-pm-hero-section h1,
+  .vg-pb-hero-section h1,
+  .vg-yt-hero-section h1,
+  .vg-about-hero h1,
+  .vg-hero-title,
+  .vg-smo-hero-title,
+  .vg-seo-hero-title,
+  .vg-pm-hero-title,
+  .vg-pb-hero-title,
+  .vg-about-hero-title,
+  section.hero-section h1,
+  .hero-content h1 {
+    font-size: clamp(28px, 7.5vw, 34px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+    word-break: break-word !important;
+    margin-top: 0 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .vg-hero-section p,
+  .vg-dm-hero-section p,
+  .vg-smo-hero-section p,
+  .vg-seo-hero p,
+  .vg-webdev-hero p,
+  .vg-pm-hero-section p,
+  .vg-pb-hero-section p,
+  .vg-yt-hero-section p,
+  .vg-about-hero p,
+  .vg-hero-desc,
+  .vg-smo-hero-desc,
+  .vg-seo-hero-sub,
+  .vg-pm-hero-desc,
+  .hero-content p {
+    font-size: 14.5px !important;
+    line-height: 1.6 !important;
+    max-width: 100% !important;
+    margin-bottom: 22px !important;
+  }
+
+  /* 7. Stack 2-Column Hero Grid to 1 Column (grid-template-columns: 1fr; gap: 28px;) */
+  .vg-hero-grid,
+  .hero-spotlight-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+    width: 100% !important;
+    text-align: left !important;
+  }
+
+  .vg-hero-container {
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .vg-hero-section .container > .row,
+  .vg-dm-hero-section .container > .row,
+  .vg-smo-hero-section .container > .row,
+  .vg-seo-hero .container > .row,
+  .vg-webdev-hero .container > .row,
+  .vg-pm-hero-section .container > .row,
+  .vg-pb-hero-section .container > .row,
+  .vg-yt-hero-section .container > .row,
+  .vg-about-hero .container > .row,
+  section.hero-section .container > .row,
+  .vg-smo-hero-row {
+    row-gap: 28px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+  }
+
+  .vg-hero-section [class*="col-"],
+  .vg-dm-hero-section [class*="col-"],
+  .vg-smo-hero-section [class*="col-"],
+  .vg-seo-hero [class*="col-"],
+  .vg-webdev-hero [class*="col-"],
+  .vg-pm-hero-section [class*="col-"],
+  .vg-pb-hero-section [class*="col-"],
+  .vg-yt-hero-section [class*="col-"],
+  .vg-about-hero [class*="col-"],
+  section.hero-section [class*="col-"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* 8. Full-Width Mobile Hero CTAs (min-height: 46px; font-size: 14px;) */
+  .vg-hero-actions,
+  .hero-actions,
+  .vg-dm-hero-actions,
+  .vg-smo-hero-actions,
+  .hero-author,
+  .vg-hero-cta-group,
+  .hero-content .d-flex.align-items-center.gap-3.flex-wrap,
+  .hero-content .d-flex.flex-wrap.align-items-center.gap-3 {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin-bottom: 24px !important;
+  }
+
+  .vg-hero-actions a,
+  .vg-hero-actions button,
+  .vg-hero-actions .vg-btn-primary,
+  .vg-hero-actions .vg-btn-glass,
+  .hero-content .vg-btn-primary,
+  .hero-content .vg-btn-glass,
+  .hero-content .vg-dm-btn-primary,
+  .hero-content .vg-dm-btn-secondary,
+  .hero-content .vg-smo-btn-primary,
+  .hero-content .vg-smo-btn-glass,
+  .hero-author a,
+  .vg-hero-cta-group a {
+    width: 100% !important;
+    min-height: 46px !important;
+    font-size: 14px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 12px 20px !important;
+  }
+
+  /* 9. Right-Side Lead Form Card / Showcase Card (width: 100%; padding: 22px 18px; zero horizontal cutoff) */
+  .vg-dm-form-card,
+  .vg-smo-form-container,
+  .vg-seo-audit-card,
+  .vg-pm-kpi-card,
+  .vg-pb-audit-card,
+  .vg-yt-audit-card,
+  .vg-telemetry-card,
+  .vg-telemetry-grid,
+  .hero-form-card,
+  .vg-lead-form-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 22px 18px !important;
+    box-sizing: border-box !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-top: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .vg-dm-form-control,
+  .vg-seo-form-input,
+  .vg-pb-form-input,
+  .vg-smo-form-input,
+  .vg-dm-form-group,
+  .vg-seo-form-group {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Holographic AI Growth Engine on Home Mobile */
+  .vg-engine-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* Extra Compact Screen Adjustment: hide top bar CTA on <= 420px to prevent crowding */
+@media (max-width: 420px) {
+  .vg-header .vg-btn-primary,
+  .vg-header .vg-dm-btn-primary,
+  .vg-header .vg-smo-btn-primary,
+  .vg-header a.theme-btn,
+  .vg-header .header-button a {
+    display: none !important;
+  }
+
+  .vg-header-brand-logo,
+  .vg-brand-wrap img {
+    max-height: 28px !important;
+    max-width: 140px !important;
+  }
+}
+

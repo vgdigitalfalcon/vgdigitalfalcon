@@ -151,7 +151,7 @@
         /* Left Breadcrumb Pill */
         .vg-breadcrumb-wrap,
         .vg-smo-badges-stack .vg-breadcrumb-wrap {
-            white-space: nowrap !important;
+            /* white-space nowrap handled in responsive media queries */
             display: inline-flex !important;
             align-items: center !important;
             gap: 8px !important;
@@ -165,7 +165,7 @@
 
         .vg-breadcrumb-wrap a,
         .vg-breadcrumb-wrap span {
-            white-space: nowrap !important;
+            /* white-space nowrap handled in responsive media queries */
         }
 
         .vg-smo-badges-stack {
@@ -1000,7 +1000,7 @@
     <!-- ==========================================================================
          HERO SECTION: SMO SERVICE & COMPACT DARK-GLASS AUDIT FORM
          ========================================================================== -->
-    <section class="vg-smo-hero-section" id="smo-hero" style="padding: 108px 0 56px !important; min-height: auto !important; display: flex !important; align-items: center !important; background-color: #0a0614 !important; position: relative !important; overflow: hidden !important; box-sizing: border-box !important;">
+    <section class="vg-smo-hero-section" id="smo-hero">
         <!-- Viral Spread Network Social Graph Animation (z-index: 0) -->
         <canvas id="vg-smo-viral-canvas" class="vg-smo-viral-canvas" aria-hidden="true"></canvas>
 
@@ -1011,12 +1011,12 @@
                     <div class="hero-content">
                         <div class="vg-smo-badges-stack" style="display: flex !important; flex-direction: column !important; align-items: flex-start !important; gap: 14px !important; margin-bottom: 20px !important;">
                             <!-- Breadcrumb Navigation -->
-                            <div class="vg-breadcrumb-wrap wow fadeInUp" style="white-space: nowrap !important; display: inline-flex !important; align-items: center !important; gap: 8px !important; padding: 7px 16px !important; border-radius: 999px !important; margin-bottom: 0 !important;" data-wow-delay=".1s">
+                            <div class="vg-breadcrumb-wrap wow fadeInUp" data-wow-delay=".1s">
                                 <a href="../index.html" style="white-space: nowrap !important;">Home</a>
                                 <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
-                                <a href="index.html#services" style="white-space: nowrap !important;">Services</a>
+                                <a href="index.html#services">Services</a>
                                 <i class="fa-solid fa-chevron-right" style="font-size: 10px;"></i>
-                                <span class="active" style="white-space: nowrap !important;">Social Media Optimization (SMO)</span>
+                                <span class="active">Social Media Optimization (SMO)</span>
                             </div>
 
                             <!-- Badge -->
