@@ -37,21 +37,21 @@
   display: inline-block;
 }
 
-.vg-contact-gradient-accent {
-  background: linear-gradient(135deg, #00f0ff 0%, #a855f7 100%) !important;
+.vg-contact-together-gradient {
+  background: linear-gradient(135deg, #A855F7 0%, #22D3EE 100%) !important;
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
-  display: inline-block;
+  display: inline-block !important;
 }
 
 /* =============================================================================
-   1. HERO / BREADCRUMB SECTION
+   1. HERO / BREADCRUMB SECTION (REFINED SPACING, TYPOGRAPHY & AMBIENT SPOTLIGHT)
    ============================================================================= */
 .vg-contact-hero {
   position: relative;
-  padding: 138px 0 56px;
-  background: radial-gradient(circle at 50% 10%, rgba(168, 85, 247, 0.16) 0%, rgba(7, 2, 18, 0.96) 65%, #070212 100%);
-  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+  padding: 132px 20px 56px;
+  background: radial-gradient(circle at 50% 12%, rgba(168, 85, 247, 0.18) 0%, rgba(34, 211, 238, 0.08) 40%, rgba(7, 2, 18, 0.98) 75%, #070212 100%);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.14);
   overflow: hidden;
   text-align: center;
 }
@@ -59,13 +59,13 @@
 .vg-contact-hero::before {
   content: '';
   position: absolute;
-  top: 0;
+  top: -60px;
   left: 50%;
   transform: translateX(-50%);
-  width: 900px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(0, 240, 255, 0.12) 0%, rgba(168, 85, 247, 0.08) 50%, transparent 75%);
-  filter: blur(80px);
+  width: 820px;
+  height: 380px;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, rgba(34, 211, 238, 0.14) 45%, transparent 70%);
+  filter: blur(75px);
   pointer-events: none;
   z-index: 0;
 }
@@ -73,7 +73,10 @@
 .vg-contact-hero .container {
   position: relative;
   z-index: 1;
-  max-width: 960px;
+  max-width: 780px;
+  margin: 0 auto;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Breadcrumb Navigation */
@@ -143,163 +146,415 @@
 }
 
 .vg-contact-hero-title {
-  font-size: clamp(32px, 4.5vw, 48px);
-  font-weight: 800;
-  line-height: 1.15;
-  margin-bottom: 16px;
-  letter-spacing: -0.025em;
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: clamp(34px, 4vw, 50px) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.03em !important;
+  color: #ffffff !important;
+  margin-bottom: 16px !important;
 }
 
 .vg-contact-hero-subtitle {
-  font-size: clamp(15px, 2vw, 17px);
-  line-height: 1.6;
-  color: #94a3b8;
-  max-width: 680px;
-  margin: 0 auto;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.65 !important;
+  color: #CBD5E1 !important;
+  max-width: 640px !important;
+  margin: 0 auto !important;
 }
 
 /* =============================================================================
-   2. 4 CONTACT INFO BENTO CARDS
+   2. 4 DIRECT-ACCESS COMMAND CARDS (ARCHITECTURAL CORNER TICKS & 2PX TOP ACCENT)
    ============================================================================= */
 .vg-contact-cards-section {
-  padding: 50px 0;
+  padding: 48px 20px;
   position: relative;
   z-index: 1;
 }
 
-.vg-contact-cards-grid {
+.vg-command-cards-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  max-width: 1240px;
+  gap: 18px;
+  max-width: 1180px;
   margin: 0 auto;
+  align-items: stretch;
 }
 
-.vg-contact-bento-card {
-  background: rgba(15, 10, 31, 0.75);
-  border: 1px solid rgba(168, 85, 247, 0.22);
-  border-radius: 18px;
-  padding: 26px 22px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+.vg-command-card {
+  position: relative;
+  background: rgba(15, 10, 31, 0.88);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 24px 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
-  position: relative;
+  min-height: 290px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   overflow: hidden;
+  box-sizing: border-box;
 }
 
-.vg-contact-bento-card::before {
+.vg-command-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(168, 85, 247, 0.2);
+}
+
+/* Distinct Top 2px Accent Strips */
+.vg-command-card::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  left: 18px;
+  right: 18px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.6), transparent);
-  opacity: 0;
+  border-radius: 2px;
+  z-index: 3;
+}
+
+.vg-command-card.card-cyan {
+  color: #22D3EE;
+}
+.vg-command-card.card-cyan::before {
+  background: linear-gradient(90deg, transparent, #22D3EE 30%, #22D3EE 70%, transparent);
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.7);
+}
+.vg-command-card.card-cyan:hover {
+  border-color: rgba(34, 211, 238, 0.45);
+}
+
+.vg-command-card.card-violet {
+  color: #A855F7;
+}
+.vg-command-card.card-violet::before {
+  background: linear-gradient(90deg, transparent, #A855F7 30%, #A855F7 70%, transparent);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
+}
+.vg-command-card.card-violet:hover {
+  border-color: rgba(168, 85, 247, 0.45);
+}
+
+.vg-command-card.card-emerald {
+  color: #10B981;
+}
+.vg-command-card.card-emerald::before {
+  background: linear-gradient(90deg, transparent, #10B981 30%, #10B981 70%, transparent);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+}
+.vg-command-card.card-emerald:hover {
+  border-color: rgba(16, 185, 129, 0.45);
+}
+
+.vg-command-card.card-amber {
+  color: #F59E0B;
+}
+.vg-command-card.card-amber::before {
+  background: linear-gradient(90deg, transparent, #F59E0B 30%, #F59E0B 70%, transparent);
+  box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
+}
+.vg-command-card.card-amber:hover {
+  border-color: rgba(245, 158, 11, 0.45);
+}
+
+/* Subtle 8px L-shaped Architectural Corner Ticks */
+.vg-corner-tick {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  opacity: 0.4;
   transition: opacity 0.3s ease;
+  z-index: 2;
 }
 
-.vg-contact-bento-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(0, 240, 255, 0.35);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 24px rgba(168, 85, 247, 0.15);
+.vg-corner-tick-tl {
+  top: 7px;
+  left: 7px;
+  border-top: 1.5px solid currentColor;
+  border-left: 1.5px solid currentColor;
 }
 
-.vg-contact-bento-card:hover::before {
-  opacity: 1;
+.vg-corner-tick-tr {
+  top: 7px;
+  right: 7px;
+  border-top: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
 }
 
-.vg-contact-card-icon-wrap {
-  width: 50px;
-  height: 50px;
-  border-radius: 14px;
+.vg-corner-tick-bl {
+  bottom: 7px;
+  left: 7px;
+  border-bottom: 1.5px solid currentColor;
+  border-left: 1.5px solid currentColor;
+}
+
+.vg-corner-tick-br {
+  bottom: 7px;
+  right: 7px;
+  border-bottom: 1.5px solid currentColor;
+  border-right: 1.5px solid currentColor;
+}
+
+.vg-command-card:hover .vg-corner-tick {
+  opacity: 0.95;
+}
+
+/* Card Header Meta Row */
+.vg-command-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.vg-command-badge-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.vg-command-badge {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 20px;
-  margin-bottom: 18px;
+  font-size: 16px;
   flex-shrink: 0;
 }
 
-.icon-cyan {
-  background: rgba(0, 240, 255, 0.1);
-  color: #00f0ff;
-  border: 1px solid rgba(0, 240, 255, 0.25);
-  box-shadow: 0 0 16px rgba(0, 240, 255, 0.15);
+.vg-command-badge.icon-cyan {
+  background: rgba(34, 211, 238, 0.12);
+  color: #22D3EE;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.2);
 }
 
-.icon-purple {
-  background: rgba(168, 85, 247, 0.12);
-  color: #c084fc;
-  border: 1px solid rgba(168, 85, 247, 0.28);
-  box-shadow: 0 0 16px rgba(168, 85, 247, 0.15);
+.vg-command-badge.icon-violet {
+  background: rgba(168, 85, 247, 0.14);
+  color: #C084FC;
+  border: 1px solid rgba(168, 85, 247, 0.32);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.2);
 }
 
-.icon-emerald {
-  background: rgba(16, 185, 129, 0.12);
-  color: #34d399;
-  border: 1px solid rgba(16, 185, 129, 0.28);
-  box-shadow: 0 0 16px rgba(16, 185, 129, 0.15);
+.vg-command-badge.icon-emerald {
+  background: rgba(16, 185, 129, 0.14);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.32);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.2);
 }
 
-.icon-amber {
-  background: rgba(245, 158, 11, 0.12);
-  color: #fbbf24;
-  border: 1px solid rgba(245, 158, 11, 0.28);
-  box-shadow: 0 0 16px rgba(245, 158, 11, 0.15);
+.vg-command-badge.icon-amber {
+  background: rgba(245, 158, 11, 0.14);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.32);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
 }
 
-.vg-contact-card-title {
-  font-size: 17px;
+.vg-command-index {
+  font-family: monospace;
+  font-size: 10.5px;
   font-weight: 700;
-  margin-bottom: 6px;
-  color: #ffffff;
+  color: #64748B;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.vg-contact-card-val {
-  font-size: 14.5px;
-  font-weight: 600;
-  color: #e2e8f0;
-  margin-bottom: 8px;
-  word-break: break-word;
+.vg-command-pill {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  text-transform: uppercase;
 }
 
-.vg-contact-card-val a {
-  color: #e2e8f0;
+.pill-cyan {
+  background: rgba(34, 211, 238, 0.12);
+  color: #22D3EE;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+}
+
+.pill-violet {
+  background: rgba(168, 85, 247, 0.12);
+  color: #C084FC;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.pill-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.pill-emerald .live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 8px #10B981;
+  animation: liveDotPulse 1.8s infinite ease-in-out;
+}
+
+@keyframes liveDotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.4; }
+}
+
+.pill-amber {
+  background: rgba(245, 158, 11, 0.12);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Card Body Content */
+.vg-command-body {
+  margin-bottom: 20px;
+}
+
+.vg-command-title {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-bottom: 6px !important;
+  letter-spacing: -0.015em !important;
+}
+
+.vg-command-val {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 14.5px !important;
+  font-weight: 600 !important;
+  color: #E2E8F0 !important;
+  margin-bottom: 10px !important;
+  word-break: break-word !important;
+}
+
+.vg-command-val a {
+  color: #E2E8F0;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.vg-contact-card-val a:hover {
+.vg-command-val a:hover {
   color: #00f0ff;
 }
 
-.vg-contact-card-desc {
-  font-size: 12.5px;
-  line-height: 1.5;
-  color: #94a3b8;
-  margin-bottom: 16px;
+.vg-command-desc {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 12.5px !important;
+  line-height: 1.55 !important;
+  color: #94A3B8 !important;
+  margin-bottom: 0 !important;
 }
 
-.vg-contact-card-action {
-  font-size: 12px;
-  font-weight: 600;
-  color: #c084fc;
-  text-decoration: none;
+/* Card Action Row */
+.vg-command-action-row {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+.vg-command-action-link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: auto;
-  transition: all 0.2s ease;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
 }
 
-.vg-contact-card-action:hover {
-  color: #00f0ff;
-  transform: translateX(3px);
+.link-cyan {
+  background: rgba(34, 211, 238, 0.08);
+  color: #22D3EE;
+  border: 1px solid rgba(34, 211, 238, 0.25);
+}
+.link-cyan:hover {
+  background: rgba(34, 211, 238, 0.2);
+  color: #ffffff;
+  border-color: #22D3EE;
+  box-shadow: 0 0 16px rgba(34, 211, 238, 0.3);
+  transform: translateY(-1px);
+}
+
+.vg-command-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.btn-violet {
+  background: rgba(168, 85, 247, 0.1);
+  color: #C084FC;
+  border: 1px solid rgba(168, 85, 247, 0.28);
+}
+.btn-violet:hover {
+  background: rgba(168, 85, 247, 0.24);
+  color: #ffffff;
+  border-color: #A855F7;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.35);
+  transform: translateY(-1px);
+}
+.btn-violet.is-copied {
+  background: rgba(16, 185, 129, 0.2) !important;
+  color: #34D399 !important;
+  border-color: #10B981 !important;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.35) !important;
+}
+
+.link-emerald {
+  background: rgba(16, 185, 129, 0.1);
+  color: #34D399;
+  border: 1px solid rgba(16, 185, 129, 0.28);
+}
+.link-emerald:hover {
+  background: rgba(16, 185, 129, 0.24);
+  color: #ffffff;
+  border-color: #10B981;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.35);
+  transform: translateY(-1px);
+}
+
+.vg-command-status-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.tag-amber {
+  background: rgba(245, 158, 11, 0.08);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
 /* =============================================================================
@@ -663,23 +918,23 @@
 }
 
 /* =============================================================================
-   5. RESPONSIVE MEDIA QUERIES (@media (max-width: 768px))
+   5. RESPONSIVE MEDIA QUERIES (@media BREAKPOINTS)
    ============================================================================= */
-@media (max-width: 991px) {
-  .vg-contact-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 1024px) {
+  .vg-command-cards-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
   }
 
   .vg-contact-main-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .vg-contact-hero {
-    padding-top: 118px !important;
-    padding-bottom: 42px !important;
+    padding: 118px 16px 42px !important;
   }
 
   .vg-contact-hero-title {
@@ -691,13 +946,14 @@
     font-size: 14px !important;
   }
 
-  .vg-contact-cards-grid {
+  .vg-command-cards-grid {
     grid-template-columns: 1fr !important;
     gap: 14px !important;
   }
 
-  .vg-contact-bento-card {
+  .vg-command-card {
     padding: 20px 18px !important;
+    min-height: auto !important;
   }
 
   .vg-contact-form-card {
