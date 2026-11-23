@@ -2608,10 +2608,12 @@ body {
   border-radius: 22px;
   overflow: hidden;
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   transition: var(--vg-transition-base);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .vg-case-card:hover {
@@ -2620,11 +2622,31 @@ body {
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 35px rgba(124, 58, 237, 0.25);
 }
 
+.case-study-thumbnail,
+.case-study-thumbnail.overflow-hidden {
+  position: relative !important;
+  width: 100% !important;
+  height: 195px !important;
+  overflow: hidden !important;
+  border-radius: 12px 12px 0 0 !important;
+  background: #110526 !important;
+  flex-shrink: 0 !important;
+}
+
+.case-study-thumbnail img,
 .vg-case-thumb {
-  height: 200px;
-  width: 100%;
-  object-fit: cover;
-  position: relative;
+  width: 100% !important;
+  height: 195px !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 12px 12px 0 0 !important;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease !important;
+}
+
+.vg-case-card:hover .case-study-thumbnail img,
+.vg-case-card:hover .vg-case-thumb {
+  transform: scale(1.045) !important;
+  filter: brightness(1.08) drop-shadow(0 0 16px rgba(168, 85, 247, 0.35)) !important;
 }
 
 .vg-case-body {
