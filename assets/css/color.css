@@ -5994,8 +5994,10 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  height: 100%;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease, opacity 0.25s ease;
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
@@ -6008,21 +6010,22 @@ body {
 /* Card Media / Image */
 .vg-blog-card-media {
   position: relative;
-  height: 220px;
+  height: 195px;
   overflow: hidden;
   background: #110526;
+  flex-shrink: 0;
 }
 
 .vg-blog-card-media img {
   width: 100%;
-  height: 100%;
+  height: 195px;
   object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   display: block;
 }
 
 .vg-blog-card:hover .vg-blog-card-media img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 .vg-blog-card-overlay {
@@ -6040,32 +6043,51 @@ body {
   position: absolute;
   top: 14px;
   left: 14px;
-  padding: 5px 12px;
-  border-radius: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  backdrop-filter: blur(10px);
+  background: rgba(10, 6, 20, 0.82) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
   z-index: 2;
+  display: inline-flex;
+  align-items: center;
 }
 
 .vg-blog-badge.badge-seo {
-  background: rgba(34, 197, 94, 0.2);
+  background: rgba(10, 6, 20, 0.82) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+.vg-blog-badge.badge-seo i {
   color: #4ade80;
-  border: 1px solid rgba(34, 197, 94, 0.45);
 }
 
 .vg-blog-badge.badge-performance {
-  background: rgba(56, 189, 248, 0.2);
+  background: rgba(10, 6, 20, 0.82) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+.vg-blog-badge.badge-performance i {
   color: #38bdf8;
-  border: 1px solid rgba(56, 189, 248, 0.45);
 }
 
 .vg-blog-badge.badge-ai {
-  background: rgba(168, 85, 247, 0.25);
+  background: rgba(10, 6, 20, 0.82) !important;
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+}
+
+.vg-blog-badge.badge-ai i {
   color: #c084fc;
-  border: 1px solid rgba(168, 85, 247, 0.5);
 }
 
 /* Read Time Pill */

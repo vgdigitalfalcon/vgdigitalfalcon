@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 869 470" width="869" height="470" style="background:#0a0318; font-family:'Plus Jakarta Sans', -apple-system, sans-serif;">
+  <defs>
+    <!-- Background Gradients -->
+    <radialGradient id="bgGlow" cx="60%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#2a0845" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#120426" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#060112" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="cyanHalo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#06b6d4" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pinGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#f43f5e" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Linear Gradients -->
+    <linearGradient id="pinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff4b72"/>
+      <stop offset="50%" stop-color="#e11d48"/>
+      <stop offset="100%" stop-color="#9f1239"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f0d3d" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#0d041c" stop-opacity="0.92"/>
+    </linearGradient>
+    <linearGradient id="cyanLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="roadGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#06b6d4" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.2"/>
+    </linearGradient>
+
+    <!-- Drop Shadows and Glow Filters -->
+    <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Canvas Background -->
+  <rect width="869" height="470" fill="url(#bgGlow)"/>
+
+  <!-- Perspective 3D Map Grid Plane -->
+  <g opacity="0.45" transform="translate(0, 40)">
+    <!-- Horizon Line -->
+    <line x1="0" y1="180" x2="869" y2="180" stroke="#7c3aed" stroke-opacity="0.25" stroke-dasharray="6,6"/>
+
+    <!-- Perspective Grid Lines -->
+    <line x1="434" y1="180" x2="-100" y2="440" stroke="#7c3aed" stroke-opacity="0.3" stroke-width="1.2"/>
+    <line x1="434" y1="180" x2="80" y2="440" stroke="#7c3aed" stroke-opacity="0.3" stroke-width="1.2"/>
+    <line x1="434" y1="180" x2="260" y2="440" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.2"/>
+    <line x1="434" y1="180" x2="434" y2="440" stroke="#06b6d4" stroke-opacity="0.5" stroke-width="1.5"/>
+    <line x1="434" y1="180" x2="610" y2="440" stroke="#7c3aed" stroke-opacity="0.35" stroke-width="1.2"/>
+    <line x1="434" y1="180" x2="790" y2="440" stroke="#7c3aed" stroke-opacity="0.3" stroke-width="1.2"/>
+    <line x1="434" y1="180" x2="970" y2="440" stroke="#7c3aed" stroke-opacity="0.3" stroke-width="1.2"/>
+
+    <!-- Transverse Grid Latitude Rings -->
+    <path d="M 0,220 Q 434,200 869,220" fill="none" stroke="#6d28d9" stroke-opacity="0.3" stroke-width="1"/>
+    <path d="M 0,265 Q 434,240 869,265" fill="none" stroke="#6d28d9" stroke-opacity="0.4" stroke-width="1.2"/>
+    <path d="M 0,320 Q 434,290 869,320" fill="none" stroke="#06b6d4" stroke-opacity="0.45" stroke-width="1.4"/>
+    <path d="M 0,385 Q 434,350 869,385" fill="none" stroke="#6d28d9" stroke-opacity="0.5" stroke-width="1.5"/>
+  </g>
+
+  <!-- Glowing Digital Roads / Geo Vectors -->
+  <g>
+    <!-- Highway 1: Magenta to Cyan Highway -->
+    <path d="M 120,470 C 280,380 410,320 540,270 C 650,230 760,210 869,205" fill="none" stroke="url(#roadGrad)" stroke-width="5" filter="url(#glowEffect)" opacity="0.85"/>
+    <path d="M 120,470 C 280,380 410,320 540,270 C 650,230 760,210 869,205" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-dasharray="12,14" opacity="0.9"/>
+
+    <!-- Cross Avenue 2 -->
+    <path d="M 720,470 C 620,380 540,310 490,260 C 420,190 380,140 340,60" fill="none" stroke="#06b6d4" stroke-opacity="0.4" stroke-width="3" filter="url(#glowEffect)"/>
+  </g>
+
+  <!-- 3D Radar Ripples (Around Pin Target x=525, y=260) -->
+  <g transform="translate(525, 260)">
+    <circle cx="0" cy="0" r="160" fill="url(#cyanHalo)"/>
+    <!-- Concentric Ellipses in Perspective -->
+    <ellipse cx="0" cy="0" rx="140" ry="46" fill="none" stroke="#06b6d4" stroke-opacity="0.2" stroke-width="1.5" stroke-dasharray="8,6"/>
+    <ellipse cx="0" cy="0" rx="100" ry="33" fill="none" stroke="#06b6d4" stroke-opacity="0.4" stroke-width="1.8"/>
+    <ellipse cx="0" cy="0" rx="60" ry="20" fill="none" stroke="#22d3ee" stroke-opacity="0.7" stroke-width="2.2" filter="url(#glowEffect)"/>
+    <ellipse cx="0" cy="0" rx="25" ry="8" fill="#f43f5e" fill-opacity="0.6" filter="url(#glowEffect)"/>
+
+    <!-- Crosshair Target -->
+    <line x1="-35" y1="0" x2="35" y2="0" stroke="#22d3ee" stroke-width="1.5" opacity="0.8"/>
+    <line x1="0" y1="-12" x2="0" y2="12" stroke="#22d3ee" stroke-width="1.5" opacity="0.8"/>
+  </g>
+
+  <!-- 3D Glowing Location Pin (x=525, y=200 anchored at base x=525, y=260) -->
+  <g filter="url(#softShadow)">
+    <!-- Vertical Beam -->
+    <line x1="525" y1="260" x2="525" y2="90" stroke="url(#pinGrad)" stroke-width="2" stroke-dasharray="4,4" opacity="0.6"/>
+
+    <!-- Pin Ambient Glow Behind -->
+    <circle cx="525" cy="180" r="70" fill="url(#pinGlow)"/>
+
+    <!-- 3D Pin Body -->
+    <path d="M 525,260 C 495,215 470,185 470,150 C 470,119.6 494.6,95 525,95 C 555.4,95 580,119.6 580,150 C 580,185 555,215 525,260 Z" fill="url(#pinGrad)" filter="url(#glowEffect)"/>
+
+    <!-- Pin Gloss Highlight -->
+    <path d="M 482,145 C 482,125 498,106 520,102 C 502,106 488,122 488,142 C 488,162 498,185 510,205 C 500,185 482,165 482,145 Z" fill="#ffffff" opacity="0.45"/>
+
+    <!-- Pin Inner Core Ring & Dot -->
+    <circle cx="525" cy="150" r="22" fill="#0c0419" stroke="#ffffff" stroke-width="2.5"/>
+    <circle cx="525" cy="150" r="10" fill="#22d3ee" filter="url(#glowEffect)"/>
+    <circle cx="525" cy="150" r="4" fill="#ffffff"/>
+  </g>
+
+  <!-- Floating Telemetry Card 1: Google Search Bar (Top Left) -->
+  <g transform="translate(60, 48)" filter="url(#softShadow)">
+    <rect width="360" height="48" rx="24" fill="url(#cardGrad)" stroke="rgba(34, 211, 238, 0.4)" stroke-width="1.2"/>
+    <!-- Search Icon -->
+    <circle cx="28" cy="24" r="8" fill="none" stroke="#22d3ee" stroke-width="2"/>
+    <line x1="34" y1="30" x2="42" y2="38" stroke="#22d3ee" stroke-width="2" stroke-linecap="round"/>
+    <!-- Search Query Text -->
+    <text x="56" y="29" fill="#ffffff" font-size="13.5" font-weight="600" letter-spacing="0.2">"best marketing agency near me"</text>
+    <!-- Map Pin Pill inside Bar -->
+    <rect x="292" y="10" width="56" height="28" rx="14" fill="rgba(244, 63, 94, 0.25)" stroke="rgba(244, 63, 94, 0.6)" stroke-width="1"/>
+    <text x="320" y="28" fill="#fda4af" font-size="11" font-weight="700" text-anchor="middle">NEAR</text>
+  </g>
+
+  <!-- Floating Telemetry Card 2: Google Maps Pack Rank #1 (Middle Left) -->
+  <g transform="translate(60, 116)" filter="url(#softShadow)">
+    <rect width="320" height="82" rx="16" fill="url(#cardGrad)" stroke="rgba(168, 85, 247, 0.35)" stroke-width="1.2"/>
+    <!-- Verified Badge -->
+    <rect x="18" y="18" width="28" height="28" rx="8" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="1.2"/>
+    <!-- Checkmark -->
+    <path d="M 26,32 L 30,36 L 38,27" fill="none" stroke="#34d399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- Title & Rating -->
+    <text x="56" y="32" fill="#ffffff" font-size="14" font-weight="700">Google Business Profile #1</text>
+    <text x="56" y="49" fill="#fbbf24" font-size="12" font-weight="600">★★★★★ <tspan fill="#e2e8f0" font-weight="500">4.9 (240+ High-Intent Reviews)</tspan></text>
+    <!-- Micro Tag -->
+    <text x="56" y="70" fill="#38bdf8" font-size="11" font-weight="600">⚡ Top 3 Local Map Pack Guaranteed</text>
+  </g>
+
+  <!-- Floating Telemetry Card 3: Growth Metric Box (Bottom Left) -->
+  <g transform="translate(60, 220)" filter="url(#softShadow)">
+    <rect width="270" height="92" rx="16" fill="url(#cardGrad)" stroke="rgba(34, 197, 94, 0.4)" stroke-width="1.2"/>
+    <text x="20" y="32" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="0.8">GEO-CONVERSION IMPACT</text>
+    <text x="20" y="68" fill="#34d399" font-size="32" font-weight="800" letter-spacing="-0.5">+185%</text>
+    <text x="135" y="56" fill="#ffffff" font-size="13" font-weight="700">Map Clicks</text>
+    <text x="135" y="72" fill="#94a3b8" font-size="11.5">Direct Footfall &amp; Calls</text>
+  </g>
+
+  <!-- Floating Marker Card at Pin (Right side) -->
+  <g transform="translate(565, 125)" filter="url(#softShadow)">
+    <rect width="240" height="64" rx="14" fill="url(#cardGrad)" stroke="rgba(244, 63, 94, 0.5)" stroke-width="1.2"/>
+    <circle cx="24" cy="32" r="10" fill="#f43f5e" filter="url(#glowEffect)"/>
+    <circle cx="24" cy="32" r="4" fill="#ffffff"/>
+    <text x="44" y="27" fill="#ffffff" font-size="12.5" font-weight="700">High-Value Customer</text>
+    <text x="44" y="45" fill="#fda4af" font-size="11" font-weight="500">Ready-To-Buy • 0.8 km Away</text>
+  </g>
+
+  <!-- Bottom Coordinate Bar -->
+  <g transform="translate(60, 428)">
+    <text x="0" y="0" fill="#64748b" font-size="10.5" font-weight="600" letter-spacing="1">GEO TELEMETRY: 13.0827° N, 80.2707° E • LOCAL ALGORITHM ENGINE PAGE 1</text>
+  </g>
+</svg>
