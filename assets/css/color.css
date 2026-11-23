@@ -30514,6 +30514,20 @@ ul.vg-services-pills-grid {
     display: block !important;
   }
 
+  /* Force Hide Desktop Horizontal Navigation Links inside Top Bar */
+  .vg-nav-menu,
+  .vg-nav-links,
+  .vg-header .vg-nav-menu,
+  .vg-header .vg-nav-links,
+  #header-sticky .vg-nav-menu,
+  #header-sticky .vg-nav-links,
+  .vg-nav-container .vg-nav-menu,
+  .vg-nav-container .vg-nav-links,
+  .main-menu,
+  .header-main .main-menu {
+    display: none !important;
+  }
+
   .vg-header .d-flex.align-items-center {
     display: flex !important;
     align-items: center !important;
@@ -30521,44 +30535,44 @@ ul.vg-services-pills-grid {
     flex-shrink: 0 !important;
   }
 
-  /* Compact Navbar Action Pill (white-space: nowrap; font-size: 12px; padding: 7px 12px; border-radius: 999px;) */
+  /* Force Hide Desktop CTA Button inside Top Bar on Mobile */
   .vg-header .vg-btn-primary,
   .vg-header .vg-dm-btn-primary,
   .vg-header .vg-smo-btn-primary,
   .vg-header a.theme-btn,
-  .vg-header .header-button a {
-    white-space: nowrap !important;
-    font-size: 12px !important;
-    padding: 7px 12px !important;
-    border-radius: 999px !important;
-    line-height: 1.2 !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    gap: 5px !important;
-    height: auto !important;
-    min-height: auto !important;
-    max-height: 34px !important;
-    box-sizing: border-box !important;
+  .vg-header .header-button,
+  .vg-header .header-button a,
+  .vg-nav-container .vg-btn-primary,
+  #header-sticky .vg-btn-primary,
+  .vg-header .d-flex.align-items-center > a,
+  #header-sticky .d-flex.align-items-center > a {
+    display: none !important;
   }
 
-  /* Mobile Hamburger Menu Button: 38px x 38px */
+  /* Mobile Hamburger Menu Button: 40px x 40px */
   .sidebar__toggle,
-  .vg-header .sidebar__toggle {
-    width: 38px !important;
-    height: 38px !important;
-    min-width: 38px !important;
-    min-height: 38px !important;
-    max-width: 38px !important;
-    max-height: 38px !important;
+  .vg-header .sidebar__toggle,
+  #header-sticky .sidebar__toggle,
+  .vg-nav-container .sidebar__toggle,
+  .header-main .sidebar__toggle {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
     border-radius: 8px !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 17px !important;
+    font-size: 19px !important;
     padding: 0 !important;
     flex-shrink: 0 !important;
     box-sizing: border-box !important;
     cursor: pointer !important;
+    color: #ffffff !important;
+    background: rgba(168, 85, 247, 0.12) !important;
+    border: 1px solid rgba(168, 85, 247, 0.3) !important;
   }
 
   /* 3. Hero / Banner Section Spacing Below Fixed Navbar (padding-top: 118px, padding-bottom: 52px, padding-inline: 18px) */
@@ -30567,6 +30581,9 @@ ul.vg-services-pills-grid {
   .vg-smo-hero-section,
   .vg-seo-hero,
   .vg-webdev-hero,
+  section.vg-webdev-hero,
+  body.vg-webdev-page .vg-webdev-hero,
+  body.vg-webdev-page section.vg-webdev-hero,
   .vg-pm-hero-section,
   .vg-pb-hero-section,
   .vg-yt-hero-section,

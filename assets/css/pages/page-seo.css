@@ -3048,3 +3048,107 @@ body.vg-webdev-page,
     white-space: normal;
   }
 }
+
+/* =============================================================================
+   MOBILE RESPONSIVE NAVIGATION & HERO ARCHITECTURE (@media (max-width: 768px))
+   ============================================================================= */
+@media (max-width: 768px) {
+  /* Mobile Top Navbar */
+  .vg-header,
+  #header-sticky.vg-header,
+  header.vg-header,
+  #header-sticky {
+    height: 68px !important;
+    min-height: 68px !important;
+    max-height: 68px !important;
+    padding: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .vg-nav-container,
+  #header-sticky .vg-nav-container {
+    height: 68px !important;
+    padding: 0 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Force Hide Desktop Nav Links & Desktop CTA */
+  .vg-nav-menu,
+  .vg-nav-links,
+  .vg-header .vg-nav-menu,
+  .vg-header .vg-nav-links,
+  #header-sticky .vg-nav-menu,
+  #header-sticky .vg-nav-links,
+  .vg-nav-container .vg-nav-menu,
+  .vg-nav-container .vg-nav-links,
+  .main-menu,
+  .header-main .main-menu {
+    display: none !important;
+  }
+
+  .vg-header .vg-btn-primary,
+  .vg-header a.theme-btn,
+  .vg-header .header-button,
+  .vg-header .header-button a,
+  .vg-header .d-flex.align-items-center > a,
+  #header-sticky .vg-btn-primary {
+    display: none !important;
+  }
+
+  /* Mobile Hamburger Toggle (40px x 40px) */
+  .sidebar__toggle,
+  .vg-header .sidebar__toggle,
+  #header-sticky .sidebar__toggle,
+  .vg-nav-container .sidebar__toggle,
+  .header-main .sidebar__toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    max-width: 40px !important;
+    max-height: 40px !important;
+    border-radius: 8px !important;
+    font-size: 19px !important;
+    padding: 0 !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+    cursor: pointer !important;
+    color: #ffffff !important;
+    background: rgba(168, 85, 247, 0.12) !important;
+    border: 1px solid rgba(168, 85, 247, 0.3) !important;
+  }
+
+  /* Web Development & SEO Hero Spacing Below Fixed Navbar */
+  body.vg-webdev-page .vg-webdev-hero,
+  body.vg-webdev-page section.vg-webdev-hero,
+  .vg-webdev-hero,
+  section.vg-webdev-hero,
+  .hero-section,
+  .vg-seo-hero {
+    padding-top: 118px !important;
+    padding-bottom: 52px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    padding-inline: 18px !important;
+    margin-top: 0 !important;
+    min-height: auto !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  .vg-webdev-hero > .container,
+  .vg-webdev-hero .container,
+  .vg-seo-hero .container {
+    margin-top: 0 !important;
+  }
+}

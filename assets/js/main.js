@@ -43,6 +43,18 @@ CSS TABLE OF CONTENTS
             $(".offcanvas__overlay").removeClass("overlay-open");
             $(".sidebar__toggle").trigger("focus");
         });
+        
+        // Delegated mobile sidebar toggle for rock-solid click response
+        $(document).on("click", ".sidebar__toggle", function(e) {
+            e.preventDefault();
+            $(".offcanvas__info").addClass("info-open");
+            $(".offcanvas__overlay").addClass("overlay-open");
+            $(".offcanvas__close").trigger("focus");
+        });
+        $(document).on("click", ".offcanvas__close, .offcanvas__overlay", function() {
+            $(".offcanvas__info").removeClass("info-open");
+            $(".offcanvas__overlay").removeClass("overlay-open");
+        });
         $(".sidebar__toggle").attr({ "role": "button", "tabindex": "0", "aria-label": "Toggle navigation menu" }).on("click", function() {
             $(".offcanvas__info").addClass("info-open");
             $(".offcanvas__overlay").addClass("overlay-open");
