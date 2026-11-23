@@ -1947,15 +1947,16 @@
     margin: 0 !important;
     padding: 0 !important;
     flex-shrink: 0 !important;
-    max-height: 30px !important;
+    max-height: 34px !important;
   }
 
+  .nav-logo,
   .vg-header-brand-logo,
   .vg-brand-wrap img {
-    max-height: 30px !important;
-    height: 30px !important;
+    max-height: 34px !important;
+    height: 34px !important;
     width: auto !important;
-    max-width: 160px !important;
+    max-width: 175px !important;
     object-fit: contain !important;
     display: block !important;
   }

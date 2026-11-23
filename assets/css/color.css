@@ -386,16 +386,15 @@ body {
   margin-right: 20px;
 }
 
+.nav-logo,
 .vg-header-brand-logo,
-.vg-footer-brand-logo,
 .navbar-brand img,
 .logo img,
 .vg-brand-wrap img {
-  height: 42px !important;
+  height: 44px !important;
   width: auto !important;
-  max-width: 240px !important;
+  max-width: 220px !important;
   object-fit: contain !important;
-  mix-blend-mode: lighten !important;
   display: block !important;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: crisp-edges;
@@ -414,19 +413,24 @@ body {
 }
 
 .vg-footer-brand-logo {
-  height: 42px !important;
+  height: 44px !important;
+  width: auto !important;
   max-width: 240px !important;
+  object-fit: contain !important;
+  display: block !important;
   margin-bottom: 8px;
 }
 
 @media (max-width: 768px) {
+  .nav-logo,
   .vg-header-brand-logo,
-  .vg-footer-brand-logo,
   .navbar-brand img,
   .logo img,
   .vg-brand-wrap img {
-    height: 36px !important;
-    max-width: 190px !important;
+    height: 34px !important;
+    max-width: 175px !important;
+    object-fit: contain !important;
+    display: block !important;
   }
 }
 
@@ -791,7 +795,7 @@ body {
 /* Icon Box */
 .vg-dd-icon-box {
   width: 32px !important;
-  height: 32px !important;
+  height: 34px !important;
   min-width: 32px !important;
   border-radius: 8px !important;
   background: rgba(168, 85, 247, 0.12) !important;
@@ -7968,7 +7972,7 @@ canvas {
     align-items: center !important;
     justify-content: center !important;
     width: 32px !important;
-    height: 32px !important;
+    height: 34px !important;
     border-radius: 50% !important;
     background: linear-gradient(135deg, rgba(239, 68, 68, 0.25), rgba(16, 185, 129, 0.25)) !important;
     border: 1px solid rgba(168, 85, 247, 0.35) !important;
@@ -8514,7 +8518,7 @@ canvas {
 
   .vg-faq-qnum {
     width: 30px !important;
-    height: 30px !important;
+    height: 34px !important;
     font-size: 11.5px !important;
   }
 
@@ -10475,7 +10479,7 @@ canvas {
 
   .vg-newsletter-box button {
     width: 32px !important;
-    height: 32px !important;
+    height: 34px !important;
     right: 4px !important;
     font-size: 12px !important;
   }
@@ -10582,7 +10586,7 @@ canvas {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    min-height: 30px !important;
+    min-height: 34px !important;
     text-align: center !important;
   }
 
@@ -20281,7 +20285,7 @@ body.vg-pm-page h6,
 
 .vg-pb-item-icon {
   width: 32px !important;
-  height: 32px !important;
+  height: 34px !important;
   min-width: 32px !important;
   border-radius: 8px !important;
   background: rgba(168, 85, 247, 0.1);
@@ -21381,7 +21385,7 @@ body.vg-pm-page h6,
 
 .vg-yt-page .vg-pb-avatar-img {
   width: 32px !important;
-  height: 32px !important;
+  height: 34px !important;
   border-radius: 50% !important;
   border: 2px solid #070212 !important;
   object-fit: cover !important;
@@ -21713,7 +21717,7 @@ body.vg-pm-page h6,
 
 .vg-yt-feature-icon img {
   max-width: 30px !important;
-  max-height: 30px !important;
+  max-height: 34px !important;
 }
 
 .vg-yt-feature-content h3 {
@@ -22021,7 +22025,7 @@ body.vg-pm-page h6,
 .vg-yt-pillar-connector-mobile {
   margin: 18px auto -6px auto !important;
   width: 30px !important;
-  height: 30px !important;
+  height: 34px !important;
   border-radius: 50% !important;
   background: #0d051e !important;
   border: 1px solid rgba(0, 240, 255, 0.4) !important;
@@ -23433,7 +23437,7 @@ body.vg-pm-page h6,
   align-items: center !important;
   justify-content: center !important;
   width: 32px !important;
-  height: 32px !important;
+  height: 34px !important;
   border-radius: 8px !important;
   background: rgba(168, 85, 247, 0.12) !important;
   border: 1px solid rgba(168, 85, 247, 0.3) !important;
@@ -24960,7 +24964,7 @@ body.vg-pm-page,
   align-items: center !important;
   justify-content: center !important;
   width: 30px !important;
-  height: 30px !important;
+  height: 34px !important;
   border-radius: 8px !important;
   background: rgba(168, 85, 247, 0.15) !important;
   color: #c084fc !important;
@@ -25143,16 +25147,23 @@ header.header-scrolled,
   position: static !important;
 }
 
+.nav-logo,
 .vg-header-brand-logo,
-.vg-footer-brand-logo,
 .navbar-brand img,
 .logo img,
 .vg-brand-wrap img {
-  height: 42px !important;
+  height: 44px !important;
+  width: auto !important;
+  max-width: 220px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.vg-footer-brand-logo {
+  height: 44px !important;
   width: auto !important;
   max-width: 240px !important;
   object-fit: contain !important;
-  mix-blend-mode: lighten !important;
   display: block !important;
 }
 
@@ -27268,7 +27279,7 @@ body.vg-yt-page .vg-yt-section {
   align-items: center !important;
   justify-content: center !important;
   width: 32px !important;
-  height: 32px !important;
+  height: 34px !important;
   border-radius: 8px !important;
   background: rgba(168, 85, 247, 0.15) !important;
   color: #c084fc !important;
@@ -28792,7 +28803,7 @@ ul.vg-services-pills-grid {
 
 .services-dropdown .vg-dd-icon-box {
   width: 32px !important;
-  height: 32px !important;
+  height: 34px !important;
   min-width: 32px !important;
   border-radius: 8px !important;
   background: rgba(168, 85, 247, 0.12) !important;
@@ -31200,15 +31211,16 @@ ul.vg-services-pills-grid {
     margin: 0 !important;
     padding: 0 !important;
     flex-shrink: 0 !important;
-    max-height: 30px !important;
+    max-height: 34px !important;
   }
 
+  .nav-logo,
   .vg-header-brand-logo,
   .vg-brand-wrap img {
-    max-height: 30px !important;
-    height: 30px !important;
+    max-height: 34px !important;
+    height: 34px !important;
     width: auto !important;
-    max-width: 160px !important;
+    max-width: 175px !important;
     object-fit: contain !important;
     display: block !important;
   }
@@ -31255,11 +31267,11 @@ ul.vg-services-pills-grid {
   .vg-nav-container .sidebar__toggle,
   .header-main .sidebar__toggle {
     width: 40px !important;
-    height: 40px !important;
+    height: 44px !important;
     min-width: 40px !important;
-    min-height: 40px !important;
+    min-height: 44px !important;
     max-width: 40px !important;
-    max-height: 40px !important;
+    max-height: 44px !important;
     border-radius: 8px !important;
     display: flex !important;
     align-items: center !important;
@@ -31720,10 +31732,12 @@ ul.vg-services-pills-grid {
     display: none !important;
   }
 
+  .nav-logo,
   .vg-header-brand-logo,
   .vg-brand-wrap img {
-    max-height: 28px !important;
-    max-width: 140px !important;
+    max-height: 34px !important;
+    height: 34px !important;
+    max-width: 175px !important;
   }
 }
 
@@ -32079,7 +32093,7 @@ ul.vg-services-pills-grid {
     flex: 1 1 0 !important;
     width: auto !important;
     min-width: 0 !important;
-    min-height: 40px !important;
+    min-height: 44px !important;
     font-size: 11.5px !important;
     padding: 10px 10px !important;
     gap: 6px !important;

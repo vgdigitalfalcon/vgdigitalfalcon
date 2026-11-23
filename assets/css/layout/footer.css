@@ -25,9 +25,10 @@
 }
 
 .vg-footer-brand-logo {
-  height: 48px;
+  height: 44px;
   width: auto;
   object-fit: contain;
+  display: block;
   margin-bottom: 16px;
 }
 

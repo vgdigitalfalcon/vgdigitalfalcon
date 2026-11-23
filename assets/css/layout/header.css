@@ -45,14 +45,18 @@
   flex-shrink: 0;
 }
 
+.nav-logo,
 .vg-header-brand-logo {
   height: 44px;
   width: auto;
+  max-width: 220px;
   object-fit: contain;
+  display: block;
   transition: transform 0.3s ease;
 }
 
-.vg-brand-wrap:hover .vg-header-brand-logo {
+.vg-brand-wrap:hover .nav-logo,
+.vg-header-brand-logo {
   transform: scale(1.03);
 }
 
