@@ -692,7 +692,7 @@
 .vg-dm-page .section-title h2.vg-strategy-title,
 .vg-dm-page .vg-strategy-title {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: clamp(30px, 3.2vw, 42px) !important;
+  font-size: clamp(28px, 3.1vw, 42px) !important;
   font-weight: 800 !important;
   line-height: 1.2 !important;
   letter-spacing: -0.025em !important;
@@ -719,7 +719,8 @@
   margin-bottom: 4px !important;
 }
 
-.vg-dm-page .vg-strategy-heading-line2 {
+.vg-dm-page .vg-strategy-heading-line2,
+.vg-dm-page .vg-strategy-title .gradient-text {
   display: block !important;
   background: linear-gradient(135deg, #A855F7 0%, #22D3EE 100%) !important;
   -webkit-background-clip: text !important;
