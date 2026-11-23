@@ -10,7 +10,7 @@
   font-family: 'Plus Jakarta Sans', sans-serif !important;
   overflow-x: clip !important;
   position: relative;
-  contain: paint;
+  /* contain: paint removed to preserve fixed mobile navbar */
 }
 
 .vg-smo-page ::selection {

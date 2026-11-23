@@ -191,227 +191,106 @@ At Digital Falcon, our mission is to empower businesses with the tools and strat
         <div class="offcanvas__overlay"></div>
 
         <!-- Header Section Start -->
-        <header class="header-section-1">
-            <div class="header-top">
-                <div class="container">
-                    <div class="header-top-wrapper">
-                        <ul class="contact-list">
-                            <li>
-                                <i class="far fa-envelope"></i>
-                                <a href="mailto:contact@vgdigitalfalcon.com">contact@vgdigitalfalcon.com</a>
-                            </li>
-                            <li>
-                                <i class="fa-regular fa-phone"></i>
-                                <a href="tel:+91 8695776922">+91 8695776922</a>
-                            </li>
-                        </ul>
-                    <!--   <p>Hostech Flash Discount: Starting at <b>$3.49/mo</b> for a Limited time</p>
-                        <ul class="list">
-                            <li><i class="fa-light fa-comments"></i><a href="contact.html">Live Chat</a></li>
-                            <li><i class="fa-light fa-user"></i>
-                                <button data-bs-toggle="modal" data-bs-target="#exampleModal2">
-                                    Login
-                                </button>
-                            </li>
-                        </ul>-->
-                    </div>
-                </div>
-            </div>
-            <div id="header-sticky" class="header-1">
-                <div class="container">
-                    <div class="mega-menu-wrapper">
-                        <div class="header-main">
-                            <div class="header-left">
-                                <div class="logo">
-                                    <a href="index.html" class="header-logo">
-                                        <img src="../assets/img/logo/dflogo-white.png" alt="logo-img">
+        <header class="vg-header" id="header-sticky">
+        <div class="vg-nav-container">
+            <!-- Brand Logo -->
+            <a href="index.html" class="vg-brand-wrap" aria-label="VG Digital Falcon Homepage">
+                <img src="../assets/images/vg-digital-falcon-logo.png" alt="VG Digital Falcon - Group of Vilvaa Guru" class="vg-header-brand-logo">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="vg-nav-menu">
+                <ul class="vg-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li class="nav-item-dropdown has-dropdown">
+                        <a href="index.html#services" class="vg-nav-link-services" role="button" aria-expanded="false" aria-haspopup="true">Services <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
+                        <div class="vg-dropdown-menu services-dropdown">
+                            <ul class="services-dropdown-grid vg-services-pills-grid">
+                                <li>
+                                    <a href="services/digital-marketing-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-chart-line"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Digital Marketing</span>
                                     </a>
-                                    <a href="index.html" class="header-logo-2">
-                                        <img src="../assets/img/logo/dflogo-black.png" alt="logo-img">
+                                </li>
+                                <li>
+                                    <a href="services/seo-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-bolt"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">SEO</span>
                                     </a>
-                                </div>
-                            </div>
-                                                        <div class="header-right d-flex justify-content-end align-items-center">
-                                <div class="mean__menu-wrapper">
-                                    <div class="main-menu">
-                                        <nav id="mobile-menu">
-                                            <ul>
-                                                 <li>
-                                                    <a href="index.html">Home</a>
-                                                </li>
-                                                <li>
-                                                    <a href="about-us.html">About Us</a>
-                                                </li>
-                                                
-                                                <li class="has-dropdown menu-thumb">
-                                                    <a href="#">
-                                                    Service
-                                                    <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu has-homemenu">
-                                                        <li class="border-none">
-                                                            <div class="homemenu-items">
-                                                                <div class="row">
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img loading="lazy" decoding="async"  src="../assets/img/choose/menu-8.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="#">Digital Marketing</a></h6>
-                                                                                <p>
-                                                                                    Digital Marketing Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img loading="lazy" decoding="async"  src="../assets/img/choose/menu-1.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="services/seo-service.html">SEO</a></h6>
-                                                                                <p>
-                                                                                    SEO Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img loading="lazy" decoding="async"  src="../assets/img/choose/menu-3.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="services/web-development.html">Web Development</a></h6>
-                                                                                <p>
-                                                                                    Website Development Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img loading="lazy" decoding="async"  src="../assets/img/choose/menu-4.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="services/performance-marketing.html">Performance Marketing</a></h6>
-                                                                                <p>
-                                                                                    Performance Marketing Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img loading="lazy" decoding="async"  src="../assets/img/choose/menu-2.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="services/social-media-optimization-agency.html">SMO</a></h6>
-                                                                                <p>
-                                                                                    SMO Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img loading="lazy" decoding="async"  src="../assets/img/choose/menu-5.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="services/personal-branding-service.html">Personal Branding</a></h6>
-                                                                                <p>
-                                                                                    Personal Branding Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img loading="lazy" decoding="async"  src="../assets/img/choose/menu-6.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="services/youtube-seo-agency.html">Youtube SEO</a></h6>
-                                                                                <p>
-                                                                                    Youtube SEO Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-lg-4">
-                                                                        <div class="homemenu-list">
-                                                                            <div class="icon">
-                                                                                <img loading="lazy" decoding="async"  src="../assets/img/choose/menu-7.png" alt="img">
-                                                                            </div>
-                                                                            <div class="content">
-                                                                                <h6><a href="services/ecommerce-seo-service.html">Ecommerce SEO</a></h6>
-                                                                                <p>
-                                                                                    Ecommerce SEO Service
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="has-dropdown active d-xl-none">
-                                                    <a href="#" class="border-none">
-                                                    Service
-                                                    <i class="fas fa-angle-down"></i>
-                                                    </a>
-                                                    <ul class="submenu">
-                                                        <li><a href="#">Digital Marketing</a></li>
-                                                        <li><a href="services/seo-service.html">SEO</a></li>
-                                                        <li><a href="services/web-development.html">Web Development</a></li>
-                                                        <li><a href="services/performance-marketing.html">Performance Marketing</a></li>
-                                                        <li><a href="services/social-media-optimization-agency.html">SMO </a></li>
-                                                        <li><a href="services/personal-branding-service.html">Personal Branding</a></li>
-                                                        <li><a href="services/youtube-seo-agency.html">Youtube SEO</a></li>
-                                                        <li><a href="services/ecommerce-seo-service.html">Ecommerce SEO</a></li>
-                                                      
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Portfolio</a>
-                                                </li>
-                                                
-                                               <li>
-                                                    <a href="#">Blogs</a>
-                                                </li>
-                                                <li>
-                                                    <a href="contact.html">Contact</a>
-                                                </li>
-                                                <li>
-                                                </li>
-                                                
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                                    <div class="header__hamburger d-xl-block my-auto">
-                                    <div aria-label="Open mobile navigation menu" tabindex="0" role="button" class="sidebar__toggle">
-                                        <i class="fas fa-bars"></i>
-                                    </div>
-                                </div>
-                                <div class="header-button">
-                                    <a href="contact.html" class="theme-btn">
-                                        get Started
-                                        <i class="fa-solid fa-arrow-right-long"></i>
+                                </li>
+                                <li>
+                                    <a href="services/web-development.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-laptop-code"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Web Development</span>
                                     </a>
-                                </div>
-                            </div>
+                                </li>
+                                <li>
+                                    <a href="services/performance-marketing.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-bullseye"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Performance Marketing</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services/social-media-optimization-agency.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-share-nodes"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">SMO</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services/personal-branding-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-user-tie"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Personal Branding</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services/youtube-seo-agency.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-brands fa-youtube"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">YouTube SEO</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="services/ecommerce-seo-service.html" class="vg-dropdown-item services-dropdown-item">
+                                        <div class="vg-dd-icon-box">
+                                            <i class="fa-solid fa-cart-shopping"></i>
+                                        </div>
+                                        <span class="vg-dd-title services-dropdown-title">Ecommerce SEO</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
-                    </div>
+                    </li>
+                    <li><a href="index.html#case-studies">Case Studies</a></li>
+                    <li><a href="index.html#insights">Insights</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Header Action Button & Mobile Toggle -->
+            <div class="d-flex align-items-center gap-3">
+                <a href="contact.html" class="vg-btn-primary d-none d-sm-inline-flex">
+                    Get Free Strategy <i class="fa-solid fa-arrow-right ms-1"></i>
+                </a>
+                <div aria-label="Open mobile navigation menu" tabindex="0" role="button" class="sidebar__toggle d-xl-none" style="color: #ffffff; font-size: 22px; cursor: pointer;">
+                    <i class="fas fa-bars"></i>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
         <!-- Modal Version 1 -->
         <div class="modal modal-common-wrap fade" id="exampleModal" tabindex="-1" aria-hidden="true">

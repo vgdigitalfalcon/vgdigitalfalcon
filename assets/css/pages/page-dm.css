@@ -10,7 +10,7 @@
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
   overflow-x: clip !important;
   position: relative;
-  contain: paint;
+  /* contain: paint removed to preserve fixed mobile navbar */
 }
 
 /* Headings (h1, h2, h3, h4): Google Fonts Plus Jakarta Sans (600, 700, 800) with tight tracking (-0.025em) */
@@ -1915,7 +1915,7 @@
     height: 68px !important;
     min-height: 68px !important;
     max-height: 68px !important;
-    z-index: 9999 !important;
+    z-index: 99999 !important;
     background: rgba(10, 6, 22, 0.96) !important;
     backdrop-filter: blur(16px) !important;
     -webkit-backdrop-filter: blur(16px) !important;
@@ -2032,8 +2032,8 @@
     overflow-y: auto !important;
     overscroll-behavior-y: contain !important;
     -webkit-overflow-scrolling: touch !important;
-    padding-bottom: 40px !important;
-    z-index: 10000 !important;
+    padding-bottom: 48px !important;
+    z-index: 100000 !important;
     box-sizing: border-box !important;
   }
 
@@ -2041,7 +2041,7 @@
     position: relative !important;
     min-height: 100% !important;
     height: auto !important;
-    padding-bottom: 40px !important;
+    padding-bottom: 48px !important;
     box-sizing: border-box !important;
   }
 
