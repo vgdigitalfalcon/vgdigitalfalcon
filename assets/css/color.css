@@ -31306,7 +31306,7 @@ ul.vg-services-pills-grid {
     padding-left: 32px !important;
   }
 
-  /* 3. Hero / Banner Section Spacing Below Fixed Navbar (padding-top: 118px, padding-bottom: 52px, padding-inline: 18px) */
+  /* 3. Hero / Banner Section Spacing Below Fixed Navbar (padding-top: 122px, padding-bottom: 52px, padding-inline: 18px) */
   .vg-hero-section,
   .vg-dm-hero-section,
   .vg-smo-hero-section,
@@ -31315,6 +31315,8 @@ ul.vg-services-pills-grid {
   section.vg-webdev-hero,
   body.vg-webdev-page .vg-webdev-hero,
   body.vg-webdev-page section.vg-webdev-hero,
+  body.vg-webdev-page main > section:first-child,
+  body.vg-webdev-page section:first-of-type,
   .vg-pm-hero-section,
   .vg-pb-hero-section,
   .vg-yt-hero-section,
@@ -31332,7 +31334,7 @@ ul.vg-services-pills-grid {
   body.vg-pm-page .vg-pm-hero-section,
   body.vg-pb-page .vg-pb-hero-section,
   body.vg-yt-page .vg-yt-hero-section {
-    padding-top: 118px !important;
+    padding-top: 122px !important;
     padding-bottom: 52px !important;
     padding-left: 18px !important;
     padding-right: 18px !important;
@@ -31351,12 +31353,14 @@ ul.vg-services-pills-grid {
   .vg-smo-hero-section .container,
   .vg-seo-hero .container,
   .vg-webdev-hero .container,
+  .vg-webdev-hero > .container,
   .vg-pm-hero-section .container,
   .vg-pb-hero-section .container,
   .vg-yt-hero-section .container,
   .vg-about-hero .container,
   .hero-content {
     margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 
   /* 4. Breadcrumb Wrapping (flex-wrap: wrap; font-size: 12px; line-height: 1.5; max-width: 100%;) */

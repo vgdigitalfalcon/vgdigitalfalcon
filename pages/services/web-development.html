@@ -313,11 +313,16 @@
   }
 
             /* Hero Top Breathing Room Below Fixed Navbar */
+            body.vg-webdev-page {
+                padding-top: 0 !important;
+            }
             body.vg-webdev-page .vg-webdev-hero,
             body.vg-webdev-page section.vg-webdev-hero,
+            body.vg-webdev-page main > section:first-child,
+            body.vg-webdev-page section:first-of-type,
             .vg-webdev-hero,
             section.vg-webdev-hero {
-                padding-top: 118px !important;
+                padding-top: 122px !important;
                 padding-bottom: 52px !important;
                 padding-left: 18px !important;
                 padding-right: 18px !important;
@@ -333,8 +338,10 @@
             }
 
             .vg-webdev-hero > .container,
-            .vg-webdev-hero .container {
+            .vg-webdev-hero .container,
+            .hero-content {
                 margin-top: 0 !important;
+                padding-top: 0 !important;
                 width: 100% !important;
                 padding-left: 0 !important;
                 padding-right: 0 !important;

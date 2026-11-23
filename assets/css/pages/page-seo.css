@@ -1034,7 +1034,7 @@
 @media (max-width: 768px) {
   .hero-section,
   .vg-seo-hero {
-    padding-top: 118px !important;
+    padding-top: 122px !important;
     padding-bottom: 52px !important;
     padding-left: 18px !important;
     padding-right: 18px !important;
@@ -3270,11 +3270,13 @@ body.vg-webdev-page,
   /* Web Development & SEO Hero Spacing Below Fixed Navbar */
   body.vg-webdev-page .vg-webdev-hero,
   body.vg-webdev-page section.vg-webdev-hero,
+  body.vg-webdev-page main > section:first-child,
+  body.vg-webdev-page section:first-of-type,
   .vg-webdev-hero,
   section.vg-webdev-hero,
   .hero-section,
   .vg-seo-hero {
-    padding-top: 118px !important;
+    padding-top: 122px !important;
     padding-bottom: 52px !important;
     padding-left: 18px !important;
     padding-right: 18px !important;
@@ -3287,7 +3289,9 @@ body.vg-webdev-page,
 
   .vg-webdev-hero > .container,
   .vg-webdev-hero .container,
-  .vg-seo-hero .container {
+  .vg-seo-hero .container,
+  .hero-content {
     margin-top: 0 !important;
+    padding-top: 0 !important;
   }
 }
