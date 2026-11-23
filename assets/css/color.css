@@ -26136,21 +26136,85 @@ body.vg-yt-page .vg-yt-section {
   z-index: 2 !important;
 }
 
-.vg-native-avatar {
-  width: 38px !important;
-  height: 38px !important;
+/* =============================================================================
+   SMO NATIVE PLATFORM CARDS: 100% CIRCULAR AVATARS (42px) & CRISP VECTOR GLYPHS
+   ============================================================================= */
+.vg-native-avatar,
+.vg-smo-platform-card .vg-native-avatar,
+.fb-avatar,
+.insta-avatar-ring,
+.yt-avatar,
+.tw-avatar,
+.li-avatar,
+.wa-avatar {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  max-width: 42px !important;
+  max-height: 42px !important;
   border-radius: 50% !important;
+  overflow: hidden !important;
+  aspect-ratio: 1 / 1 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   flex-shrink: 0 !important;
-  overflow: hidden !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
 }
 
-.vg-native-avatar img {
+.insta-avatar-inner {
   width: 100% !important;
   height: 100% !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  aspect-ratio: 1 / 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Centered Clean 20px White Vector Glyphs inside Circular Badges */
+.vg-native-avatar i,
+.vg-native-avatar svg,
+.insta-avatar-inner i,
+.insta-avatar-inner svg {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+  font-size: 20px !important;
+  width: 20px !important;
+  height: 20px !important;
+  line-height: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  flex-shrink: 0 !important;
+}
+
+/* Fallback for Inner Icon Images: 100% Round & Symmetrical */
+.vg-native-avatar img,
+.vg-smo-platform-card .vg-native-avatar img,
+.insta-avatar-inner img,
+.fb-avatar img,
+.yt-avatar img,
+.tw-avatar img,
+.li-avatar img,
+.wa-avatar img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  border-radius: 50% !important;
   object-fit: cover !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .vg-native-meta {
@@ -26247,9 +26311,12 @@ body.vg-yt-page .vg-yt-section {
   box-shadow: 0 0 10px rgba(24, 119, 242, 0.45) !important;
 }
 
-.vg-smo-card-fb .fb-avatar {
+.vg-smo-card-fb .fb-avatar,
+.fb-avatar {
   background: #1877F2 !important;
-  padding: 6px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
 }
 
 .vg-smo-card-fb .fb-pill {
@@ -26358,9 +26425,10 @@ body.vg-yt-page .vg-yt-section {
 }
 
 .insta-avatar-ring {
-  padding: 2px !important;
-  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF) !important;
+  padding: 2.5px !important;
+  background: linear-gradient(45deg, #F58529 0%, #DD2A7B 50%, #8134AF 100%) !important;
   border-radius: 50% !important;
+  overflow: hidden !important;
 }
 
 .insta-avatar-inner {
@@ -26368,11 +26436,11 @@ body.vg-yt-page .vg-yt-section {
   height: 100% !important;
   border-radius: 50% !important;
   overflow: hidden !important;
-  background: #000 !important;
+  background: #000000 !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 3px !important;
+  padding: 0 !important;
 }
 
 .insta-verified {
@@ -26437,7 +26505,9 @@ body.vg-yt-page .vg-yt-section {
 
 .yt-avatar {
   background: #FF0000 !important;
-  padding: 6px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
 }
 
 .yt-subscribe-btn {
@@ -26502,8 +26572,10 @@ body.vg-yt-page .vg-yt-section {
 
 .tw-avatar {
   background: #000000 !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  padding: 6px !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
 }
 
 .tw-verified {
@@ -26556,7 +26628,9 @@ body.vg-yt-page .vg-yt-section {
 
 .li-avatar {
   background: #0A66C2 !important;
-  padding: 6px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
 }
 
 .li-degree {
@@ -26672,7 +26746,9 @@ body.vg-yt-page .vg-yt-section {
 
 .wa-avatar {
   background: #25D366 !important;
-  padding: 6px !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
 }
 
 .wa-online-status {
