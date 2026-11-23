@@ -23765,7 +23765,13 @@ body.vg-pm-page,
   font-size: 15px !important;
   line-height: 1.65 !important;
   margin-bottom: 24px !important;
-  text-align: left !important;
+  text-align: justify !important;
+  text-align-last: left !important;
+  text-justify: inter-word !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
   max-width: 560px !important;
   letter-spacing: normal !important;
 }
@@ -24081,9 +24087,12 @@ body.vg-pm-page,
 /* Section 3: Feature Section Editorial Justified Content */
 #feature .vg-pm-card-desc {
   text-align: justify !important;
+  text-align-last: left !important;
   text-justify: inter-word !important;
-  hyphens: auto !important;
-  -webkit-hyphens: auto !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
   word-spacing: normal !important;
 }
 
@@ -24237,9 +24246,12 @@ body.vg-pm-page,
   line-height: 1.6 !important;
   color: #CBD5E1 !important;
   text-align: justify !important;
+  text-align-last: left !important;
   text-justify: inter-word !important;
-  hyphens: auto !important;
-  -webkit-hyphens: auto !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
   margin: 0 !important;
 }
 
@@ -24284,9 +24296,12 @@ body.vg-pm-page,
 
 #why-us .vg-pm-card-desc {
   text-align: justify !important;
+  text-align-last: left !important;
   text-justify: inter-word !important;
-  hyphens: auto !important;
-  -webkit-hyphens: auto !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
   word-spacing: normal !important;
 }
 
@@ -24440,9 +24455,12 @@ body.vg-pm-page,
   line-height: 1.55 !important;
   margin-bottom: 0 !important;
   text-align: justify !important;
+  text-align-last: left !important;
   text-justify: inter-word !important;
-  hyphens: auto !important;
-  -webkit-hyphens: auto !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
   word-spacing: normal !important;
 }
 
@@ -32044,5 +32062,75 @@ ul.vg-services-pills-grid {
   body {
     overflow-x: hidden !important;
     max-width: 100vw !important;
+  }
+}
+
+
+/* =============================================================================
+   CLEAN JUSTIFIED ALIGNMENT FOR PERFORMANCE MARKETING BODY DESCRIPTIONS & CARDS
+   ============================================================================= */
+body.vg-pm-page .vg-pm-hero-subtitle,
+body.vg-pm-page .vg-pm-card-desc,
+body.vg-pm-page .vg-pm-bento-card .vg-pm-card-desc,
+body.vg-pm-page .vg-pm-bento-card p,
+body.vg-pm-page .vg-pm-card p,
+body.vg-pm-page .vg-pm-pipeline-desc,
+body.vg-pm-page #feature .vg-pm-card-desc,
+body.vg-pm-page #feature p,
+body.vg-pm-page #why-us .vg-pm-card-desc,
+body.vg-pm-page #why-us p,
+body.vg-pm-page .vg-faq-body p,
+.vg-pm-hero-subtitle,
+.vg-pm-card-desc,
+.vg-pm-pipeline-desc {
+  text-align: justify !important;
+  text-align-last: left !important;
+  text-justify: inter-word !important;
+  hyphens: none !important;
+  -webkit-hyphens: none !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+/* Maintain Existing Alignments for Headings, Pills, Metrics & Buttons */
+body.vg-pm-page h1,
+body.vg-pm-page h2,
+body.vg-pm-page h3,
+body.vg-pm-page h4,
+body.vg-pm-page .vg-pm-hero-title,
+body.vg-pm-page .vg-pb-section-title,
+body.vg-pm-page .vg-pm-card-title,
+body.vg-pm-page .vg-pm-pipeline-title,
+body.vg-pm-page .vg-pm-form-title,
+body.vg-pm-page .vg-pm-badge,
+body.vg-pm-page .vg-pm-match-pill,
+body.vg-pm-page .vg-pm-btn-primary,
+body.vg-pm-page .vg-pm-btn-secondary,
+body.vg-pm-page .vg-pm-kpi-val,
+body.vg-pm-page .vg-pm-form-label {
+  text-align-last: auto !important;
+}
+
+body.vg-pm-page .text-center,
+body.vg-pm-page .vg-pb-section-title.text-center,
+body.vg-pm-page .vg-pb-section-desc.text-center {
+  text-align: center !important;
+  text-align-last: center !important;
+}
+
+/* Prevent Excessive Word-Stretching on Narrow Mobile Screens (<= 480px) */
+@media (max-width: 480px) {
+  body.vg-pm-page .vg-pm-hero-subtitle,
+  body.vg-pm-page .vg-pm-card-desc,
+  body.vg-pm-page .vg-pm-bento-card p,
+  body.vg-pm-page .vg-pm-card p,
+  body.vg-pm-page .vg-pm-pipeline-desc,
+  body.vg-pm-page #feature p,
+  body.vg-pm-page #why-us p,
+  body.vg-pm-page .vg-faq-body p,
+  .vg-pm-hero-subtitle,
+  .vg-pm-card-desc,
+  .vg-pm-pipeline-desc {
+    word-spacing: normal !important;
   }
 }
