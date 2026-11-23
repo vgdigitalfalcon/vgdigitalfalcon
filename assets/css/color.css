@@ -30561,7 +30561,7 @@ ul.vg-services-pills-grid {
     cursor: pointer !important;
   }
 
-  /* 3. Hero / Banner Section Padding & Height Reset (padding: 96px 16px 48px) */
+  /* 3. Hero / Banner Section Spacing Below Fixed Navbar (padding-top: 118px, padding-bottom: 52px, padding-inline: 18px) */
   .vg-hero-section,
   .vg-dm-hero-section,
   .vg-smo-hero-section,
@@ -30572,14 +30572,43 @@ ul.vg-services-pills-grid {
   .vg-yt-hero-section,
   .vg-about-hero,
   section.hero-section,
-  section.vg-hero {
-    padding: 96px 16px 48px !important;
+  section.vg-hero,
+  #smo-hero,
+  #dm-hero,
+  #performance-marketing-hero,
+  #personal-branding-hero,
+  #youtube-seo-hero,
+  body.vg-dm-page .vg-dm-hero-section,
+  body.vg-smo-page .vg-smo-hero-section,
+  body.vg-seo-page .vg-seo-hero,
+  body.vg-pm-page .vg-pm-hero-section,
+  body.vg-pb-page .vg-pb-hero-section,
+  body.vg-yt-page .vg-yt-hero-section {
+    padding-top: 118px !important;
+    padding-bottom: 52px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    margin-top: 0 !important;
     min-height: auto !important;
     height: auto !important;
     overflow-x: hidden !important;
     box-sizing: border-box !important;
     width: 100% !important;
     max-width: 100% !important;
+  }
+
+  /* Ensure inner hero containers and content have zero negative margins */
+  .vg-hero-container,
+  .vg-dm-hero-section .container,
+  .vg-smo-hero-section .container,
+  .vg-seo-hero .container,
+  .vg-webdev-hero .container,
+  .vg-pm-hero-section .container,
+  .vg-pb-hero-section .container,
+  .vg-yt-hero-section .container,
+  .vg-about-hero .container,
+  .hero-content {
+    margin-top: 0 !important;
   }
 
   /* 4. Breadcrumb Wrapping (flex-wrap: wrap; font-size: 12px; line-height: 1.5; max-width: 100%;) */

@@ -91,6 +91,17 @@
   }
 }
 
+@media (max-width: 768px) {
+  .vg-pm-hero-section,
+  #performance-marketing-hero {
+    padding-top: 118px !important;
+    padding-bottom: 52px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    margin-top: 0 !important;
+  }
+}
+
 .vg-pm-section {
   position: relative;
   padding: 85px 0;

@@ -52,6 +52,17 @@
   }
 }
 
+@media (max-width: 768px) {
+  .vg-smo-hero-section,
+  #smo-hero {
+    padding-top: 118px !important;
+    padding-bottom: 52px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    margin-top: 0 !important;
+  }
+}
+
 /* 3D Viral Stage Wrap & Canvas */
 .vg-smo-stage-wrap {
   position: absolute !important;

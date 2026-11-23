@@ -1,5 +1,3 @@
-}
-
 /* ==========================================================================
    VG DIGITAL FALCON - SEO SERVICE PAGE CYBERNETIC THEME (v60.0)
    ========================================================================== */
@@ -1033,9 +1031,14 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+  .hero-section,
   .vg-seo-hero {
-    padding: 45px 0 40px;
+    padding-top: 118px !important;
+    padding-bottom: 52px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    margin-top: 0 !important;
   }
 
   .vg-seo-hero-title {
