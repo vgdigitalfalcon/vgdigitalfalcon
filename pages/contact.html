@@ -226,26 +226,33 @@
         </div>
     </header>
 
-        <!-- ==========================================================================
+            <!-- ==========================================================================
          HERO / BREADCRUMB SECTION
          ========================================================================== -->
     <section class="vg-contact-hero">
+        <!-- Ambient Floating Aurora Glow Orbs (GPU-Accelerated translate3d) -->
+        <div class="vg-contact-aurora-wrap" aria-hidden="true">
+            <div class="vg-aurora-orb vg-aurora-1"></div>
+            <div class="vg-aurora-orb vg-aurora-2"></div>
+            <div class="vg-aurora-orb vg-aurora-3"></div>
+        </div>
+
         <div class="container">
-            <div class="vg-contact-breadcrumb wow fadeInUp" data-wow-delay=".1s">
+            <div class="vg-contact-breadcrumb vg-blur-reveal vg-delay-1">
                 <a href="../index.html">Home</a>
                 <span class="separator"><i class="fa-solid fa-chevron-right"></i></span>
                 <span class="current">Contact Us</span>
             </div>
-            <div class="d-flex justify-content-center wow fadeInUp" data-wow-delay=".2s">
-                <div class="vg-contact-eyebrow">
+            <div class="d-flex justify-content-center">
+                <div class="vg-contact-eyebrow vg-blur-reveal vg-delay-2">
                     <span class="vg-contact-pulse-beacon"></span>
-                    <span>Direct Access • Rapid 15-Min Response</span>
+                    <span>DIRECT ACCESS • RAPID 15-MIN RESPONSE</span>
                 </div>
             </div>
-            <h1 class="vg-contact-hero-title wow fadeInUp" data-wow-delay=".3s">
+            <h1 class="vg-contact-hero-title vg-blur-reveal vg-delay-3">
                 Let's Build Something Exceptional <span class="vg-contact-together-gradient">Together</span>
             </h1>
-            <p class="vg-contact-hero-subtitle wow fadeInUp" data-wow-delay=".4s">
+            <p class="vg-contact-hero-subtitle vg-blur-reveal vg-delay-4">
                 Have a question, need a custom digital growth roadmap, or ready to 10x your inbound pipeline? Connect directly with our strategy leadership team.
             </p>
         </div>
@@ -256,9 +263,9 @@
          ========================================================================== -->
     <section class="vg-contact-cards-section">
         <div class="container">
-            <div class="vg-command-cards-grid">
+            <div class="vg-command-cards-grid" id="vgCommandCardsGrid">
                 <!-- Card 1: 01 // HQ LOCATION (Cyan #22D3EE Accent) -->
-                <div class="vg-command-card card-cyan wow fadeInUp" data-wow-delay=".15s">
+                <div class="vg-command-card card-cyan vg-blur-reveal vg-delay-5">
                     <span class="vg-corner-tick vg-corner-tick-tl"></span>
                     <span class="vg-corner-tick vg-corner-tick-tr"></span>
                     <span class="vg-corner-tick vg-corner-tick-bl"></span>
@@ -288,7 +295,7 @@
                 </div>
 
                 <!-- Card 2: 02 // DIRECT INBOX (Violet #A855F7 Accent) -->
-                <div class="vg-command-card card-violet wow fadeInUp" data-wow-delay=".25s">
+                <div class="vg-command-card card-violet vg-blur-reveal vg-delay-6">
                     <span class="vg-corner-tick vg-corner-tick-tl"></span>
                     <span class="vg-corner-tick vg-corner-tick-tr"></span>
                     <span class="vg-corner-tick vg-corner-tick-bl"></span>
@@ -318,7 +325,7 @@
                 </div>
 
                 <!-- Card 3: 03 // PRIORITY LINE (Emerald #10B981 Accent) -->
-                <div class="vg-command-card card-emerald wow fadeInUp" data-wow-delay=".35s">
+                <div class="vg-command-card card-emerald vg-blur-reveal vg-delay-7">
                     <span class="vg-corner-tick vg-corner-tick-tl"></span>
                     <span class="vg-corner-tick vg-corner-tick-tr"></span>
                     <span class="vg-corner-tick vg-corner-tick-bl"></span>
@@ -350,7 +357,7 @@
                 </div>
 
                 <!-- Card 4: 04 // AVAILABILITY (Amber #F59E0B Accent) -->
-                <div class="vg-command-card card-amber wow fadeInUp" data-wow-delay=".45s">
+                <div class="vg-command-card card-amber vg-blur-reveal vg-delay-8">
                     <span class="vg-corner-tick vg-corner-tick-tl"></span>
                     <span class="vg-corner-tick vg-corner-tick-tr"></span>
                     <span class="vg-corner-tick vg-corner-tick-bl"></span>
@@ -709,7 +716,7 @@
         });
     </script>
 
-    <!-- Dedicated Copy Email & Mobile Drawer Scripts -->
+    <!-- Dedicated Copy Email & Cursor-Tracking Spotlight Scripts -->
     <script>
         function copyEmailAddress(btn) {
             var email = 'contact@vgdigitalfalcon.com';
@@ -750,6 +757,42 @@
             }
             document.body.removeChild(textArea);
         }
+
+        // 60fps GPU-Accelerated Cursor-Tracking Radial Spotlight on Command Cards
+        (function initCommandCardSpotlights() {
+            var cards = document.querySelectorAll('.vg-command-card');
+            if (!cards.length) return;
+
+            cards.forEach(function(card) {
+                var rafId = null;
+                var lastX = -999;
+                var lastY = -999;
+
+                function updateSpotlight() {
+                    card.style.setProperty('--mouse-x', lastX + 'px');
+                    card.style.setProperty('--mouse-y', lastY + 'px');
+                    rafId = null;
+                }
+
+                card.addEventListener('mousemove', function(e) {
+                    var rect = card.getBoundingClientRect();
+                    lastX = e.clientX - rect.left;
+                    lastY = e.clientY - rect.top;
+                    if (!rafId) {
+                        rafId = requestAnimationFrame(updateSpotlight);
+                    }
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    if (rafId) {
+                        cancelAnimationFrame(rafId);
+                        rafId = null;
+                    }
+                    card.style.setProperty('--mouse-x', '-999px');
+                    card.style.setProperty('--mouse-y', '-999px');
+                });
+            });
+        })();
     </script>
 
 </body>

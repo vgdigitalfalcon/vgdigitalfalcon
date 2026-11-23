@@ -45,35 +45,114 @@
 }
 
 /* =============================================================================
-   1. HERO / BREADCRUMB SECTION (REFINED SPACING, TYPOGRAPHY & AMBIENT SPOTLIGHT)
+   1. HERO / BREADCRUMB SECTION (REFINED TOP CLEARANCE, TYPOGRAPHY & AMBIENT AURORA)
    ============================================================================= */
 .vg-contact-hero {
   position: relative;
-  padding: 132px 20px 56px;
+  padding-top: 136px !important;
+  padding-bottom: 52px !important;
+  padding-inline: 20px !important;
   background: radial-gradient(circle at 50% 12%, rgba(168, 85, 247, 0.18) 0%, rgba(34, 211, 238, 0.08) 40%, rgba(7, 2, 18, 0.98) 75%, #070212 100%);
   border-bottom: 1px solid rgba(168, 85, 247, 0.14);
   overflow: hidden;
   text-align: center;
 }
 
-.vg-contact-hero::before {
-  content: '';
+/* Ambient Floating Aurora Glow Orbs */
+.vg-contact-aurora-wrap {
   position: absolute;
-  top: -60px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 820px;
-  height: 380px;
-  background: radial-gradient(circle, rgba(168, 85, 247, 0.22) 0%, rgba(34, 211, 238, 0.14) 45%, transparent 70%);
-  filter: blur(75px);
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
   z-index: 0;
 }
 
+.vg-aurora-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.42;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.vg-aurora-1 {
+  width: 550px;
+  height: 380px;
+  top: -80px;
+  left: 20%;
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.35) 0%, rgba(168, 85, 247, 0.08) 60%, transparent 80%);
+  animation: vgAuroraDrift1 14s ease-in-out infinite alternate;
+}
+
+.vg-aurora-2 {
+  width: 500px;
+  height: 360px;
+  top: -40px;
+  right: 18%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.28) 0%, rgba(34, 211, 238, 0.06) 60%, transparent 80%);
+  animation: vgAuroraDrift2 16s ease-in-out infinite alternate;
+}
+
+.vg-aurora-3 {
+  width: 420px;
+  height: 280px;
+  bottom: -20px;
+  left: 42%;
+  background: radial-gradient(circle, rgba(192, 132, 252, 0.2) 0%, rgba(34, 211, 238, 0.08) 55%, transparent 75%);
+  animation: vgAuroraDrift3 12s ease-in-out infinite alternate;
+}
+
+@keyframes vgAuroraDrift1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(40px, 25px, 0) scale(1.08); }
+  100% { transform: translate3d(-30px, 45px, 0) scale(0.95); }
+}
+
+@keyframes vgAuroraDrift2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-45px, 35px, 0) scale(1.05); }
+  100% { transform: translate3d(25px, -20px, 0) scale(0.92); }
+}
+
+@keyframes vgAuroraDrift3 {
+  0% { transform: translate3d(0, 0, 0) scale(0.96); }
+  100% { transform: translate3d(30px, -30px, 0) scale(1.1); }
+}
+
+/* Staggered Blur-to-Sharp Entrance Reveal (0.75s cubic-bezier(0.22, 1, 0.36, 1)) */
+@keyframes vgBlurReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.vg-blur-reveal {
+  opacity: 0;
+  animation: vgBlurReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform, filter;
+}
+
+.vg-delay-1 { animation-delay: 80ms; }
+.vg-delay-2 { animation-delay: 160ms; }
+.vg-delay-3 { animation-delay: 240ms; }
+.vg-delay-4 { animation-delay: 320ms; }
+.vg-delay-5 { animation-delay: 400ms; }
+.vg-delay-6 { animation-delay: 480ms; }
+.vg-delay-7 { animation-delay: 560ms; }
+.vg-delay-8 { animation-delay: 640ms; }
+
 .vg-contact-hero .container {
   position: relative;
-  z-index: 1;
-  max-width: 780px;
+  z-index: 2;
+  max-width: 1180px !important;
   margin: 0 auto;
   padding-left: 0;
   padding-right: 0;
@@ -88,10 +167,12 @@
   background: rgba(18, 10, 36, 0.85);
   border: 1px solid rgba(168, 85, 247, 0.25);
   border-radius: 999px;
+  font-family: 'Inter', sans-serif !important;
   font-size: 12px;
   font-weight: 500;
   color: #94a3b8;
   margin-bottom: 18px;
+  white-space: nowrap;
 }
 
 .vg-contact-breadcrumb a {
@@ -123,12 +204,14 @@
   background: rgba(0, 240, 255, 0.08);
   border: 1px solid rgba(0, 240, 255, 0.28);
   border-radius: 999px;
+  font-family: 'Inter', sans-serif !important;
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   color: #00f0ff;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   margin-bottom: 18px;
+  white-space: nowrap;
 }
 
 .vg-contact-pulse-beacon {
@@ -138,6 +221,7 @@
   background: #00f0ff;
   box-shadow: 0 0 10px #00f0ff;
   animation: vgContactPulse 2s infinite ease-in-out;
+  flex-shrink: 0;
 }
 
 @keyframes vgContactPulse {
@@ -145,9 +229,9 @@
   50% { transform: scale(1.4); opacity: 0.5; }
 }
 
+/* Single-Line Desktop Heading & Responsive Font */
 .vg-contact-hero-title {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: clamp(34px, 4vw, 50px) !important;
   font-weight: 800 !important;
   line-height: 1.15 !important;
   letter-spacing: -0.03em !important;
@@ -155,22 +239,37 @@
   margin-bottom: 16px !important;
 }
 
+@media (min-width: 993px) {
+  .vg-contact-hero-title {
+    font-size: clamp(32px, 3.2vw, 44px) !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .vg-contact-hero-title {
+    white-space: normal !important;
+    font-size: clamp(26px, 4.5vw, 36px) !important;
+  }
+}
+
 .vg-contact-hero-subtitle {
   font-family: 'Inter', sans-serif !important;
   font-size: 16px !important;
+  font-weight: 400 !important;
   line-height: 1.65 !important;
   color: #CBD5E1 !important;
-  max-width: 640px !important;
+  max-width: 720px !important;
   margin: 0 auto !important;
 }
 
 /* =============================================================================
-   2. 4 DIRECT-ACCESS COMMAND CARDS (ARCHITECTURAL CORNER TICKS & 2PX TOP ACCENT)
+   2. 4 DIRECT-ACCESS COMMAND CARDS (CURSOR-TRACKING SPOTLIGHT, 3D SPRING LIFT & SHEEN)
    ============================================================================= */
 .vg-contact-cards-section {
   padding: 48px 20px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .vg-command-cards-grid {
@@ -194,14 +293,41 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 290px;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(0);
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.45s ease;
   overflow: hidden;
   box-sizing: border-box;
 }
 
 .vg-command-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(168, 85, 247, 0.2);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.58), 0 0 28px rgba(168, 85, 247, 0.22);
+}
+
+/* Cursor-Tracking Radial Spotlight Pseudo-element */
+.vg-command-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(380px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(168, 85, 247, 0.18), rgba(34, 211, 238, 0.1) 40%, transparent 80%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.35s ease;
+}
+
+.vg-command-card:hover::after {
+  opacity: 1;
+}
+
+/* Ensure inner content is layered above spotlight */
+.vg-command-card > div,
+.vg-command-top-row,
+.vg-command-body,
+.vg-command-action-row {
+  position: relative;
+  z-index: 2;
 }
 
 /* Distinct Top 2px Accent Strips */
@@ -213,7 +339,7 @@
   right: 18px;
   height: 2px;
   border-radius: 2px;
-  z-index: 3;
+  z-index: 4;
 }
 
 .vg-command-card.card-cyan {
@@ -224,7 +350,8 @@
   box-shadow: 0 0 10px rgba(34, 211, 238, 0.7);
 }
 .vg-command-card.card-cyan:hover {
-  border-color: rgba(34, 211, 238, 0.45);
+  border-color: rgba(34, 211, 238, 0.55);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.58), 0 0 28px rgba(34, 211, 238, 0.25);
 }
 
 .vg-command-card.card-violet {
@@ -235,7 +362,8 @@
   box-shadow: 0 0 10px rgba(168, 85, 247, 0.7);
 }
 .vg-command-card.card-violet:hover {
-  border-color: rgba(168, 85, 247, 0.45);
+  border-color: rgba(168, 85, 247, 0.55);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.58), 0 0 28px rgba(168, 85, 247, 0.25);
 }
 
 .vg-command-card.card-emerald {
@@ -246,7 +374,8 @@
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
 }
 .vg-command-card.card-emerald:hover {
-  border-color: rgba(16, 185, 129, 0.45);
+  border-color: rgba(16, 185, 129, 0.55);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.58), 0 0 28px rgba(16, 185, 129, 0.25);
 }
 
 .vg-command-card.card-amber {
@@ -257,7 +386,8 @@
   box-shadow: 0 0 10px rgba(245, 158, 11, 0.7);
 }
 .vg-command-card.card-amber:hover {
-  border-color: rgba(245, 158, 11, 0.45);
+  border-color: rgba(245, 158, 11, 0.55);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.58), 0 0 28px rgba(245, 158, 11, 0.25);
 }
 
 /* Subtle 8px L-shaped Architectural Corner Ticks */
@@ -268,7 +398,7 @@
   pointer-events: none;
   opacity: 0.4;
   transition: opacity 0.3s ease;
-  z-index: 2;
+  z-index: 3;
 }
 
 .vg-corner-tick-tl {
@@ -317,6 +447,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
+  flex-shrink: 0;
 }
 
 .vg-command-badge {
@@ -358,26 +490,31 @@
   box-shadow: 0 0 12px rgba(245, 158, 11, 0.2);
 }
 
+/* Micro-tags on a single clean line */
 .vg-command-index {
-  font-family: monospace;
-  font-size: 10.5px;
-  font-weight: 700;
-  color: #64748B;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  color: #64748B !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
 }
 
 .vg-command-pill {
-  font-size: 10px;
-  font-weight: 700;
-  padding: 4px 10px;
-  border-radius: 999px;
-  letter-spacing: 0.05em;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  text-transform: uppercase;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  padding: 4px 10px !important;
+  border-radius: 999px !important;
+  letter-spacing: 0.05em !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  text-transform: uppercase !important;
+  flex-shrink: 0 !important;
 }
 
 .pill-cyan {
@@ -453,31 +590,67 @@
 
 .vg-command-desc {
   font-family: 'Inter', sans-serif !important;
-  font-size: 12.5px !important;
+  font-size: 13px !important;
+  font-weight: 400 !important;
   line-height: 1.55 !important;
   color: #94A3B8 !important;
   margin-bottom: 0 !important;
 }
 
-/* Card Action Row */
+/* Card Action Row with Sheen & Micro-Scale */
 .vg-command-action-row {
   margin-top: auto;
   padding-top: 14px;
   border-top: 1px solid rgba(168, 85, 247, 0.12);
 }
 
-.vg-command-action-link {
+.vg-command-action-link,
+.vg-command-action-btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 8px 12px;
+  padding: 9px 14px;
   border-radius: 10px;
+  font-family: 'Inter', sans-serif !important;
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
-  transition: all 0.25s ease;
+  cursor: pointer;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.45s ease;
   box-sizing: border-box;
+}
+
+/* Light-sweep sheen animation */
+.vg-command-action-link::after,
+.vg-command-action-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.32), transparent);
+  transform: rotate(25deg);
+  transition: left 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.vg-command-action-link:hover::after,
+.vg-command-action-btn:hover::after {
+  left: 170%;
+}
+
+.vg-command-action-link:hover,
+.vg-command-action-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.vg-command-action-link:active,
+.vg-command-action-btn:active {
+  transform: translateY(0) scale(0.99);
 }
 
 .link-cyan {
@@ -490,21 +663,6 @@
   color: #ffffff;
   border-color: #22D3EE;
   box-shadow: 0 0 16px rgba(34, 211, 238, 0.3);
-  transform: translateY(-1px);
-}
-
-.vg-command-action-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-sizing: border-box;
 }
 
 .btn-violet {
@@ -517,7 +675,6 @@
   color: #ffffff;
   border-color: #A855F7;
   box-shadow: 0 0 16px rgba(168, 85, 247, 0.35);
-  transform: translateY(-1px);
 }
 .btn-violet.is-copied {
   background: rgba(16, 185, 129, 0.2) !important;
@@ -536,7 +693,6 @@
   color: #ffffff;
   border-color: #10B981;
   box-shadow: 0 0 16px rgba(16, 185, 129, 0.35);
-  transform: translateY(-1px);
 }
 
 .vg-command-status-tag {
@@ -544,8 +700,9 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 8px 12px;
+  padding: 9px 14px;
   border-radius: 10px;
+  font-family: 'Inter', sans-serif !important;
   font-size: 12px;
   font-weight: 600;
   box-sizing: border-box;
@@ -934,7 +1091,9 @@
 
 @media (max-width: 640px) {
   .vg-contact-hero {
-    padding: 118px 16px 42px !important;
+    padding-top: 124px !important;
+    padding-bottom: 44px !important;
+    padding-inline: 16px !important;
   }
 
   .vg-contact-hero-title {
