@@ -1516,12 +1516,14 @@ body {
 
 .node-seo {
   top: 44%;
-  left: 93%;
+  left: 87%;
+  white-space: nowrap !important;
 }
 
 .node-automation {
   top: 68%;
   left: 85%;
+  white-space: nowrap !important;
 }
 
 .node-crm {
@@ -25357,19 +25359,19 @@ header.header-scrolled,
 
 
 
-/* Left Hero Card (max-width: 580px !important) */
+/* Left Hero Content (Open Hero Canvas - Matching Service Pages) */
 .vg-hero-section .vg-hero-content {
   max-width: 580px !important;
   width: 100% !important;
   position: relative !important;
   z-index: 10 !important;
-  padding: 28px 32px !important;
-  border-radius: 20px !important;
-  background: radial-gradient(circle at 25% 35%, rgba(10, 6, 20, 0.78) 0%, rgba(10, 6, 20, 0.45) 75%, transparent 100%) !important;
-  border: 1px solid rgba(124, 58, 237, 0.28) !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45), inset 0 0 20px rgba(124, 58, 237, 0.04) !important;
-  backdrop-filter: blur(12px) !important;
-  -webkit-backdrop-filter: blur(12px) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
 }
 
 
@@ -32181,5 +32183,28 @@ body.vg-pm-page .vg-pb-section-desc.text-center {
   .vg-pm-card-desc,
   .vg-pm-pipeline-desc {
     word-spacing: normal !important;
+  }
+}
+
+
+/* Orbit Stage Overflow Protection for Search Engine Optimization Pill */
+.vg-engine-wrapper,
+.vg-engine-stage {
+  overflow: visible !important;
+}
+
+@media (max-width: 768px) {
+  .node-seo {
+    top: 44% !important;
+    left: 83% !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .node-seo {
+    top: 44% !important;
+    left: 80% !important;
+    white-space: nowrap !important;
   }
 }
