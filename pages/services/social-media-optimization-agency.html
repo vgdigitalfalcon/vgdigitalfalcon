@@ -727,6 +727,278 @@
 
         /* Mobile Responsive Navigation & Hero Spacing (@media (max-width: 768px)) */
         @media (max-width: 768px) {
+
+  /* 1. Prevent Global Mobile Horizontal Overflow */
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    position: relative !important;
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+  }
+
+  section,
+  .section,
+  .vg-section,
+  .container,
+  .vg-container,
+  .hero-container,
+  .vg-hero-container,
+  .vg-smo-section .container,
+  .vg-smo-hero-section .container,
+  #smo-hero .container,
+  #services .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    padding-inline: 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. SMO Growth Audit Form Eyebrow Pill Wrapping */
+  .vg-smo-telemetry-pill,
+  .vg-smo-form-container .vg-smo-telemetry-pill,
+  #smoEnquiryCard .vg-smo-telemetry-pill {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+    text-align: center !important;
+    font-size: 10.5px !important;
+    line-height: 1.35 !important;
+    padding: 6px 12px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 999px !important;
+    gap: 6px !important;
+  }
+
+  .vg-smo-telemetry-pill .d-flex {
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    min-width: 0 !important;
+  }
+
+  .vg-smo-telemetry-pill .vg-telemetry-text {
+    white-space: normal !important;
+    text-align: center !important;
+    font-size: 10.5px !important;
+    line-height: 1.35 !important;
+    max-width: 100% !important;
+    display: inline !important;
+  }
+
+  .vg-smo-telemetry-pill .vg-telemetry-tag {
+    font-size: 10px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 3. SMO 6 Native Social Platform Cards Grid & Action Row Wrapping */
+  .vg-smo-services-grid,
+  #services .vg-smo-services-grid,
+  #services .row.vg-smo-services-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 16px !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .vg-smo-grid-col {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    display: block !important;
+  }
+
+  .vg-smo-card.vg-smo-platform-card,
+  .vg-smo-card-fb,
+  .vg-smo-card-insta,
+  .vg-smo-card-yt,
+  .vg-smo-card-x,
+  .vg-smo-card-in,
+  .vg-smo-card-wa {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 18px 16px !important;
+    box-sizing: border-box !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* Native Card Header Wrap */
+  .vg-native-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .vg-native-meta {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+
+  .vg-native-name-row {
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+  }
+
+  .vg-native-name {
+    white-space: normal !important;
+    word-break: break-word !important;
+  }
+
+  /* Native Card Action Rows & Telemetry Wrap */
+  .vg-native-footer,
+  .fb-footer,
+  .insta-footer,
+  .yt-footer,
+  .tw-footer,
+  .li-footer,
+  .wa-footer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .yt-subscribe-btn,
+  .fb-share-btn,
+  .fb-reactions-left,
+  .insta-actions-row,
+  .insta-likes-row,
+  .yt-telemetry,
+  .yt-views,
+  .yt-telemetry-tag,
+  .tw-metrics-row,
+  .li-metrics-left,
+  .li-action-pill,
+  .wa-status-left,
+  .wa-chat-pill {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    box-sizing: border-box !important;
+  }
+
+  .yt-subscribe-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* 4. Personal Branding Executive Outcome Card - Badges & 3-Metric List */
+  .vg-pb-outcome-card,
+  #vgPbOutcomeCard {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 20px 16px !important;
+    transform: none !important;
+  }
+
+  .vg-pb-outcome-card-inner,
+  #vgOutcomeCardInner {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Top Badges Row: Clean, compact horizontal pills wrapped cleanly */
+  .vg-outcome-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-bottom: 14px !important;
+  }
+
+  .vg-outcome-badge,
+  #vgOutcomeBadge {
+    display: inline-flex !important;
+    align-items: center !important;
+    border-radius: 999px !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.04em !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .vg-outcome-tag,
+  #vgOutcomeTag {
+    display: inline-flex !important;
+    align-items: center !important;
+    border-radius: 999px !important;
+    padding: 6px 12px !important;
+    font-size: 10px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.06em !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3-Metric Grid (+450%, Top 1%, $250K+): Single Column Horizontal Stat List */
+  .vg-outcome-metrics-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-bottom: 14px !important;
+  }
+
+  .vg-outcome-metric-cell {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    text-align: left !important;
+    padding: 12px 14px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    border-radius: 12px !important;
+  }
+
+  .vg-outcome-metric-val {
+    font-size: 22px !important;
+    line-height: 1 !important;
+    order: 2 !important;
+    text-align: right !important;
+  }
+
+  .vg-outcome-metric-lbl {
+    font-size: 11px !important;
+    order: 1 !important;
+    text-align: left !important;
+    white-space: nowrap !important;
+  }
+
+
             /* 2. Mobile Top Navbar - Permanently Fixed on Scroll Across Every Page */
             .vg-header,
             #header-sticky,
@@ -799,13 +1071,6 @@
                 display: none !important;
             }
 
-            .vg-header .d-flex.align-items-center {
-                display: flex !important;
-                align-items: center !important;
-                gap: 8px !important;
-                flex-shrink: 0 !important;
-            }
-
             /* Force Hide Desktop CTA Button inside Top Bar on Mobile */
             .vg-header .vg-btn-primary,
             .vg-header .vg-dm-btn-primary,
@@ -846,7 +1111,7 @@
                 border: 1px solid rgba(168, 85, 247, 0.3) !important;
             }
 
-            /* Mobile Side Menu Drawer - Vertically Scrollable Full Height Without Clipping */
+                        /* Mobile Slide-Out Drawer - Vertical Scrolling */
             .offcanvas__info {
                 position: fixed !important;
                 top: 0 !important;
@@ -1332,12 +1597,12 @@
                         <div class="vg-scanline-beam"></div>
 
                         <!-- Live SMO Telemetry Pill -->
-                        <div class="vg-smo-telemetry-pill" style="display: flex !important; align-items: center !important; justify-content: space-between !important; margin-bottom: 12px !important; padding: 5px 12px !important; background: rgba(14, 6, 32, 0.9) !important; border: 1px solid rgba(56, 189, 248, 0.35) !important; border-radius: 999px !important;">
+                        <div class="vg-smo-telemetry-pill">
                             <div class="d-flex align-items-center gap-2">
                                 <span class="vg-smo-pulse-beacon"></span>
-                                <span class="vg-telemetry-text" style="font-size: 11.5px !important;">LIVE SMO ENGINE: <strong>VIRAL REACH ACTIVE</strong></span>
+                                <span class="vg-telemetry-text">LIVE SMO ENGINE: <strong>VIRAL REACH ACTIVE</strong></span>
                             </div>
-                            <span class="vg-telemetry-tag" style="font-size: 11px !important;">v2026.4</span>
+                            <span class="vg-telemetry-tag">v2026.4</span>
                         </div>
 
                         <h3 class="vg-smo-form-title" style="font-size: 20px !important; font-weight: 800 !important; color: #ffffff !important; text-align: center !important; margin-bottom: 4px !important; letter-spacing: -0.01em !important;">Get FREE SMO Growth Audit!</h3>

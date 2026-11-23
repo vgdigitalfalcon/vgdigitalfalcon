@@ -35,7 +35,7 @@
       metric1Lbl: 'CXO Network Reach',
       metric2Val: 'Top 1%',
       metric2Lbl: 'Industry Voice',
-      metric3Val: '$25k+',
+      metric3Val: '$250K+',
       metric3Lbl: 'Keynote & Advisory',
       quote: 'Elevate your digital stature to command board seats, international keynote invitations, and top-tier industry advisory retainers.',
       status: 'Executive Influence Engine • Direct CXO Access'
