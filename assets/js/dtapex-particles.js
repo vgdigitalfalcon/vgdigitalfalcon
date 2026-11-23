@@ -80,11 +80,13 @@
       this.ctx.scale(this.dpr, this.dpr);
 
       // Responsive density
-      if (this.width < 768) {
-        this.options.cols = 18;
-        this.options.rows = 14;
-        this.options.spacingX = Math.floor(this.width / 16);
-        this.options.spacingY = 40;
+      if (this.width <= 768) {
+        this.options.cols = 16;
+        const targetSpacingY = 52;
+        this.options.rows = Math.max(24, Math.ceil(this.height / targetSpacingY) + 2);
+        this.options.spacingX = Math.floor(this.width / 14);
+        this.options.spacingY = Math.ceil(this.height / (this.options.rows - 1)) + 4;
+        this.buildOrbits();
       } else if (this.width < 1200) {
         this.options.cols = 26;
         this.options.rows = 18;
@@ -129,15 +131,20 @@
 
     buildOrbits() {
       this.orbitParticles = [];
+      const isMobile = this.width <= 768;
       for (let i = 0; i < this.options.orbitCount; i++) {
-        const radiusX = 180 + Math.random() * 320;
-        const radiusY = 90 + Math.random() * 180;
+        const radiusX = isMobile
+          ? (80 + Math.random() * (this.width * 0.4))
+          : (180 + Math.random() * 320);
+        const radiusY = isMobile
+          ? (120 + Math.random() * (this.height * 0.42))
+          : (90 + Math.random() * 180);
         const speed = (0.007 + Math.random() * 0.011) * (Math.random() > 0.5 ? 1 : -1);
         const angle = Math.random() * Math.PI * 2;
         const tiltAngle = (Math.random() - 0.5) * 0.7;
         this.orbitParticles.push({
           radiusX, radiusY, speed, angle, tiltAngle,
-          size: 1.6 + Math.random() * 2.4,
+          size: (isMobile ? 1.4 : 1.6) + Math.random() * (isMobile ? 1.8 : 2.4),
           colorRatio: Math.random() // 0 = cyan, 1 = violet
         });
       }
@@ -153,6 +160,16 @@
           this.cachedRect = this.canvas.getBoundingClientRect();
         }, 120);
       }, { passive: true });
+
+      // ResizeObserver to recalibrate canvas dimensions when mobile content / hero expands
+      if (typeof ResizeObserver !== 'undefined') {
+        const roTarget = this.canvas.parentElement || document.body;
+        const ro = new ResizeObserver(() => {
+          this.resize();
+          this.cachedRect = this.canvas.getBoundingClientRect();
+        });
+        ro.observe(roTarget);
+      }
 
       this.cachedRect = this.canvas.getBoundingClientRect();
 
@@ -494,8 +511,18 @@
 
     if (!canvas._dtapexInstance) {
       canvas._dtapexInstance = new GlobalDtapexParticleMesh(canvas);
+    } else {
+      canvas._dtapexInstance.resize();
     }
   }
+
+  // Recalibrate dimensions on window load for complete mobile layout stabilization
+  window.addEventListener('load', () => {
+    const heroCanvas = document.getElementById('vg-about-hero-canvas');
+    if (heroCanvas && heroCanvas._dtapexInstance) {
+      heroCanvas._dtapexInstance.resize();
+    }
+  });
 
   // ==========================================================================
   // 3b. MOUNT DTAPEX 3D CANVAS (ABOUT METRICS STRIP)

@@ -10434,12 +10434,15 @@ canvas {
     font-size: 12px !important;
   }
 
-  /* 3. About Us: Telemetry Card & Falcon Engine Active • 24/7 Alignment (Mobile Only < 768px) */
+  /* 3. About Us: Telemetry Card & Falcon Engine Active • 24/7 Alignment (Mobile Only <= 768px) */
   .vg-telemetry-card {
     padding: 20px 16px !important;
     border-radius: 20px !important;
     margin: 0 auto !important;
+    width: 100% !important;
     max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
   }
 
   .vg-telemetry-header {
@@ -10450,8 +10453,9 @@ canvas {
     gap: 8px !important;
     padding-bottom: 14px !important;
     margin-bottom: 18px !important;
-    flex-wrap: nowrap !important;
+    flex-wrap: wrap !important;
     width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .vg-telemetry-status {
@@ -10485,13 +10489,20 @@ canvas {
     padding: 4px 10px !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
   .vg-telemetry-grid {
     display: grid !important;
-    grid-template-columns: repeat(2, minmax(210px, 1fr)) !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
     gap: 12px !important;
+    overflow: hidden !important;
     margin-bottom: 18px !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
   }
 
   .vg-telemetry-item {
@@ -10500,6 +10511,10 @@ canvas {
     justify-content: center !important;
     align-items: center !important;
     text-align: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     padding: 14px 10px !important;
     min-height: 96px !important;
     border-radius: 14px !important;
@@ -31364,6 +31379,36 @@ ul.vg-services-pills-grid {
     padding-top: 0 !important;
   }
 
+
+  /* About Us Hero Ambient Particle Canvas Covering Entire Section on Mobile (max-width: 768px) */
+  .vg-about-hero {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .vg-about-hero-canvas,
+  #vg-about-hero-canvas,
+  .vg-about-hero .vg-global-dtapex-canvas {
+    position: absolute !important;
+    inset: 0 !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: 0 !important;
+    pointer-events: none !important;
+    opacity: 0.65 !important;
+    display: block !important;
+  }
+
+  .vg-about-hero > .container,
+  .vg-about-hero .container {
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
   /* 4. Breadcrumb Wrapping (flex-wrap: wrap; font-size: 12px; line-height: 1.5; max-width: 100%;) */
   .vg-breadcrumb-wrap,
   .vg-smo-badges-stack .vg-breadcrumb-wrap,
@@ -31579,7 +31624,6 @@ ul.vg-services-pills-grid {
   .vg-pb-audit-card,
   .vg-yt-audit-card,
   .vg-telemetry-card,
-  .vg-telemetry-grid,
   .hero-form-card,
   .vg-lead-form-card {
     width: 100% !important;
