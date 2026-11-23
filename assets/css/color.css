@@ -23665,15 +23665,87 @@ body.vg-pm-page,
 /* Hero Titles */
 .vg-pm-hero-title {
   font-family: 'Plus Jakarta Sans', sans-serif !important;
-  font-size: clamp(32px, 3.2vw, 44px) !important;
+  font-size: clamp(28px, 2.65vw, 37px) !important;
   font-weight: 800 !important;
-  line-height: 1.15 !important;
+  line-height: 1.18 !important;
   color: #FFFFFF !important;
   margin-bottom: 16px !important;
-  letter-spacing: -0.02em !important;
+  letter-spacing: -0.025em !important;
 }
 
-@media (max-width: 991px) {
+.vg-pm-hero-title .pm-line-one,
+.pm-line-one {
+  background: linear-gradient(135deg, #00f0ff 0%, #c084fc 45%, #a855f7 75%, #f472b6 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  display: inline-block;
+  filter: drop-shadow(0 2px 24px rgba(168, 85, 247, 0.4));
+}
+
+/* Keep Best Performance Marketing Agency on a Single Desktop Line (@media (min-width: 993px)) */
+@media (min-width: 993px) {
+  .vg-pm-hero-section .container,
+  #performance-marketing-hero .container {
+    max-width: 1240px !important;
+    margin: 0 auto !important;
+  }
+
+  .vg-pm-hero-section .vg-pm-hero-row,
+  #performance-marketing-hero .row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  .vg-pm-hero-section .vg-pm-hero-col-left,
+  .vg-pm-hero-section .row > .col-lg-6,
+  #performance-marketing-hero .row > .col-lg-6 {
+    flex: 1.18 1 0 !important;
+    max-width: 56% !important;
+    width: 56% !important;
+  }
+
+  .vg-pm-hero-section .vg-pm-hero-col-right,
+  .vg-pm-hero-section .row > .col-lg-5,
+  #performance-marketing-hero .row > .col-lg-5 {
+    flex: 1 1 0 !important;
+    max-width: 44% !important;
+    width: 44% !important;
+  }
+
+  .vg-pm-hero-title,
+  .vg-pm-hero-section h1,
+  #performance-marketing-hero h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 800 !important;
+    font-size: clamp(28px, 2.65vw, 37px) !important;
+    line-height: 1.18 !important;
+    letter-spacing: -0.025em !important;
+    color: #FFFFFF !important;
+  }
+
+  .vg-pm-hero-title .pm-line-one,
+  .pm-line-one {
+    white-space: nowrap !important;
+  }
+
+  .desktop-br {
+    display: block !important;
+  }
+}
+
+/* Preserve Natural Mobile & Tablet Wrapping (@media (max-width: 992px)) */
+@media (max-width: 992px) {
+  .vg-pm-hero-title .pm-line-one,
+  .pm-line-one {
+    white-space: normal !important;
+  }
+
+  .desktop-br {
+    display: none !important;
+  }
+
   .vg-pm-hero-title {
     font-size: 34px !important;
     line-height: 1.2 !important;
