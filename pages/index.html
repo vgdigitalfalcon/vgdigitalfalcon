@@ -138,34 +138,6 @@
       .services-dropdown .vg-dd-desc {
         display: none !important;
       }
-          /* ================= 3D Growth Orbit Component ================= */
-      .orbit-wrap { perspective: 1400px; width: 100%; max-width: 680px; aspect-ratio: 760 / 600; margin: 0 auto; overflow: visible; position: relative; z-index: 10; }
-      .orbit { position: relative; width: 100%; height: 100%; transition: transform 0.25s ease-out; will-change: transform; }
-      .orbit > * { position: absolute; left: 0; top: 0; }
-      .ring { border: 1px dashed rgba(167, 139, 250, 0.28); border-radius: 50%; transform: translate(-50%, -50%); }
-      .ring.inner { border-color: rgba(34, 211, 238, 0.28); }
-      .ground { border-radius: 50%; transform: translate(-50%, -50%); background: radial-gradient(closest-side, rgba(124, 58, 237, 0.45), rgba(124, 58, 237, 0) 70%); filter: blur(6px); }
-      .chip { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 999px; white-space: nowrap; font-size: 14px; font-weight: 600; color: #fff; background: rgba(18, 10, 40, 0.78); border: 1px solid rgba(167, 139, 250, 0.35); box-shadow: 0 8px 30px -10px rgba(124, 58, 237, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); will-change: transform, opacity; user-select: none; }
-      .chip i { width: 8px; height: 8px; border-radius: 50%; background: var(--c, #a78bfa); box-shadow: 0 0 10px var(--c, #a78bfa); display: inline-block; flex-shrink: 0; }
-      .pulse { width: 10px; height: 10px; border-radius: 50%; background: #fff; box-shadow: 0 0 14px 4px rgba(34, 211, 238, 0.9); will-change: transform; }
-      .core { transform: translate(-50%, -50%); z-index: 20; width: 130px; height: 130px; perspective: 700px; animation: bob 5s ease-in-out infinite; }
-      .cube { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; animation: spin 16s linear infinite; }
-      .face { position: absolute; inset: 0; display: grid; place-items: center; text-align: center; border-radius: 18px; background: linear-gradient(145deg, rgba(124, 58, 237, 0.55), rgba(20, 10, 50, 0.75)); border: 1px solid rgba(196, 181, 253, 0.55); box-shadow: inset 0 0 30px rgba(167, 139, 250, 0.35), 0 0 30px rgba(124, 58, 237, 0.4); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
-      .face b { display: block; font-size: 38px; font-weight: 800; line-height: 1; letter-spacing: 0.02em; color: #fff; }
-      .face small { display: block; margin-top: 6px; font-size: 10px; letter-spacing: 0.28em; color: #c4b5fd; text-transform: uppercase; }
-      .f1 { transform: rotateY(0) translateZ(65px); }
-      .f2 { transform: rotateY(90deg) translateZ(65px); }
-      .f3 { transform: rotateY(180deg) translateZ(65px); }
-      .f4 { transform: rotateY(270deg) translateZ(65px); }
-      .f5 { transform: rotateX(90deg) translateZ(65px); background: radial-gradient(circle, rgba(34, 211, 238, 0.6), rgba(124, 58, 237, 0.3)); }
-      .f6 { transform: rotateX(-90deg) translateZ(65px); }
-      .core::after { content: ""; position: absolute; inset: -40%; z-index: -1; border-radius: 50%; background: radial-gradient(circle, rgba(124, 58, 237, 0.55), transparent 65%); animation: glow 3s ease-in-out infinite; }
-      @keyframes spin { from { transform: rotateX(-18deg) rotateY(0); } to { transform: rotateX(-18deg) rotateY(360deg); } }
-      @keyframes bob { 50% { margin-top: -10px; } }
-      @keyframes glow { 50% { opacity: 0.55; transform: scale(1.12); } }
-      @media (max-width: 768px) { .orbit-wrap { width: 100% !important; max-width: 100% !important; overflow: hidden !important; margin: 16px auto 0 auto !important; } }
-      @media (max-width: 640px) { .chip { font-size: 11px !important; padding: 7px 11px !important; } .core { width: 90px !important; height: 90px !important; } .face b { font-size: 26px !important; } .f1 { transform: rotateY(0) translateZ(45px); } .f2 { transform: rotateY(90deg) translateZ(45px); } .f3 { transform: rotateY(180deg) translateZ(45px); } .f4 { transform: rotateY(270deg) translateZ(45px); } .f5 { transform: rotateX(90deg) translateZ(45px); } .f6 { transform: rotateX(-90deg) translateZ(45px); } }
-      @media (prefers-reduced-motion: reduce) { .cube, .core, .core::after { animation: none !important; } }
     </style>
 
     <!-- Resource Hints & Google Web Fonts -->
@@ -434,22 +406,87 @@
                         </div>
                     </div>
                 </div>
-                <!-- Right Column: Interactive 3D Growth Orbit -->
-                <div class="orbit-wrap wow fadeInRight" data-wow-delay=".4s">
-                    <div class="orbit" id="orbit">
-                        <div class="ground" id="ground"></div>
-                        <div class="ring" id="ringOuter"></div>
-                        <div class="ring inner" id="ringInner"></div>
 
-                        <div class="core" id="core">
-                            <div class="cube">
-                                <div class="face f1"><div><b>AI</b><small>GROWTH ENGINE</small></div></div>
-                                <div class="face f2"><div><b>AI</b><small>GROWTH ENGINE</small></div></div>
-                                <div class="face f3"><div><b>AI</b><small>GROWTH ENGINE</small></div></div>
-                                <div class="face f4"><div><b>AI</b><small>GROWTH ENGINE</small></div></div>
-                                <div class="face f5"></div>
-                                <div class="face f6"></div>
-                            </div>
+                <!-- Right Column: Interactive Holographic AI Growth Engine -->
+                <div class="vg-engine-wrapper wow fadeInRight" data-wow-delay=".4s" style="margin-top: 24px;">
+                    <div class="vg-engine-stage">
+                        <!-- SVG Concentric Orbital Rings & Laser Beams -->
+                        <svg class="vg-engine-orbit-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="orbitGlowGrad" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#9333ea" stop-opacity="0.25"/>
+                                    <stop offset="60%" stop-color="#7c3aed" stop-opacity="0.08"/>
+                                    <stop offset="100%" stop-color="transparent"/>
+                                </radialGradient>
+                                <linearGradient id="beamGrad" x1="50%" y1="50%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#c084fc"/>
+                                    <stop offset="100%" stop-color="#7c3aed"/>
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Ambient Radial Glow -->
+                            <circle cx="250" cy="250" r="230" fill="url(#orbitGlowGrad)"/>
+
+                            <!-- Outer Orbit Ring -->
+                            <ellipse cx="250" cy="250" rx="215" ry="205" stroke="rgba(168, 85, 247, 0.22)" stroke-width="1.2" stroke-dasharray="8 8" class="orbit-circle-dashed"/>
+                            <!-- Inner Accent Orbit Ring -->
+                            <circle cx="250" cy="250" r="140" stroke="rgba(192, 132, 252, 0.28)" stroke-width="1.2" stroke-dasharray="12 8" class="orbit-circle-reverse"/>
+                            <!-- Core Glow Aura Ring -->
+                            <circle cx="250" cy="250" r="75" stroke="rgba(147, 51, 234, 0.45)" stroke-width="1.5"/>
+
+                            <!-- Laser Connecting Beams (Center 250,250 to 9 Nodes) -->
+                            <line id="beam-google-ads" class="engine-beam" x1="250" y1="250" x2="250" y2="45" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+                            <line id="beam-meta-ads" class="engine-beam" x1="250" y1="250" x2="410" y2="100" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+                            <line id="beam-seo" class="engine-beam" x1="250" y1="250" x2="465" y2="220" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+                            <line id="beam-automation" class="engine-beam" x1="250" y1="250" x2="425" y2="340" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+                            <line id="beam-crm" class="engine-beam" x1="250" y1="250" x2="340" y2="455" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+                            <line id="beam-analytics" class="engine-beam" x1="250" y1="250" x2="160" y2="455" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+                            <line id="beam-content" class="engine-beam" x1="250" y1="250" x2="75" y2="340" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+                            <line id="beam-whatsapp" class="engine-beam" x1="250" y1="250" x2="35" y2="220" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+                            <line id="beam-email" class="engine-beam" x1="250" y1="250" x2="90" y2="100" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5"/>
+                        </svg>
+
+                        <!-- Central Pulsing Core -->
+                        <div class="vg-engine-core" title="AI Growth Core">
+                            <div class="core-title">AI</div>
+                            <div class="core-subtitle">GROWTH ENGINE</div>
+                        </div>
+
+                        <!-- 9 Interactive Orbital Service Nodes -->
+                        <div class="vg-node node-google-ads" data-beam="beam-google-ads">
+                            <i class="fa-brands fa-google"></i> Google Ads
+                        </div>
+
+                        <div class="vg-node node-meta-ads" data-beam="beam-meta-ads">
+                            <i class="fa-brands fa-meta"></i> Meta Ads
+                        </div>
+
+                        <div class="vg-node node-seo" data-beam="beam-seo">
+                            <i class="fa-solid fa-magnifying-glass"></i> Search Engine Optimization
+                        </div>
+
+                        <div class="vg-node node-automation" data-beam="beam-automation">
+                            <i class="fa-solid fa-microchip"></i> AI Automation
+                        </div>
+
+                        <div class="vg-node node-crm" data-beam="beam-crm">
+                            <i class="fa-solid fa-users-gear"></i> <span class="d-none d-sm-inline">CRM &amp; Automation</span><span class="d-inline d-sm-none">CRM &amp; Auto</span>
+                        </div>
+
+                        <div class="vg-node node-analytics" data-beam="beam-analytics">
+                            <i class="fa-solid fa-chart-line-up"></i> <span class="d-none d-sm-inline">Analytics &amp; Reporting</span><span class="d-inline d-sm-none">Analytics</span>
+                        </div>
+
+                        <div class="vg-node node-content" data-beam="beam-content">
+                            <i class="fa-solid fa-pen-nib"></i> Content Marketing
+                        </div>
+
+                        <div class="vg-node node-whatsapp" data-beam="beam-whatsapp">
+                            <i class="fa-brands fa-whatsapp"></i> WhatsApp Automation
+                        </div>
+
+                        <div class="vg-node node-email" data-beam="beam-email">
+                            <i class="fa-solid fa-envelope"></i> Email Marketing
                         </div>
                     </div>
                 </div>
@@ -3829,118 +3866,6 @@
                 });
             });
         });
-    </script>
-    <!-- Interactive 3D Growth Orbit Component Simulation Engine -->
-    <script>
-        (function () {
-            var orbit = document.getElementById('orbit');
-            if (!orbit) return;
-            var heroSection = document.querySelector('.vg-hero-section') || orbit.closest('section') || document.body;
-            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-            // ring 0 = inner (cyan, clockwise), ring 1 = outer (violet, counter-clockwise)
-            var items = [
-                { t: 'AI Automation', c: '#22d3ee', ring: 0 },
-                { t: 'WhatsApp Automation', c: '#22c55e', ring: 0 },
-                { t: 'CRM & Automation', c: '#a78bfa', ring: 0 },
-                { t: 'Analytics & Reporting', c: '#22d3ee', ring: 0 },
-                { t: 'Google Ads', c: '#facc15', ring: 1 },
-                { t: 'Meta Ads', c: '#60a5fa', ring: 1 },
-                { t: 'Email Marketing', c: '#f472b6', ring: 1 },
-                { t: 'Search Engine Optimization', c: '#22d3ee', ring: 1 },
-                { t: 'Content Marketing', c: '#a78bfa', ring: 1 },
-                { t: 'Social Media', c: '#fb7185', ring: 1 }
-            ];
-            var rings = [
-                { R: 0.215, speed: 0.32, el: document.getElementById('ringInner') },
-                { R: 0.345, speed: -0.2, el: document.getElementById('ringOuter') }
-            ];
-            var FLAT = 0.36; // ellipse squash = camera tilt
-
-            var els = items.map(function(it) {
-                var d = document.createElement('div');
-                d.className = 'chip';
-                d.style.setProperty('--c', it.c);
-                d.innerHTML = '<i></i>' + it.t;
-                orbit.appendChild(d);
-                var peers = items.filter(function(x) { return x.ring === it.ring; });
-                it.base = (peers.indexOf(it) / peers.length) * Math.PI * 2 + it.ring * 0.6;
-                return d;
-            });
-            var pulses = rings.map(function() {
-                var p = document.createElement('div');
-                p.className = 'pulse';
-                orbit.appendChild(p);
-                return p;
-            });
-
-            var W = 0, H = 0, CX = 0, CY = 0;
-            function layout() {
-                W = orbit.clientWidth;
-                H = orbit.clientHeight;
-                CX = W / 2;
-                CY = H / 2;
-                rings.forEach(function(r) {
-                    if (!r.el) return;
-                    var w = r.R * W * 2;
-                    r.el.style.width = w + 'px';
-                    r.el.style.height = (w * FLAT) + 'px';
-                    r.el.style.left = CX + 'px';
-                    r.el.style.top = CY + 'px';
-                });
-                var g = document.getElementById('ground');
-                if (g) {
-                    g.style.width = (W * 0.3) + 'px';
-                    g.style.height = (W * 0.3 * FLAT) + 'px';
-                    g.style.left = CX + 'px';
-                    g.style.top = (CY + H * 0.12) + 'px';
-                }
-                var c = document.getElementById('core');
-                if (c) {
-                    c.style.left = CX + 'px';
-                    c.style.top = CY + 'px';
-                }
-            }
-
-            window.addEventListener('resize', layout);
-            if (typeof ResizeObserver !== 'undefined') {
-                var ro = new ResizeObserver(function() { layout(); });
-                ro.observe(orbit);
-            }
-            layout();
-
-            function place(el, ang, R, zFront, zBack) {
-                var x = CX + Math.cos(ang) * R * W;
-                var y = CY + Math.sin(ang) * R * W * FLAT;
-                var depth = (Math.sin(ang) + 1) / 2; // 0 = back, 1 = front
-                el.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%,-50%) scale(' + (0.72 + 0.4 * depth).toFixed(3) + ')';
-                el.style.opacity = (0.42 + 0.58 * depth).toFixed(3);
-                el.style.zIndex = depth > 0.5 ? zFront : zBack;
-            }
-
-            function frame(now) {
-                var t = reduce ? 0 : now / 1000;
-                items.forEach(function(it, i) {
-                    place(els[i], it.base + t * rings[it.ring].speed, rings[it.ring].R, 30, 5);
-                });
-                pulses.forEach(function(p, k) {
-                    place(p, t * rings[k].speed * 2.4 + k * 2, rings[k].R, 31, 6);
-                });
-                if (!reduce) requestAnimationFrame(frame);
-            }
-            requestAnimationFrame(frame);
-
-            // Mouse parallax tilt scoped to Hero section
-            heroSection.addEventListener('pointermove', function(e) {
-                var rect = heroSection.getBoundingClientRect();
-                var mx = (e.clientX - rect.left) / rect.width - 0.5;
-                var my = (e.clientY - rect.top) / rect.height - 0.5;
-                orbit.style.transform = 'rotateX(' + (-my * 8).toFixed(2) + 'deg) rotateY(' + (mx * 12).toFixed(2) + 'deg)';
-            });
-            heroSection.addEventListener('pointerleave', function() {
-                orbit.style.transform = '';
-            });
-        })();
     </script>
 </body>
 </html>
