@@ -30752,11 +30752,13 @@ ul.vg-services-pills-grid {
   #vgOutcomeBadge {
     display: inline-flex !important;
     align-items: center !important;
+    justify-content: center !important;
     border-radius: 999px !important;
     padding: 6px 12px !important;
     font-size: 10px !important;
-    line-height: 1.2 !important;
-    white-space: nowrap !important;
+    line-height: 1.35 !important;
+    white-space: normal !important;
+    text-align: center !important;
     letter-spacing: 0.04em !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -30782,6 +30784,8 @@ ul.vg-services-pills-grid {
     grid-template-columns: 1fr !important;
     gap: 10px !important;
     width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     margin-bottom: 14px !important;
   }
 
@@ -30792,23 +30796,60 @@ ul.vg-services-pills-grid {
     justify-content: space-between !important;
     text-align: left !important;
     padding: 12px 14px !important;
+    gap: 10px !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
     border-radius: 12px !important;
+    overflow: hidden !important;
   }
 
-  .vg-outcome-metric-val {
-    font-size: 22px !important;
-    line-height: 1 !important;
+  .vg-outcome-metric-val,
+  .vg-outcome-metric-cell .vg-outcome-metric-val,
+  #vgOutcomeM1Val,
+  #vgOutcomeM2Val,
+  #vgOutcomeM3Val {
+    font-size: 20px !important;
+    line-height: 1.1 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
     order: 2 !important;
     text-align: right !important;
   }
 
-  .vg-outcome-metric-lbl {
+  .vg-outcome-metric-lbl,
+  .vg-outcome-metric-cell .vg-outcome-metric-lbl,
+  #vgOutcomeM1Lbl,
+  #vgOutcomeM2Lbl,
+  #vgOutcomeM3Lbl {
     font-size: 11px !important;
+    line-height: 1.3 !important;
+    white-space: normal !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    word-break: break-word !important;
     order: 1 !important;
     text-align: left !important;
-    white-space: nowrap !important;
+  }
+
+  /* Who We Empower With Personal Branding Excellence? - Full-Width Single Column (Mobile <= 768px) */
+  #who-we-empower .vg-pb-empower-grid,
+  .vg-pb-empower-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #who-we-empower .vg-pb-empower-card,
+  .vg-pb-empower-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 22px 18px !important;
+    box-sizing: border-box !important;
   }
 
 
