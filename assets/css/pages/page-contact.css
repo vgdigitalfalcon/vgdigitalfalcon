@@ -1,0 +1,726 @@
+/* =============================================================================
+   VG DIGITAL FALCON - CONTACT US PAGE CYBERNETIC THEME
+   Scoped to .vg-contact-page & .vg-contact-* classes
+   ============================================================================= */
+
+/* Base Page Styling */
+.vg-contact-page {
+  background-color: #070212 !important;
+  color: #cbd5e1 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+/* Headings */
+.vg-contact-page h1,
+.vg-contact-page h2,
+.vg-contact-page h3,
+.vg-contact-page h4,
+.vg-contact-page h5 {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+}
+
+/* Selection Highlight */
+.vg-contact-page ::selection {
+  background: #a855f7;
+  color: #ffffff;
+}
+
+/* Gradient Text Utilities */
+.vg-contact-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 35%, #c084fc 70%, #00f0ff 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block;
+}
+
+.vg-contact-gradient-accent {
+  background: linear-gradient(135deg, #00f0ff 0%, #a855f7 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block;
+}
+
+/* =============================================================================
+   1. HERO / BREADCRUMB SECTION
+   ============================================================================= */
+.vg-contact-hero {
+  position: relative;
+  padding: 138px 0 56px;
+  background: radial-gradient(circle at 50% 10%, rgba(168, 85, 247, 0.16) 0%, rgba(7, 2, 18, 0.96) 65%, #070212 100%);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.12);
+  overflow: hidden;
+  text-align: center;
+}
+
+.vg-contact-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.12) 0%, rgba(168, 85, 247, 0.08) 50%, transparent 75%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.vg-contact-hero .container {
+  position: relative;
+  z-index: 1;
+  max-width: 960px;
+}
+
+/* Breadcrumb Navigation */
+.vg-contact-breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  background: rgba(18, 10, 36, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+  margin-bottom: 18px;
+}
+
+.vg-contact-breadcrumb a {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vg-contact-breadcrumb a:hover {
+  color: #00f0ff;
+}
+
+.vg-contact-breadcrumb .separator {
+  color: #64748b;
+  font-size: 10px;
+}
+
+.vg-contact-breadcrumb .current {
+  color: #c084fc;
+  font-weight: 600;
+}
+
+/* Eyebrow Pill Badge */
+.vg-contact-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(0, 240, 255, 0.08);
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #00f0ff;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.vg-contact-pulse-beacon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+  animation: vgContactPulse 2s infinite ease-in-out;
+}
+
+@keyframes vgContactPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.vg-contact-hero-title {
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 16px;
+  letter-spacing: -0.025em;
+}
+
+.vg-contact-hero-subtitle {
+  font-size: clamp(15px, 2vw, 17px);
+  line-height: 1.6;
+  color: #94a3b8;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* =============================================================================
+   2. 4 CONTACT INFO BENTO CARDS
+   ============================================================================= */
+.vg-contact-cards-section {
+  padding: 50px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.vg-contact-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.vg-contact-bento-card {
+  background: rgba(15, 10, 31, 0.75);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  border-radius: 18px;
+  padding: 26px 22px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.vg-contact-bento-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.6), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.vg-contact-bento-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 24px rgba(168, 85, 247, 0.15);
+}
+
+.vg-contact-bento-card:hover::before {
+  opacity: 1;
+}
+
+.vg-contact-card-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-bottom: 18px;
+  flex-shrink: 0;
+}
+
+.icon-cyan {
+  background: rgba(0, 240, 255, 0.1);
+  color: #00f0ff;
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.15);
+}
+
+.icon-purple {
+  background: rgba(168, 85, 247, 0.12);
+  color: #c084fc;
+  border: 1px solid rgba(168, 85, 247, 0.28);
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.15);
+}
+
+.icon-emerald {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.28);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.15);
+}
+
+.icon-amber {
+  background: rgba(245, 158, 11, 0.12);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.28);
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.15);
+}
+
+.vg-contact-card-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.vg-contact-card-val {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 8px;
+  word-break: break-word;
+}
+
+.vg-contact-card-val a {
+  color: #e2e8f0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.vg-contact-card-val a:hover {
+  color: #00f0ff;
+}
+
+.vg-contact-card-desc {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #94a3b8;
+  margin-bottom: 16px;
+}
+
+.vg-contact-card-action {
+  font-size: 12px;
+  font-weight: 600;
+  color: #c084fc;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  transition: all 0.2s ease;
+}
+
+.vg-contact-card-action:hover {
+  color: #00f0ff;
+  transform: translateX(3px);
+}
+
+/* =============================================================================
+   3. CONTACT FORM & DIRECT CONNECT HUB
+   ============================================================================= */
+.vg-contact-main-section {
+  padding: 40px 0 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.vg-contact-main-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 32px;
+  align-items: start;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Left: Contact Form Card */
+.vg-contact-form-card {
+  background: rgba(14, 8, 28, 0.82);
+  border: 1px solid rgba(168, 85, 247, 0.24);
+  border-radius: 22px;
+  padding: 38px 34px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 25px rgba(124, 58, 237, 0.1);
+  position: relative;
+}
+
+.vg-contact-form-header {
+  margin-bottom: 26px;
+}
+
+.vg-contact-telemetry-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 999px;
+  font-size: 10.5px;
+  font-weight: 700;
+  color: #c084fc;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.vg-contact-form-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.vg-contact-form-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #94a3b8;
+}
+
+/* Form Elements */
+.vg-contact-form .row {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.vg-contact-form .col-md-6,
+.vg-contact-form .col-12 {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+.vg-contact-input-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.vg-contact-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 6px;
+}
+
+.vg-contact-input,
+.vg-contact-select,
+.vg-contact-textarea {
+  width: 100% !important;
+  background: rgba(10, 5, 22, 0.85) !important;
+  border: 1px solid rgba(168, 85, 247, 0.28) !important;
+  border-radius: 12px !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+  color: #ffffff !important;
+  outline: none !important;
+  transition: all 0.2s ease !important;
+  box-sizing: border-box !important;
+  font-family: inherit !important;
+}
+
+.vg-contact-input::placeholder,
+.vg-contact-textarea::placeholder {
+  color: #64748b;
+  font-size: 13.5px;
+}
+
+.vg-contact-input:focus,
+.vg-contact-select:focus,
+.vg-contact-textarea:focus {
+  border-color: #00f0ff !important;
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.25) !important;
+  background: rgba(14, 7, 30, 0.95) !important;
+}
+
+.vg-contact-select option {
+  background: #0d061c;
+  color: #ffffff;
+  padding: 10px;
+}
+
+.vg-contact-submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #00f0ff 0%, #a855f7 60%, #ec4899 100%);
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 8px;
+}
+
+.vg-contact-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0, 240, 255, 0.4), 0 0 20px rgba(168, 85, 247, 0.3);
+  color: #ffffff;
+}
+
+.vg-contact-trust-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+/* Right: Direct Connect Hub & Map Card */
+.vg-contact-hub-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.vg-contact-hub-card {
+  background: rgba(14, 8, 28, 0.82);
+  border: 1px solid rgba(168, 85, 247, 0.24);
+  border-radius: 22px;
+  padding: 30px 26px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+}
+
+.vg-contact-hub-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.vg-contact-hub-desc {
+  font-size: 13.5px;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Instant Action Buttons */
+.vg-contact-instant-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.vg-contact-whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 20px;
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.2) 0%, rgba(18, 140, 126, 0.2) 100%);
+  border: 1px solid rgba(37, 211, 102, 0.45);
+  border-radius: 12px;
+  color: #4ade80;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.vg-contact-whatsapp-btn:hover {
+  background: linear-gradient(135deg, rgba(37, 211, 102, 0.35) 0%, rgba(18, 140, 126, 0.35) 100%);
+  border-color: #25d366;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.vg-contact-phone-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 13px 20px;
+  background: rgba(168, 85, 247, 0.12);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  border-radius: 12px;
+  color: #c084fc;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.vg-contact-phone-btn:hover {
+  background: rgba(168, 85, 247, 0.22);
+  border-color: #c084fc;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Map Wrapper */
+.vg-contact-map-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  position: relative;
+  background: rgba(10, 5, 20, 0.9);
+}
+
+.vg-contact-map-frame {
+  width: 100%;
+  height: 240px;
+  border: none;
+  display: block;
+}
+
+/* Trust Metric Row */
+.vg-contact-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.vg-contact-trust-item {
+  background: rgba(18, 10, 36, 0.65);
+  border: 1px solid rgba(168, 85, 247, 0.16);
+  border-radius: 12px;
+  padding: 12px 10px;
+  text-align: center;
+}
+
+.vg-contact-trust-num {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 18px;
+  font-weight: 800;
+  color: #00f0ff;
+  line-height: 1.1;
+  margin-bottom: 2px;
+}
+
+.vg-contact-trust-lbl {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* =============================================================================
+   4. FAQ ACCORDION SECTION
+   ============================================================================= */
+.vg-contact-faq-section {
+  padding: 60px 0 90px;
+  position: relative;
+  z-index: 1;
+}
+
+.vg-contact-faq-section .container {
+  max-width: 960px;
+}
+
+.vg-contact-faq-title-wrap {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.vg-contact-faq-title {
+  font-size: 30px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.vg-contact-faq-accordion .accordion-item {
+  background: rgba(15, 10, 31, 0.75) !important;
+  border: 1px solid rgba(168, 85, 247, 0.22) !important;
+  border-radius: 14px !important;
+  margin-bottom: 14px !important;
+  overflow: hidden !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.vg-contact-faq-accordion .accordion-button {
+  background: transparent !important;
+  color: #ffffff !important;
+  font-size: 15.5px !important;
+  font-weight: 700 !important;
+  padding: 18px 22px !important;
+  box-shadow: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.vg-contact-faq-accordion .accordion-button:not(.collapsed) {
+  color: #00f0ff !important;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.18) !important;
+}
+
+.vg-contact-faq-accordion .accordion-button::after {
+  filter: invert(1) brightness(2) !important;
+  transform-origin: center !important;
+}
+
+.vg-contact-faq-accordion .accordion-body {
+  padding: 18px 22px !important;
+  font-size: 14px !important;
+  line-height: 1.65 !important;
+  color: #cbd5e1 !important;
+}
+
+/* =============================================================================
+   5. RESPONSIVE MEDIA QUERIES (@media (max-width: 768px))
+   ============================================================================= */
+@media (max-width: 991px) {
+  .vg-contact-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .vg-contact-main-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vg-contact-hero {
+    padding-top: 118px !important;
+    padding-bottom: 42px !important;
+  }
+
+  .vg-contact-hero-title {
+    font-size: 28px !important;
+    line-height: 1.2 !important;
+  }
+
+  .vg-contact-hero-subtitle {
+    font-size: 14px !important;
+  }
+
+  .vg-contact-cards-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .vg-contact-bento-card {
+    padding: 20px 18px !important;
+  }
+
+  .vg-contact-form-card {
+    padding: 24px 18px !important;
+  }
+
+  .vg-contact-hub-card {
+    padding: 22px 18px !important;
+  }
+
+  .vg-contact-trust-grid {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .vg-contact-trust-item {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 10px 14px !important;
+  }
+
+  .vg-contact-trust-num {
+    margin-bottom: 0 !important;
+  }
+}
