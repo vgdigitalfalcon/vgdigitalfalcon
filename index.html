@@ -353,6 +353,13 @@
          HERO SECTION (COSMIC AI GROWTH ENGINE SHOWCASE)
          ========================================================================== -->
     <section class="vg-hero-section">
+        <!-- 3D Perspective Horizon Grid + Ambient Light Orbs -->
+        <div class="vg-hero-3d-ambient-stage" aria-hidden="true">
+            <div class="vg-hero-orb vg-hero-orb-violet"></div>
+            <div class="vg-hero-orb vg-hero-orb-cyan"></div>
+            <div class="vg-hero-horizon-plane"></div>
+        </div>
+
         <!-- Ambient Cosmic Floating Particles -->
         <div class="vg-cosmic-particles"></div>
 
@@ -3865,6 +3872,51 @@
                     item.classList.remove('is-open');
                 });
             });
+
+            // Ultra-Gentle Whisper-Subtle 3D Ambient Hero Parallax (Desktop Only, 60fps)
+            (function() {
+                var heroSection = document.querySelector('.vg-hero-section');
+                if (!heroSection) return;
+
+                var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+                if (prefersReduced.matches) return;
+
+                var isDesktop = window.innerWidth > 992;
+                window.addEventListener('resize', function() {
+                    isDesktop = window.innerWidth > 992;
+                    if (!isDesktop) {
+                        heroSection.style.setProperty('--hero-tilt-x', '0px');
+                        heroSection.style.setProperty('--hero-tilt-y', '0px');
+                    }
+                }, { passive: true });
+
+                var ticking = false;
+                var targetX = 0, targetY = 0;
+
+                heroSection.addEventListener('mousemove', function(e) {
+                    if (!isDesktop) return;
+                    var rect = heroSection.getBoundingClientRect();
+                    var relX = (e.clientX - rect.left) / rect.width - 0.5;
+                    var relY = (e.clientY - rect.top) / rect.height - 0.5;
+                    // Whisper-gentle max +/- 5px
+                    targetX = Math.max(-5, Math.min(5, relX * 10));
+                    targetY = Math.max(-5, Math.min(5, relY * 10));
+
+                    if (!ticking) {
+                        ticking = true;
+                        requestAnimationFrame(function() {
+                            heroSection.style.setProperty('--hero-tilt-x', targetX.toFixed(2) + 'px');
+                            heroSection.style.setProperty('--hero-tilt-y', targetY.toFixed(2) + 'px');
+                            ticking = false;
+                        });
+                    }
+                }, { passive: true });
+
+                heroSection.addEventListener('mouseleave', function() {
+                    heroSection.style.setProperty('--hero-tilt-x', '0px');
+                    heroSection.style.setProperty('--hero-tilt-y', '0px');
+                }, { passive: true });
+            })();
         });
     </script>
 </body>

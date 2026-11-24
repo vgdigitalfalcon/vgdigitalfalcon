@@ -25385,10 +25385,154 @@ header.header-scrolled,
 .vg-hero-section {
   position: relative !important;
   overflow: hidden !important;
+  overflow-x: clip !important;
   background: #0a0614 !important;
   z-index: 1 !important;
   padding-top: 108px !important;
   padding-bottom: 24px !important;
+  --hero-tilt-x: 0px;
+  --hero-tilt-y: 0px;
+}
+
+/* =============================================================================
+   3D PERSPECTIVE HORIZON GRID + FLOATING AMBIENT LIGHT ORBS (HERO SECTION)
+   ============================================================================= */
+.vg-hero-3d-ambient-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  contain: paint layout;
+  transform: translate3d(calc(var(--hero-tilt-x, 0px) * 0.35), calc(var(--hero-tilt-y, 0px) * 0.35), 0);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* 3D Perspective Horizon Grid Plane */
+.vg-hero-horizon-plane {
+  position: absolute;
+  top: 12%;
+  left: -30%;
+  width: 160%;
+  height: 125%;
+  opacity: 0.22;
+  transform: perspective(900px) rotateX(68deg) translate3d(var(--hero-tilt-x, 0px), var(--hero-tilt-y, 0px), 0);
+  transform-origin: 50% 20%;
+  background-image: 
+    linear-gradient(to right, rgba(139, 92, 246, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(34, 211, 238, 0.08) 1px, transparent 1px);
+  background-size: 90px 90px;
+  animation: gridGlide 28s linear infinite;
+  will-change: transform, background-position;
+  mask-image: radial-gradient(ellipse 68% 58% at 52% 58%, rgba(0,0,0,0.85) 15%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 68% 58% at 52% 58%, rgba(0,0,0,0.85) 15%, transparent 75%);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes gridGlide {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 90px;
+  }
+}
+
+/* Floating Ambient Light Orbs */
+.vg-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.14;
+  filter: blur(80px);
+  will-change: transform;
+}
+
+.vg-hero-orb-violet {
+  width: 520px;
+  height: 520px;
+  left: 2%;
+  top: 12%;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.18) 0%, rgba(124, 58, 237, 0.05) 55%, transparent 75%);
+  animation: orbDriftViolet 18s ease-in-out infinite alternate;
+}
+
+.vg-hero-orb-cyan {
+  width: 540px;
+  height: 540px;
+  right: 2%;
+  top: 8%;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.10) 0%, rgba(34, 211, 238, 0.02) 55%, transparent 75%);
+  animation: orbDriftCyan 18s ease-in-out infinite alternate;
+}
+
+/* Soften Floating Dust Particles Container */
+.vg-cosmic-particles,
+.vg-cosmic-particles .cosmic-particle {
+  opacity: 0.14 !important;
+}
+
+@keyframes orbDriftViolet {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(18px, -15px, 0) scale(1.05);
+  }
+  100% {
+    transform: translate3d(-14px, 16px, 0) scale(0.96);
+  }
+}
+
+@keyframes orbDriftCyan {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(-20px, 16px, 0) scale(1.04);
+  }
+  100% {
+    transform: translate3d(15px, -14px, 0) scale(0.97);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vg-hero-horizon-plane,
+  .vg-hero-orb-violet,
+  .vg-hero-orb-cyan {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .vg-hero-section {
+    overflow-x: clip !important;
+    --hero-tilt-x: 0px !important;
+    --hero-tilt-y: 0px !important;
+  }
+  .vg-hero-3d-ambient-stage {
+    transform: none !important;
+    transition: none !important;
+  }
+  .vg-hero-horizon-plane {
+    transform: perspective(700px) rotateX(68deg) !important;
+    transition: none !important;
+  }
+  .vg-hero-orb-violet {
+    width: 320px;
+    height: 320px;
+    left: -5%;
+    top: 5%;
+  }
+  .vg-hero-orb-cyan {
+    width: 340px;
+    height: 340px;
+    right: -5%;
+    top: 25%;
+  }
 }
 
 
